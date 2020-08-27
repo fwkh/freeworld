@@ -179,7 +179,7 @@
                         	<a href="talent/talentSearch.html" class="gnb_depTxt" id="f_search"><em>프리랜서 검색</em></a>
                         </li>
                         <li class="menu_about gnb_depth1 ">
-                        	<a href="../www.freemon.co.kr/project/projectSearch.html" class="gnb_depTxt" id="p_search"><em>프로젝트 검색</em></a>
+                        	<a href="../../views/project/projectSearch.jsp" class="gnb_depTxt" id="p_search"><em>프로젝트 검색</em></a>
                         </li>
                         <li class="menu_about gnb_depth1 ">
                         	<a href="../www.freemon.co.kr/project/projectMap.html" class="gnb_depTxt" id="p_map"><em>프로젝트 맵</em></a>
@@ -187,16 +187,16 @@
                         <li class="menu_about gnb_depth1 ">
                         	<a href="../www.freemon.co.kr/home/noticeSearch.html" class="gnb_depTxt" id="notice"><em>공지사항</em></a>
                         </li>
-                        <<li class="menu_about gnb_depth1 ">
+                        <li class="menu_about gnb_depth1 ">
                         	<a href="/document/documentSelect" class="gnb_depTxt" id="f_management"><em>프리랜서 관리</em></a>
                         </li>
-                        <<li class="menu_about gnb_depth1 ">
+                        <li class="menu_about gnb_depth1 ">
                         	<a href="/document/documentSelect" class="gnb_depTxt" id="p_management"><em>프로젝트 관리</em></a>
                         </li>
-                        <<li class="menu_about gnb_depth1 ">
+                        <li class="menu_about gnb_depth1 ">
                         	<a href="/document/documentSelect" class="gnb_depTxt" id="profile"><em>프로필 관리</em></a>
                         </li>
-                        <<li class="menu_about gnb_depth1 ">
+                        <li class="menu_about gnb_depth1 ">
                         	<a href="/document/documentSelect" class="gnb_depTxt" id="suggestion"><em>제안 및 지원 현황</em></a>
                         </li>
                         <li class="menu_about gnb_depth1">
