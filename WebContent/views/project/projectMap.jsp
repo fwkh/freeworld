@@ -170,7 +170,7 @@
 
 
 <body>
-	<%@ include file="../common/header.jsp" %>
+	<%@ include file="../common/header1.jsp" %>
 
 		
 <style type="text/css">
@@ -392,6 +392,6 @@
         }
     </script>
 
-	<%@ include file="../common/footer.jsp" %>
+	<%@ include file="../common/footer1.jsp" %>
 </body>
 </html>
