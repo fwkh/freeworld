@@ -31,6 +31,13 @@
 					<li>© InsightOn Corp.</li>
 				</ul>
 		   </section>
+ 			<section id="">
+			   <h3></h3>
+			   <div class="">
+					<a href="" target="_blank" class="play"><em></em></a>
+					<a href="" target="_blank" class="store"><em></em></a>
+				</div>
+			</section>
 		   <section>
 				<h3>고객센터</h3>
 				<p class="f_tel eng"><a href="tel:18992951">1899-2951</a></p>
@@ -41,13 +48,7 @@
 					<a href="../customer/questionRegistForm.html">문의하기</a>
 				</div>
 			</section>
-			<section id="app_download">
-			   <h3>앱 다운로드</h3>
-			   <div class="app_btn cf">
-					<a href="https://play.google.com/store/apps/details?id=kr.insighton.freemonservice" target="_blank" class="play"><em>구글플레이</em></a>
-					<a href="https://itunes.apple.com/app/id1472330588" target="_blank" class="store"><em>앱스토어</em></a>
-				</div>
-			</section>
+
 		</div>
 	</div>
 			<!-- footer -->

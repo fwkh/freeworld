@@ -97,8 +97,8 @@ a, button{cursor:pointer;}
 .footer_in{padding: 30px 0;}
 
 #footer section{float:left;padding-right:15px;}
-#footer section:nth-child(1){width:40%;}
-#footer section:nth-child(2){width: 30%;}
+#footer section:nth-child(1){width:550%;}
+#footer section:nth-child(2){width:15%;}
 #footer section:nth-child(3){width:30%;}
 #footer h3{font-size:17px;margin-bottom:10px;}
 
