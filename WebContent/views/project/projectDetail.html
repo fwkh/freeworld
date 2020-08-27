@@ -1,0 +1,675 @@
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <!-- Google Tag Manager -->
+        <!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        '../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-MF7LK3J');</script> -->
+        <!-- End Google Tag Manager -->	
+    
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="naver-site-verification" content="81b7cb5e5f8e2975b94b334d812bb38453749a5a"/>
+        <meta name="keywords" content="프리몬, FREEMON, SI, SM, 프리랜서, 아웃소싱 플랫폼, 상주, 프로젝트, 개발자, 시스템엔지니어, MES, 설계자, 디자이너, 타임라인, Java, C#" />
+        <meta name="description" content="SI 전문 아웃소싱 플랫폼. 일정이 딱딱 맞는 프로젝트, 프리랜서를 한눈에. 프로젝트 프리랜서 타임라인, 간편하게 작성하는 전자계약서, 이력 간편등록, 프리랜서 멘토, 쉽게 관리하는 프로젝트" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="프리몬 - SI 전문 아웃소싱" />
+        <meta property="og:description" content="SI 전문 아웃소싱 플랫폼. 프로젝트 프리랜서 타임라인, 이력 간편등록, 프리랜서 멘토, 간편 전자계약서" />
+        <meta property="og:image" content="https://www.freemon.co.kr/resources/images/new/freemon_naver.jpg" />
+        <meta property="og:url" content="https://www.freemon.co.kr" />
+        <meta id="_csrf" name="_csrf" content="45d71795-fe18-44ec-9100-ef681e66286f"/>
+        <meta id="_csrf_header" name="_csrf_header" content="X-CSRF-TOKEN"/>
+        <meta name="viewport" content="width=1360">
+        <title>프리월드 - SI 전문 아웃소싱</title>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-137161229-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+        
+              gtag('config', 'UA-137161229-1', {
+                'linker': {
+                  'domains': ['www.freemon.co.kr', 'www.freemon.kr']
+                }
+              });
+        </script> -->
+    
+        <link rel="stylesheet" type="text/css" href="../resources/css/defaulta9af.css?version=4.3">
+        <link rel="stylesheet" type="text/css" href="../resources/css/jquery-ui.mina751.css?version=2.0">
+        <link rel="stylesheet" type="text/css" href="../resources/css/membercd4e.css?version=4.1">
+        <link rel="stylesheet" type="text/css" href="../resources/css/new6d33.css?version=4.8">
+        <link rel="stylesheet" type="text/css" id="mobile" href="../resources/css/web_hand.css">
+        <link rel="stylesheet" type="text/css" href="../resources/css/career-ui.mina751.css?version=2.0" />
+        <link rel="stylesheet" type="text/css" href="../resources/css/ui.jqgrid.css" />
+        <link rel="shortcut icon" href="../resources/images/new/favicon.ico"/>
+        
+        <style type="text/css">
+          .tooltipUI{
+            background-color:#FAF4C0;
+          }
+          .ui-tooltip {
+            padding: 8px;
+            position: absolute;
+            z-index: 999999;
+            color : #fff;
+            font-size : 12px;
+            max-width: 600px;
+            -webkit-box-shadow: 0 0 5px #aaa;
+            box-shadow: 0 0 5px #aaa;
+            /* for IE */
+            filter:alpha(opacity=80);
+            /* CSS3 standard */
+            opacity:0.8;
+            line-height:16px;
+          }
+          body .ui-tooltip {
+            border-width: 2px;
+          }
+          
+          /* .scrollOff{position:fixed;overflow:hidden;height:100%;width:100%;} */
+        </style>
+        <!-- <script type="text/javascript" src="../resources/scripts/jquery-3.3.1.min.js" charset="utf-8"></script> -->
+        <script type="text/javascript" src="../resources/scripts/jquery-3.3.1.min.js" charset="utf-8"></script>
+        <script type="text/javascript" src="../resources/scripts/jquery.flexslider.js"></script>
+        <script type="text/javascript" src="../resources/scripts/site_ui.js"></script>
+        <script type="text/javascript" src="../resources/js/jquery.easing.1.3.js"></script>
+        <!--Calendar-->
+        <script type="text/javascript" src="../resources/scripts/calendar/pignose.calendar.full.js"></script>
+        <script type="text/javascript" src="../resources/js/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="../resources/js/jquery.ba-hashchange.min.js"></script>
+        <script type="text/javascript" src="../resources/js/jquery.json-2.3.js"></script>
+        <script type="text/javascript" src="../resources/js/jquery.validate.min.js"></script>
+        <script type="text/javascript" src="../resources/js/jquery.history.js"></script>
+        <!-- Jqgrid -->
+        <script type="text/javascript" src="../resources/js/grid.locale-kr.js"></script>
+        <script type="text/javascript" src="../resources/js/jquery.jqGrid.min.js"></script>
+        <!-- //Jqgrid -->
+        <script type="text/javascript" src="../resources/js/jquery.marquee.min9a0d.js?version=1.0"></script>
+        <script type="text/javascript" src="../resources/js/mustache.js"></script>
+        <script type="text/javascript" src="../resources/js/jquery.cookie.js"></script>
+        <script type="text/javascript" src="../resources/i18n/commonMessages_ko.js"></script>
+        <script type="text/javascript" src="../resources/freemon/base64.js"></script>
+        <script type="text/javascript" src="../resources/freemon/sha256.js"></script>
+        <script type="text/javascript" src="../resources/freemon/nmask.js"></script>
+        <script type="text/javascript" src="../resources/freemon/freemonc599.js?version=3.3"></script>
+        <script type="text/javascript" src="../resources/js/gnb_common56b8.js?version=4.2"></script>
+        <script type="text/javascript" src="../resources/freemon/common/apply.js"></script>
+        <script type="text/javascript" src="../resources/freemon/common/freemonPopUp9667.js?version=1.2"></script>
+        <script type="text/javascript" src="../resources/freemon/common/input.js"></script>
+        
+        <script type="text/javascript" src="../../developers.kakao.com/sdk/js/kakao.min.js"></script>
+        
+        <script type="text/javascript">
+            var frameworkProperties = {
+                context: '',
+                locale: 'ko',
+                defaultLang: 'ko',
+                kakaoAppKey: 'a8bf256e33657332f212fd5847dbd8c5',
+            };
+        </script>
+    
+        <script type="text/javascript">
+            $(function() {
+                $(document).tooltip({
+                    //tooltipClass: 'tooltipUI',
+                       content: function() {
+                    return $(this).prop('title');
+                       },
+                       track: true
+                });
+                
+                freemon.invoker.invoke("freemonPopUp");
+    
+                var stylesheet = document.getElementById("mobile");
+                if(freemon.ux.isMobileCheck() == false){				
+                    stylesheet.setAttribute('href', "");
+                    $(".link_mobile").hide();
+                }
+                else{
+                    var url = "../resources/css/web_hand.css";
+                    stylesheet.setAttribute('href', url);
+                    $(".link_mobile").show();
+                }
+                
+                 $('.flow_text_in').marquee({
+                    direction: 'up',
+                    speed: 200,
+                    gap: 0,
+                    delayBeforeStart: 0,
+                    duplicated: true,
+                    pauseOnHover: true
+                }); 
+            });
+            
+            // 모바일일때 모바일경로로 이동
+            $(document).ready(function(){
+                if(freemon.ux.isMobileCheck() == true && "PC" == "MOBILE"){
+                    document.location.href = "https://m.freemon.co.kr/";
+                    return false;
+                }
+            });
+        </script>
+    </head>
+<body>
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MF7LK3J"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+
+	<div class="load_box" style="display:none;"><div class="load_img"><img src="/resources/mobl/images/common/loading.gif" alt="loading"/></div></div>
+	<div class="empty"></div><!-- 아이폰 최신버전 상위 bar 노출 막음 -->
+
+	<div class="margin-100"></div>
+	
+	<!-- 하단고정메뉴 -->
+	<div class="m_gnb">
+		<ul class="cf">
+			
+		    
+			<li><a href="/m/project/projectSearch" class="menu2 ">프로젝트 검색</a></li>
+			<li><a href="/m/project/projectMap" class="menu4 ">프로젝트 맵</a></li>
+			<li><a href="/m/mypage/myFreemon" class="menu3 active">마이프리몬</a></li>
+			<li><a href="/m/applicant/talentApplicantSearch" class="menu6 ">제안 및 지원</a></li>
+			<!--<li><a href="/m/home/freemonSupport" class="m1_4 ">출장지원</a></li> -->
+			<li><a href="/m/resume/resumeSearch" class="menu7 ">프로필 관리</a></li>
+			
+			
+		</ul>
+	</div>
+	<!-- 하단로그인 -->
+	<!-- div class="link_login">
+		
+		
+		<a href="/m/mypage/myFreemon" class="active">마이프리몬</a>
+		
+		
+		<a href="#none" class="quest mt-3 kakaoPlusTalk">카톡문의</a>
+	</div -->
+	
+	<!-- 회원구분(프리랜서/기업고객) -->
+	<!-- div class="divide_member">
+		<div class="link_login">
+			<a href="#none" class="close">닫기</a> 
+			<a href="/m/login/freemonLogin?loginType=freelancer" class="free">프리랜서</a>
+			<a href="/m/login/freemonLogin?loginType=company" class="company">기업고객</a>
+		</div>
+	</div -->
+	<!-- /회원구분(프리랜서/기업고객) -->
+<script type="text/javascript" src="/resources/mobl/freemon/project/projectDetail.js?version=1.5"></script>
+<script type="text/javascript">
+	$(function() {
+		freemon.invoker.invoke("projectDetail", "param", {'m':'{"projCloseDt":"2020.10.10","projAddrCd":"138","projAddr":"송파구","closeYn":"N","compNm":"플랜정보기술","applicantCount":0,"mngId":"jina6678@daum.net","recrtNum":"중급 1명","recrtrQm":"파이썬 3년이상","projTerm":"3","projStrtDt":"2020.08.10","accptCloseDt":"2020.08.24","email":"jina6678@daum.net","resumeCount":0,"unitPrice":"1","negoYn":"Y","projUpperAddr":"서울","joinPsblDt":"2020.12.07","projNm":"DB 모니터링 툴 개발","travelExpYn":"N","accptStrtDt":"2020.07.24","projIdx":"804","recruitSkillNm":"MongoDB, Python, Oracle, Linux","contractCount":0,"phone":"010-3864-1858","cntiPlanYn":"Y","mngNm":"주종면","projRegDt":"2020-07-24 21:50:46","closed":false,"projectDateDiff":"0","customer":"플랜정보기술"}'});
+		// projectDetail.fn.selectContractList('804');
+	});
+</script>
+<div id="container">
+	<!-- 제목 -->
+	<div class="sub_tit cf">
+		<span class="prev">이전</span>
+		<h2>프로젝트 정보</h2>
+		<a href="/m/" class="home">홈으로</a> 
+	</div>
+	<section class="sub_content">
+	
+				<div class="pop_bg" id="pop_communication" style="display:none;">
+			<div class="pop">
+		    	<div class="pop_header">
+		        	<h3 style="width:90%"></h3>
+		            <a href="javascript:void(0);" class="close">닫기</a>
+		        </div>
+		        <div class="pop_body">
+		            <div class="apply_con">
+				        <div class="career_etc_con">
+				        	<div class="talk_box proj_talk" id="communicationList" style="max-height:300px;">
+				        	</div>
+       					</div>
+       					
+		            	<textarea id="talk" name="talk" style="height:100px;" placeholder="남기고 싶은 말을 남기세요."></textarea>
+		                <div class="btn_pop_box">
+		                    <button id="btnProp" class="btn_apply" data-action="talkSave" onClick="return false;">내용 남기기</button>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+		
+		<!-- 팝업 -->
+		<div class="pop_bg" id="projectInTalentList" style="display:none;">
+		</div>
+
+		<script id="communicationListTemplate" type="text/x-mustache">
+        {{#inqueryList}}
+        {{^me}}
+        <!-- 상대 대화 -->
+        <div class="talk you cf">
+            <div class="talk_con">
+                <div class="talk_in">
+                    {{{inqDtl}}}
+                    <p class="arrow"></p>
+                    <p class="talk_time">{{#readYn}}읽음 {{/readYn}}{{^readYn}}안읽음 {{/readYn}}{{inqDt}}</p>
+                </div>
+            </div>
+        </div>
+        {{/me}}
+        {{#me}}
+        <!-- 내 대화 -->
+        <div class="talk me">
+            <div class="talk_in">
+                {{{inqDtl}}}
+                <p class="arrow"></p>
+                <p class="talk_time">{{#readYn}}읽음 {{/readYn}}{{^readYn}}안읽음 {{/readYn}}{{inqDt}}</p>
+            </div>
+        </div>
+        {{/me}}
+        {{/inqueryList}}
+		</script>
+		
+		
+		<div class="pop_bg" id ="pop_apply" style="display:none;">
+			<div class="pop">
+		    	<div class="pop_header">
+		        	<h3>지원하기</h3>
+		            <a href="javascript:void(0);" class="close">닫기</a>
+		        </div>
+		        <div class="pop_body">
+		        	<div class="apply_top">
+		            	<h4 class="company_name red"><a href="javascript:void(0);">플랜정보기술</a></h4>
+		                <h3 class="project_name cf">
+		                    <a href="javascript:void(0);">DB 모니터링 툴 개발</a>
+		                </h3>
+		            </div>
+		            <div class="apply_con">
+		            	<textarea id="textarea" placeholder="지원시 참고할 내용이 있을 경우 여기에 남기세요."></textarea>
+                        
+                        
+           					
+           						<div class="join_agree_body">
+			                        <div class="agree_list mb-0">
+			                        	<ul>
+			                               <li class="active has-sub">
+												<a href="javascript:void(0);" style="cursor:default; margin-left:0px;"><span style="display:inline-block;padding-right:10px;width: 19px;
+		    height: 19px;background: #ff6600 url(/resources/images/new/agree_all.png) no-repeat center;border-radius:20px;margin-right:2px;vertical-align: bottom;"></span> 프로젝트 지원시 확인하세요!!</a>
+			                               </li>
+			                               <li class="has-sub agree_detail">
+			                               	<h4><strong>프로젝트 담당자</strong>가 지원하시는 프리랜서님의 <strong>이력정보</strong>를 확인 할 수 있게 이력서가 꼭 <br/>등록되어 있어야 합니다.<br/>
+			                               		<span style="color:#ff6600; font-size:13px;">* 이력정보가 없을 경우 1일 지원횟수가 제한됨.<br/>&nbsp;&nbsp;&nbsp;(1일 1회)</span>
+			                               	</h4>
+			                               	<p><a href="mailto:freemon@freemon.co.kr" class="underline">[메일로 프리몬에 이력서파일 보내기] <span style="color:#999;">클릭</span></a></p>
+			                               </li>
+			                            </ul>
+			                        </div>
+			                    </div>
+           					
+           					
+           				
+           				
+	                    <!-- <div class="join_agree_body">
+	                        <div class="agree_list mb-0">
+	                        	<ul>
+	                               <li class="active has-sub">
+										<a href="javascript:void(0);" style="cursor:default;margin-left:5px;"><span style="display:inline-block;padding-right:10px;width: 19px;
+    height: 19px;background: #ff6600 url(/resources/images/new/agree_all.png) no-repeat center;border-radius:20px;margin-right:2px;vertical-align: middle;"></span> 프로젝트 지원시 확인하세요!!</a>
+	                               </li>
+	                               <li class="has-sub agree_detail">
+	                               	<h4><strong>프로젝트 담당자</strong>가 지원하시는 프리랜서님의 <strong>이력정보</strong>를 확인 할 수 있게 이력서가 꼭 등록되어 있어야 합니다.</h4>
+	                               	<p><a href="mailto:freemon@freemon.co.kr" class="underline">[메일로 프리몬에 이력서파일 보내기] <span style="color:#999;">클릭</span></a></p>
+	                               </li>
+	                            </ul>
+	                        </div>
+	                    </div> -->
+	                    
+		                <div class="btn_pop_box">
+		                    <button class="btn_apply" data-action = "applicntProj" onClick="return false;">지원하기</button>
+		                </div>
+		                
+		            </div>
+		        </div>
+		    </div>
+		</div>
+		
+        <!-- 프로젝트 상세 -->        
+        <div class="card no_over cf">
+        	<!-- 프로젝트 정보 -->
+            <div class="pro_info">
+                <h4>플랜정보기술</h4>
+                <h3>
+                    DB 모니터링 툴 개발
+                    <!-- step1:제안 / step2:지원 / step3:면접진행 / step4:계약요청 / step5:계약완료 / 진행수락시:별도 표시 없음 / 거절취소시:no  -->
+                    <!-- <span class="free_step step2">지원<em class="yes">O</em><em class="no">X</em></span> -->
+                </h3>
+                <ul class="ul_detail cf">
+                    <li><span class="tit">투입기간</span><p>2020.08.10 ~ 2020.10.10 <br/><span class="add_info">3개월</span><span class="add_info">연장가능</span></p></li>
+                    <li><span class="tit">전문기술</span><p>MongoDB, Python, Oracle, Linux</p></li>
+                    
+                    <li><span class="tit">모집요건</span><p>파이썬 3년이상</p></li>
+                    
+                    <li><span class="tit">근무지역</span><p>서울 송파구</p></li>
+                    <li><span class="tit">모집인원</span><p>중급 1명</p></li>
+
+                    
+                    <li><span class="tit">단가</span><p>1만원
+                    	<span class="add_info">협의가능</span>
+                        </p>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            <!-- 공유하기 -->
+            <div class="btn_icon cf">
+                <a href="javascript:void(0);" class="share col-12" data-action="share_click" title="친구공유">친구공유</a>
+            </div>
+            
+            <!-- 프로젝트 에디터 -->
+            <div class="pro_info no_line story">
+            	<프로젝트 제반사항><br/>DB 모니터링 툴 개발(웹기반)<br/>Python, DJango, MongoDB, Oracle, echart  등<br/><br/><유의사항><br/>- 계약직<br/>- 2~3개월<br/>- 노트북 지참<br/><br/><br/>
+            </div>
+            
+            
+        </div>
+        
+		<!-- 업체정보 -->
+        <div class="card no_over cf">
+            <div class="pro_info">
+                <h5><span class="add_info first">등록기업</span>플랜정보기술</h5>
+                <p style="word-break: break-word;white-space: pre-wrap;"class="story"></p>
+            </div>
+            <div class="pro_info">
+             	<ul class="ul_company cf">
+                     <li><span class="tit">담당자</span>주종면</li>
+                     
+			
+				<li><span class="tit">연락처</span><a href="tel:010-3864-1858" style="color:#666;">010-3864-1858</a></li>
+                    		<li><span class="tit">이메일</span><a href="mailto:jina6678@daum.net" style="color:#666;">jina6678@daum.net</a></li>
+                    	
+                    	
+                    	
+                 </ul>
+             </div>
+        </div>
+            
+            <!-- 버튼 -->
+            <div class="btn_box right">
+            	
+	            	
+	                <!-- <button type="button" class="btn_normal btn_blue" data-action ="share_click" >친구공유</button> -->
+	                
+	                	
+	                		
+	                			
+	                				
+	                					
+	                					
+	                						<button type="button" class="btn_normal btn_blue" data-action="apply_click">지원하기</button>
+	                					
+	                				
+	                			
+	                		
+	                		
+	                	
+	                
+                
+                <button id="btn" class="btn_normal btn_gray" style="cursor:pointer;" data-action="list_click">목록으로</button>
+            </div>
+            
+            
+            
+        </div>
+    </section>
+</div>
+
+<script id="contractListTemplate" type="text/x-mustache">
+{{#data}}
+    <div class="detail_man_list cf">
+        <div class="detail_man_info cf">
+			<a href="javascript:void(0);" style="cursor:default;">
+            <div class="profile" style="background-image:url('{{profileUrl}}')">
+                프로필사진
+            </div>
+            <div class="pro_con">
+                <h4 class="man_name">{{userNm}}</h4>
+                <ul class="project_ul darkgray_ul  cf">
+                    <li>{{#isGenderNm}}{{genderNm}}{{#age}},{{/age}} {{/isGenderNm}}{{#age}}{{age}}세{{/age}}</li>
+                    <li>{{hopeAreaNm}}</li>
+                    <li class="ul_no_line ellipsis">{{usableSkillNm}}</li>
+                </ul>
+                <ul class="detail_man_ul cf">
+                    <li class="ellipsis"><span>계약일</span>{{cntrctStrtDt}}</li>
+                </ul>
+            </div>
+			</a>
+        </div>
+    </div>
+{{/data}}
+{{^data}}
+	<div class="detail_man_list no-date cf">
+    	<span>조회 결과가 없습니다.</span>
+	</div>
+{{/data}}
+</script>
+
+
+	<!-- 팝업 -->
+	<div class="pop_bg" id="popInfoData" style="display:none;">
+	</div>
+
+	<!-- 팝업 -->
+	<div class="pop_bg" id="popAlertData" style="display:none;">
+		<div class="pop pop2">
+	    	<div class="pop_header">
+	        	<h3>&nbsp;</h3>
+	            <a href="javascript:void(0);" class="close">닫기</a>
+	        </div>
+	        <div class="pop_body p-20 no_scroll" style="">
+	        	<div class="no_page_tit"></div>
+                <div class="btn_pop_box center">
+                </div>
+	        </div>
+	    </div>
+	</div>
+
+
+	<script id="popAlamnTemplate" type="text/x-mustache">
+<div class="pop">
+    <div class="pop_header">
+        <h3 id="pop-title">알림설정</h3>
+        <a href="#none" class="close">닫기</a>
+    </div>
+    <div class="pop_body">
+        <form id="popAlarmForm" name="popAlarmForm">
+        <div class="option_box">
+                <table class="t_option">
+                    <tbody>
+                        {{#data}}
+                        <tr>
+                            <th>{{alamnClsCdNm}}
+								{{#isDesc}}<p>{{alamnDisplayNm}}</p>{{/isDesc}}
+							</th>
+                            <td>
+								<label class="optChk" for="">
+                                	<input type="checkbox" id="alamn{{alamnClsCd}}" name="alamn{{alamnClsCd}}" {{#almVal}}checked="checked"{{/almVal}} value="Y" />
+                                	<i></i>
+                            	</label>
+
+                                <!--input type="radio" id="alamn{{alamnClsCd}}_1" name="alamn{{alamnClsCd}}" {{#almVal}}checked="checked"{{/almVal}} value="Y" /> <label for="alamn{{alamnClsCd}}_1">수신함</label>
+                                <input type="radio" id="alamn{{alamnClsCd}}_2" name="alamn{{alamnClsCd}}" {{^almVal}}checked="checked"{{/almVal}}value="N" /> <label for="alamn{{alamnClsCd}}_2">수신하지않음</label-->
+                            </td>
+                        </tr>
+                        {{/data}}
+                    </tbody>
+                </table>
+        </div>
+        </form>
+
+		<!-- 버튼-->
+        <div class="btn_pop_box center mt-10">
+        	<button id="btnAlamn" class="btn_apply" style="cursor:pointer;">저장</button>
+        </div>
+    </div>
+</div>
+	</script>
+	<script id="popClosedTemplate" type="text/x-mustache">
+<div class="pop">
+    <div class="pop_header">
+        <h3 id="pop-title">회원탈퇴</h3>
+        <a href="#none" class="close">닫기</a>
+    </div>
+    <div class="pop_body">
+        <form id="popForm" name="popForm">
+			<div class="option_box add_box">
+            	<div class="input_list p-0 mb-20">
+                    <ul class="input_list_in cf">
+						
+						
+							<input type="hidden" id="pincode" name="pincode" value="1" />
+						
+                        <li>
+                            <div class="input sign_box exit">
+                                <label for="">탈퇴사유</label>
+                                <div class="sign">
+                                    <textarea id="scssnDtl" name="scssnDtl"></textarea>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 동의 -->
+				<div class="join_agree">
+                    <div class="join_agree_top">
+                        <h3>탈퇴안내</h3>
+                    </div>
+                    <div class="join_agree_body">
+                        <div class="agree_list">
+                        	<ul>
+                               <li class="active has-sub">
+                                    <div class="join_check">
+                                        <label class="agrChk" for="agrChk">
+                                            <input type="checkbox" id="agrChk" name="agrChk" class="argChecked" value="Y"><i></i>
+                                        </label>
+                                    </div>
+                                    <a href="#none" class="joinAgreeList">회원탈퇴 안내사항 확인</a>
+                               </li>
+                               <li class="has-sub agree_detail" style="overflow:auto;height:150px;">
+                               	<h4>회원탈퇴 신청 전에 안내 사항을 확인해주세요.</h4>
+                               	<p>1. 탈퇴 후 회사 내부 방침에 의해 기업고객과의 계약 관계로 이름, 로그인 ID를 1년간 따로 보유할 수 있습니다. 이후 삭제처리 됩니다.</p>
+								<p>2. 회원의 즉시 삭제 요청시 프리몬이 확인 후 그에 따른 조치를 취합니다.</p>
+              					<p>※ 참고 : 계정의 개인정보는 관계 법령의 규정에 의하여 보유할 필요가 있는 경우 관계법령에서 정한 기간 동안 개인정보를 보관합니다.</p>
+              					<p>회원 탈퇴와 관련하여 더 궁금하신 점은 프리몬 <a href="/customer/questionRegistForm">"문의하기 > 회원정보/아이디/비밀번호"</a>로 문의를 남기거나 고객센터(<a href="mailto:freemon@freemon.co.kr">freemon@freemon.co.kr</a>) 문의해주세요.</p>
+                               </li>
+                            </ul>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+			<!-- 버튼-->
+			<div class="btn_pop_box">
+		    	<button id="btnClosed" class="btn_apply" style="cursor:pointer;" onClick="return false;">회원탈퇴</button>
+		    </div>
+        </form>
+    </div>
+</div>
+	</script>
+	
+    <script id="projectInTalentListTemplate" type="text/x-mustache">
+        <div class="pop">
+            <div class="pop_header">
+                <h3>프로젝트 참여자</h3>
+                <a href="#none" class="close">닫기</a>
+            </div>
+            <div class="pop_body">
+                <div class="proj_tit">
+                    <h4 class="company_name detail"><a href="#none" style="cursor:default">{{customer}}</a></h4>
+                    <h3 class="project_name cf"><a href="#none" style="cursor:default">{{projNm}}</a></h3>
+                    <p class="project_term mt-5">{{projPeriod}}</p>
+                </div>
+                
+                <div class="entry_list">
+                    <div class="entry_box">
+                        <ul class="entry cf">
+                            {{#talentList}}
+                            <li>
+                                <div class="entry_in">
+                                    <div class="profile" style="cursor:pointer; background-image:url('{{profileUrl}}')" data-value="{{userId}}" data-action="talentDetail">
+                                        프로필사진
+                                    </div>
+                                    <h4 class="man_name mt-5 ellipsis"><a href="#none" data-value="{{userId}}" data-action="talentDetail">{{userNm}}</a></h4>
+                                    <ul class="name1 cf mt-5">
+                                        <li class="old">{{#isGenderNm}}{{genderNm}}{{#age}},{{/age}} {{/isGenderNm}}{{#age}}{{age}}세{{/age}}</li>
+                                        <li class="local">{{hopeAreaNm}}</li>
+                                    </ul><div class="cf"></div>
+                                    <ul class="name1 cf">
+                                        <li>총 {{totalWorkCareer}}</li>
+                                    </ul><div class="cf"></div>
+                                    <p class="entry_tech ellipsis mt-3">
+										{{usableSkillNm}}
+                                    </p>
+                                    <span class="d_day mt-10 {{leaveStrtTermCss}}">{{leaveStrtTermTxt}}</span>
+                                </div>
+                            </li>
+                            {{/talentList}}
+                        </ul>
+                    </div>                              
+                </div>
+                
+            </div>
+        </div>
+    </script>
+
+
+
+
+<!-- footer -->
+<div class="footer">
+    <section>
+        <h3>고객센터</h3>
+        <p class="f_tel eng"><a href="tel:18992951">1899-2951</a></p>
+        <p class="operate">평일 09:00 ~ 18:00 / 주말·공휴일 휴무</p>
+        <div class="btn_box">
+            <a href="/m/home/freemonService" class="btn">서비스소개</a>
+	        <a href="/m/customer/noticeSearch" class="btn">자주묻는질문</a>
+	        <a href="/m/customer/questionRegistForm" class="btn">문의하기</a>
+        </div>
+    </section>
+    
+    <section>
+        <h3>앱 다운로드</h3>
+        <div class="app_btn">
+            <a href="https://play.google.com/store/apps/details?id=kr.insighton.freemonservice" target="_blank" class="play">구글플레이</a>
+            <a href="https://itunes.apple.com/app/id1472330588" target="_blank" class="store">앱스토어</a>
+        </div>
+    </section>
+    
+    <section>
+        <ul class="f_link cf">
+            <li><a href="/m/home/freemonIndividualTerms">회원이용약관</a></li>
+            <li><a href="/m/home/freemonIndividualPrivacy">개인정보보호방침</a></li>
+            <li><a href="https://www.freemon.co.kr/?mobile" id="pcUrl">PC버전</a></li>
+        </ul>
+        <copyright class="eng">© InsightOn Corp.</copyright>
+        <h2 class="f_logo">freemon</h2>
+    </section>
+    <a href="#none" class="f_top">위로</a>
+</div>
+<a href="#none" class="kakao_inquire kakaoPlusTalk">카톡문의</a>
+</body>
+</html>

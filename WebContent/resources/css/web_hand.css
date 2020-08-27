@@ -1,0 +1,7 @@
+@charset "utf-8";
+
+#section02{ background-position:70% 50%!important;background-size:auto 100%!important;}
+#section03 { background-position:45% 50%!important;background-size:auto 100%!important;}
+#section04 { background-position:70% 50%!important;background-size:auto 100%!important;}
+#section05 { background-position:30% 50%!important;background-size:auto 100%!important;}
+#section02,#section03,#section04,#section05{background-attachment: scroll!important;}
