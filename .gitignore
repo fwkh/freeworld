@@ -1,37 +1,6 @@
-# Directories #
-/build/
-/bin/
-target/
 
-# OS Files #
-.DS_Store
-
-*.class
-
-# Package Files #
-*.jar
-*.war
-*.ear
-*.db
-
-# Eclipse #
-.project
-.metadata
-.classpath
-.settings/
-.loadpath
-
-bin/**
-tmp/**
-tmp/**/*
-*.tmp
-*.bak
-local.properties
-/src/main/resources/rebel.xml
-
-
-# Created by https://www.toptal.com/developers/gitignore/api/java,eclipse,intellij
-# Edit at https://www.toptal.com/developers/gitignore?templates=java,eclipse,intellij
+# Created by https://www.toptal.com/developers/gitignore/api/macos,java,eclipse,intellij
+# Edit at https://www.toptal.com/developers/gitignore?templates=macos,java,eclipse,intellij
 
 ### Eclipse ###
 .metadata
@@ -227,6 +196,32 @@ fabric.properties
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
-# End of https://www.toptal.com/developers/gitignore/api/java,eclipse,intellij
+### macOS ###
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
 
-.idea/
+# Icon must end with two \r
+Icon
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# End of https://www.toptal.com/developers/gitignore/api/macos,java,eclipse,intellij
