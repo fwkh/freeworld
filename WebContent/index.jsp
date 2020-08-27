@@ -12,6 +12,5 @@
 	<h3>projectSearch 페이지로 이동</h3>
 	</a>
 <p> 두한  intelliJ commit Test </p>
-<P>테스트입니다.</P>
 </body>
 </html>
