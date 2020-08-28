@@ -145,7 +145,7 @@
 	</script>
 </head>
 <body>
-	<%@ include file="../common/header1.jsp" %>
+	<%@ include file="../common/header.jsp" %>
 		
 <!-- Bootstrap css -->
 <style type="text/css">
@@ -905,6 +905,6 @@
     {{/areaList}}
 </script>
 
-	<%@ include file="../common/footer1.jsp" %>
+	<%@ include file="../common/footer.jsp" %>
 </body>
 </html>
