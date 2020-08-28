@@ -182,7 +182,7 @@
                         	<a href="../../views/project/projectSearch.jsp" class="gnb_depTxt" id="p_search"><em>프로젝트 검색</em></a>
                         </li>
                         <li class="menu_about gnb_depth1 ">
-                        	<a href="../../views/project/projectMap.jsp" class="gnb_depTxt" id="p_map"><em>프로젝트 맵</em></a>
+                        	<a href="../www.freemon.co.kr/project/projectMap.html" class="gnb_depTxt" id="p_map"><em>프로젝트 맵</em></a>
                         </li>
                         <li class="menu_about gnb_depth1 ">
                         	<a href="../www.freemon.co.kr/home/noticeSearch.html" class="gnb_depTxt" id="notice"><em>공지사항</em></a>
