@@ -39,33 +39,33 @@
 	  
 	  /* .scrollOff{position:fixed;overflow:hidden;height:100%;width:100%;} */
 	</style>
-    <script type="text/javascript" src="resources/scripts/jquery-3.3.1.min.js" charset="utf-8"></script>
-    <script type="text/javascript" src="resources/scripts/jquery.flexslider.js"></script>
-    <script type="text/javascript" src="resources/scripts/site_ui.js"></script>
-	<script type="text/javascript" src="resources/js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="../../resources/scripts/jquery-3.3.1.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../../resources/scripts/jquery.flexslider.js"></script>
+    <script type="text/javascript" src="../../resources/scripts/site_ui.js"></script>
+	<script type="text/javascript" src="../../resources/js/jquery.easing.1.3.js"></script>
     <!--Calendar-->
-    <script type="text/javascript" src="resources/scripts/calendar/pignose.calendar.full.js"></script>
-	<script type="text/javascript" src="resources/js/jquery-ui.min.js"></script>
-	<script type="text/javascript" src="resources/js/jquery.ba-hashchange.min.js"></script>
-	<script type="text/javascript" src="resources/js/jquery.json-2.3.js"></script>
-	<script type="text/javascript" src="resources/js/jquery.validate.min.js"></script>
-	<script type="text/javascript" src="resources/js/jquery.history.js"></script>
+    <script type="text/javascript" src="../../resources/scripts/calendar/pignose.calendar.full.js"></script>
+	<script type="text/javascript" src="../../resources/js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="../../resources/js/jquery.ba-hashchange.min.js"></script>
+	<script type="text/javascript" src="../../resources/js/jquery.json-2.3.js"></script>
+	<script type="text/javascript" src="../../resources/js/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="../../resources/js/jquery.history.js"></script>
 	<!-- Jqgrid -->
-	<script type="text/javascript" src="resources/js/grid.locale-kr.js"></script>
-	<script type="text/javascript" src="resources/js/jquery.jqGrid.min.js"></script>
+	<script type="text/javascript" src="../../resources/js/grid.locale-kr.js"></script>
+	<script type="text/javascript" src="../../resources/js/jquery.jqGrid.min.js"></script>
 	<!-- //Jqgrid -->
-	<script type="text/javascript" src="resources/js/jquery.marquee.min9a0d.js?version=1.0"></script>
-	<script type="text/javascript" src="resources/js/mustache.js"></script>
-	<script type="text/javascript" src="resources/js/jquery.cookie.js"></script>
-	<script type="text/javascript" src="resources/i18n/commonMessages_ko.js"></script>
-	<script type="text/javascript" src="resources/freemon/base64.js"></script>
-	<script type="text/javascript" src="resources/freemon/sha256.js"></script>
-	<script type="text/javascript" src="resources/freemon/nmask.js"></script>
-	<script type="text/javascript" src="resources/freemon/freemonc599.js?version=3.3"></script>
-	<script type="text/javascript" src="resources/js/gnb_common56b8.js?version=4.2"></script>
-	<script type="text/javascript" src="resources/freemon/common/apply.js"></script>
-	<script type="text/javascript" src="resources/freemon/common/freemonPopUp9667.js?version=1.2"></script>
-	<script type="text/javascript" src="resources/freemon/common/input.js"></script>
+	<script type="text/javascript" src="../../resources/js/jquery.marquee.min9a0d.js?version=1.0"></script>
+	<script type="text/javascript" src="../../resources/js/mustache.js"></script>
+	<script type="text/javascript" src="../../resources/js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="../../resources/i18n/commonMessages_ko.js"></script>
+	<script type="text/javascript" src="../../resources/freemon/base64.js"></script>
+	<script type="text/javascript" src="../../resources/freemon/sha256.js"></script>
+	<script type="text/javascript" src="../../resources/freemon/nmask.js"></script>
+	<script type="text/javascript" src="../../resources/freemon/freemonc599.js?version=3.3"></script>
+	<script type="text/javascript" src="../../resources/js/gnb_common56b8.js?version=4.2"></script>
+	<script type="text/javascript" src="../../resources/freemon/common/apply.js"></script>
+	<script type="text/javascript" src="../../resources/freemon/common/freemonPopUp9667.js?version=1.2"></script>
+	<script type="text/javascript" src="../../resources/freemon/common/input.js"></script>
 	
 	<script type="text/javascript" src="../developers.kakao.com/sdk/js/kakao.min.js"></script>
 	
@@ -119,17 +119,17 @@
 	<div class="load_box" style="display:none;"><div class="load_img"><img src="resources/images/common/loading.gif" alt="loading"/></div></div>
 <!--Index Scripts-->
 <link href="resources/css/main56b8.css?version=4.2" rel="stylesheet" type="text/css">
-<script type="text/javascript" src="resources/freemon/common/jquery.mousewheel.js"></script>
-<script type="text/javascript" src="resources/freemon/common/slick.min.js"></script>
-<script type="text/javascript" src="resources/freemon/common/main069b.js?version=1.1"></script>
-<script type="text/javascript" src="resources/freemon/home/freemonHome3851.js?version=1.12"></script>
+<script type="text/javascript" src="../../resources/freemon/common/jquery.mousewheel.js"></script>
+<script type="text/javascript" src="../../resources/freemon/common/slick.min.js"></script>
+<script type="text/javascript" src="../../resources/freemon/common/main069b.js?version=1.1"></script>
+<!--  <script type="text/javascript" src="resources/freemon/home/freemonHome3851.js?version=1.12"></script> -- 이곳에서 에러 발생 -->
 <script type="text/javascript">
 	$(function() {
 		freemon.invoker.invoke("freemonHome");
 	});
 </script>
 <!-- 숫자카운트 -->
-<script type="text/javascript" src="resources/freemon/home/counter069b.js?version=1.1"></script>
+<script type="text/javascript" src="../../resources/freemon/home/counter069b.js?version=1.1"></script>
 <!--//Index Scripts-->
 <div id="wrap" >
 	<div id="modal-wrap" class="modal-wrap"></div>
@@ -155,7 +155,7 @@
 	    	</div> -->
 	        <div class="top_menu w_top_menu">
 	            <ul class="cf">
-	                <li class="login"><a href="../views/member/loginForm.jsp">로그인</a></li>
+	                <li class="login"><a href="../member/loginForm.jsp">로그인</a></li>
 	                <li><a href="../www.freemon.co.kr/login/freemonLoginbce7.html">회원가입</a></li>
 	                <li class="coustomer"><a href="../customer/noticeSearch.html"><span class="arrow"></span></a>
 	                	<ul class="top_depth2" style="display:none;">
@@ -171,7 +171,7 @@
 	</div>
     <div class="header_body">
     	<div class="box">
-           <h1 class="logo"><a href="../index.html">프리월드</a></h1>
+           <h1 class="logo"><a href="../../index.jsp">프리월드</a></h1>
             <div id="gnb">
                 <nav>
                     <ul class ="gnb_in cf">
