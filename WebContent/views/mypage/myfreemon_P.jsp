@@ -8,7 +8,7 @@
 	Member m = (Member)session.getAttribute("member");
 	Calendar today = Calendar.getInstance();
 	SimpleDateFormat df = new SimpleDateFormat("yy-MM");
-	
+	//ArrayList<Project> list = (ArrayList<Board>)request.getAttribute("list"); 
 %>
 <!DOCTYPE html>
 <html lang="ko">
@@ -81,7 +81,7 @@
 			<div class="mt-40 cf">
 				<div>
 					<!-- 프로젝트 -->
-					<div class="dash">
+					 <div class="dash">
 						<div class="dash_tit">
 							<h3>
 								나의 타임라인 <a class="btn_close" href="/talent/openTalentDetail?fno=1414045769" 
@@ -104,9 +104,9 @@
 											</div>
 											<div class="pro_con">
 												<h3>
-													<%-- <%=m.getUserName()%> --%>
+													이름<%-- <%=m.getUserName()%> --%>
 													<ul class="f_nature cf">
-														<li><%-- <%
+														<li>나이<%-- <%
 															df.format(today.getTime());
 														%> --%></li>
 														<li class="ellipsis"></li>
@@ -187,7 +187,7 @@
 
 
 									<!-- 투입가능일 -->
-									<div class="line_able" style="left: 69%;">
+									<div class="line_able" style="left: 69%;"> <%-- %조절로 위치 조절함 노가다 해야함 --%>
 										<div class="day_able"><%--프로젝트 종료일 or 프로젝트 희망일 --%>08/10</div>
 									</div>
 								</div>
@@ -202,29 +202,33 @@
 										
 										<div class="dash_list" id="myRecommandProjectList">
 											<!--프로젝트 불러오기 -->
+										<%-- 	<% for(Project p : list){ %> --%>
 											<div class="card cf ">
 												<div class="pro_info">
 													<h4>
 														<a href="javascript:void(0);" data-action="projectDetail"
-															data-id="804">플랜정보기술</a>
+															data-id="804">플랜정보기술<%--p.기업이름 --%></a>
 													</h4>
 													<h3 class="ellipsis">
 														<a href="javascript:void(0);" data-action="projectDetail"
-															data-id="804">DB 모니터링 툴 개발</a>
+															data-id="804">DB 모니터링 툴 개발<%--p.프로젝트 명 --%></a>
 													</h3>
 													<ul class="pro_list surport cf">
-														<li>2020.08.10 ~ 2020.10.10<span class="add_info org">3개월</span>
+														<li><%--p.프로젝트 시작일 --%>2020.08.10 ~ 2020.10.10<%--p.프로젝트 종료일 --%><span class="add_info org">3개월</span>
 														</li>
-														<li>서울 송파구</li>
-														<li>1만원(협의가능)</li>
-														<li class="ellipsis">MongoDB,Python,Oracle,Linux</li>
+														<li>서울 송파구<%--p.프로젝트 위치 --%></li>
+														<li>1만원(협의가능)<%--p.단가 --%></li>
+														<li class="ellipsis">MongoDB,Python,Oracle,Linux><%--p.스킬1 --%><%--if p.스킬2,3이 있다면 출력 --%>)</li>
 													</ul>
-													<ul class="btn_icon absolute">
+													<!-- <ul class="btn_icon absolute">
 														<li class="share"><a href="javascript:void(0);"
 															data-action="shareClick" data-value="804" title="친구공유">친구공유</a></li>
-													</ul>
+													</ul> -->
 												</div>
 											</div>
+											<%-- <%} %> --%>
+											
+											<!-- 중복되는 것 삭제 예정 -->
 											<div class="card cf ">
 												<div class="pro_info">
 													<h4>
