@@ -3,7 +3,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+<link rel="stylesheet" type="text/css"
+	href="../../resources/css/defaulta9af.css">
+<link rel="stylesheet" type="text/css"
+	href="../../resources/css/jquery-ui.mina751.css">
+<link rel="stylesheet" type="text/css"
+	href="../../resources/css/membercd4e.css">
+<link rel="stylesheet" type="text/css"
+	href="../../resources/css/new6d33.css">
+<link rel="stylesheet" type="text/css" id="mobile"
+	href="../../resources/css/web_hand.css">
+<link rel="stylesheet" type="text/css"
+	href="../../resources/css/career-ui.mina751.css" />
+<link rel="stylesheet" type="text/css"
+	href="../../resources/css/ui.jqgrid.css" />
+<link rel="shortcut icon" href="../../resources/images/new/favicon.ico" />
 </head>
 
 
