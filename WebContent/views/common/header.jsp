@@ -176,7 +176,7 @@
                 <nav>
                     <ul class ="gnb_in cf">
 						<li class="menu_about gnb_depth1 ">
-                        	<a href="talent/talentSearch.html" class="gnb_depTxt" id="f_search"><em>프리랜서 검색</em></a>
+                        	<a href="../../views/freelancer/freelancerSearch.jsp" class="gnb_depTxt" id="f_search"><em>프리랜서 검색</em></a>
                         </li>
                         <li class="menu_about gnb_depth1 ">
                         	<a href="../../views/project/projectSearch.jsp" class="gnb_depTxt" id="p_search"><em>프로젝트 검색</em></a>
