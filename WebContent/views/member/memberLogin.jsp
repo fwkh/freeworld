@@ -231,10 +231,30 @@
 			<div class="white_box center">
 				<h3 class="name">프리랜서</h3>
 				<div class="middle">
-                   	<div>
-                   		<h4 class="explain">회원님과 대화하는 프리몬입니다.<br/>로그인하여 더 많은 서비스를 받으세요.</h4>
-                   		<a href="#none" class="b_login b_kakao mt-30 freemonLoginBtn"><i></i>카카오 계정으로 로그인</a>
-                   		<a href="../member/memberJoin.jsp" class="b_login freemonLoginBtn">프리랜서 회원가입</a>
+                   <div class="member_input">
+						<form class="login_form" id="login_form" name="login_form">
+		                    <ul class="cf">
+		                        <li class="p-0">
+	                                <!-- <label for="companyUserId">아이디</label> -->
+	                                <input type="text" id="UserId" name="UserId" placeholder="아이디(이메일주소)"/>
+		                        </li>
+		                        <li class="pb-0">
+	                                <!-- <label for="companyPwd">비밀번호</label> -->
+	                                <input type="password" id="userPwd" name="userPwd" placeholder="비밀번호" />
+		                        </li>
+		                    </ul>
+						</form>
+		                <div class="radio member_check left">
+		                	<label for="chkIdSave">
+		                	<input type="checkbox" id="chkIdSave" name="chkIdSave" value="Y" />
+		                	<i></i>
+		                	아이디저장</label>
+                        </div>
+		                <button id="userLoginBtn" class="b_login b_red" value="로그인" style="cursor:pointer;">로그인</button>
+		                <ul class="login_link">
+		                	<li><a href="#none" class="underline">아이디/비밀번호 찾기</a></li>
+		                	<li><a href="../account/companyJoin.html">프리랜서 회원가입</a></li>
+		                </ul>
                    	</div>
 				</div>
 			</div>

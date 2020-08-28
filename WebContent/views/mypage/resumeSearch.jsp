@@ -148,6 +148,7 @@
 
 
 
+	<%@ include file="../common/header.jsp" %>
 
 <body>
 	<!-- Google Tag Manager (noscript) -->
@@ -163,7 +164,7 @@
         <link rel="stylesheet" type="text/css" href="../resources/css/resume.css">
     
     
-<%@ include file="../common/header.jsp"%>
+
 
 
 

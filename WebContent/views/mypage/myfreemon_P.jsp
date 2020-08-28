@@ -9,26 +9,16 @@
 <head>
 
 	<title>프리월드 - SI 전문 아웃소싱</title>
-	
-	<!-- 페이지 적용 CSS -->
-	<link rel="stylesheet" type="text/css"
-		href="../../resources/css/defaulta9af.css">
-	<link rel="stylesheet" type="text/css"
-		href="../../resources/css/jquery-ui.mina751.css">
-	<link rel="stylesheet" type="text/css"
-		href="../../resources/css/membercd4e.css">
-	<link rel="stylesheet" type="text/css"
-		href="../../resources/css/new6d33.css">
-	<link rel="stylesheet" type="text/css" id="mobile"
-		href="../../resources/css/web_hand.css">
-	<link rel="stylesheet" type="text/css"
-		href="../../resources/css/career-ui.mina751.css" />
-	<link rel="stylesheet" type="text/css"
-		href="../../resources/css/ui.jqgrid.css" />
-	<link rel="shortcut icon" href="../../resources/images/new/favicon.ico" />
-	
-	<script type="text/javascript" src="../resources/scripts/jquery-3.3.1.min.js" charset="utf-8"></script>
 
+	<%@ include file="../common/header.jsp" %>
+	
+    <!-- 네비게이션바 -->
+	<style type="text/css">	  
+	  #f_management{display:none;}
+	  #p_management{display:none;}
+	  #profile{display:none;}
+	  #suggestion{display:none;}
+	</style>
 </head>
 
 <body>

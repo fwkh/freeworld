@@ -29,28 +29,7 @@
 	</style>
 </head>
 <body>
-		<!-- Google Tag Manager (noscript) -->
-		<noscript><iframe src="http://www.googletagmanager.com/ns.html?id=GTM-MF7LK3J"
-		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-		<!-- End Google Tag Manager (noscript) -->
-	
-		<div class="load_box" style="display:none;"><div class="load_img"><img src="resources/images/common/loading.gif" alt="loading"/></div></div>
-	
-	<!--Index Scripts-->
-	<link href="resources/css/main56b8.css?version=4.2" rel="stylesheet" type="text/css">
-	<script type="text/javascript" src="resources/freemon/common/jquery.mousewheel.js"></script>
-	<script type="text/javascript" src="resources/freemon/common/slick.min.js"></script>
-	<script type="text/javascript" src="resources/freemon/common/main069b.js?version=1.1"></script>
-	<script type="text/javascript" src="resources/freemon/home/freemonHome3851.js?version=1.12"></script>
-	<script type="text/javascript">
-		$(function() {
-			freemon.invoker.invoke("freemonHome");
-		});
-	</script>
-	
-	<!-- 숫자카운트 -->
-	<script type="text/javascript" src="resources/freemon/home/counter069b.js?version=1.1"></script>
-	<!--//Index Scripts-->
+
 	
 	<div id="wrap" >
 		<div id="modal-wrap" class="modal-wrap"></div>
@@ -58,6 +37,8 @@
 		<!-- 상단 -->
 		
 	
+
+
 	<div id="header">
 		<div class="header_top">
 		    <div class="box">
@@ -150,8 +131,8 @@
 		        <div class="top_menu w_top_menu">
 		            <ul class="cf">
 		            	
-		                <li class="login"><a href="../www.freemon.co.kr/login/freemonLogin.html">로그인</a></li>
-		                <li><a href="../www.freemon.co.kr/login/freemonLoginbce7.html">회원가입</a></li>
+		                <li class="login"><a href="../member/memberLogin.jsp">로그인</a></li>
+		                <li><a href="../member/memberLogin.jsp">회원가입</a></li>
 		                
 		                
 		                
@@ -180,10 +161,10 @@
 	                        	<a href="talent/talentSearch.html" class="gnb_depTxt"><em>프리랜서 검색</em></a>
 	                        </li>
 	                        <li class="menu_about gnb_depth1 ">
-	                        	<a href="../www.freemon.co.kr/project/projectSearch.html" class="gnb_depTxt"><em>프로젝트 검색</em></a>
+	                        	<a href="../project/projectSearch.jsp" class="gnb_depTxt"><em>프로젝트 검색</em></a>
 	                        </li>
 	                        <li class="menu_about gnb_depth1 ">
-	                        	<a href="../www.freemon.co.kr/project/projectMap.html" class="gnb_depTxt"><em>프로젝트 맵</em></a>
+	                        	<a href="../project/projectMap.jsp" class="gnb_depTxt"><em>프로젝트 맵</em></a>
 	                        </li>
 	                        <li class="menu_about gnb_depth1 ">
 	                        	<a href="../www.freemon.co.kr/home/noticeSearch.html" class="gnb_depTxt"><em>공지사항</em></a>
@@ -202,6 +183,7 @@
 		</div>
 	</div>
 			
+
 	<div class="ask_box" style="display:none;">
 		<ul>
 			<li><a href="https://www.notion.so/FREEMON-4f97ecd6edb44c5cb43b921a8467f51f" target="_blank"><img src="resources/images/new/r_free.gif" alt=""/><p>서비스소개 GO!</p></a></li>
