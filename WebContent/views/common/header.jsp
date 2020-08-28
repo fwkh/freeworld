@@ -67,7 +67,7 @@
 	<script type="text/javascript" src="../../resources/freemon/common/freemonPopUp9667.js?version=1.2"></script>
 	<script type="text/javascript" src="../../resources/freemon/common/input.js"></script>
 	
-	<script type="text/javascript" src="../developers.kakao.com/sdk/js/kakao.min.js"></script>
+	<!-- <script type="text/javascript" src="../developers.kakao.com/sdk/js/kakao.min.js"></script>  -->
 	
 	<script type="text/javascript">
 		var frameworkProperties = {
@@ -96,7 +96,7 @@
 			    $(".link_mobile").hide();
 			}
 			else{
-				var url = "resources/css/web_hand.css";
+				var url = "../../resources/css/web_hand.css";
 				stylesheet.setAttribute('href', url);
 				$(".link_mobile").show();
 			}
@@ -116,13 +116,13 @@
 	<noscript><iframe src="http://www.googletagmanager.com/ns.html?id=GTM-MF7LK3J"
 	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<!-- End Google Tag Manager (noscript) -->
-	<div class="load_box" style="display:none;"><div class="load_img"><img src="resources/images/common/loading.gif" alt="loading"/></div></div>
+	<div class="load_box" style="display:none;"><div class="load_img"><img src="../../resources/images/common/loading.gif" alt="loading"/></div></div>
 <!--Index Scripts-->
-<link href="resources/css/main56b8.css?version=4.2" rel="stylesheet" type="text/css">
+<link href="../../resources/css/main56b8.css?version=4.2" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="../../resources/freemon/common/jquery.mousewheel.js"></script>
 <script type="text/javascript" src="../../resources/freemon/common/slick.min.js"></script>
 <script type="text/javascript" src="../../resources/freemon/common/main069b.js?version=1.1"></script>
-<!--  <script type="text/javascript" src="resources/freemon/home/freemonHome3851.js?version=1.12"></script> -- 이곳에서 에러 발생 -->
+<!--  <script type="text/javascript" src="resources/freemon/home/freemonHome3851.js?version=1.12"></script> --> 이곳에서 에러 발생 -->
 <script type="text/javascript">
 	$(function() {
 		freemon.invoker.invoke("freemonHome");
@@ -155,7 +155,7 @@
 	    	</div> -->
 	        <div class="top_menu w_top_menu">
 	            <ul class="cf">
-	                <li class="login"><a href="../member/loginForm.jsp">로그인</a></li>
+	                <li class="login"><a href="../views/member/loginForm.jsp">로그인</a></li>
 	                <li><a href="../www.freemon.co.kr/login/freemonLoginbce7.html">회원가입</a></li>
 	                <li class="coustomer"><a href="../customer/noticeSearch.html"><span class="arrow"></span></a>
 	                	<ul class="top_depth2" style="display:none;">

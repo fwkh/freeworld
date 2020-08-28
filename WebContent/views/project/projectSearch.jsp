@@ -9,6 +9,7 @@
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
 	<%@ include file="../common/header.jsp" %>
+	
     <!-- 네비게이션바 -->
 	<style type="text/css">	  
 	  #f_management{display:none;}
@@ -16,7 +17,7 @@
 	  #profile{display:none;}
 	  #suggestion{display:none;}
 	</style>
-	<!-- 네비게이션바 -->
+
 </head>
 <body>
 	<!-- Google Tag Manager (noscript) -->
