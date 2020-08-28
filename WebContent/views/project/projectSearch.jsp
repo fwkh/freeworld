@@ -523,10 +523,10 @@
 	</div>
 
 
-    		
+	<%@ include file="../common/footer.jsp" %>
 
 </body>
-	<%@ include file="../common/footer.jsp" %>
+
 
 <!-- Mirrored from www.freemon.co.kr/project/projectSearch by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 27 Jul 2020 06:59:42 GMT -->
 </html>
