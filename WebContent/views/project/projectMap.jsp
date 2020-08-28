@@ -77,9 +77,12 @@
 
 
 <body>
+<<<<<<< HEAD
 
 	<%@ include file="../common/header.jsp" %>
 
+=======
+>>>>>>> refs/remotes/origin/master
 
 		
 <style type="text/css">

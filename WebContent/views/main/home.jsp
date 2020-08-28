@@ -37,6 +37,7 @@
 		<!-- 상단 -->
 		
 	
+<<<<<<< HEAD
 
 	<div id="header">
 		<div class="header_top">
@@ -185,6 +186,9 @@
 =======
 
 >>>>>>> branch 'master' of https://github.com/fwkh/freeworld.git
+=======
+
+>>>>>>> refs/remotes/origin/master
 	<div class="ask_box" style="display:none;">
 		<ul>
 			<li><a href="https://www.notion.so/FREEMON-4f97ecd6edb44c5cb43b921a8467f51f" target="_blank"><img src="resources/images/new/r_free.gif" alt=""/><p>서비스소개 GO!</p></a></li>
