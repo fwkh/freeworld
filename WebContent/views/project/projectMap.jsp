@@ -84,7 +84,7 @@
     #projectList{display: inline-block; float: left;}
     
     <!-- 네비게이션바 -->
-	#f_management{display:none;}
+    #f_management{display:none;}
 	#p_management{display:none;}
 	#profile{display:none;}
 	#suggestion{display:none;}
@@ -170,7 +170,7 @@
 
 
 <body>
-	<%@ include file="../common/header1.jsp" %>
+	<%@ include file="../common/header.jsp" %>
 
 		
 <style type="text/css">
@@ -392,6 +392,6 @@
         }
     </script>
 
-	<%@ include file="../common/footer1.jsp" %>
+	<%@ include file="../common/footer.jsp" %>
 </body>
 </html>

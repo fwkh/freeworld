@@ -139,7 +139,7 @@ var projectSearch = {
 				projectSearch.fn.moreProjectList();
 			}else if(action == "searchTag"){
 				projectSearch.fn.searchTag(e);
-			}
+			}														
 		},
 		/*
 		 * 프로젝트검색목록 조회

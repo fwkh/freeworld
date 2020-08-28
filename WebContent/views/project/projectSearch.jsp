@@ -1,27 +1,31 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<<<<<<< HEAD
-=======
 
 
->>>>>>> branch 'master' of https://github.com/fwkh/freeworld.git
+
 <!DOCTYPE html>
 <html lang="ko">
 <!-- Mirrored from www.freemon.co.kr/project/projectSearch by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 27 Jul 2020 06:59:41 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
+	<%@ include file="../common/header.jsp" %>
+	
+    <!-- 네비게이션바 -->
+	<style type="text/css">	  
+	  #f_management{display:none;}
+	  #p_management{display:none;}
+	  #profile{display:none;}
+	  #suggestion{display:none;}
+	</style>
 
 </head>
 <body>
-	<%@ include file="../common/header.jsp" %>
 	<!-- Google Tag Manager (noscript) -->
 	<noscript><iframe src="http://www.googletagmanager.com/ns.html?id=GTM-MF7LK3J"
 	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<!-- End Google Tag Manager (noscript) -->
 
 	<!-- <div class="load_box" style="display:none;"><div class="load_img"><img src="" alt="loading"/></div></div>  -->
-
-		
 
 <script type="text/javascript" src="../../resources/freemon/project/projectSearch6a91.js?version=1.7"></script>
 <script type="text/javascript">
@@ -36,10 +40,6 @@
     	<div class="pro_tit mb-0">
         	<h2>프로젝트 검색 <span><span class="totalCnt">111</span></span></h2>
 			
-
-
-
-
 
 
 <script type="text/javascript" src="../../resources/freemon/common/freemonSearch9667.js?version=1.2"></script>
