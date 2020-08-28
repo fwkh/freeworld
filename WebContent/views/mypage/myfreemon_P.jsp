@@ -1,5 +1,15 @@
+<%@page import="java.util.Calendar"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.Calendar"%>
+<%@page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8" import="kh.semi.jsp.member.model.vo.*"%>
+<%
+	Member m = (Member)session.getAttribute("member");
+	Calendar today = Calendar.getInstance();
+	SimpleDateFormat df = new SimpleDateFormat("yy-MM");
+	
+%>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -30,7 +40,7 @@
 		<section class="project_in margintop" style="min-height: 765px;">
 			<!-- 제목부분 -->
 			<div class="pro_tit mb-0">
-				<h2>김은호</h2>
+				<h2><%-- <%=m.getUserName()%> --%></h2>
 			</div>
 			<ul class="man_tab my_man_tab cf">
 				<li class="active"><a href="#none">마이프리몬</a></li>		
@@ -74,31 +84,31 @@
 					<div class="dash">
 						<div class="dash_tit">
 							<h3>
-								나의 타임라인 <a class="btn_close"
-									href="/talent/openTalentDetail?fno=1414045769" target="_blank">프로필
-									미리보기</a> <a href="javascript:void(0);" class="note_q">
+								나의 타임라인 <a class="btn_close" href="/talent/openTalentDetail?fno=1414045769" 
+								target="_blank">프로필 미리보기</a> <a href="javascript:void(0);" class="note_q">
 									<p class="note_a">
 										등록된 경력을 기준으로<br>기업고객에게 보여지는<br>이력정보 화면입니다.<span class="a_arrow"></span>
 									</p>
 								</a>
 								<p class="small">
-									<span>투입가능일</span>2020.12.07
-								</p>
-								<a href="/changeDate" class="btn_logout"> <!-- 투입가능일(비공개 프로젝트 수행중) 변경 -->일자변경
+									<span>투입가능일</span><%-- <%=m.getFuture() %> --%></p>
+								<a href="changeDate.jsp" class="btn_logout">날짜 변경
 								</a>
 							</h3>
 							<div class="man_box cf" id="talentSearchList">
 								<div class="man_info">
-									<a href="/resume/resumeSearch">
+									<a href="resumeSearch.jsp">
 										<div class="free_info cf">
 											<div class="profile"
 												style="background-image: url(/resources/images/new/no-pic.png)">프로필사진
 											</div>
 											<div class="pro_con">
 												<h3>
-													김은호
+													<%-- <%=m.getUserName()%> --%>
 													<ul class="f_nature cf">
-														<li>32세</li>
+														<li><%-- <%
+															df.format(today.getTime());
+														%> --%></li>
 														<li class="ellipsis"></li>
 													</ul>
 												</h3>
@@ -114,7 +124,7 @@
 														</ul>
 													</div>
 													<!-- 투입가능일- 오늘날짜-->
-													<p class="able ">119일후</p>
+													<p class="able ">투입 가능일(if진행중인 프로젝트가 있따면 진행중인 프로젝트종료일-오늘/ else 투입 희망일- 오늘) 양식 :xx일 후</p>
 												</div>
 											</div>
 										</div>
@@ -169,8 +179,8 @@
 											data-customer="" data-area="" data-strtdt="" data-closedt=""
 											data-action="moveLink"
 											title="비공개 프로젝트 진행중<br></a>2020.12.07부터 투입가능">
-											<h4 class="ellipsis">비공개 프로젝트 진행중</h4>
-											<p class="ellipsis">2020.12.07부터 투입가능</p>
+											<h4 class="ellipsis"><%-- if 프로젝트가 진행중=>"비공개 프로젝트 진행중", else if 투입희망일<오늘 =>'공백',else "즉시투입가능"   --%>비공개 프로젝트 진행중</h4>
+											<p class="ellipsis"><!-- 투입 가능일(if진행중인 프로젝트가 있따면 진행중인 프로젝트종료일-오늘=> "xx일 후가능"/ else if 투입 희망일- 오늘 => "xx일 후 가능"/ else => '공백') -->  12일 후 가능</p>
 											<div class="day_end"></div>
 										</a>
 									</div>
@@ -178,7 +188,7 @@
 
 									<!-- 투입가능일 -->
 									<div class="line_able" style="left: 69%;">
-										<div class="day_able">08/10</div>
+										<div class="day_able"><%--프로젝트 종료일 or 프로젝트 희망일 --%>08/10</div>
 									</div>
 								</div>
 							</div>

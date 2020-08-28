@@ -3,16 +3,8 @@
 <!DOCTYPE html>
 <html lang="ko">
 
-<!-- Mirrored from www.freemon.co.kr/login/freemonLogin by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 27 Jul 2020 06:59:35 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
-	<!-- Google Tag Manager -->
-	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-	'../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
-	})(window,document,'script','dataLayer','GTM-MF7LK3J');</script>
-	<!-- End Google Tag Manager -->	
+
 
     <title>프리월드 - SI 전문 아웃소싱</title>
 
@@ -88,58 +80,6 @@
 	<script type="text/javascript" src="../resources/freemon/common/freemonPopUp9667.js?version=1.2"></script>
 	<script type="text/javascript" src="../resources/freemon/common/input.js"></script>
 	
-	<script type="text/javascript" src="../../developers.kakao.com/sdk/js/kakao.min.js"></script>
-	
-	<script type="text/javascript">
-		var frameworkProperties = {
-			context: '',
-			locale: 'ko',
-			defaultLang: 'ko',
-			kakaoAppKey: 'a8bf256e33657332f212fd5847dbd8c5',
-		};
-	</script>
-
-	<script type="text/javascript">
-		$(function() {
-			$(document).tooltip({
-				//tooltipClass: 'tooltipUI',
-		       	content: function() {
-		        return $(this).prop('title');
-		       	},
-		       	track: true
-			});
-			
-			freemon.invoker.invoke("freemonPopUp");
-
-			var stylesheet = document.getElementById("mobile");
-			if(freemon.ux.isMobileCheck() == false){				
-			    stylesheet.setAttribute('href', "");
-			    $(".link_mobile").hide();
-			}
-			else{
-				var url = "../resources/css/web_hand.css";
-				stylesheet.setAttribute('href', url);
-				$(".link_mobile").show();
-			}
-			
- 			$('.flow_text_in').marquee({
-				direction: 'up',
-				speed: 200,
-				gap: 0,
-				delayBeforeStart: 0,
-				duplicated: true,
-				pauseOnHover: true
-			}); 
-		});
-		
-		// 모바일일때 모바일경로로 이동
-		$(document).ready(function(){
-			if(freemon.ux.isMobileCheck() == true && "PC" == "MOBILE"){
-				document.location.href = "https://m.freemon.co.kr/";
-				return false;
-			}
-		});
-	</script>
 </head>
 
 
@@ -163,11 +103,6 @@
         </div>
         <link rel="stylesheet" type="text/css" href="../resources/css/resume.css">
     
-    
-
-
-
-
 <script type="text/javascript" src="../resources/js/Chart.js"></script>
 <script type="text/javascript" src="../resources/js/resumeSearch.js"></script>
 <script type="text/javascript">
