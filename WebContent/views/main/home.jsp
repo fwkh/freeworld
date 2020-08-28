@@ -150,8 +150,8 @@
 		        <div class="top_menu w_top_menu">
 		            <ul class="cf">
 		            	
-		                <li class="login"><a href="../www.freemon.co.kr/login/freemonLogin.html">로그인</a></li>
-		                <li><a href="../www.freemon.co.kr/login/freemonLoginbce7.html">회원가입</a></li>
+		                <li class="login"><a href="../member/memberLogin.jsp">로그인</a></li>
+		                <li><a href="../member/memberLogin.jsp">회원가입</a></li>
 		                
 		                
 		                
@@ -180,10 +180,10 @@
 	                        	<a href="talent/talentSearch.html" class="gnb_depTxt"><em>프리랜서 검색</em></a>
 	                        </li>
 	                        <li class="menu_about gnb_depth1 ">
-	                        	<a href="../www.freemon.co.kr/project/projectSearch.html" class="gnb_depTxt"><em>프로젝트 검색</em></a>
+	                        	<a href="../project/projectSearch.jsp" class="gnb_depTxt"><em>프로젝트 검색</em></a>
 	                        </li>
 	                        <li class="menu_about gnb_depth1 ">
-	                        	<a href="../www.freemon.co.kr/project/projectMap.html" class="gnb_depTxt"><em>프로젝트 맵</em></a>
+	                        	<a href="../project/projectMap.jsp" class="gnb_depTxt"><em>프로젝트 맵</em></a>
 	                        </li>
 	                        <li class="menu_about gnb_depth1 ">
 	                        	<a href="../www.freemon.co.kr/home/noticeSearch.html" class="gnb_depTxt"><em>공지사항</em></a>
