@@ -1,11 +1,17 @@
 package kh.semi.jsp.member.controller;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import kh.semi.jsp.member.exception.MemberException;
+import kh.semi.jsp.member.model.service.MemberService;
+import kh.semi.jsp.member.model.vo.Member;
 
 /**
  * Servlet implementation class LoginServlet
@@ -26,8 +32,30 @@ public class LoginServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+	String userId = request.getParameter("userId");
+	String userPwd = request.getParameter("userPwd");
+	
+	Member m = new Member(userId,userPwd);
+	
+	MemberService ms = new MemberService();
+	
+	try {
+		m = ms.selectMember(m);
+		
+		System.out.println("회원 로그인 성공!");
+		
+		HttpSession session = request.getSession();
+		session.setAttribute("member", m);
+		
+		response.sendRedirect("home.jsp");
+		
+	}catch(MemberException e) {
+		request.setAttribute("msg", "회원 로그인 실패!");
+		request.setAttribute("exception", e);
+		
+		request.getRequestDispatcher("views/common/errorPage.jsp")
+		.forward(request, response);
+	}
 	}
 
 	/**

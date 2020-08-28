@@ -78,6 +78,10 @@
 
 <body>
 
+
+	<%@ include file="../common/header.jsp" %>
+
+
 		
 <style type="text/css">
 .gm-style-cc {display: none !important;}
