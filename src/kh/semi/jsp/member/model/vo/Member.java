@@ -11,14 +11,14 @@ public class Member implements Serializable{
 	private static final long serialVersionUID = -5860829447627887370L;
 	
 	private String userId;		// 아이디
-	private String userName;	// 이름
 	private String userPwd;		// 비밀번호
+	private String userName;	// 이름
 	private String birth;		// 생년월일
 	private String phone;		// 연락처
 	private String hope;		// 희망지역
 	private String address;		// 거주지역
 	private String skill;		// 보유기술
-	private Date Date;			// 투입가능 날짜
+	private Date date;			// 투입가능 날짜
 	
 	public Member() {
 		
@@ -54,7 +54,7 @@ public class Member implements Serializable{
 		this.hope = hope;
 		this.address = address;
 		this.skill = skill;
-		Date = date;
+		date = date;
 	}
 
 	public String getUserId() {
@@ -122,17 +122,17 @@ public class Member implements Serializable{
 	}
 
 	public Date getDate() {
-		return Date;
+		return date;
 	}
 
 	public void setDate(Date date) {
-		Date = date;
+		date = date;
 	}
 
 	@Override
 	public String toString() {
 		return "userId=" + userId + ", userName=" + userName + ", userPwd=" + userPwd + ", birth=" + birth
-				+ ", phone=" + phone + ", hope=" + hope + ", address=" + address + ", skill=" + skill + ", Date=" + Date;  
+				+ ", phone=" + phone + ", hope=" + hope + ", address=" + address + ", skill=" + skill + ", Date=" + date;  
 	}
 	
 	
