@@ -132,7 +132,7 @@ public class Member implements Serializable{
 	@Override
 	public String toString() {
 		return "userId=" + userId + ", userName=" + userName + ", userPwd=" + userPwd + ", birth=" + birth
-				+ ", phone=" + phone + ", hope=" + hope + ", address=" + address + ", skill=" + skill + ", Date=" + Date;
+				+ ", phone=" + phone + ", hope=" + hope + ", address=" + address + ", skill=" + skill + ", Date=" + Date;  
 	}
 	
 	
