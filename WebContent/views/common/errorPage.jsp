@@ -16,7 +16,7 @@
 		padding: 20px;
 		width:600px;
 		height:500px;
-		background:black;
+		background:yellowgreen;
 		color:white;
 		margin-left:auto;
 		margin-right:auto;
@@ -28,9 +28,17 @@ span {
 	color: navy;
 }
 </style>
+	<%@ include file="../common/header.jsp" %>
+    <!-- 네비게이션바 -->
+	<style type="text/css">	  
+	  #f_management{display:none;}
+	  #p_management{display:none;}
+	  #profile{display:none;}
+	  #suggestion{display:none;}
+	</style>
 </head>
 <body>
-<%@ include file="../common/header.jsp" %>
+
 	<div class="outer">
 		<h1>서비스 에러 발생!!!</h1> e
 		<h3 style="color:hotpink;">ERROR : <%= request.getAttribute("msg") %></h3>

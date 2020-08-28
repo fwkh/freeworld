@@ -155,7 +155,7 @@
 	    	</div> -->
 	        <div class="top_menu w_top_menu">
 	            <ul class="cf">
-	                <li class="login"><a href="../views/member/loginForm.jsp">로그인</a></li>
+	                <li class="login"><a href="../../views/member/memberLogin.jsp">로그인</a></li>
 	                <li><a href="../www.freemon.co.kr/login/freemonLoginbce7.html">회원가입</a></li>
 	                <li class="coustomer"><a href="../customer/noticeSearch.html"><span class="arrow"></span></a>
 	                	<ul class="top_depth2" style="display:none;">
