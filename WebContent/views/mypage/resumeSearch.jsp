@@ -6,17 +6,149 @@
 <!-- Mirrored from www.freemon.co.kr/login/freemonLogin by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 27 Jul 2020 06:59:35 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
-	<%@ include file="../common/header.jsp" %>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-MF7LK3J');</script>
+	<!-- End Google Tag Manager -->	
+
+    <title>프리월드 - SI 전문 아웃소싱</title>
+
+
+<!-- 페이지 적용 CSS -->
+<link rel="stylesheet" type="text/css"
+	href="../../resources/css/defaulta9af.css">
+<link rel="stylesheet" type="text/css"
+	href="../../resources/css/jquery-ui.mina751.css">
+<link rel="stylesheet" type="text/css"
+	href="../../resources/css/membercd4e.css">
+<link rel="stylesheet" type="text/css"
+	href="../../resources/css/new6d33.css">
+<link rel="stylesheet" type="text/css" id="mobile"
+	href="../../resources/css/web_hand.css">
+<link rel="stylesheet" type="text/css"
+	href="../../resources/css/career-ui.mina751.css" />
+<link rel="stylesheet" type="text/css"
+	href="../../resources/css/ui.jqgrid.css" />
+<link rel="shortcut icon" href="../../resources/images/new/favicon.ico" />
+
 	
-    <!-- 네비게이션바 -->
-	<style type="text/css">	  
-	  #f_search{display:none;}
-	  #f_management{display:none;}
-	  #p_management{display:none;}
-	  #notice{display:none;}
-	  #service{display:none;}
+	<style type="text/css">
+	  .tooltipUI{
+	    background-color:#FAF4C0;
+	  }
+	  .ui-tooltip {
+	    padding: 8px;
+	    position: absolute;
+	    z-index: 999999;
+	    color : #fff;
+	    font-size : 12px;
+	    max-width: 600px;
+	    -webkit-box-shadow: 0 0 5px #aaa;
+	    box-shadow: 0 0 5px #aaa;
+		/* for IE */
+		filter:alpha(opacity=80);
+		/* CSS3 standard */
+		opacity:0.8;
+		line-height:16px;
+	  }
+	  body .ui-tooltip {
+	    border-width: 2px;
+	  }
+	  
+	  /* .scrollOff{position:fixed;overflow:hidden;height:100%;width:100%;} */
 	</style>
+    <script type="text/javascript" src="../resources/scripts/jquery-3.3.1.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../resources/scripts/jquery.flexslider.js"></script>
+    <script type="text/javascript" src="../resources/scripts/site_ui.js"></script>
+	<script type="text/javascript" src="../resources/js/jquery.easing.1.3.js"></script>
+    <!--Calendar-->
+    <script type="text/javascript" src="../resources/scripts/calendar/pignose.calendar.full.js"></script>
+	<script type="text/javascript" src="../resources/js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="../resources/js/jquery.ba-hashchange.min.js"></script>
+	<script type="text/javascript" src="../resources/js/jquery.json-2.3.js"></script>
+	<script type="text/javascript" src="../resources/js/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="../resources/js/jquery.history.js"></script>
+	<!-- Jqgrid -->
+	<script type="text/javascript" src="../resources/js/grid.locale-kr.js"></script>
+	<script type="text/javascript" src="../resources/js/jquery.jqGrid.min.js"></script>
+	<!-- //Jqgrid -->
+	<script type="text/javascript" src="../resources/js/jquery.marquee.min9a0d.js?version=1.0"></script>
+	<script type="text/javascript" src="../resources/js/mustache.js"></script>
+	<script type="text/javascript" src="../resources/js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="../resources/i18n/commonMessages_ko.js"></script>
+	<script type="text/javascript" src="../resources/freemon/base64.js"></script>
+	<script type="text/javascript" src="../resources/freemon/sha256.js"></script>
+	<script type="text/javascript" src="../resources/freemon/nmask.js"></script>
+	<script type="text/javascript" src="../resources/freemon/freemonc599.js?version=3.3"></script>
+	<script type="text/javascript" src="../resources/js/gnb_common56b8.js?version=4.2"></script>
+	<script type="text/javascript" src="../resources/freemon/common/apply.js"></script>
+	<script type="text/javascript" src="../resources/freemon/common/freemonPopUp9667.js?version=1.2"></script>
+	<script type="text/javascript" src="../resources/freemon/common/input.js"></script>
+	
+	<script type="text/javascript" src="../../developers.kakao.com/sdk/js/kakao.min.js"></script>
+	
+	<script type="text/javascript">
+		var frameworkProperties = {
+			context: '',
+			locale: 'ko',
+			defaultLang: 'ko',
+			kakaoAppKey: 'a8bf256e33657332f212fd5847dbd8c5',
+		};
+	</script>
+
+	<script type="text/javascript">
+		$(function() {
+			$(document).tooltip({
+				//tooltipClass: 'tooltipUI',
+		       	content: function() {
+		        return $(this).prop('title');
+		       	},
+		       	track: true
+			});
+			
+			freemon.invoker.invoke("freemonPopUp");
+
+			var stylesheet = document.getElementById("mobile");
+			if(freemon.ux.isMobileCheck() == false){				
+			    stylesheet.setAttribute('href', "");
+			    $(".link_mobile").hide();
+			}
+			else{
+				var url = "../resources/css/web_hand.css";
+				stylesheet.setAttribute('href', url);
+				$(".link_mobile").show();
+			}
+			
+ 			$('.flow_text_in').marquee({
+				direction: 'up',
+				speed: 200,
+				gap: 0,
+				delayBeforeStart: 0,
+				duplicated: true,
+				pauseOnHover: true
+			}); 
+		});
+		
+		// 모바일일때 모바일경로로 이동
+		$(document).ready(function(){
+			if(freemon.ux.isMobileCheck() == true && "PC" == "MOBILE"){
+				document.location.href = "https://m.freemon.co.kr/";
+				return false;
+			}
+		});
+	</script>
 </head>
+
+
+
+
+
+
+
+	<%@ include file="../common/header.jsp" %>
 
 <body>
 	<!-- Google Tag Manager (noscript) -->
@@ -32,48 +164,8 @@
         <link rel="stylesheet" type="text/css" href="../resources/css/resume.css">
     
     
-    <div id="header">
-        <div class="header_top">
-            <div class="box">
-                <!-- 활동내역 -->
-                <div class="flow_text" style="padding-top:10px;">
-                    <div class="flow_text_in" style="border:0px solid red; line-height:30px; height:22px;">
-                        
 
-                    </div>
-                </div>
-                <div class="top_menu w_top_menu">
-                    <ul class="cf">
-                        <li>아무개님</li>
-                        <li class="login"><a href="/login/logout">로그아웃</a></li>
-                        <li><a href="/mypage/myFreemon">마이프리몬<span class="arrow"></span></a>
-                            <ul class="top_depth2" style="display:none;">
-                                <p class="top_arrow"></p>
-                                <li><a href="/resume/resumeSearch">프로필 관리</a></li>
-                                <!-- <li><a href="/document/documentSelect">서류신청</a></li> -->
-                                <li><a href="#none" class="common-open_popup" data-div="alamn" data-user-div="freelancer">알림설정</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="/customer/noticeSearch">고객센터<span class="arrow"></span></a>
-                            <ul class="top_depth2" style="display:none;">
-                                <p class="top_arrow"></p>
-                                <li><a href="/customer/noticeSearch">자주묻는질문</a></li>
-                                <li><a href="/customer/questionRegistForm">문의하기</a></li>
-                            </ul>
-                        </li>
-                        <li class="blog"><a href="http://blog.freemon.co.kr" target="_blank">블로그</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
 
-    </div>
-
-    <!-- 팝업 -->
-<div class="ask_box">
-</div>
-
-		
 
 
 <script type="text/javascript" src="../resources/js/Chart.js"></script>
@@ -1129,6 +1221,8 @@
         </div>
     </script>
 
-	<%@ include file="../common/footer.jsp" %>
+	
+<%@ include file="../common/footer.jsp"%>		
+
 </body>
 </html>
