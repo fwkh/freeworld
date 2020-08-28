@@ -163,73 +163,8 @@
         <link rel="stylesheet" type="text/css" href="../resources/css/resume.css">
     
     
-    <div id="header">
-        <div class="header_top">
-            <div class="box">
-                <!-- 활동내역 -->
-                <div class="flow_text" style="padding-top:10px;">
-                    <div class="flow_text_in" style="border:0px solid red; line-height:30px; height:22px;">
-                        
+<%@ include file="../common/header.jsp"%>
 
-                    </div>
-                </div>
-                <div class="top_menu w_top_menu">
-                    <ul class="cf">
-                        <li>아무개님</li>
-                        <li class="login"><a href="/login/logout">로그아웃</a></li>
-                        <li><a href="/mypage/myFreemon">마이프리몬<span class="arrow"></span></a>
-                            <ul class="top_depth2" style="display:none;">
-                                <p class="top_arrow"></p>
-                                <li><a href="/resume/resumeSearch">프로필 관리</a></li>
-                                <!-- <li><a href="/document/documentSelect">서류신청</a></li> -->
-                                <li><a href="#none" class="common-open_popup" data-div="alamn" data-user-div="freelancer">알림설정</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="/customer/noticeSearch">고객센터<span class="arrow"></span></a>
-                            <ul class="top_depth2" style="display:none;">
-                                <p class="top_arrow"></p>
-                                <li><a href="/customer/noticeSearch">자주묻는질문</a></li>
-                                <li><a href="/customer/questionRegistForm">문의하기</a></li>
-                            </ul>
-                        </li>
-                        <li class="blog"><a href="http://blog.freemon.co.kr" target="_blank">블로그</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="header_body">
-            <div class="box">
-               <h1 class="logo"><a href="/">프리몬</a></h1>
-                <div id="gnb">
-                    <nav>
-                        <ul class ="gnb_in cf">
-                            <li class="menu_about gnb_depth1 ">
-                                <a href="/project/projectSearch" class="gnb_depTxt"><em>프로젝트 검색</em></a>
-                            </li>
-                            <li class="menu_about gnb_depth1 ">
-                                <a href="/project/projectMap" class="gnb_depTxt"><em>프로젝트 맵</em></a>
-                            </li>
-                            <li class="menu_about gnb_depth1 ">
-                                <a href="/applicant/talentApplicantSearch" class="gnb_depTxt"><em>제안 및 지원 현황</em></a>
-                            </li>
-                           <!--  <li class="menu_about gnb_depth1 ">
-                                <a href="/home/freemonSupport" class="gnb_depTxt"><em>출장지원</em></a> 
-                            </li>-->
-                            <li class="menu_about gnb_depth1 ">
-                                <a href="/resume/resumeSearch" class="gnb_depTxt"><em>프로필 관리</em></a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- 팝업 -->
-<div class="ask_box">
-</div>
-
-		
 
 
 <script type="text/javascript" src="../resources/js/Chart.js"></script>
@@ -1286,44 +1221,7 @@
     </script>
 
 	
+<%@ include file="../common/footer.jsp"%>		
 
-    		
-<div id="footer">
-	<div class="footer_in box cf">
-        <section>
-	       <h3>주식회사 인사이트온</h3>
-	       <ul class="over_info cf">
-                <li>대표 : 박승래</li>
-                <li>사업자등록번호 : 522-88-00100</li>
-                <li>상표등록 제 40-1402651호</li>
-                <li>특허 제 10-2007018호</li>
-                <li class="col-12">디자인특허 제 30-2019-0048098호, 제 30-2019-0048099호</li>
-            </ul>
-            <ul class="over_menu cf">
-                <li><a href="/home/freemonIndividualTerms">회원이용약관</a></li>
-                <li><a href="/home/freemonIndividualPrivacy">개인정보보호방침</a></li>
-                <li><a href="https://m.freemon.co.kr" class="link_mobile" style="display:;">모바일버전</a></li>
-                <li>© InsightOn Corp.</li>
-            </ul>
-	   </section>
-	   <section>
-	        <h3>고객센터</h3>
-	        <p class="f_tel eng"><a href="tel:18992951">1899-2951</a></p>
-	        <p class="operate">평일 09:00 ~ 18:00 / 주말·공휴일 휴무</p>
-	        <div class="f_btn">
-                <a href="/home/freemonService" target="_blank">서비스소개</a>
-	            <a href="/customer/noticeSearch">자주묻는질문</a>
-	            <a href="/customer/questionRegistForm">문의하기</a>
-	        </div>
-	    </section>
-	    <section>
-	       <h3>앱 다운로드</h3>
-	       <div class="app_btn cf">
-	            <a href="https://play.google.com/store/apps/details?id=kr.insighton.freemonservice" target="_blank" class="play"><em>구글플레이</em></a>
-	            <a href="https://itunes.apple.com/app/id1472330588" target="_blank" class="store"><em>앱스토어</em></a>
-	        </div>
-	    </section>
-    </div>
-</div>
 </body>
 </html>
