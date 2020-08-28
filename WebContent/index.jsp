@@ -13,5 +13,9 @@
 	</a>
 <p> 두한  intelliJ commit Test </p>
 <p> Test Test....</p>
+
+	<h2>Main 연결 시험</h2>
+	<a href = "views/main/home.jsp">
+	<h3>Main 페이지로 이동</h3>
 </body>
 </html>
