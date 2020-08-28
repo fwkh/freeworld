@@ -122,7 +122,7 @@
 <script type="text/javascript" src="../../resources/freemon/common/jquery.mousewheel.js"></script>
 <script type="text/javascript" src="../../resources/freemon/common/slick.min.js"></script>
 <script type="text/javascript" src="../../resources/freemon/common/main069b.js?version=1.1"></script>
-<!--  <script type="text/javascript" src="resources/freemon/home/freemonHome3851.js?version=1.12"></script> --> 이곳에서 에러 발생 -->
+<!--  <script type="text/javascript" src="resources/freemon/home/freemonHome3851.js?version=1.12"></script> -- 이곳에서 에러 발생 -->
 <script type="text/javascript">
 	$(function() {
 		freemon.invoker.invoke("freemonHome");
