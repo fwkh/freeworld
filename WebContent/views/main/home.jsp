@@ -29,28 +29,7 @@
 	</style>
 </head>
 <body>
-		<!-- Google Tag Manager (noscript) -->
-		<noscript><iframe src="http://www.googletagmanager.com/ns.html?id=GTM-MF7LK3J"
-		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-		<!-- End Google Tag Manager (noscript) -->
-	
-		<div class="load_box" style="display:none;"><div class="load_img"><img src="resources/images/common/loading.gif" alt="loading"/></div></div>
-	
-	<!--Index Scripts-->
-	<link href="resources/css/main56b8.css?version=4.2" rel="stylesheet" type="text/css">
-	<script type="text/javascript" src="resources/freemon/common/jquery.mousewheel.js"></script>
-	<script type="text/javascript" src="resources/freemon/common/slick.min.js"></script>
-	<script type="text/javascript" src="resources/freemon/common/main069b.js?version=1.1"></script>
-	<script type="text/javascript" src="resources/freemon/home/freemonHome3851.js?version=1.12"></script>
-	<script type="text/javascript">
-		$(function() {
-			freemon.invoker.invoke("freemonHome");
-		});
-	</script>
-	
-	<!-- 숫자카운트 -->
-	<script type="text/javascript" src="resources/freemon/home/counter069b.js?version=1.1"></script>
-	<!--//Index Scripts-->
+
 	
 	<div id="wrap" >
 		<div id="modal-wrap" class="modal-wrap"></div>
@@ -58,6 +37,7 @@
 		<!-- 상단 -->
 		
 	
+
 	<div id="header">
 		<div class="header_top">
 		    <div class="box">
@@ -202,6 +182,9 @@
 		</div>
 	</div>
 			
+=======
+
+>>>>>>> branch 'master' of https://github.com/fwkh/freeworld.git
 	<div class="ask_box" style="display:none;">
 		<ul>
 			<li><a href="https://www.notion.so/FREEMON-4f97ecd6edb44c5cb43b921a8467f51f" target="_blank"><img src="resources/images/new/r_free.gif" alt=""/><p>서비스소개 GO!</p></a></li>
