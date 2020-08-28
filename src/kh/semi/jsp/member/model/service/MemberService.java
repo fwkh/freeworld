@@ -16,12 +16,12 @@ public class MemberService {
 	public Member selectMember(Member m) throws MemberException {
 		con = getConnection();
 		
-		Member result = mDao.selectMembver(con,m);
+		Member result = mDao.selectMember(con,m);
 		
 		close(con);
 		
 		if(result == null) {
-			throw new MemberException("아이디나 비번을 확인해주세요.");
+			throw new MemberException("이메일이나 비밀번호를 확인해주세요.");
 		}
 		return result;
 	}

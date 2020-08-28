@@ -31,7 +31,7 @@ public class MemberDao {
 			e.printStackTrace();
 		}
 	}
-	public Member selectMembver(Connection con, Member m) throws MemberException{
+	public Member selectMember(Connection con, Member m) throws MemberException{
 		Member result = null;
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
@@ -39,24 +39,27 @@ public class MemberDao {
 		String sql = prop.getProperty("selectMember");
 		try {
 			pstmt.getConnection().prepareStatement(sql);
-			pstmt.setString(1, m.getUserId());
+			pstmt.setString(1, m.getEmail());
 			pstmt.setString(2, m.getUserPwd());
 			
 			rset = pstmt.executeQuery();
 			
 			if(rset.next()) {
 				result = new Member();
-				
-				result.setUserId(m.getUserId());
+				result.setEmail(m.getEmail());
 				result.setUserPwd(m.getUserPwd());
 				
+				result.setUserNo(rset.getInt("userNo"));
 				result.setUserName(rset.getString(3));
-				result.setBirth(rset.getString("birth"));
+				result.setBirth(rset.getDate("birth"));
 				result.setPhone(rset.getString("phone"));
+				result.setArea(rset.getString("area"));
 				result.setHope(rset.getString("hope"));
-				result.setAddress(rset.getString("address"));
-				result.setSkill(rset.getString("skill"));
-				result.setDate(rset.getDate("date"));
+				result.setFuture(rset.getDate("future"));
+				result.setCareer(rset.getInt("career"));
+				result.setTotal(rset.getInt("total"));
+				result.setJoin(rset.getString("join"));
+			
 				
 			}
 		} catch (Exception e) {

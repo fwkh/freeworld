@@ -253,7 +253,7 @@
 		                <button id="userLoginBtn" class="b_login b_red" value="로그인" style="cursor:pointer;">로그인</button>
 		                <ul class="login_link">
 		                	<li><a href="#none" class="underline">아이디/비밀번호 찾기</a></li>
-		                	<li><a href="../account/companyJoin.html">프리랜서 회원가입</a></li>
+		                	<li><a href="../member/memberJoin.jsp">프리랜서 회원가입</a></li>
 		                </ul>
                    	</div>
 				</div>

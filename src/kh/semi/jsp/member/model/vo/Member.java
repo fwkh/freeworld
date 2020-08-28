@@ -10,67 +10,70 @@ public class Member implements Serializable{
 	 */
 	private static final long serialVersionUID = -5860829447627887370L;
 	
-	private String userId;		// 아이디
+	private int userNo;			// 유저번호
 	private String userPwd;		// 비밀번호
 	private String userName;	// 이름
-	private String birth;		// 생년월일
-	private String phone;		// 연락처
+	private Date birth;			// 생년월일
+	private String phone;		// 전화번호
+	private String email;		// 이메일
+	private String area;		// 거주지역
 	private String hope;		// 희망지역
-	private String address;		// 거주지역
-	private String skill;		// 보유기술
-	private Date date;			// 투입가능 날짜
+	private Date future;		// 투입가능날
+	private Date enrolldate;
+	private int career;
+	private int total;
+	private String join;
 	
 	public Member() {
-		
 	}
 
-	public Member(String userId, String userPwd) {
+	public Member(String userPwd, String email) {
 		super();
-		this.userId = userId;
 		this.userPwd = userPwd;
+		this.email = email;
 	}
 
-	public Member(String userId, String userName, String userPwd, String birth, String phone, String hope,
-			String address, String skill) {
+	public Member(int userNo, String userPwd, String userName, Date birth, String phone, String email, String area,
+			String hope, Date future, int career, int total, String join) {
 		super();
-		this.userId = userId;
+		this.userNo = userNo;
+		this.userPwd = userPwd;
 		this.userName = userName;
-		this.userPwd = userPwd;
 		this.birth = birth;
 		this.phone = phone;
+		this.email = email;
+		this.area = area;
 		this.hope = hope;
-		this.address = address;
-		this.skill = skill;
+		this.future = future;
+		this.career = career;
+		this.total = total;
+		this.join = join;
 	}
 
-	public Member(String userId, String userName, String userPwd, String birth, String phone, String hope,
-			String address, String skill, java.sql.Date date) {
+	public Member(int userNo, String userPwd, String userName, Date birth, String phone, String email, String area,
+			String hope, Date future, Date enrolldate, int career, int total, String join) {
 		super();
-		this.userId = userId;
-		this.userName = userName;
+		this.userNo = userNo;
 		this.userPwd = userPwd;
+		this.userName = userName;
 		this.birth = birth;
 		this.phone = phone;
+		this.email = email;
+		this.area = area;
 		this.hope = hope;
-		this.address = address;
-		this.skill = skill;
-		date = date;
+		this.future = future;
+		this.enrolldate = enrolldate;
+		this.career = career;
+		this.total = total;
+		this.join = join;
 	}
 
-	public String getUserId() {
-		return userId;
+	public int getUserNo() {
+		return userNo;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
-	}
-
-	public String getUserName() {
-		return userName;
-	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setUserNo(int userNo) {
+		this.userNo = userNo;
 	}
 
 	public String getUserPwd() {
@@ -81,11 +84,19 @@ public class Member implements Serializable{
 		this.userPwd = userPwd;
 	}
 
-	public String getBirth() {
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public Date getBirth() {
 		return birth;
 	}
 
-	public void setBirth(String birth) {
+	public void setBirth(Date birth) {
 		this.birth = birth;
 	}
 
@@ -97,6 +108,22 @@ public class Member implements Serializable{
 		this.phone = phone;
 	}
 
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getArea() {
+		return area;
+	}
+
+	public void setArea(String area) {
+		this.area = area;
+	}
+
 	public String getHope() {
 		return hope;
 	}
@@ -105,35 +132,53 @@ public class Member implements Serializable{
 		this.hope = hope;
 	}
 
-	public String getAddress() {
-		return address;
+	public Date getFuture() {
+		return future;
 	}
 
-	public void setAddress(String address) {
-		this.address = address;
+	public void setFuture(Date future) {
+		this.future = future;
 	}
 
-	public String getSkill() {
-		return skill;
+	public Date getEnrolldate() {
+		return enrolldate;
 	}
 
-	public void setSkill(String skill) {
-		this.skill = skill;
+	public void setEnrolldate(Date enrolldate) {
+		this.enrolldate = enrolldate;
 	}
 
-	public Date getDate() {
-		return date;
+	public int getCareer() {
+		return career;
 	}
 
-	public void setDate(Date date) {
-		date = date;
+	public void setCareer(int career) {
+		this.career = career;
+	}
+
+	public int getTotal() {
+		return total;
+	}
+
+	public void setTotal(int total) {
+		this.total = total;
+	}
+
+	public String getJoin() {
+		return join;
+	}
+
+	public void setJoin(String join) {
+		this.join = join;
 	}
 
 	@Override
 	public String toString() {
-		return "userId=" + userId + ", userName=" + userName + ", userPwd=" + userPwd + ", birth=" + birth
-				+ ", phone=" + phone + ", hope=" + hope + ", address=" + address + ", skill=" + skill + ", Date=" + date;  
+		return "Member [userNo=" + userNo + ", userPwd=" + userPwd + ", userName=" + userName + ", birth=" + birth
+				+ ", phone=" + phone + ", email=" + email + ", area=" + area + ", hope=" + hope + ", future=" + future
+				+ ", enrolldate=" + enrolldate + ", career=" + career + ", total=" + total + ", join=" + join + "]";
 	}
+
 	
 	
 }
