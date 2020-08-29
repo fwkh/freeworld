@@ -30,9 +30,15 @@
 	  #profile{display:none;}
 	  #suggestion{display:none;}
 	</style>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 
 <body>
+<script>
+	$(function(){
+		
+	});
+</script>
 	<!-- 헤더 include -->
 	<%@ include file="../common/header.jsp"%>
 	
@@ -46,7 +52,7 @@
 			<ul class="man_tab my_man_tab cf">
 				<li class="active"><a href="#none">마이프리몬</a></li>		
 				<!-- 주소 변경 -->
-				<li><a href="../resume/resumeSearch.html">프로필관리</a></li>	
+				<li><a href="resumeSearch.jsp">프로필관리</a></li>	
 			</ul>
 			<!-- 카운트 -->
 			<div class="counter per_counter">
@@ -55,17 +61,17 @@
 					<li><a href="/applicant/talentApplicantSearch">
 							<h5>제안된 요청</h5>
 							<p>
-								<span class="icon"></span>0
+								<span class="icon"></span>0 <!-- 제안된 요청 count(*)불러오기 -->
 							</p>
 					</a></li>
 					<li><a href="/applicant/talentApplicantSearch?dv=2">
 							<h5>지원 프로젝트</h5>
 							<p>
-								<span class="icon"></span>1
+								<span class="icon"></span>1 <!--  지원한 프로젝트가 있다면 count(*) 불러오기 -->
 							</p>
 					</a></li>
 					<li><a href="/applicant/talentApplicantSearch?dv=4">
-							<h5>계약요청</h5>
+							<h5>계약요청</h5> <!--  계약요청이 들어온 프로젝트 count(*)불러오기 -->
 							<p>
 								<span class="icon"></span>0
 							</p>
@@ -73,7 +79,7 @@
 					<li><a href="/applicant/talentApplicantSearch?dv=3">
 							<h5>계약 프로젝트</h5>
 							<p>
-								<span class="icon"></span>0
+								<span class="icon"></span><!--  계약한 프로젝트가 있다면 count(*) 불러오기 -->
 							</p>
 					</a></li>
 				</ul>
@@ -215,7 +221,7 @@
 															data-id="804">DB 모니터링 툴 개발<%--p.프로젝트 명 --%></a>
 													</h3>
 													<ul class="pro_list surport cf">
-														<li><%--p.프로젝트 시작일 --%>2020.08.10 ~ 2020.10.10<%--p.프로젝트 종료일 --%><span class="add_info org">3개월</span>
+														<li><%--p.프로젝트 시작일 --%>2020.08.10 ~ 2020.10.10<%--p.프로젝트 종료일 --%><span class="add_info org"><%--p.프로젝트 종료일 - p.프로젝트 시작일=(월) --%>3개월</span>
 														</li>
 														<li>서울 송파구<%--p.프로젝트 위치 --%></li>
 														<li>1만원(협의가능)<%--p.단가 --%></li>
