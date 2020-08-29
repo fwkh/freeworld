@@ -28,6 +28,7 @@
 	  #p_management{display:none;}
 	  #profile{display:none;}
 	  #suggestion{display:none;}
+	  #login{display:none;}
 	</style>
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>

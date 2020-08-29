@@ -13,6 +13,7 @@
 	  #p_management{display:none;}
 	  #profile{display:none;}
 	  #suggestion{display:none;}
+	  #login{display:none;}
 	</style>
     </head>
 <body>

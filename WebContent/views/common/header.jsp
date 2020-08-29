@@ -155,8 +155,11 @@
 	    	</div> -->
 	        <div class="top_menu w_top_menu">
 	            <ul class="cf">
-	                <li class="login"><a href="../../views/member/memberLogin.jsp">로그인</a></li>
-	                <li><a href="../../views/member/joinSelect.jsp">회원가입</a></li>
+                    <li id="logout">한진선님</li>
+	                <li class="login" id="logout"><a href="/login/logout">로그아웃</a></li>
+	                <li class="login" id="login"><a href="../../views/member/memberLogin.jsp">로그인</a></li>
+	                <li id="logout"><a href="/mypage/myFreemon">마이프리몬<span class="arrow"></span></a>
+	                <li id="login"><a href="../../views/member/joinSelect.jsp">회원가입</a></li>
 	                <li class="coustomer"><a href="../customer/noticeSearch.html"><span class="arrow"></span></a>
 	                	<ul class="top_depth2" style="display:none;">
 	                    	<p class="top_arrow"></p>
@@ -194,10 +197,10 @@
                         	<a href="/document/documentSelect" class="gnb_depTxt" id="p_management"><em>프로젝트 관리</em></a>
                         </li>
                         <li class="menu_about gnb_depth1 ">
-                        	<a href="/document/documentSelect" class="gnb_depTxt" id="profile"><em>프로필 관리</em></a>
+                        	<a href="/document/documentSelect" class="gnb_depTxt" id="suggestion"><em>제안 및 지원 현황</em></a>
                         </li>
                         <li class="menu_about gnb_depth1 ">
-                        	<a href="/document/documentSelect" class="gnb_depTxt" id="suggestion"><em>제안 및 지원 현황</em></a>
+                        	<a href="/document/documentSelect" class="gnb_depTxt" id="profile"><em>프로필 관리</em></a>
                         </li>
                         <li class="menu_about gnb_depth1">
                             <a href="../../views/customer/introduction.html" target="_blank" class="gnb_depTxt" id="service"><em>서비스소개</em></a>

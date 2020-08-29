@@ -10,6 +10,7 @@
 	SimpleDateFormat df = new SimpleDateFormat("yy-MM");
 	//ArrayList<Project> list = (ArrayList<Board>)request.getAttribute("list"); 
 %>
+
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -20,6 +21,7 @@
 	  #p_management{display:none;}
 	  #profile{display:none;}
 	  #suggestion{display:none;}
+	  #logout{display:none;}
 	</style>
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
