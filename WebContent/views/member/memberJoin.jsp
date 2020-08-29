@@ -216,11 +216,11 @@
         <div id="signup_wrapper">
             <h1 style="text-align: center;" id="signup">회원가입</h1>
             <div id="id_wrapper">
-                <h3 style="margin: 10px;">*아이디</h3>
-                <input type="text" id="input_id">&nbsp;
+                <h3 style="margin: 10px;">*아이디(이메일형식)</h3>
+                <input type="text" id="input_id" name="id">&nbsp;
                 <button type="submit" id="id_check">중복확인</button>
                 <h3 style="margin: 10px;">*비밀번호</h3>
-                <input type="password" id="input_pass" placeholder="비밀번호(숫자,영문,특수문자 조합 최소 8자)">&nbsp;
+                <input type="password" id="input_pass" name="pwd" placeholder="비밀번호(숫자,영문,특수문자 조합 최소 8자)">&nbsp;
                 <h3 style="margin: 10px;">*생년월일</h3>
                 <input type="text" id="yy" placeholder="년(4자)" aria-label="년(4자)" class="int" maxlength="4">
                 &nbsp;
