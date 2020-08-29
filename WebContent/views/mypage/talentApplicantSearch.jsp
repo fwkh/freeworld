@@ -13,68 +13,13 @@
 	  #profile{display:none;}
 	  #suggestion{display:none;}
 	</style>
-<!-- 페이지 적용 CSS -->
-<link rel="stylesheet" type="text/css"
-	href="../../resources/css/defaulta9af.css">
-<link rel="stylesheet" type="text/css"
-	href="../../resources/css/jquery-ui.mina751.css">
-<link rel="stylesheet" type="text/css"
-	href="../../resources/css/membercd4e.css">
-<link rel="stylesheet" type="text/css"
-	href="../../resources/css/new6d33.css">
-<link rel="stylesheet" type="text/css" id="mobile"
-	href="../../resources/css/web_hand.css">
-<link rel="stylesheet" type="text/css"
-	href="../../resources/css/career-ui.mina751.css" />
-<link rel="stylesheet" type="text/css"
-	href="../../resources/css/ui.jqgrid.css" />
-<link rel="shortcut icon" href="../../resources/images/new/favicon.ico" />
-	
-	<style type="text/css">
-	  .tooltipUI{
-	    background-color:#FAF4C0;
-	  }
-	  .ui-tooltip {
-	    padding: 8px;
-	    position: absolute;
-	    z-index: 999999;
-	    color : #fff;
-	    font-size : 12px;
-	    max-width: 600px;
-	    -webkit-box-shadow: 0 0 5px #aaa;
-	    box-shadow: 0 0 5px #aaa;
-		/* for IE */
-		filter:alpha(opacity=80);
-		/* CSS3 standard */
-		opacity:0.8;
-		line-height:16px;
-	  }
-	  body .ui-tooltip {
-	    border-width: 2px;
-	  }
-	  
-	  /* .scrollOff{position:fixed;overflow:hidden;height:100%;width:100%;} */
-	</style>
-
-	<script type="text/javascript">
-		var frameworkProperties = {
-			context: '',
-			locale: 'ko',
-			defaultLang: 'ko',
-			kakaoAppKey: 'a8bf256e33657332f212fd5847dbd8c5',
-		};
-	</script>
 
 </head>
 <body>
 	<!-- Google Tag Manager (noscript) -->
-	
 
 	        <div class="top_menu w_top_menu">
 	            <ul class="cf">
-	            	
-	                
-	                
 	                <li>한진선님</li>
 	                <li class="login"><a href="/login/logout">로그아웃</a></li>
 	                <li><a href="/mypage/myFreemon">마이프리몬<span class="arrow"></span></a>

@@ -215,7 +215,7 @@
                                         </label>
                                     </div>
 									<a href="#none" class="joinAgreeList">회원약관(필수)</a>
-									<a href="/home/freemonIndividualTerms" target="_blank" class="btn_open">전문보기</a>
+									<a href="../home/freeworldInvidualPrivacy.jsp" target="_blank" class="btn_open">전문보기</a>
                                </li>
                                <li class="active has-sub">
                                     <div class="join_check">
@@ -224,7 +224,7 @@
                                         </label>
                                     </div>
                                     <a href="#none" class="joinAgreeList">개인정보 수집 및 이용동의(필수)</a>
-                                    <a href="/home/freemonIndividualPrivacy" target="_blank" class="btn_open">전문보기</a>
+                                    <a href="../home/freeworldIndivdualTerms.jsp" target="_blank" class="btn_open">전문보기</a>
                                </li>
                                <li class="active has-sub">
                                     <div class="join_check">
