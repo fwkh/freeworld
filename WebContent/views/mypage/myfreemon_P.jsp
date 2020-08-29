@@ -10,6 +10,7 @@
 	SimpleDateFormat df = new SimpleDateFormat("yy-MM");
 	//ArrayList<Project> list = (ArrayList<Board>)request.getAttribute("list"); 
 %>
+
 <!DOCTYPE html>
 <html lang="ko">
 

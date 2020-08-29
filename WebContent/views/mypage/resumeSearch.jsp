@@ -4,91 +4,16 @@
 <html lang="ko">
 
 <head>
-
-
-    <title>프리월드 - SI 전문 아웃소싱</title>
-
-
-<!-- 페이지 적용 CSS -->
-<link rel="stylesheet" type="text/css"
-	href="../../resources/css/defaulta9af.css">
-<link rel="stylesheet" type="text/css"
-	href="../../resources/css/jquery-ui.mina751.css">
-<link rel="stylesheet" type="text/css"
-	href="../../resources/css/membercd4e.css">
-<link rel="stylesheet" type="text/css"
-	href="../../resources/css/new6d33.css">
-<link rel="stylesheet" type="text/css" id="mobile"
-	href="../../resources/css/web_hand.css">
-<link rel="stylesheet" type="text/css"
-	href="../../resources/css/career-ui.mina751.css" />
-<link rel="stylesheet" type="text/css"
-	href="../../resources/css/ui.jqgrid.css" />
-<link rel="shortcut icon" href="../../resources/images/new/favicon.ico" />
-
-	
-	<style type="text/css">
-	  .tooltipUI{
-	    background-color:#FAF4C0;
-	  }
-	  .ui-tooltip {
-	    padding: 8px;
-	    position: absolute;
-	    z-index: 999999;
-	    color : #fff;
-	    font-size : 12px;
-	    max-width: 600px;
-	    -webkit-box-shadow: 0 0 5px #aaa;
-	    box-shadow: 0 0 5px #aaa;
-		/* for IE */
-		filter:alpha(opacity=80);
-		/* CSS3 standard */
-		opacity:0.8;
-		line-height:16px;
-	  }
-	  body .ui-tooltip {
-	    border-width: 2px;
-	  }
-	  
-	  /* .scrollOff{position:fixed;overflow:hidden;height:100%;width:100%;} */
+	<%@ include file="../common/header.jsp" %>
+	<style type="text/css">	  
+	  #f_management{display:none;}
+	  #p_management{display:none;}
+	  #profile{display:none;}
+	  #suggestion{display:none;}
 	</style>
-    <script type="text/javascript" src="../resources/scripts/jquery-3.3.1.min.js" charset="utf-8"></script>
-    <script type="text/javascript" src="../resources/scripts/jquery.flexslider.js"></script>
-    <script type="text/javascript" src="../resources/scripts/site_ui.js"></script>
-	<script type="text/javascript" src="../resources/js/jquery.easing.1.3.js"></script>
-    <!--Calendar-->
-    <script type="text/javascript" src="../resources/scripts/calendar/pignose.calendar.full.js"></script>
-	<script type="text/javascript" src="../resources/js/jquery-ui.min.js"></script>
-	<script type="text/javascript" src="../resources/js/jquery.ba-hashchange.min.js"></script>
-	<script type="text/javascript" src="../resources/js/jquery.json-2.3.js"></script>
-	<script type="text/javascript" src="../resources/js/jquery.validate.min.js"></script>
-	<script type="text/javascript" src="../resources/js/jquery.history.js"></script>
-	<!-- Jqgrid -->
-	<script type="text/javascript" src="../resources/js/grid.locale-kr.js"></script>
-	<script type="text/javascript" src="../resources/js/jquery.jqGrid.min.js"></script>
-	<!-- //Jqgrid -->
-	<script type="text/javascript" src="../resources/js/jquery.marquee.min9a0d.js?version=1.0"></script>
-	<script type="text/javascript" src="../resources/js/mustache.js"></script>
-	<script type="text/javascript" src="../resources/js/jquery.cookie.js"></script>
-	<script type="text/javascript" src="../resources/i18n/commonMessages_ko.js"></script>
-	<script type="text/javascript" src="../resources/freemon/base64.js"></script>
-	<script type="text/javascript" src="../resources/freemon/sha256.js"></script>
-	<script type="text/javascript" src="../resources/freemon/nmask.js"></script>
-	<script type="text/javascript" src="../resources/freemon/freemonc599.js?version=3.3"></script>
-	<script type="text/javascript" src="../resources/js/gnb_common56b8.js?version=4.2"></script>
-	<script type="text/javascript" src="../resources/freemon/common/apply.js"></script>
-	<script type="text/javascript" src="../resources/freemon/common/freemonPopUp9667.js?version=1.2"></script>
-	<script type="text/javascript" src="../resources/freemon/common/input.js"></script>
 	
 </head>
 
-
-
-
-
-
-
-	<%@ include file="../common/header.jsp" %>
 
 <body>
 	<!-- Google Tag Manager (noscript) -->
