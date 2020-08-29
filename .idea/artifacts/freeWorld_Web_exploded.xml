@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="kh_semi:Web exploded">
-    <output-path>$PROJECT_DIR$/out/artifacts/kh_semi_Web_exploded</output-path>
+  <artifact type="exploded-war" name="freeWorld:Web exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/freeWorld_Web_exploded</output-path>
     <root id="root">
       <element id="javaee-facet-resources" facet="kh_semi/web/Web" />
       <element id="directory" name="WEB-INF">
