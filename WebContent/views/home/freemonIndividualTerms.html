@@ -1,0 +1,843 @@
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<!-- Mirrored from www.freemon.co.kr/home/freemonIndividualTerms by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 27 Jul 2020 06:59:44 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-MF7LK3J');</script>
+	<!-- End Google Tag Manager -->	
+
+	<!-- <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="naver-site-verification" content="81b7cb5e5f8e2975b94b334d812bb38453749a5a"/>
+	<meta name="keywords" content="프리몬, FREEMON, SI, SM, 프리랜서, 아웃소싱 플랫폼, 상주, 프로젝트, 개발자, 시스템엔지니어, MES, 설계자, 디자이너, 타임라인, Java, C#" />
+	<meta name="description" content="SI 전문 아웃소싱 플랫폼. 일정이 딱딱 맞는 프로젝트, 프리랜서를 한눈에. 프로젝트 프리랜서 타임라인, 간편하게 작성하는 전자계약서, 이력 간편등록, 프리랜서 멘토, 쉽게 관리하는 프로젝트" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="프리몬 - SI 전문 아웃소싱" />
+	<meta property="og:description" content="SI 전문 아웃소싱 플랫폼. 프로젝트 프리랜서 타임라인, 이력 간편등록, 프리랜서 멘토, 간편 전자계약서" />
+	<meta property="og:image" content="https://www.freemon.co.kr/resources/images/new/freemon_naver.jpg" />
+	<meta property="og:url" content="https://www.freemon.co.kr" />
+    <meta id="_csrf" name="_csrf" content="45d71795-fe18-44ec-9100-ef681e66286f"/>
+	<meta id="_csrf_header" name="_csrf_header" content="X-CSRF-TOKEN"/>
+    <meta name="viewport" content="width=1360"> -->
+    <title>프리월드 - SI 전문 아웃소싱</title>
+
+
+	<link rel="stylesheet" type="text/css" href="../resources/css/defaulta9af.css">
+	<link rel="stylesheet" type="text/css" href="../resources/css/jquery-ui.mina751.css">
+	<link rel="stylesheet" type="text/css" href="../resources/css/membercd4e.css">
+	<link rel="stylesheet" type="text/css" href="../resources/css/new6d33.css">
+	<link rel="stylesheet" type="text/css" id="mobile" href="../resources/css/web_hand.css">
+	<link rel="stylesheet" type="text/css" href="../resources/css/career-ui.mina751.css?version=2.0" />
+	<link rel="stylesheet" type="text/css" href="../resources/css/ui.jqgrid.css" />
+	<link rel="shortcut icon" href="../resources/images/new/favicon.ico"/>
+	
+	<style type="text/css">
+	  .tooltipUI{
+	    background-color:#FAF4C0;
+	  }
+	  .ui-tooltip {
+	    padding: 8px;
+	    position: absolute;
+	    z-index: 999999;
+	    color : #fff;
+	    font-size : 12px;
+	    max-width: 600px;
+	    -webkit-box-shadow: 0 0 5px #aaa;
+	    box-shadow: 0 0 5px #aaa;
+		/* for IE */
+		filter:alpha(opacity=80);
+		/* CSS3 standard */
+		opacity:0.8;
+		line-height:16px;
+	  }
+	  body .ui-tooltip {
+	    border-width: 2px;
+	  }
+	  
+	  /* .scrollOff{position:fixed;overflow:hidden;height:100%;width:100%;} */
+	</style>
+    <!-- <script type="text/javascript" src="../resources/scripts/jquery-3.3.1.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../resources/scripts/jquery.flexslider.js"></script>
+    <script type="text/javascript" src="../resources/scripts/site_ui.js"></script>
+	<script type="text/javascript" src="../resources/js/jquery.easing.1.3.js"></script> -->
+    <!--Calendar-->
+    <!-- <script type="text/javascript" src="../resources/scripts/calendar/pignose.calendar.full.js"></script>
+	<script type="text/javascript" src="../resources/js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="../resources/js/jquery.ba-hashchange.min.js"></script>
+	<script type="text/javascript" src="../resources/js/jquery.json-2.3.js"></script>
+	<script type="text/javascript" src="../resources/js/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="../resources/js/jquery.history.js"></script> -->
+	<!-- Jqgrid -->
+	<!-- <script type="text/javascript" src="../resources/js/grid.locale-kr.js"></script>
+	<script type="text/javascript" src="../resources/js/jquery.jqGrid.min.js"></script> -->
+	<!-- //Jqgrid -->
+	<!-- <script type="text/javascript" src="../resources/js/jquery.marquee.min9a0d.js?version=1.0"></script>
+	<script type="text/javascript" src="../resources/js/mustache.js"></script>
+	<script type="text/javascript" src="../resources/js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="../resources/i18n/commonMessages_ko.js"></script>
+	<script type="text/javascript" src="../resources/freemon/base64.js"></script>
+	<script type="text/javascript" src="../resources/freemon/sha256.js"></script>
+	<script type="text/javascript" src="../resources/freemon/nmask.js"></script>
+	<script type="text/javascript" src="../resources/freemon/freemonc599.js?version=3.3"></script>
+	<script type="text/javascript" src="../resources/js/gnb_common56b8.js?version=4.2"></script>
+	<script type="text/javascript" src="../resources/freemon/common/apply.js"></script>
+	<script type="text/javascript" src="../resources/freemon/common/freemonPopUp9667.js?version=1.2"></script>
+	<script type="text/javascript" src="../resources/freemon/common/input.js"></script> -->
+	
+	<!-- <script type="text/javascript" src="../../developers.kakao.com/sdk/js/kakao.min.js"></script>
+	
+	<script type="text/javascript">
+		var frameworkProperties = {
+			context: '',
+			locale: 'ko',
+			defaultLang: 'ko',
+			kakaoAppKey: 'a8bf256e33657332f212fd5847dbd8c5',
+		};
+	</script> -->
+
+	<script type="text/javascript">
+		$(function() {
+			$(document).tooltip({
+				//tooltipClass: 'tooltipUI',
+		       	content: function() {
+		        return $(this).prop('title');
+		       	},
+		       	track: true
+			});
+			
+			freemon.invoker.invoke("freemonPopUp");
+
+			var stylesheet = document.getElementById("mobile");
+			if(freemon.ux.isMobileCheck() == false){				
+			    stylesheet.setAttribute('href', "");
+			    $(".link_mobile").hide();
+			}
+			else{
+				var url = "../resources/css/web_hand.css";
+				stylesheet.setAttribute('href', url);
+				$(".link_mobile").show();
+			}
+			
+ 			$('.flow_text_in').marquee({
+				direction: 'up',
+				speed: 200,
+				gap: 0,
+				delayBeforeStart: 0,
+				duplicated: true,
+				pauseOnHover: true
+			}); 
+		});
+		
+		// 모바일일때 모바일경로로 이동
+		$(document).ready(function(){
+			if(freemon.ux.isMobileCheck() == true && "PC" == "MOBILE"){
+				document.location.href = "https://m.freemon.co.kr/";
+				return false;
+			}
+		});
+	</script>
+</head>
+<body>
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="http://www.googletagmanager.com/ns.html?id=GTM-MF7LK3J"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+
+	<div class="load_box" style="display:none;"><div class="load_img"><img src="../resources/images/common/loading.gif" alt="loading"/></div></div>
+
+
+<div id="header">
+	<div class="header_top">
+	    <div class="box">
+	        <!-- 활동내역 -->
+	    	<div class="flow_text" style="padding-top:10px;">
+	    		<div class="flow_text_in" style="border:0px solid red; line-height:30px; height:22px;">
+	    			
+	    				
+	    					
+	    						<p class="cf"><span class="tit ellipsis">오OO님의 이력서가 업데이트 되었습니다.</span></p>
+	    					
+	    					
+	    					
+	    				
+					
+	    				
+	    					
+	    					
+	    					
+	    						<p class="cf"><span class="tit ellipsis">안OO님이 프로젝트‘CMS 페이지 제작’에 제안 되었습니다.</span></p>
+	    					
+	    				
+					
+	    				
+	    					
+	    					
+	    					
+	    						<p class="cf"><span class="tit ellipsis">한OO님이 프로젝트‘CMS 페이지 제작’에 제안 되었습니다.</span></p>
+	    					
+	    				
+					
+	    				
+	    					
+	    						<p class="cf"><span class="tit ellipsis">최OO님의 이력서가 업데이트 되었습니다.</span></p>
+	    					
+	    					
+	    					
+	    				
+					
+	    				
+	    					
+	    						<p class="cf"><span class="tit ellipsis">안OO님의 이력서가 업데이트 되었습니다.</span></p>
+	    					
+	    					
+	    					
+	    				
+					
+	    				
+	    					
+	    					
+	    						<p class="cf"><span class="tit ellipsis">프로젝트‘Unifier(오라클 제품) 설치 및 수행’이 신규로 추가되었습니다.</span></p>
+	    					
+	    					
+	    				
+					
+	    				
+	    					
+	    					
+	    					
+	    						<p class="cf"><span class="tit ellipsis">서OO님이 프로젝트‘CMS 페이지 제작’에 제안 되었습니다.</span></p>
+	    					
+	    				
+					
+	    				
+	    					
+	    					
+	    					
+	    						<p class="cf"><span class="tit ellipsis">여OO님이 프로젝트‘CMS 페이지 제작’에 제안 되었습니다.</span></p>
+	    					
+	    				
+					
+	    				
+	    					
+	    					
+	    					
+	    						<p class="cf"><span class="tit ellipsis">김OO님이 프로젝트‘CMS 페이지 제작’에 지원 되었습니다.</span></p>
+	    					
+	    				
+					
+	    				
+	    					
+	    					
+	    					
+	    						<p class="cf"><span class="tit ellipsis">이OO님이 프로젝트‘CMS 페이지 제작’에 제안 되었습니다.</span></p>
+	    					
+	    				
+					
+	    		</div>
+	    	</div>
+	        <div class="top_menu w_top_menu">
+	            <ul class="cf">
+	            	
+	                <li class="login"><a href="../login/freemonLogin.html">로그인</a></li>
+	                <li><a href="joinSelect.html">회원가입</a></li>
+	                
+	                
+	                
+	                <li clas="coustomer"><a href="../customer/noticeSearch.html"><span class="arrow"></span></a>
+	                	<ul class="top_depth2" style="display:none;">
+	                    	<p class="top_arrow"></p>
+	                    	<li><a href="../customer/noticeSearch.html">자주묻는질문</a></li>
+	                        <li><a href="../customer/questionRegistForm.html">문의하기</a></li>
+	                    </ul>
+	                </li>
+	                <li class="blog"><a href="http://blog.freemon.co.kr/" target="_blank">블로그</a></li>
+	            </ul>
+	        </div>
+	    </div>
+	</div>
+    <div class="header_body">
+    	<div class="box">
+           <h1 class="logo"><a href="../index.html">프리월드</a></h1>
+            <div id="gnb">
+                <nav>
+                    <ul class ="gnb_in cf">
+                    	
+						
+						
+						<li class="menu_about gnb_depth1 ">
+                        	<a href="../talent/talentSearch.html" class="gnb_depTxt"><em>프리랜서 검색</em></a>
+                        </li>
+                        <li class="menu_about gnb_depth1 ">
+                        	<a href="../project/projectSearch.html" class="gnb_depTxt"><em>프로젝트 검색</em></a>
+                        </li>
+                        <li class="menu_about gnb_depth1 ">
+                        	<a href="../project/projectMap.html" class="gnb_depTxt"><em>프로젝트 맵</em></a>
+                        </li>
+                        <li class="menu_about gnb_depth1 ">
+                        	<a href="/home/freemonSupport" class="gnb_depTxt"><em>공지사항</em></a>
+                        </li>
+                        <!-- <li class="menu_about gnb_depth1 ">
+                        	<a href="/document/documentSelect" class="gnb_depTxt"><em>서류신청</em></a>
+                        </li> -->
+                        <li class="menu_about gnb_depth1">
+                            <a href="https://www.notion.so/FREEMON-4f97ecd6edb44c5cb43b921a8467f51f" target="_blank" class="gnb_depTxt"><em>서비스소개</em></a>
+                        </li>
+						
+                    </ul>
+                </nav>
+            </div>
+		</div>
+	</div>
+</div>
+		
+<!-- <div class="ask_box">
+	<ul>
+		<li><a href="https://www.notion.so/FREEMON-4f97ecd6edb44c5cb43b921a8467f51f" target="_blank"><img src="../resources/images/new/r_free.gif" alt=""/><p>서비스소개 GO!</p></a></li>
+		<li><a href="../login/freemonLoginbce7.html"><img src="../resources/images/new/r_file.png" alt=""/></a></li>
+	</ul>
+	<a href="#none" class="ask kakaoPlusTalk">카톡문의</a>
+	<a href="#none" class="top_btn">TOP</a>
+</div> -->
+
+		
+<!--Contents-->
+<div id="container">
+	<section class="project_in">
+    	<!-- 제목부분 -->
+    	<div class="pro_tit mb-0">
+        	<h2>회원 이용약관</h2>
+        </div>
+        
+        <!-- 이용약관 내용 -->
+        <div class="privacy">
+			<h3>제1조 (목적)</h3>
+			<p>
+				본 약관은 프리몬(이하 "회사)이 회원에게 제공하는 서비스의 이용과 관련하여 회사과 회원 간의 권리, 의무, 책임사항 및 기타 필요한 사항을 규정함을 목적으로 합니다.
+			</p>
+			
+			<h3>제 2 조 (이용약관의 명시 , 효력 및 변경)</h3>
+			<ol class="depth2">
+				<li>
+			 		이 약관은 회사에서 운영하는 홈페이지 및 제휴사 홈페이지에 게시하여 공시함으로써 효력이 발생합니다.
+			 	</li>
+			 	<li>
+			 		이용자가 본 약관의'동의함' 단추를 누르면 이용약관, 책임의 한계 및 회사의 개인정보보호정책을 모두 이해하고 그 내용에 동의하는 것으로 간주합니다.
+			 	</li>
+			 	<li>
+			 		회사가 제공하는 서비스 전반에 있어 책임의 한계와 개인정보보호정책에 관하여는 별도 고지합니다.
+			 	</li>
+			 	<li>
+			 		회사는 약관의 규제 등에 관한 법률 , 전자거래기본법 , 전자서명법 , 정보통신망 이용촉진 등에 관한 법률 등 관련법을 위배하지 않는 범위에서 합리적 사유가 있는 경우 회원의 사전동의 없이 본 약관을 개정할 수 있습니다.
+			 	</li>
+			 	<li>
+			 		본 약관의 개정시 운영사이트에 공지하는 것으로 효력이 발생합니다.
+			 	</li>
+			 	<li>
+			 		본 약관에 정하는 범위 이외의 이용자와 회사의 권리 , 의무 및 책임사항에 관해서는 전기통신사업법 기타 대한민국의 관련 법령과 상관습을 따릅니다.
+			 	</li>
+			</ol>
+			<h3>제 3 조 (용어의 정의)</h3>
+			<p>
+				이 약관에서 이용하는 용어의 정의는 다음과 같습니다 . 이 약관에서 이용하는 용어의 정의는 제 1항에서 정하는 것을 제외하고는 관계법령 및 서비스 별 안내에서 정하는 바에 의합니다.
+			</p>
+			<ol class="depth2">
+				<li>
+					"회원"은 본 약관에 동의하고 회사 플랫폼을 포함한 회사가 관리/운영하는 웹사이트 및 어플리케이션 등 서비스 플랫폼 일체를 의미함)의 회원가입 절차를 완료한 자를 의미합니다.
+				</li>
+				<li>
+					"기업회원(이하 "클라이언트")"은 회원 중 프로젝트를 의뢰하기 위하여 회원이 된 자 또는 특정 프로젝트에서 프로젝트를 의뢰한 자를 의미합니다.
+				</li>
+				<li>
+					“개인회원(이하 "프리랜서")”은 회원 중 기업회원의 의뢰를 받아 프로젝트를 수행하기 위하여 회원이 된 자 또는 특정 프로젝트에서 기업회원의 의뢰를 받아 업무를 수행하는 자를 의미합니다.
+				</li>
+				<li>
+					"서비스"는 회원들이 적합한 거래 상대방을 찾을 수 있도록 회원이 스스로 작성한 정보를 다른 회원이 볼 수 있도록 회사 홈페이지에 게시할 수 있도록 하는 온라인 서비스, 회사 회원간 서비스 계약의 체결 중개 및 대금 보호 시스템 등을 제공하는 오프라인 서비스를 의미합니다.
+				</li>
+			</ol>
+			
+			<h3>제 4 조 (이용 및 제한)</h3>
+			<p>
+				회사는 다음 각 호에 해당하는 경우에 대해서는 그 신청에 대한 제한 사유가 해소될 때까지 승낙을 유보 또는 서비스 이용을 제한 할 수 있습니다.
+			</p>
+			<ol class="depth2">
+				<li>
+					기재 내용이 허위인 것으로 판명 되거나, 의심할 만한 합리적인 사유가 발생할 경우
+				</li>
+				<li>
+					기타 회사가 필요하다고 인정되는 경우
+				</li>
+			</ol>
+			<p>
+				회사는 다음 각 호에 해당하는 경우에는 이용 신청을 승낙하지 아니할 수 있습니다.
+			</p>
+			<ol class="depth2">
+				<li>
+					본인의 실명으로 신청하지 않았을 때
+				</li>
+				<li>
+					다른 사람의 명의를 사용하여 신청하였을 때
+				</li>
+				<li>
+					신청서의 내용을 허위로 기재하였을 때
+				</li>
+				<li>
+					사회의 안녕 질서 혹은 미풍양속을 저해할 목적으로 신청하였을 때
+				</li>
+				<li>
+					기타 회사가 필요하다고 인정되는 경우
+				</li>
+			</ol>
+			<h4>성립 유보</h4>
+			<p>
+				회사는 다음 각 호에 해당하는 경우 그 사유가 해소될 때까지 이용계약 성립을 유보할 수 있습니다.
+			</p>
+			<ol class="depth2">
+				<li>
+					서비스 관련 제반 용량이 부족한 경우
+				</li>
+				<li>
+					기술상 장애 사유가 있는 경우
+				</li>
+				<li>
+					그 밖에 위 각 호에 준하는 사유로 이용신청의 승낙이 곤란한 경우
+				</li>
+			</ol>
+			
+			<h3>제 5 조 (회사의 의무)</h3>
+			<ol class="depth2">
+				<li>
+					회사는 관련법령과 본 약관이 정하는 바에 따라 지속적이고 안정적으로 서비스를 제공하기 위하여 최선을 다합니다.
+				</li>
+				<li>
+					회사는 보안 및 아이디 정책, 서비스의 원활한 제공 등과 같은 이유로 회원의 아이디 및 비밀번호 변경을 요구하거나 변경 할 수 있습니다.
+				</li>
+				<li>
+					회사는 회원의 개인 신상 정보를 본인의 승낙 없이 제3자에게 누설, 배포하지 않습니다. 다만, 관계법령에 의해 국가기관의 요구나 전기통신관련법령 및 정보통신윤리위원회의 요청 등 법률의 규정에 따른 적법한 절차에 의한 경우에는 그러하지 아니합니다.
+				</li>
+				<li>
+					계속적이고 안정적인 서비스의 제공을 위하여 설비에 장애가 생기거나 멸실된 때에는 부득이한 사유가 없는 한 지체없이 이를 수리 또는 복구합니다.
+				</li>
+				<li>
+					회사는 회원으로부터 제기되는 의견이나 불만이 정당하다고 인정할 경우에는 신속히 처리하여야 합니다. 다만, 신속한 처리가 곤란한 경우에는 회원에게 그 사유와 처리일정을 통보하여야 합니다.
+				</li>
+				<li>
+					회사가 제공하는 서비스, 소프트웨어, 이미지, 마크, 로고, 디자인, 서비스 명칭, 정보 및 상표 등과 관련된 지적재산권 및 기타 권리는 회사에게 있습니다. 회원은 회사가 명시적으로 승인한 경우를 제외하고는 상기항에 기재한 소정의 각 재산에 대한 전부 또는 일부의 수정, 대여, 대출, 판매, 배포, 제작, 양도, 재라이센스, 담보권설정행위, 상업적 이용행위를 할 수 없으며, 제3자로 하여금 이와 같은 행위를 하도록 허락할 수 없습니다.
+				</li>
+			</ol>
+			
+			<h3>제 6 조 (회원의 의무)</h3>
+			<ol class="depth3">
+				<li>
+					회원은 회사가 제공하는 모든 서비스를 관련법규 및 본 약관에 따라 자유롭게 이용할 수 있습니다.
+				</li>
+				<li>
+					이용자는 회원가입 신청 또는 회원정보 변경 시 실명으로 모든 사항을 사실에 근거하여   작성하여야 하며 , 허위 또는 타인의 정보를 등록할 경우 일체의 권리를 주장할 수 없습니다.
+				</li>
+				<li>
+					이용자는 본 약관에서 규정하는 사항과 회사가 정한 제반 규정 , 공지사항 등 회사가 공지하는 사항 및 관계법령을 준수하여야 하며 , 기타 회사의 업무에 방해가 되는 행위 , 회사의 명예를 손상시키는 행위를 해서는 안됩니다.
+				</li>
+				<li>
+					회사가 관계법령 및 개인정보보호정책에 의거하여 그 책임을 지는 경우 외에는 회원에게 부여된 비밀번호 관리소홀 , 부정이용에 의하여 발생하는 모든 결과에 대한 책임은 회원에게 있습니다.
+				</li>
+			</ol>
+			<p>
+				회원은 다음 행위(또는 이에 준하는 행위를 포함함)를 하여서는 안 됩니다.
+			</p>
+			<ol class="depth2">
+            	<li>
+                	비정상적인 시스템 접근
+                    <ol class="depth3">
+						<li>
+							악성코드, 바이러스 등의 프로그램을 고의 또는 과실로 설치, 유포하는 행위
+						</li>
+						<li>
+							프로젝트의 정보 및 파트너의 정보를 수집하기 위해 크롤링을 하는 행위
+						</li>
+						<li>
+							리버스엔지니어링, 디컴파일, 디스어셈블 및 기타 일체의 가공행위를 통하여 서비스를 복제, 분해 또는 모방 기타 변형하는 행위
+						</li>
+					</ol>
+                </li> 
+                <li>
+                	비정상적인 서비스 이용
+                    <ol class="depth3">
+						<li>
+							허위 또는 타인의 정보로 가입을 하는 행위
+						</li>
+						<li>
+							정당한 사유 없이 다수의 계정으로 활동을 하는 행위
+						</li>
+						<li>
+							계정 내 불리한 정보를 삭제하기 위해 의도적으로 계정을 탈퇴/재가입하는 행위
+						</li>
+						<li>
+							상습적으로 프로젝트 진행 의사 없이 견적 및 구현 가능 여부를 판단하기 위한 목적으로 서비스를 이용하는 행위
+						</li>
+						<li>
+							클라이언트가 상습적으로 프로젝트 등록 후 검수 상담만을 진행하고 모집은 진행하지 않는 행위
+						</li>
+						<li>
+							클라이언트가 모집 중에 프로젝트의 내용을 상습적으로 변경, 조정하는 행위
+						</li>
+						<li>
+							회사의 의사에 반하여 동일 또는 유사한 내용(비용 및 기간을 포함)의 프로젝트를 반복하여 등록하는 행위
+						</li>
+					</ol>
+                </li>
+                <li>
+                	허위 또는 과장된 정보 입력
+                    <ol class="depth3">
+						<li>
+							프리랜서가 자신이 참여하지 않은 포트폴리오를 입력하는 행위
+						</li>
+						<li>
+							프리랜서가 포트폴리오 등록 시 참여율을 사실과 다르게 입력하는 행위
+						</li>
+						<li>
+							기업회원이 프로젝트 등록 시 실제 업무 범위보다 축소하거나 허위 내용을 입력하는 행위
+						</li>
+						<li>
+							기타 회사 서비스 이용 시 회원이 입력하는 정보 일체에 대하여 허위 또는 과장된 정보를 입력하는 행위
+						</li>
+					</ol>
+                </li> 
+                <li>
+                	타인의 서비스 이용 방해
+                    <ol class="depth3">
+						<li>
+							사전 협의 없이 미팅에 참석하지 않는 행위
+						</li>
+						<li>
+							상습적으로 미팅 일정을 지연시키는 행위
+						</li>
+						<li>
+							상습적으로 미팅 일정을 준수하지 않는 행위
+						</li>
+						<li>
+							미팅 시 등록된 프로젝트 내용과 다른 요구를 하는 행위
+						</li>
+						<li>
+							서비스 내에서 체결한 계약을 정당한 사유 없이 이행하지 않는 행위
+						</li>
+					</ol>
+                </li> 
+                <li>
+                	직거래가 제한된 서비스에서의 직거래 유도
+                    <ol class="depth3">
+						<li>
+							회사 플랫폼 내에 상호(성명), 로고 등 상표, 주소, 전화번호, 이메일 주소 등 신원 식별을 용이하게 하는 정보를 입력하는 행위
+						</li>
+						<li>
+							사전 협의 없이 회사을 제외하고 직거래를 하는 행위
+						</li>
+					</ol>
+                </li> 
+                <li>
+                	업무 방해
+                    <ol class="depth3">
+						<li>
+							도배 광고, 홍보 스팸 등을 보내는 행위
+						</li>
+						<li>
+							파트너가 상습적으로 세금계산서(영수증, 계산서, 거래명세서 등 일체의 거래에 관한 증명서류를 포함)를 발행하지 않거나 거래일자보다 늦게 발행하는 행위
+						</li>
+					</ol>
+                </li> 
+                <li>
+                	공공질서 위반
+                    <ol class="depth3">
+						<li>
+							성별, 정치, 종교, 장애, 연령, 사회적 신분, 인종, 지역, 직업 등을 차별하거나 이에 대한 편견을 조장하는 행위
+						</li>
+						<li>
+							회사 또는 다른 회원, 제3자를 차별 또는 비방하거나 명예를 훼손하는 행위
+						</li>
+						<li>
+							회사 또는 다른 회원, 제3자에게 욕설, 폭언, 협박을 하는 행위
+						</li>
+						<li>
+							과도한 신체 노출이나 음란한 행위를 묘사하거나, 성매매 관련 정보를 공유하거나, 타인에게 성적 수치심이나 불쾌감을 유발할 수 있는 내용을 게시하는 등 미풍양속에 반하는 정보를 회사 사이트에 등록하는 행위
+						</li>
+						<li>
+							혐오스러운 사진 또는 내용을 게시하거나, 욕설, 비속어, 은어를 사용하는 등 사회 통념에 반하는 비정상적인 활동을 하는 행위
+						</li>
+					</ol>
+                </li> 
+                <li>
+                	타인의 권리 침해
+                    <ol class="depth3">
+						<li>
+							회사 및 다른 회원, 제3자의 특허권, 상표권, 저작권 등 지적재산권을 침해하는 행위 또는 침해할 우려가 있는 행위
+						</li>
+						<li>
+							타인의 개인정보를 침해하는 행위
+						</li>
+						<li>
+							기타 웹 해킹 프로그램, 매크로 프로그램, 보이스 피싱을 위한 미러링 사이트 등 타인의 권리를 침해하거나 침해할 우려가 있는 모든 행위
+						</li>
+					</ol>
+                </li> 
+                <li>
+                	계정 거래, 양도, 대리, 교환 등
+                    <ol class="depth3">
+						<li>
+							계정 및 계정 내 컨텐츠를 타인에게 판매, 양도, 대여하거나, 타인에게 그 이용을 허락 또는 이를 시도하는 행위 및 이를 알선하는 행위
+						</li>
+					</ol>
+                </li> 
+                <li>
+                	명의 사칭, 도용 등
+                    <ol class="depth3">
+						<li>
+							다른 회원, 제3자 또는 회사 직원을 사칭하는 행위
+						</li>
+					</ol>
+                </li> 
+                <li>
+                	기타
+                    <ol class="depth3">
+						<li>
+							본 조에 준하는 행위로서 회사의 이익(영업)을 저해하는 행위
+						</li>
+						<li>
+							회사의 동의 없이 영리, 영업, 광고, 정치활동 등을 목적으로 서비스를 사용하는 행위
+						</li>
+						<li>
+							자기 또는 타인에게 재산상의 이익을 주거나 타인에게 손해를 가할 목적으로 허위의 정보를 유통시키는 행위
+						</li>
+						<li>
+							관련 법령에서 금지하거나 선량한 풍속 기타 사회통념상 허용되지 아니하거나 원활한 서비스 제공에 악영향을 끼치는 행위
+						</li>
+					</ol>
+                </li> 
+            </ol>
+			<p>
+				회원은 본 약관의 규정, 이용안내 및 서비스와 관련하여 공지한 주의사항, 회사가 통지하는 사항 등을 확인하고 준수할 의무가 있습니다다
+			</p>
+			
+			<h3>제 7 조 (서비스 제공 및 중단)</h3>
+			<p>
+				회사는 회원의  이용 신청을 승낙한 때부터 서비스를 개시합니다. 단 회사가 필요한 경우 일부 서비스는 특정 시점부터 개시할 수 있습니다. 이러한 경우 회사는 사전 또는 사후에 이를 공지합니다. 회원으로 가입한 이후라도 일부 서비스는 회사가 필요한 경우 특정 회원에게만 서비스를 제공할 수 있습니다. 회사는 서비스를 일정 범위로 분할하여 각 범위 별로 이용 가능 시간을 별도로 정할 수 있습니다. 이 경우 그 내용을 사전 또는 사후에 이를 사이트에 공시하거나 회원에게 이를 통지합니다.
+				<br/>
+				서비스는 연중무휴, 1일 24시간을 원칙으로 합니다. 다만 서비스 성격에 따라 토요일, 일요일, 공휴일과 평일 오후 6시 이후에는 제공이 제한될 수 있습니다.
+			</p>
+			
+			<h3>제 8 조 (통지 및 정보의 제공)</h3>
+			<ol class="depth2">
+				<li>
+					회사는 서비스 이용에 도움이 된다고 판단한 각종 정보에 대해서 전자우편이나 서신우편 등의 방법으로 회원에게 통지할 수 있습니다.
+				</li>
+				<li>
+					회사는 서비스 개선 및 회원 대상의 서비스 소개 등의 목적으로 회원의 동의 하에 추가적인 개인 정보를 요구할 수 있습니다.
+				</li>
+				<li>
+					회사는 불특정다수 회원에 대한 통지의 경우 1주일이상 회사 게시판에 게시 함으로서 개별 통지에 갈음할 수 있습니다.
+				</li>
+			</ol>
+			
+			<h3>제 9 조 (개인정보의 이용)</h3>
+			<ol class="depth2">
+				<li>이용자에 의해 제공된 개인정보는 당해 이용자의 동의 없이 목적 외의 이용이나 제 3자에게 제공할 수 없으며 다만, 다음과 같은 경우에는 예외로 합니다.
+			    	<ol class="depth3">
+			            <li>
+			            	이용자와 업체 상호간의 상담을 돕기 위해 회사에서 정한 방식에 의해 업체에게 제공하는 경우
+			            </li>
+			            <li>
+			            	금융실거래 및 비밀보장에 관한법률, 신용정보의 이용 및 보호에관한법률, 전기통신기본법, 전기통신사업법, 지방세법, 소비자보호법, 한국은행법, 형사소송법 등 관계법령에 특별한 규정이 있는 경우
+			            </li>
+			            <li>
+			            	관계법령이 허용하는 한도 내에서 회사의 제휴사에 제공하는 경우
+			            </li>
+			            <li>
+			            	통계작성, 학술연구 또는 시장조사를 위하여 필요한 경우로서 특정 개인을 식별할 수 없는 형태로 제공하는 경우
+			            </li>
+			    	</ol>
+			    </li>
+			    <li>회사는 서비스 제공과 관련하여 취득한 회원의 신상 자료를 본인의 승낙 없이 제 3자에게 누출, 또는 배포할 수 없으며 또한 상업적 목적으로도 사용할 수 없습니다. 다만 다음 사항에 해당하는 경우에는 예외로 합니다.
+			    	<ol class="depth3">
+			            <li>
+			            	관계법령에 의거 수사상의 목적으로 인해 관계 기관으로부터 요구가 있는 경우.
+			            </li>
+			            <li>
+			            	정보통신윤리위원회의 요청이 있는 경우.
+			            </li>
+			            <li>
+			            	기타 관계법령에서 정한 절차에 따른 요청이 있는 경우.
+			            </li>
+			            <li>
+			            	특정 개인을 식별할 수 없는 통계작성, 홍보자료, 학술연구등의 목적일 때
+			            </li>
+			    	</ol>
+			    </li>
+			    <li>
+			    	회사가 향후 타 사이트와 서비스 제휴를 하게 된다면 회원 정보의 일부가 원활한 서비스를 위해서 제휴한 사이트에 공개될 수 있습니다.
+			    </li>
+			    <li>
+			    	회사가 상담을 목적으로 업체에게 제공한 개인정보를 업체가 임의로 오용한 경우 그로 인한 민형사상 책임은 업체에게 있으며 회사는 면책됩니다.
+			    </li>
+			</ol>
+			
+			<h3>제 10 조 (회원간의 서비스 계약)</h3>
+			<p>
+				본 계약은 업무의 진행을 의뢰한 기업회원(이하 "클라이언트")과 업무를 수행하는 개인회원(이하 "프리랜서")간 체결하는 업무 계약입니다. 
+				본 약관은 계약에 따른 업무 수행을 함에 있어 관련 법령을 준수하고 신의성실의 원칙에 따라 업무에 임하는 것을 목적으로 합니다. 
+				체결하게 되는 계약은 클라이언트와 프리랜서가 각각 서비스 이용 계약에 따라 회사의 서비스 이용 약관에 동의하는 것으로 그 효력이 있으며 계약에 명시되지 않은 항목에 대해서는 회사의 이용약관을 따르게 됩니다.
+			</p>
+			<ol class="depth2">
+				<li>계약의 성립과 계약기간
+					<ol class="depth3">
+						<li>
+							본 계약은 해당 업무에 대해 클라이언트와 프리랜서가 회사를 통해 상호 확인함으로써 성립하게 됩니다.
+						</li>
+					</ol>
+				</li>
+				<li>계약의 변경과 변경에 따른 부담
+					<ol class="depth3">
+						<li>
+							계약은 상호 확인을 통해 성립하기 전에 자유롭게 변경될 수 있습니다. 클라이언트 또는 프리랜서가 계약 내용을 변경하게 되는 경우 상대방의 확인은 무효화되어 다시 상호 확인을 거치게 됩니다.
+						</li>
+						<li>
+							성립된 계약은 원칙적으로는 계약 내용을 변경할 수 없습니다. 다만 그 변경이 불가피한 경우에는 변경되는 내용에 대해 다시 상호 확인을 통해 변경할 수 있습니다.
+						</li>
+						<li>
+							클라이언트 또는 프리랜서가 상대방의 계약 내용 변경에 대해 확인하지 않을 수 있으며 이러한 경우에는 기존의 계약 내용이 유지됩니다.
+						</li>
+						<li>
+							계약 간 분쟁이 발생할 경우에는 회사의 이용약관에 따라 일차적으로는 계약 당사자 간의 상호 합의와 존중을 바탕으로 조정하는 것에 동의합니다.
+						</li>
+					</ol>
+				</li>
+				<li>계약의 종료
+					<ol class="depth3">
+						<li>
+							일반적으로 계약 기간이 종료되는 시점까지 입니다.
+						</li>
+					</ol>
+				</li>
+			</ol>
+			
+			<h3>제 11 조 (회원간의 계약에 따른 의무)</h3>
+			<ol class="depth2">
+				<li>원활한 소통 
+					<ol class="depth3">
+						<li>
+							클라이언트와 프리랜서는 성공적인 업무의 진행을 위해 최대한 원활하게 소통을 해야 하는 의무가 있습니다.
+						</li>
+						<li>
+							클라이언트와 프리랜서는 상대방의 요청에 대해 최대 7일 이내에 성실하게 응답해야 하며, 이를 지키지 않는 경우 불이익을 받는 것에 동의합니다.
+						</li>
+					</ol>
+				</li>
+				<li>업무진행과 수행
+					<ol class="depth3">
+						<li>
+							클라이언트는 업무 진행에 있어 관리와 점검, 요청에 대한 동의와 적절한 지불의 책임이
+있으며, 프리랜서에게 업무 수행에 있어 보유 장비, 도구, 자료들을 포함한 적절한 대금의
+청구, 우수한 성과와 요청에 대한 동의에 대한 책임이 있습니다.
+						</li>
+						<li>
+							클라이언트와 프리랜서는 각각 업무를 진행함과 수행함에 있어 선의로 이행하며 공정하게
+거래하는 것에 동의합니다.
+						</li>
+					</ol>
+				</li>
+				<li>비밀의 준수 
+					<ol class="depth3">
+						<li>
+							클라이언트와 프리랜서는 본 계약의 전후를 막론하고 본 계약과 관련하여 취득한
+상대방에 대한 비밀사항을 제3 자에게 누설해서는 안되며, 보안사항을 철저히 준수해야
+합니다.
+						</li>
+						<li>
+							비밀 유출시, 이로 인해 발생하는 모든 책임은 유출한 주체에게 있습니다.
+						</li>
+					</ol>
+				</li>
+			</ol>
+			
+			<p>이 약관은 2019년 08월 12일부터 적용됩니다.</p>
+        </div>
+    </section>
+</div>
+
+<!--//Contents-->
+﻿	<!-- 팝업 -->
+	<div class="pop_bg" id="popInfoData" style="display:none;">
+	</div>
+
+	<!-- 팝업 -->
+	<div class="pop_bg" id="popAlertData" style="display:none;">
+		<div class="pop pop2">
+	    	<div class="pop_header">
+	        	<h3>&nbsp;</h3>
+	            <a href="javascript:void(0);" class="close">닫기</a>
+	        </div>
+	        <div class="pop_body p-20 no_scroll" style="">
+	        	<div class="no_page_tit"></div>
+                <div class="btn_pop_box center">
+                </div>
+	        </div>
+	    </div>
+	</div>
+
+
+	
+
+    		
+	<div id="footer">
+		<div class="footer_in box cf">
+			<section>
+			   <h3>주식회사 KH 정보</h3>
+			   <ul class="over_info cf">
+					<li>대표 : 유승제</li>
+					<li>사업자등록번호 : xxx-xx-xxxxx</li>
+					<li>상표등록 제 xx-xxxxxxx호</li>
+					<li>특허 제 xx-xxxxxxx호</li>
+					<li class="col-12">디자인특허 제 xx-xxxx-xxxxxxx호, 제 xx-xxxx-xxxxxxx호</li>
+				</ul>
+				<ul class="over_menu cf">
+					<li><a href="../home/freemonIndividualTerms.html">회원이용약관</a></li>
+					<li><a href="../home/freemonIndividualPrivacy.html">개인정보보호방침</a></li>
+					<li><a href="https://m.freemon.co.kr/" class="link_mobile" style="display:;">모바일버전</a></li>
+					<li>© InsightOn Corp.</li>
+				</ul>
+		   </section>
+		   <section>
+				<h3>고객센터</h3>
+				<p class="f_tel eng"><a href="tel:18992951">1899-2951</a></p>
+				<p class="operate">평일 09:00 ~ 18:00 / 주말·공휴일 휴무</p>
+				<div class="f_btn">
+					<a href="https://www.notion.so/FREEMON-4f97ecd6edb44c5cb43b921a8467f51f" target="_blank">서비스소개</a>
+					<a href="../customer/noticeSearch.html">자주묻는질문</a>
+					<a href="../customer/questionRegistForm.html">문의하기</a>
+				</div>
+			</section>
+			<section id="app_download">
+			   <h3>앱 다운로드</h3>
+			   <div class="app_btn cf">
+					<a href="https://play.google.com/store/apps/details?id=kr.insighton.freemonservice" target="_blank" class="play"><em>구글플레이</em></a>
+					<a href="https://itunes.apple.com/app/id1472330588" target="_blank" class="store"><em>앱스토어</em></a>
+				</div>
+			</section>
+		</div>
+	</div>
+</body>
+
+<!-- Mirrored from www.freemon.co.kr/home/freemonIndividualTerms by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 27 Jul 2020 06:59:45 GMT -->
+</html>
