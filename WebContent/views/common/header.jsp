@@ -196,7 +196,7 @@
                         	<a href="/document/documentSelect" class="gnb_depTxt" id="suggestion"><em>제안 및 지원 현황</em></a>
                         </li>
                         <li class="menu_about gnb_depth1">
-                            <a href="../www.freemon.co.kr/customer/introduction.html" target="_blank" class="gnb_depTxt" id="service"><em>서비스소개</em></a>
+                            <a href="../../views/customer/introduction.html" target="_blank" class="gnb_depTxt" id="service"><em>서비스소개</em></a>
                         </li>
                     </ul>
                 </nav>

@@ -1,0 +1,516 @@
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<!-- Mirrored from www.freemon.co.kr/customer/questionRegistForm by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 27 Jul 2020 06:59:38 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-MF7LK3J');</script>
+	<!-- End Google Tag Manager -->	
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="naver-site-verification" content="81b7cb5e5f8e2975b94b334d812bb38453749a5a"/>
+	<meta name="keywords" content="프리몬, FREEMON, SI, SM, 프리랜서, 아웃소싱 플랫폼, 상주, 프로젝트, 개발자, 시스템엔지니어, MES, 설계자, 디자이너, 타임라인, Java, C#" />
+	<meta name="description" content="SI 전문 아웃소싱 플랫폼. 일정이 딱딱 맞는 프로젝트, 프리랜서를 한눈에. 프로젝트 프리랜서 타임라인, 간편하게 작성하는 전자계약서, 이력 간편등록, 프리랜서 멘토, 쉽게 관리하는 프로젝트" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="프리몬 - SI 전문 아웃소싱" />
+	<meta property="og:description" content="SI 전문 아웃소싱 플랫폼. 프로젝트 프리랜서 타임라인, 이력 간편등록, 프리랜서 멘토, 간편 전자계약서" />
+	<meta property="og:image" content="https://www.freemon.co.kr/resources/images/new/freemon_naver.jpg" />
+	<meta property="og:url" content="https://www.freemon.co.kr" />
+    <meta id="_csrf" name="_csrf" content="45d71795-fe18-44ec-9100-ef681e66286f"/>
+	<meta id="_csrf_header" name="_csrf_header" content="X-CSRF-TOKEN"/>
+    <meta name="viewport" content="width=1360">
+    <title>프리월드 - SI 전문 아웃소싱</title>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-137161229-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+	  	function gtag(){dataLayer.push(arguments);}
+	  	gtag('js', new Date());
+	
+	  	gtag('config', 'UA-137161229-1', {
+	  	  'linker': {
+	  	    'domains': ['www.freemon.co.kr', 'www.freemon.kr']
+	  	  }
+	  	});
+	</script> -->
+
+	<link rel="stylesheet" type="text/css" href="../resources/css/defaulta9af.css?version=4.3">
+	<link rel="stylesheet" type="text/css" href="../resources/css/jquery-ui.mina751.css?version=2.0">
+	<link rel="stylesheet" type="text/css" href="../resources/css/membercd4e.css?version=4.1">
+	<link rel="stylesheet" type="text/css" href="../resources/css/new6d33.css?version=4.8">
+	<link rel="stylesheet" type="text/css" id="mobile" href="../resources/css/web_hand.css">
+	<link rel="stylesheet" type="text/css" href="../resources/css/career-ui.mina751.css?version=2.0" />
+	<link rel="stylesheet" type="text/css" href="../resources/css/ui.jqgrid.css" />
+	<link rel="shortcut icon" href="../resources/images/new/favicon.ico"/>
+	
+	<style type="text/css">
+	  .tooltipUI{
+	    background-color:#FAF4C0;
+	  }
+	  .ui-tooltip {
+	    padding: 8px;
+	    position: absolute;
+	    z-index: 999999;
+	    color : #fff;
+	    font-size : 12px;
+	    max-width: 600px;
+	    -webkit-box-shadow: 0 0 5px #aaa;
+	    box-shadow: 0 0 5px #aaa;
+		/* for IE */
+		filter:alpha(opacity=80);
+		/* CSS3 standard */
+		opacity:0.8;
+		line-height:16px;
+	  }
+	  body .ui-tooltip {
+	    border-width: 2px;
+	  }
+	  
+	  /* .scrollOff{position:fixed;overflow:hidden;height:100%;width:100%;} */
+	</style>
+    <script type="text/javascript" src="../resources/scripts/jquery-3.3.1.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../resources/scripts/jquery.flexslider.js"></script>
+    <script type="text/javascript" src="../resources/scripts/site_ui.js"></script>
+	<script type="text/javascript" src="../resources/js/jquery.easing.1.3.js"></script>
+    <!--Calendar-->
+    <script type="text/javascript" src="../resources/scripts/calendar/pignose.calendar.full.js"></script>
+	<script type="text/javascript" src="../resources/js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="../resources/js/jquery.ba-hashchange.min.js"></script>
+	<script type="text/javascript" src="../resources/js/jquery.json-2.3.js"></script>
+	<script type="text/javascript" src="../resources/js/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="../resources/js/jquery.history.js"></script>
+	<!-- Jqgrid -->
+	<script type="text/javascript" src="../resources/js/grid.locale-kr.js"></script>
+	<script type="text/javascript" src="../resources/js/jquery.jqGrid.min.js"></script>
+	<!-- //Jqgrid -->
+	<script type="text/javascript" src="../resources/js/jquery.marquee.min9a0d.js?version=1.0"></script>
+	<script type="text/javascript" src="../resources/js/mustache.js"></script>
+	<script type="text/javascript" src="../resources/js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="../resources/i18n/commonMessages_ko.js"></script>
+	<script type="text/javascript" src="../resources/freemon/base64.js"></script>
+	<script type="text/javascript" src="../resources/freemon/sha256.js"></script>
+	<script type="text/javascript" src="../resources/freemon/nmask.js"></script>
+	<script type="text/javascript" src="../resources/freemon/freemonc599.js?version=3.3"></script>
+	<script type="text/javascript" src="../resources/js/gnb_common56b8.js?version=4.2"></script>
+	<script type="text/javascript" src="../resources/freemon/common/apply.js"></script>
+	<script type="text/javascript" src="../resources/freemon/common/freemonPopUp9667.js?version=1.2"></script>
+	<script type="text/javascript" src="../resources/freemon/common/input.js"></script>
+	
+	<script type="text/javascript" src="../../developers.kakao.com/sdk/js/kakao.min.js"></script>
+	
+	<script type="text/javascript">
+		var frameworkProperties = {
+			context: '',
+			locale: 'ko',
+			defaultLang: 'ko',
+			kakaoAppKey: 'a8bf256e33657332f212fd5847dbd8c5',
+		};
+	</script>
+
+	<script type="text/javascript">
+		$(function() {
+			$(document).tooltip({
+				//tooltipClass: 'tooltipUI',
+		       	content: function() {
+		        return $(this).prop('title');
+		       	},
+		       	track: true
+			});
+			
+			freemon.invoker.invoke("freemonPopUp");
+
+			var stylesheet = document.getElementById("mobile");
+			if(freemon.ux.isMobileCheck() == false){				
+			    stylesheet.setAttribute('href', "");
+			    $(".link_mobile").hide();
+			}
+			else{
+				var url = "../resources/css/web_hand.css";
+				stylesheet.setAttribute('href', url);
+				$(".link_mobile").show();
+			}
+			
+ 			$('.flow_text_in').marquee({
+				direction: 'up',
+				speed: 200,
+				gap: 0,
+				delayBeforeStart: 0,
+				duplicated: true,
+				pauseOnHover: true
+			}); 
+		});
+		
+		// 모바일일때 모바일경로로 이동
+		$(document).ready(function(){
+			if(freemon.ux.isMobileCheck() == true && "PC" == "MOBILE"){
+				document.location.href = "https://m.freemon.co.kr/";
+				return false;
+			}
+		});
+	</script>
+</head>
+<body>
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="http://www.googletagmanager.com/ns.html?id=GTM-MF7LK3J"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+
+	<div class="load_box" style="display:none;"><div class="load_img"><img src="../resources/images/common/loading.gif" alt="loading"/></div></div>
+
+
+<div id="header">
+	<div class="header_top">
+	    <div class="box">
+	        <!-- 활동내역 -->
+	    	<div class="flow_text" style="padding-top:10px;">
+	    		<div class="flow_text_in" style="border:0px solid red; line-height:30px; height:22px;">
+	    			
+	    				
+	    					
+	    						<p class="cf"><span class="tit ellipsis">오OO님의 이력서가 업데이트 되었습니다.</span></p>
+	    					
+	    					
+	    					
+	    				
+					
+	    				
+	    					
+	    					
+	    					
+	    						<p class="cf"><span class="tit ellipsis">안OO님이 프로젝트‘CMS 페이지 제작’에 제안 되었습니다.</span></p>
+	    					
+	    				
+					
+	    				
+	    					
+	    					
+	    					
+	    						<p class="cf"><span class="tit ellipsis">한OO님이 프로젝트‘CMS 페이지 제작’에 제안 되었습니다.</span></p>
+	    					
+	    				
+					
+	    				
+	    					
+	    						<p class="cf"><span class="tit ellipsis">최OO님의 이력서가 업데이트 되었습니다.</span></p>
+	    					
+	    					
+	    					
+	    				
+					
+	    				
+	    					
+	    						<p class="cf"><span class="tit ellipsis">안OO님의 이력서가 업데이트 되었습니다.</span></p>
+	    					
+	    					
+	    					
+	    				
+					
+	    				
+	    					
+	    					
+	    						<p class="cf"><span class="tit ellipsis">프로젝트‘Unifier(오라클 제품) 설치 및 수행’이 신규로 추가되었습니다.</span></p>
+	    					
+	    					
+	    				
+					
+	    				
+	    					
+	    					
+	    					
+	    						<p class="cf"><span class="tit ellipsis">서OO님이 프로젝트‘CMS 페이지 제작’에 제안 되었습니다.</span></p>
+	    					
+	    				
+					
+	    				
+	    					
+	    					
+	    					
+	    						<p class="cf"><span class="tit ellipsis">여OO님이 프로젝트‘CMS 페이지 제작’에 제안 되었습니다.</span></p>
+	    					
+	    				
+					
+	    				
+	    					
+	    					
+	    					
+	    						<p class="cf"><span class="tit ellipsis">김OO님이 프로젝트‘CMS 페이지 제작’에 지원 되었습니다.</span></p>
+	    					
+	    				
+					
+	    				
+	    					
+	    					
+	    					
+	    						<p class="cf"><span class="tit ellipsis">이OO님이 프로젝트‘CMS 페이지 제작’에 제안 되었습니다.</span></p>
+	    					
+	    				
+					
+	    		</div>
+	    	</div>
+	        <div class="top_menu w_top_menu">
+	            <ul class="cf">
+	            	
+	                <li class="login"><a href="../login/freemonLogin.html">로그인</a></li>
+	                <li><a href="joinSelect.html">회원가입</a></li>
+	                
+	                
+	                
+	                <!-- <li clas="coustomer"><a href="../customer/noticeSearch.html"><span class="arrow"></span></a>
+	                	<ul class="top_depth2" style="display:none;">
+	                    	<p class="top_arrow"></p>
+	                    	<li><a href="../customer/noticeSearch.html">자주묻는질문</a></li>
+	                        <li><a href="../customer/questionRegistForm.html">문의하기</a></li>
+	                    </ul>
+	                </li> -->
+	                <!-- <li class="blog"><a href="http://blog.freemon.co.kr/" target="_blank">블로그</a></li> -->
+	            </ul>
+	        </div>
+	    </div>
+	</div>
+    <div class="header_body">
+    	<div class="box">
+           <h1 class="logo"><a href="../index.html">프리월드</a></h1>
+            <div id="gnb">
+                <nav>
+                    <ul class ="gnb_in cf">
+                    	
+						
+						
+						<li class="menu_about gnb_depth1 ">
+                        	<a href="../talent/talentSearch.html" class="gnb_depTxt"><em>프리랜서 검색</em></a>
+                        </li>
+                        <li class="menu_about gnb_depth1 ">
+                        	<a href="../project/projectSearch.html" class="gnb_depTxt"><em>프로젝트 검색</em></a>
+                        </li>
+                        <li class="menu_about gnb_depth1 ">
+                        	<a href="../project/projectMap.html" class="gnb_depTxt"><em>프로젝트 맵</em></a>
+                        </li>
+                        <li class="menu_about gnb_depth1 ">
+                        	<a href="/home/freemonSupport" class="gnb_depTxt"><em>공지사항</em></a>
+                        </li>
+                        <!-- <li class="menu_about gnb_depth1 ">
+                        	<a href="/document/documentSelect" class="gnb_depTxt"><em>서류신청</em></a>
+                        </li> -->
+                        <li class="menu_about gnb_depth1">
+                            <a href="https://www.notion.so/FREEMON-4f97ecd6edb44c5cb43b921a8467f51f" target="_blank" class="gnb_depTxt"><em>서비스소개</em></a>
+                        </li>
+						
+                    </ul>
+                </nav>
+            </div>
+		</div>
+	</div>
+</div>
+		
+<div class="ask_box">
+	<ul>
+		<li><a href="https://www.notion.so/FREEMON-4f97ecd6edb44c5cb43b921a8467f51f" target="_blank"><img src="../resources/images/new/r_free.gif" alt=""/><p>서비스소개 GO!</p></a></li>
+		<li><a href="../login/freemonLoginbce7.html"><img src="../resources/images/new/r_file.png" alt=""/></a></li>
+	</ul>
+	<a href="#none" class="ask kakaoPlusTalk">카톡문의</a>
+	<a href="#none" class="top_btn">TOP</a>
+</div>
+
+		
+
+<script type="text/javascript" src="../resources/freemon/customer/questionRegist.js"></script>
+<script type="text/javascript">
+	$(function() {
+		freemon.invoker.invoke("questionRegist");
+	});
+</script>
+
+<div id="container">
+<section class="project_in">
+    	<!-- 제목부분 -->
+    	<div class="pro_tit mb-0">
+        	<h2>문의하기</h2>
+             <div class="note xs-hidden cf">
+                <span>!</span>질문을 남겨주시면 가능한 빨리 답변을 드리도록 하겠습니다.
+            </div>
+        </div>
+        
+		<!-- 입력폼 -->
+        <div class="input_list">
+        	<form name="registForm" id ="registForm">
+            
+        	<ul class="input_list_in cf">
+            	<li>
+                	<div class="input">
+                    	<label for="">문의종류<span class="major">*</span></label>
+                       	<select name="type" id="type" required="required">
+                           	<option value="">문의종류를 선택해주세요.</option>
+                        </select>
+                    </div>
+                </li>
+                <li class="col-6 xs-col-12 pr-16 xs-pr-0">
+                	<div class="input">
+                    	<label for="">이름<span class="major">*</span></label>
+                    	
+                        <input type="text" id="name" name= "name" required="required" 
+                        
+                        	
+                        	
+                        
+                         />
+                    </div>
+                </li>
+                <li class="col-6 xs-col-12 pl-16 xs-pl-0">
+                	<div class="input">
+                    	<label for="">전화번호<span class="major">*</span></label>
+                        <input type="text" id="telNo" name = "telNo" required="required" 
+                        
+                        	
+                        	
+                        
+                        />
+                    </div>
+                </li>
+                <li>
+                	<div class="input">
+                    	<label for="">이메일<span class="major">*</span></label>
+                        <input type="text" id="email" name="email" required="required" 
+                        
+                        	
+                        	
+                        />
+                    </div>
+                </li>
+                <li>
+                	<div class="input sign_box">
+                    	<label for="">문의내용<span class="major">*</span></label>
+                        <div class="sign">
+                        	<textarea name = "contents" required="required" style="height:200px;"></textarea>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            
+            <!-- 동의 -->
+            <div class="join_agree">
+                  <div class="join_agree_top">
+                      <h3>약관동의</h3>
+                  </div>
+                  <div class="join_agree_body">
+                      <div class="agree_list">
+                      	<ul class="cf">
+                             <li class="active has-sub">
+                                  <div class="join_check">
+                                      <label class="agrChk" for="chk">
+                                          <input type="checkbox" id="chk" ><i></i>
+                                      </label>
+                                  </div>
+                                  <a href="#none" class="joinAgreeList">개인정보 수집 및 이용안내</a>
+                             </li>
+                             <li class="has-sub agree_detail">
+                             	<h4>정보통신망 이용촉진 및 정보보호 등에 관한 법률을 준수하며 고객님의 개인정보를 수집하고 소중하게 다루고 있습니다.</h4>
+                             	<p>1. 개인정보 수집 항목 : 이름, 이메일주소, 전화번호등</p>
+            					<p>2. 수집목적 : 고객식별, 문의응대, 서비스 품질 향상</p>
+            					<p>3. 보유 및 이용기간 :</p>
+            					<p style="padding-left:20px;">- 수집 목적이 달성되면 지체없이 모든 개인정보를 파기합니다.</p>
+            					<p style="padding-left:20px;">- 단, 관계법령에서 일정 기간 정보의 보관을 규정한 경우에 한해 분리 보관 후 파기합니다.</p>
+                             </li>
+                          </ul>
+                          
+                      </div>
+                  </div>
+              </div>
+            
+            <!-- 버튼 -->
+            <div class="btn_box right">
+            	<button type="submit" id="btn" class="btn_submit">문의하기</button>
+            </div>
+            
+            </form>
+        </div>
+          
+    </section>
+</div>
+<script id="typeListTemplate" type="text/x-mustache">
+{{#typeList}}
+	<option value={{cdVal}}>{{cdValNm}}</option>
+{{/typeList}}
+{{^typeList}}
+   <tr>조회된 결과가 없습니다.<tr>
+{{/typeList}}
+</script>
+﻿	<!-- 팝업 -->
+	<div class="pop_bg" id="popInfoData" style="display:none;">
+	</div>
+
+	<!-- 팝업 -->
+	<div class="pop_bg" id="popAlertData" style="display:none;">
+		<div class="pop pop2">
+	    	<div class="pop_header">
+	        	<h3>&nbsp;</h3>
+	            <a href="javascript:void(0);" class="close">닫기</a>
+	        </div>
+	        <div class="pop_body p-20 no_scroll" style="">
+	        	<div class="no_page_tit"></div>
+                <div class="btn_pop_box center">
+                </div>
+	        </div>
+	    </div>
+	</div>
+
+
+	
+
+    		
+	<div id="footer">
+		<div class="footer_in box cf">
+			<section>
+			   <h3>주식회사 KH 정보</h3>
+			   <ul class="over_info cf">
+					<li>대표 : 유승제</li>
+					<li>사업자등록번호 : xxx-xx-xxxxx</li>
+					<li>상표등록 제 xx-xxxxxxx호</li>
+					<li>특허 제 xx-xxxxxxx호</li>
+					<li class="col-12">디자인특허 제 xx-xxxx-xxxxxxx호, 제 xx-xxxx-xxxxxxx호</li>
+				</ul>
+				<ul class="over_menu cf">
+					<li><a href="../home/freemonIndividualTerms.html">회원이용약관</a></li>
+					<li><a href="../home/freemonIndividualPrivacy.html">개인정보보호방침</a></li>
+					<li><a href="https://m.freemon.co.kr/" class="link_mobile" style="display:;">모바일버전</a></li>
+					<li>© InsightOn Corp.</li>
+				</ul>
+		   </section>
+		   <section>
+				<h3>고객센터</h3>
+				<p class="f_tel eng"><a href="tel:18992951">1899-2951</a></p>
+				<p class="operate">평일 09:00 ~ 18:00 / 주말·공휴일 휴무</p>
+				<div class="f_btn">
+					<a href="https://www.notion.so/FREEMON-4f97ecd6edb44c5cb43b921a8467f51f" target="_blank">서비스소개</a>
+					<a href="../customer/noticeSearch.html">자주묻는질문</a>
+					<a href="../customer/questionRegistForm.html">문의하기</a>
+				</div>
+			</section>
+			<section id="app_download">
+			   <h3>앱 다운로드</h3>
+			   <div class="app_btn cf">
+					<a href="https://play.google.com/store/apps/details?id=kr.insighton.freemonservice" target="_blank" class="play"><em>구글플레이</em></a>
+					<a href="https://itunes.apple.com/app/id1472330588" target="_blank" class="store"><em>앱스토어</em></a>
+				</div>
+			</section>
+		</div>
+	</div>
+</body>
+
+<!-- Mirrored from www.freemon.co.kr/customer/questionRegistForm by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 27 Jul 2020 06:59:39 GMT -->
+</html>

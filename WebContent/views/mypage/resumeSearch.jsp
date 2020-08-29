@@ -1,5 +1,15 @@
+<%@page import="java.util.Calendar"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.Calendar"%>
+<%@page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8" import="kh.semi.jsp.member.model.vo.*"%>
+<%
+	Member m = (Member)session.getAttribute("member");
+	Calendar today = Calendar.getInstance();
+	SimpleDateFormat df = new SimpleDateFormat("yy-MM");
+	//ArrayList<Project> list = (ArrayList<Board>)request.getAttribute("list"); 
+%>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -11,7 +21,7 @@
 	  #profile{display:none;}
 	  #suggestion{display:none;}
 	</style>
-	
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 
 
@@ -104,6 +114,11 @@
 			        </div>
 			            <a href="" class="btn b_s absolute" id="modifyButton">수정하기</a>
                 </div>
+                <script type="text/javascript">
+                	$("#modifyButton").click(function(){
+                		
+                	});
+                </script>
                 <!-- /기본정보 출력 -->
                 <!-- 기본정보 입력 -->
                 <div class="free_con" id="freelancerUpdate" style="display:none;">
@@ -309,10 +324,7 @@
                                 <label for="">투입가능일<span class="need orange">(필수)</span></label>
                                 <input type="text" class="input_day" id="joinPsblDt" name="joinPsblDt" value="2020-12-09" placeholder="투입가능일자를 선택하시면 회원님의 일정에 반영됩니다." readonly="readonly"/>
                             </li>
-                            <li class="col-6 pl-5">
-                                <label for="">해시태그<span class="need orange">(필수)</span></label>
-                                <input type="text" id="keyword" name="keyword" value="" placeholder="예)#단기선호 #PL/PM전문 #해외출장경험자" />
-                            </li>
+                           
                         </ul>
 
                     </div>
