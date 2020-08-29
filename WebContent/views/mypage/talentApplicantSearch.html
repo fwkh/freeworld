@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'http://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-MF7LK3J');</script>
+	<!-- End Google Tag Manager -->	
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="naver-site-verification" content="81b7cb5e5f8e2975b94b334d812bb38453749a5a"/>
+	<meta name="keywords" content="프리몬, FREEMON, SI, SM, 프리랜서, 아웃소싱 플랫폼, 상주, 프로젝트, 개발자, 시스템엔지니어, MES, 설계자, 디자이너, 타임라인, Java, C#" />
+	<meta name="description" content="SI 전문 아웃소싱 플랫폼. 일정이 딱딱 맞는 프로젝트, 프리랜서를 한눈에. 프로젝트 프리랜서 타임라인, 간편하게 작성하는 전자계약서, 이력 간편등록, 프리랜서 멘토, 쉽게 관리하는 프로젝트" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="프리몬 - SI 전문 아웃소싱" />
+	<meta property="og:description" content="SI 전문 아웃소싱 플랫폼. 프로젝트 프리랜서 타임라인, 이력 간편등록, 프리랜서 멘토, 간편 전자계약서" />
+	<meta property="og:image" content="https://www.freemon.co.kr/resources/images/new/freemon_naver.jpg" />
+	<meta property="og:url" content="https://www.freemon.co.kr" />
+    <meta id="_csrf" name="_csrf" content="d91d3787-ad86-49d3-a7f1-193e58098c1f"/>
+	<meta id="_csrf_header" name="_csrf_header" content="X-CSRF-TOKEN"/>
+    <meta name="viewport" content="width=1360">
+    <title>프리몬 - SI 전문 아웃소싱</title>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-137161229-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+	  	function gtag(){dataLayer.push(arguments);}
+	  	gtag('js', new Date());
+	
+	  	gtag('config', 'UA-137161229-1', {
+	  	  'linker': {
+	  	    'domains': ['www.freemon.co.kr', 'www.freemon.kr']
+	  	  }
+	  	});
+	</script> -->
+
+<!-- 페이지 적용 CSS -->
+<link rel="stylesheet" type="text/css"
+	href="../../resources/css/defaulta9af.css">
+<link rel="stylesheet" type="text/css"
+	href="../../resources/css/jquery-ui.mina751.css">
+<link rel="stylesheet" type="text/css"
+	href="../../resources/css/membercd4e.css">
+<link rel="stylesheet" type="text/css"
+	href="../../resources/css/new6d33.css">
+<link rel="stylesheet" type="text/css" id="mobile"
+	href="../../resources/css/web_hand.css">
+<link rel="stylesheet" type="text/css"
+	href="../../resources/css/career-ui.mina751.css" />
+<link rel="stylesheet" type="text/css"
+	href="../../resources/css/ui.jqgrid.css" />
+<link rel="shortcut icon" href="../../resources/images/new/favicon.ico" />
+	
+	<style type="text/css">
+	  .tooltipUI{
+	    background-color:#FAF4C0;
+	  }
+	  .ui-tooltip {
+	    padding: 8px;
+	    position: absolute;
+	    z-index: 999999;
+	    color : #fff;
+	    font-size : 12px;
+	    max-width: 600px;
+	    -webkit-box-shadow: 0 0 5px #aaa;
+	    box-shadow: 0 0 5px #aaa;
+		/* for IE */
+		filter:alpha(opacity=80);
+		/* CSS3 standard */
+		opacity:0.8;
+		line-height:16px;
+	  }
+	  body .ui-tooltip {
+	    border-width: 2px;
+	  }
+	  
+	  /* .scrollOff{position:fixed;overflow:hidden;height:100%;width:100%;} */
+	</style>
+    <script type="text/javascript" src="/resources/scripts/jquery-3.3.1.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/resources/scripts/jquery.flexslider.js"></script>
+    <script type="text/javascript" src="/resources/scripts/site_ui.js"></script>
+	<script type="text/javascript" src="/resources/js/jquery.easing.1.3.js"></script>
+    <!--Calendar-->
+    <script type="text/javascript" src="/resources/scripts/calendar/pignose.calendar.full.js"></script>
+	<script type="text/javascript" src="/resources/js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/resources/js/jquery.ba-hashchange.min.js"></script>
+	<script type="text/javascript" src="/resources/js/jquery.json-2.3.js"></script>
+	<script type="text/javascript" src="/resources/js/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="/resources/js/jquery.history.js"></script>
+	<!-- Jqgrid -->
+	<script type="text/javascript" src="/resources/js/grid.locale-kr.js"></script>
+	<script type="text/javascript" src="/resources/js/jquery.jqGrid.min.js"></script>
+	<!-- //Jqgrid -->
+	<script type="text/javascript" src="/resources/js/jquery.marquee.min.js?version=1.0"></script>
+	<script type="text/javascript" src="/resources/js/mustache.js"></script>
+	<script type="text/javascript" src="/resources/js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="/resources/i18n/commonMessages_ko.js"></script>
+	<script type="text/javascript" src="/resources/freemon/base64.js"></script>
+	<script type="text/javascript" src="/resources/freemon/sha256.js"></script>
+	<script type="text/javascript" src="/resources/freemon/nmask.js"></script>
+	<script type="text/javascript" src="/resources/freemon/freemon.js?version=3.4"></script>
+	<script type="text/javascript" src="/resources/js/gnb_common.js?version=4.2"></script>
+	<script type="text/javascript" src="/resources/freemon/common/apply.js"></script>
+	<script type="text/javascript" src="/resources/freemon/common/freemonPopUp.js?version=1.2"></script>
+	<script type="text/javascript" src="/resources/freemon/common/input.js"></script>
+	
+	<script type="text/javascript" src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+	
+	<script type="text/javascript">
+		var frameworkProperties = {
+			context: '',
+			locale: 'ko',
+			defaultLang: 'ko',
+			kakaoAppKey: 'a8bf256e33657332f212fd5847dbd8c5',
+		};
+	</script>
+
+	<script type="text/javascript">
+		$(function() {
+			$(document).tooltip({
+				//tooltipClass: 'tooltipUI',
+		       	content: function() {
+		        return $(this).prop('title');
+		       	},
+		       	track: true
+			});
+			
+			freemon.invoker.invoke("freemonPopUp");
+
+			var stylesheet = document.getElementById("mobile");
+			if(freemon.ux.isMobileCheck() == false){				
+			    stylesheet.setAttribute('href', "");
+			    $(".link_mobile").hide();
+			}
+			else{
+				var url = "/resources/css/web_hand.css";
+				stylesheet.setAttribute('href', url);
+				$(".link_mobile").show();
+			}
+			
+ 			$('.flow_text_in').marquee({
+				direction: 'up',
+				speed: 200,
+				gap: 0,
+				delayBeforeStart: 0,
+				duplicated: true,
+				pauseOnHover: true
+			}); 
+		});
+		
+		// 모바일일때 모바일경로로 이동
+		$(document).ready(function(){
+			if(freemon.ux.isMobileCheck() == true && "PC" == "MOBILE"){
+				document.location.href = "https://m.freemon.co.kr";
+				return false;
+			}
+		});
+	</script>
+</head>
+<body>
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="http://www.googletagmanager.com/ns.html?id=GTM-MF7LK3J"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+
+	<div class="load_box" style="display:none;"><div class="load_img"><img src="/resources/images/common/loading.gif" alt="loading"/></div></div>
+
+
+<div id="header">
+	<div class="header_top">
+	    <div class="box">
+	        <!-- 활동내역 -->
+	    	<div class="flow_text" style="padding-top:10px;">
+	    		<div class="flow_text_in" style="border:0px solid red; line-height:30px; height:22px;">
+	    			
+	    				
+	    					
+	    					
+	    						<p class="cf"><span class="tit ellipsis">프로젝트‘정보진흥원 해수부 빅데이타 구축’이 신규로 추가되었습니다.</span></p>
+	    					
+	    					
+	    				
+					
+	    				
+	    					
+	    					
+	    						<p class="cf"><span class="tit ellipsis">프로젝트‘국민은행 (정산, 빌링)시스템 개발’이 신규로 추가되었습니다.</span></p>
+	    					
+	    					
+	    				
+					
+	    				
+	    					
+	    					
+	    					
+	    						<p class="cf"><span class="tit ellipsis">조OO님이 프로젝트‘커머스(쇼핑몰) JAVA 기획/디자이너/퍼블/개발자 구인합니다.’에 지원 되었습니다.</span></p>
+	    					
+	    				
+					
+	    				
+	    					
+	    					
+	    					
+	    						<p class="cf"><span class="tit ellipsis">유OO님이 프로젝트‘반도체 설비 생산정보시스템 구축’에 지원 되었습니다.</span></p>
+	    					
+	    				
+					
+	    				
+	    					
+	    					
+	    					
+	    						<p class="cf"><span class="tit ellipsis">유OO님이 프로젝트‘000 후속지원 시스템 개발’에 지원 되었습니다.</span></p>
+	    					
+	    				
+					
+	    				
+	    					
+	    					
+	    					
+	    						<p class="cf"><span class="tit ellipsis">유OO님이 프로젝트‘인재추천 서비스 고도화 사업’에 지원 되었습니다.</span></p>
+	    					
+	    				
+					
+	    				
+	    					
+	    					
+	    					
+	    						<p class="cf"><span class="tit ellipsis">유OO님이 프로젝트‘[을지로] SK 에너지 프로젝트 ’에 지원 되었습니다.</span></p>
+	    					
+	    				
+					
+	    				
+	    					
+	    						<p class="cf"><span class="tit ellipsis">유OO님의 이력서가 업데이트 되었습니다.</span></p>
+	    					
+	    					
+	    					
+	    				
+					
+	    				
+	    					
+	    						<p class="cf"><span class="tit ellipsis">신OO님의 이력서가 업데이트 되었습니다.</span></p>
+	    					
+	    					
+	    					
+	    				
+					
+	    				
+	    					
+	    					
+	    					
+	    						<p class="cf"><span class="tit ellipsis">유OO님이 프로젝트‘[오창] LG화학 프로젝트’에 지원 되었습니다.</span></p>
+	    					
+	    				
+					
+	    		</div>
+	    	</div>
+	        <div class="top_menu w_top_menu">
+	            <ul class="cf">
+	            	
+	                
+	                
+	                <li>한진선님</li>
+	                <li class="login"><a href="/login/logout">로그아웃</a></li>
+	                <li><a href="/mypage/myFreemon">마이프리몬<span class="arrow"></span></a>
+	                	<ul class="top_depth2" style="display:none;">
+	                    	<p class="top_arrow"></p>
+	                    	<li><a href="/resume/resumeSearch">프로필 관리</a></li>
+	                    	<!-- <li><a href="/document/documentSelect">서류신청</a></li> -->
+	                    	<li><a href="#none" class="common-open_popup" data-div="alamn" data-user-div="freelancer">알림설정</a></li>
+	                    </ul>
+	                </li>
+					
+	                <li><a href="/customer/noticeSearch">고객센터<span class="arrow"></span></a>
+	                	<ul class="top_depth2" style="display:none;">
+	                    	<p class="top_arrow"></p>
+	                    	<li><a href="/customer/noticeSearch">자주묻는질문</a></li>
+	                        <li><a href="/customer/questionRegistForm">문의하기</a></li>
+	                    </ul>
+	                </li>
+	                <li class="blog"><a href="http://blog.freemon.co.kr" target="_blank">블로그</a></li>
+	            </ul>
+	        </div>
+	    </div>
+	</div>
+    <div class="header_body">
+    	<div class="box">
+           <h1 class="logo"><a href="/">프리몬</a></h1>
+            <div id="gnb">
+                <nav>
+                    <ul class ="gnb_in cf">
+                    	
+						
+						<li class="menu_about gnb_depth1 ">
+                        	<a href="/project/projectSearch" class="gnb_depTxt"><em>프로젝트 검색</em></a>
+                        </li>
+						<li class="menu_about gnb_depth1 ">
+                        	<a href="/project/projectMap" class="gnb_depTxt"><em>프로젝트 맵</em></a>
+                        </li>
+                        <li class="menu_about gnb_depth1 active">
+                        	<a href="/applicant/talentApplicantSearch" class="gnb_depTxt"><em>제안 및 지원 현황</em></a>
+                        </li>
+                       <!--  <li class="menu_about gnb_depth1 ">
+                        	<a href="/home/freemonSupport" class="gnb_depTxt"><em>출장지원</em></a> 
+                        </li>-->
+                        <li class="menu_about gnb_depth1 ">
+                        	<a href="/resume/resumeSearch" class="gnb_depTxt"><em>프로필 관리</em></a>
+                        </li>
+						
+						
+                    </ul>
+                </nav>
+            </div>
+		</div>
+	</div>
+</div>
+		
+<div class="ask_box">
+	<ul>
+		<li><a href="/home/freemonService" target="_blank"><img src="/resources/images/new/r_free.gif" alt=""/><p>서비스소개 GO!</p></a></li>
+		<li><a href="/resume/resumeSearch"><img src="/resources/images/new/r_file.png" alt=""/></a></li>
+	</ul>
+	<a href="#none" class="ask kakaoPlusTalk">카톡문의</a>
+	<a href="#none" class="top_btn">TOP</a>
+</div>
+
+		
+<script type="text/javascript" src="/resources/freemon/applicant/talentApplicantSearch.js?version=4.2"></script>
+<script type="text/javascript">
+	$(function() {
+		freemon.invoker.invoke("talentApplicantSearch", "pm", "P");
+		
+		switch("P"){
+		case "Y" : $(".tab_menu > ul.cf > li").removeClass("active"); $(".tab_menu > ul.cf > li:nth-child(2)").addClass("active"); break;
+		case "N" : $(".tab_menu > ul.cf > li").removeClass("active"); $(".tab_menu > ul.cf > li:last-child").addClass("active"); break;
+		case "R" : $(".tab_menu > ul.cf > li").removeClass("active"); $(".tab_menu > ul.cf > li:nth-child(4)").addClass("active"); break;
+		case "I" : $(".tab_menu > ul.cf > li").removeClass("active"); $(".tab_menu > ul.cf > li:nth-child(3)").addClass("active"); break;
+		default: $(".tab_menu > ul.cf > li").removeClass("active"); $(".tab_menu > ul.cf > li:first-child").addClass("active"); break;
+		}
+
+		$('.dateRangePicker').datepicker({
+             format: "yyyy-mm-dd",
+             language: "kr",
+             minDate: freemon.util.getDateString(new Date(), '-'),
+             autoclose: true
+        });
+	});
+</script>
+<div id="container">
+	<section class="project_in">
+		<!-- 제목부분 -->
+		<div class="pro_tit mb-0 no_line">
+			<h2>제안 및 지원 현황</h2>
+			<div class="search cf" style="display: none;">
+				<div class="input_box sm-col-3 xs-col-5 cf">
+					<input type="text" class="dateRangePicker col-10 xs-col-9"
+						id="searchStrDate" name="searchStrDate"
+						placeholder="프로젝트시작일"
+						readonly="readonly" /> <a href="javascript:void(0);" id="freemonSearchDateBtn"
+						class="btn_sche col-2 xs-col-3">달력</a>
+				</div>
+				<div class="input_box sm-col-7 xs-col-5">
+					<input type="text" name="keyword" id="keyword" placeholder="예) 서울 java 홍길동" />
+				</div>
+				<a href="javascript:void(0);" class="btn_search sm-col-1" id="freemonSearchBtn">검색</a>
+				<a href="javascript:void(0);" class="btn_search btn_reset sm-col-1"
+					id="freemonReload">초기화</a>
+			</div>
+		</div>
+		<div class="pop_bg" id="pop_prop" style="display: none;">
+			<div class="pop">
+				<div class="pop_header">
+					<h3>다음에 지원하는 이유</h3>
+					<a href="javascript:void(0);" class="close">닫기</a>
+				</div>
+				<div class="pop_body">
+					<form id="propForm" name="propForm" action="#">
+						<div class="apply_top">
+							<select id="rejectList">
+								<option></option>
+							</select>
+							<div id="joinPsblDtPage" class="member_input" style="display:none;">
+                                <ul>
+                                    <li class="horizon cf">
+	                                    <label for="joinPsblDt">투입가능일자</label>
+		                                <input type="text" class="dateRangePicker" id="joinPsblDt" value="" readonly="readonly" />
+		                                <button class="btn b_s" id="changeDate">수정</button>
+                                    </li>
+                                </ul>
+							</div>
+<!-- 						<div id="joinPsblDtPage" class="input cf" style="display:none;">
+                            <label for="joinPsblDt" class="col-3" style="height:32px;line-height:30px;">투입가능일자</label>
+                            <input type="text" class="col-7 dateRangePicker" id="joinPsblDt" value="" readonly="readonly" style="height:32px;line-height:30px;" />
+                            <button class="btn b_s col-2" id="changeDate">수정</button>
+                        </div> -->
+						</div>
+						<div class="apply_con">
+							<textarea id="rejectResonText" name="rejectResonText"
+								placeholder="기타/상세설명이 있을 경우 여기에 남기세요."></textarea>
+							<div class="message_note">
+								<p class="foot_note first">
+									<span></span>작성하신 사유는 기업에는 공개되지 않고 프리몬 매칭 품질 향상을 위해<br />사용됩니다.
+								</p>
+							</div>
+							<!-- 버튼-->
+							<div class="btn_pop_box">
+								<button id="btnProp" class="btn_apply"
+									data-action="proposeReject" onClick="return false;">확인</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!-- 팝업 지원취소하기 -->
+        <div class="pop_bg" id="pop_applicant" style="display:none;">
+            <div class="pop">
+                <div class="pop_header">
+                    <h3>지원취소하기</h3>
+                    <a href="javascript:void(0);" class="close">닫기</a>
+                </div>
+                <div class="pop_body">
+                    <div class="apply_top" style="line-height:20px;">
+                        <span id="project_name"></span>
+                        <br/>
+                        <span style="color:#666;">지원일시</span> <span id="project_date">%{projRegDt}</span>
+                    </div>
+                    <div class="apply_con">
+                        <textarea id="textarea" placeholder="지원취소시 안내 내용이 있을 경우 여기에 남기세요."></textarea>
+                        <div class="btn_pop_box">
+                            <button id="btnProp" class="btn_apply" data-action="applicantCancelRegist" onClick="return false;">지원취소하기</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		<!-- 카운터 -->
+        <div class="count_num count5" style="display:none;">
+            <ul class="cf">
+                <li class="step1">
+	                <a href="#none" data-value = "P">
+	                    <span class="num">999+<em><i>999+</i></em></span>
+	                    <span class="tit"><em>제안</em></span>
+	                </a>
+	            </li>
+	            <li class="step2">
+	                <a href="#none" data-value = "Y">
+	                    <span class="num">5</span>
+	                    <span class="tit"><em>지원</em></span>
+	                </a>
+	            </li>
+	            <li class="step3">
+	                <a href="#none" data-value = "I">
+	                    <span class="num">5<em><i>5</i></em></span>
+	                    <span class="tit"><em>면접진행</em></span>
+	                </a>
+	            </li>
+	            <li class="step4">
+	                <a href="#none" data-value = "R">
+	                    <span class="num">5</span>
+	                    <span class="tit"><em>계약요청</em></span>
+	                </a>
+	            </li>
+	            <li class="step5">
+	                <a href="#none" data-value = "N">
+	                    <span class="num">5<em><i>999+</i></em></span>
+	                    <span class="tit"><em>계약완료</em></span>
+	                </a>
+	            </li>
+            </ul>
+        </div>
+		<!-- 선택부분 -->
+        <!--div class="choice">
+        	<div class="cho_man">
+                <ul class="cf">
+                    <li class="active"><a href="javascript:void(0);" data-value = "P">제안된 프로젝트</a></li>
+                    <li><a href="javascript:void(0);" data-value = "Y">지원한 프로젝트</a></li>
+                    <li><a href="javascript:void(0);" data-value = "R">계약요청 프로젝트</a></li>
+                    <li><a href="javascript:void(0);" data-value = "N">계약된 프로젝트</a></li>
+                </ul>
+            </div>
+        </div -->
+        <div class="tab_menu cf">
+			<ul class="cf">
+			    <li class="active"><a href="javascript:void(0);" data-value = "P">제안</a></li>
+			    <li><a href="javascript:void(0);" data-value = "Y">지원</a></li>
+			    <li><a href="javascript:void(0);" data-value = "I">면접진행</a></li>
+			    <li><a href="javascript:void(0);" data-value = "R">계약요청</a></li>
+			    <li><a href="javascript:void(0);" data-value = "N">계약완료</a></li>
+			</ul>
+			<div class="custom_check" style="display:none;">
+	            <span class="custom_checkbox">
+			        <input type="checkbox" id="custom" name="" class="image_checkbox">
+			        <label for="custom" class="image_checkbox">마감 포함</label>
+			    </span>
+			    <span class="custom_checkbox">
+	                <input type="checkbox" id="custom2" name="" class="image_checkbox">
+	                <label for="custom2" class="image_checkbox">[다음에 함께 할게요] 포함</label>
+	            </span>
+            </div>
+        </div>
+        
+        <!-- 인재목록 -->
+        <div class="proj_list">
+        	<!-- 목록형 -->
+			<div class="open_list xs-hidden">
+                <ul class="suggest_list" id="projectSearchList">
+				</ul>
+			</div>
+            
+            <!-- 팝업 -->
+					<div class="pop_bg" id="pop_communication" style="display:none;">
+			<div class="pop">
+		    	<div class="pop_header">
+		        	<h3 style="width:90%"></h3>
+		            <a href="javascript:void(0);" class="close">닫기</a>
+		        </div>
+		        <div class="pop_body">
+		            <div class="apply_con">
+				        <div class="career_etc_con">
+				        	<div class="talk_box proj_talk" id="communicationList">
+				        	</div>
+       					</div>
+       					
+		            	<textarea id="talk" name="talk" style="height:100px;" placeholder="남기고 싶은 말을 남기세요."></textarea>
+		                <div class="btn_pop_box">
+		                    <button id="btnProp" class="btn_apply" data-action="talkSave" onClick="return false;">내용 남기기</button>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+		
+		<!-- 팝업 -->
+		<div class="pop_bg" id="projectInTalentList" style="display:none;">
+		</div>
+
+		<script id="communicationListTemplate" type="text/x-mustache">
+        {{#inqueryList}}
+        {{^me}}
+        <!-- 상대 대화 -->
+        <div class="talk you cf">
+            <div class="talk_con">
+                <div class="talk_in">
+                    {{{inqDtl}}}
+                    <p class="arrow"></p>
+                    <p class="talk_time">{{#readYn}}읽음 {{/readYn}}{{^readYn}}안읽음 {{/readYn}}{{inqDt}}</p>
+                </div>
+            </div>
+        </div>
+        {{/me}}
+        {{#me}}
+        <!-- 내 대화 -->
+        <div class="talk me">
+            <div class="talk_in">
+                {{{inqDtl}}}
+                <p class="arrow"></p>
+                <p class="talk_time">{{#readYn}}읽음 {{/readYn}}{{^readYn}}안읽음 {{/readYn}}{{inqDt}}</p>
+            </div>
+        </div>
+        {{/me}}
+        {{/inqueryList}}
+		</script>
+    	</div>
+    	
+    	<!-- 더보기 -->
+        <div class="more_box" style="display:none;">
+           	<a href="javascript:void(0);" class="btn_more center" data-action="moreViewClick"><span class="t_more">더보기</span></a>
+        </div>
+        
+    </section>
+</div>
+<script id="projectSearchListTemplate" type="text/x-mustache">
+{{#projectList}}
+<!-- 목록형-->
+<li class="{{^closed}}{{#isApplcntY}}open{{/isApplcntY}} {{#isInterview}}open{{/isInterview}}{{#isProposStep1}}{{^isApplcntStep2}}{{#isPropos}}{{^isApplcntStep2}}open{{/isApplcntStep2}}{{/isPropos}}{{/isApplcntStep2}}{{/isProposStep1}}{{/closed}} {{#isClosed}}closed{{/isClosed}}">
+	<div class="proj_box cf">
+		<div class="proj_info col-6" data-action="applicantInfo" data-view="slider">
+                <h4 data-value ="{{projIdx}}"><a href="javascript:void(0);" data-action="projectDetail" data-appidx="{{applicntidx}}" data-proidx="{{prpstIdx}}"><span class="line-130">{{compNm}}</span></a></h4>
+                <h3 data-value ="{{projIdx}}">
+                    <a href="javascript:void(0);" data-action="projectDetail" data-appidx="{{applicntidx}}" data-proidx="{{prpstIdx}}">
+                        {{#closed}}<span class="add_info gray first">마감</span><span class="add_info org first {{isContactFinish}}">{{contactStatus}}</span>{{/closed}}<span class="line-130">{{projNm}}</span>
+                    </a> 
+                    {{#isReadYn}}<span class="new">New</span>{{/isReadYn}}
+                </h3>
+                <ul class="pro_list surport">
+                    <li>{{projStrtDt}} ~ {{projCloseDt}}<span class="add_info org">{{projTerm}}개월</span></li>
+                    <li>{{projUpperAddr}} {{projAddr}}</li>
+					<li class="ellipsis">{{unitPrice}}만원{{#isNegoYn}}<span class="add_info">협의가능</span>{{/isNegoYn}}</li>
+                    <li class="ellipsis">{{recruitSkillNm}}</li>
+                </ul>
+                <!-- 친구공유 -->
+                <ul class="btn_icon absolute cf">
+                    <li class="share"><a href="javascript:void(0);" data-action = "share_click" data-value="{{projIdx}}" title="친구공유">친구공유</a></li>
+                </ul>
+                <!-- 지원 또는 답변이 와서 상세 내용을 확인하지 않았을때 -->
+                {{#isProposreadN}}<div class="checked round1"><p><em>미확인</em></p></div>{{/isProposreadN}}
+                {{#isApplcntreadN}}<div class="checked round1"><p><em>미확인</em></p></div>{{/isApplcntreadN}}
+				<span class="right_plus"></span>
+        </div>
+        <div class="process">
+            <div class="process_in">
+                <div class="p_btn">
+                    
+                    {{^closed}}
+
+                    {{#isProposStep1}}{{^isApplcntStep2}}
+                    {{#isPropos}}{{^isApplcntStep2}}
+                    <!-- 제안받았을 때 -->
+                    <p class="center">기업으로부터 프로젝트 제안를 받았습니다. 프로젝트 내용을 검토하시고 다음 단계를 선택하세요.</p>
+                    <div class="btn_box mt-10" data-value ="{{projIdx}}">
+                        <button id=" " class="btn_close" data-action="projectDetail" data-proidx="{{prpstIdx}}">제안수락</button>
+                        <button id=" " class="btn_open" data-action="prop">다음에 함께 할게요</button>
+                    </div>
+                    {{/isApplcntStep2}}{{/isPropos}}
+
+                    {{^isApplcntY}}
+                    {{#isCancelY}}
+                    <!-- 제안취소 되었을 때 -->
+                    <p class="center">프로젝트 제안이 취소되었습니다. 프로젝트 참여를 원하시면 지원이 가능합니다.</p>
+                    <div class="btn_box mt-10" data-value ="{{projIdx}}"> 
+                        <button id=" " class="btn_close" data-action="projectprojectDetail">지원하기</button>
+                    </div> 
+                    {{/isCancelY}}
+                    {{/isApplcntY}}
+
+                    {{^isApplcntY}}
+                    {{#isRejectY}}
+                    {{^isNextTime}}
+                    {{^isInterview}}
+                    {{^isApplcntN}}
+					<!-- 제안거절한 뒤 -->
+                    <p class="center">{{youNm}}님이 프로젝트에 참여하지 않기로 하셨습니다.</br>다시 참여를 원하시면 재검토 후 지원하실 수 있습니다.</p>
+                    <div class="btn_box mt-10" data-value ="{{projIdx}}">
+                        <button id=" " class="btn_close" data-action="projectprojectDetail">지원하기</button>
+                    </div> 
+                    {{/isApplcntN}}
+                    {{/isInterview}}
+                    {{/isNextTime}}
+                    {{/isRejectY}}
+                    {{/isApplcntY}}
+                    {{/isApplcntStep2}}{{/isProposStep1}}
+
+                    {{#isApplcntY}}
+                    <!-- 지원한 뒤 -->
+                    <p class="center">{{youNm}}님이 프로젝트에 지원하셨습니다. 기업에서 지원내용을 확인하고 있습니다.</p>
+                    <div class="btn_box mt-10" data-value ="{{projIdx}}" data-projnm="{{projNm}}" data-regdt="{{projProRegDt}}">
+                        <button id=" " class="btn_open" data-action="applicntProjCancel" data-appidx="{{applicntidx}}">지원취소</button>
+                    </div> 
+                    {{/isApplcntY}}
+
+                    {{#isApplcntN}}
+                    {{^isInterview}}
+                    <!-- 지원취소한 뒤 -->
+                    <p class="center">{{youNm}}님이 지원을 취소하셨습니다. 다시 지원이 가능합니다.</p>
+                    <div class="btn_box mt-10" data-value ="{{projIdx}}">
+                        <button id=" " class="btn_close" data-action="projectprojectDetail" data-appidx="{{applicntidx}}">지원하기</button>
+                    </div> 
+                    {{/isInterview}}
+                    {{/isApplcntN}}
+
+                    {{#isNextTime}}
+                    <!-- 지원거절 되었을 때 -->
+                    <p class="center">기업에서 지원은 감사하지만, 이번 프로젝트는 함께하기 어렵다고 합니다.</br>도움이 필요하시면 프리몬 매니져에게 문의하세요</p> 
+                    {{/isNextTime}}
+
+                    {{#isInterview}}
+                    <!-- 지원수락되어 면접진행중일 때 -->
+                    <p class="center">기업과 전화 혹은 대면면접을 진행하고자 연락처와 이력서를 열람하였습니다.</br>좋은 결과를 바랍니다.</p> 
+                    {{/isInterview}}
+
+                    {{/closed}}
+
+                    {{#closed}}
+					<!-- 프로젝트 모집이 마감되었을 때 -->
+                    <p class="center">프로젝트 모집이 마감되었습니다.</p>
+                    {{/closed}}
+
+                </div>
+                <!-- 프로세스 -->
+                <div class="p_step {{#isProposStep1}}step1 {{/isProposStep1}}
+                                {{#isRejectY}}step2 {{/isRejectY}}
+                                {{#isApplcntStep2}}step2 {{/isApplcntStep2}}
+                                {{^isProposStep1}}{{#isNextTime}}step2 {{/isNextTime}}{{/isProposStep1}}
+                                {{#isInterview}}step3 {{/isInterview}}{{#isNextTime}}step3 no{{/isNextTime}} 
+                                {{^isInterview}}{{#isCancelY}}{{#isRejectY}}no{{/isRejectY}}{{/isCancelY}}
+                                {{^isApplcntStep2}}{{#isRejectY}}no{{/isRejectY}} {{#isCancelY}}no{{/isCancelY}}{{/isApplcntStep2}}
+                                {{#isApplcntN}}no{{/isApplcntN}}{{/isInterview}}">          
+                    <ul>
+                        <p class="line_graph"><em></em></p>
+                        <li>
+                                {{#isPropos}}<p class="tit"><span class="tit_in">제안<em class="yes">O</em></span></p><span class="date">{{projRegDt}}</span>{{/isPropos}}
+                                {{^isRejectY}}{{#isCancelY}}<p class="tit"><span class="tit_in">제안<em class="no">X</em></span></p><span class="date">{{proCancelDt}}</span>{{/isCancelY}}{{/isRejectY}}
+                                {{#isRejectY}}{{^isCancelY}}<p class="tit"><span class="tit_in">제안<em class="yes">O</em></span></p><span class="date">{{projRegDt}}</span>{{/isCancelY}}{{/isRejectY}}
+                                {{#isRejectY}}{{#isCancelY}}<p class="tit"><span class="tit_in">제안<em class="yes">O</em></span></p><span class="date">{{projRegDt}}</span>{{/isCancelY}}{{/isRejectY}}
+                                {{#isApplcntStep2}}{{^isProposStep1}}<p class="tit"><span class="tit_in">제안</span></p><span class="date"></span>{{/isProposStep1}}{{/isApplcntStep2}}
+                        </li>
+                        <li>
+                                {{#isApplcntY}}<p class="tit"><span class="tit_in">지원<em class="yes">O</em></span></p><span class="date">{{projProRegDt}}</span>{{/isApplcntY}}
+                                {{^isInterview}}{{#isApplcntN}}<p class="tit"><span class="tit_in">지원<em class="no">X</em></span></p><span class="date">{{appCancelDt}}</span>{{/isApplcntN}}{{/isInterview}}
+                                {{#isNextTime}}<p class="tit"><span class="tit_in">지원<em class="yes">O</em></span></p><span class="date">{{spprtRefuseDt}}</span>{{/isNextTime}}
+                                {{#isProposStep1}}{{^isApplcntStep2}}
+                                {{^isApplcntY}}{{#isRejectY}}<p class="tit"><span class="tit_in">지원<em class="no">X</em></span></p><span class="date">{{proRejectDt}}</span>{{/isRejectY}}{{/isApplcntY}}
+                                {{^isRejectY}}<p class="tit"><span class="tit_in">지원</span></p><span class="date"></span>{{/isRejectY}}
+                                {{/isApplcntStep2}}{{/isProposStep1}}
+                                {{#isInterview}}<p class="tit"><span class="tit_in">지원<em class="yes">O</em></span></p><span class="date">{{projRegDt}}</span>{{/isInterview}}
+                        </li>
+                        <li>
+                            {{#isInterview}}<p class="tit"><span class="tit_in">면접진행<em class="yes">O</em></span></p><span class="date">{{interviewDt}}</span>{{/isInterview}}
+                            {{#isNextTime}}<p class="tit"><span class="tit_in">면접진행<em class="no">X</em></span></p><span class="date"></span>{{/isNextTime}}
+                            {{^isInterview}}{{^isNextTime}}<p class="tit"><span class="tit_in">면접진행</span></p><span class="date"></span>{{/isNextTime}}{{/isInterview}}
+                        </li>
+                        <li>
+                            <p class="tit"><span class="tit_in">계약요청</span></p><span class="date"></span>
+                        </li>
+                        <li>
+                            <p class="tit"><span class="tit_in">계약완료</span></p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div> 
+    </div>
+    <ul class="open_talk" {{#isClosed}}style="display:none"{{/isClosed}} 
+                          {{^isInterview}}{{#isCancelY}}{{#isRejectY}}style="display:none"{{/isRejectY}}{{/isCancelY}}
+                          {{^isApplcntStep2}}{{#isRejectY}}style="display:none"{{/isRejectY}} {{#isCancelY}}style="display:none"{{/isCancelY}}{{/isApplcntStep2}}
+                          {{#isApplcntN}}style="display:none"{{/isApplcntN}}{{/isInterview}}
+                          {{#isNextTime}}style="display:none"{{/isNextTime}}>
+     	<li>
+         	<div class="talk_box proj_talk" id="loadCommunicationList{{projIdx}}" data-action="openCommunicationPopup" data-idx="{{projIdx}}" data-fno="{{mngId}}" data-nm="{{compNm}}" data-appidx="{{applicntidx}}" data-proidx="{{prpstIdx}}">
+             	<!-- 제안메시지 -->
+                <div class="apply_talk">
+                    <h6><strong>{{youNm}}</strong>님이 {{userNm}}{{applicantDivNm}}하셨습니다.<br class="md-hidden sm-hidden xs-visible"/><span>{{propositionDt}}</span></h6>
+					{{#isUnitPriceYn}}
+						<ul class="detail_ul cf mt-5 center">
+            				<li class="col-12"><span class="stroke">제안단가</span>{{unitPrice}}만원 {{#isNegoYn}}(협의가능{{/isNegoYn}}{{^isNegoYn}}{{#isTravelExpYn}}({{/isTravelExpYn}}{{/isNegoYn}}{{#isTravelExpYn}}{{#isNegoYn}},{{/isNegoYn}}출장비 포함){{/isTravelExpYn}}{{^isTravelExpYn}}{{#isNegoYn}}){{/isNegoYn}}{{/isTravelExpYn}}</li>
+        				</ul>
+					{{/isUnitPriceYn}}
+                </div>
+
+				{{#inqueryList}}
+				{{^me}}
+                <!-- 상대 대화 -->
+                <div class="talk you cf">
+                    <div class="talk_con">
+                        <div class="talk_in">
+							{{{inqDtl}}}
+                            <p class="arrow"></p>
+                        	<p class="talk_time">{{#readYn}}읽음 {{/readYn}}{{^readYn}}안읽음 {{/readYn}}{{inqDt}}</p>
+                    	</div>
+                	</div>
+                </div>
+				{{/me}}
+				{{#me}}
+				<!-- 내 대화 -->
+				<div class="talk me">
+					<div class="talk_in">
+						{{{inqDtl}}}
+						<p class="arrow"></p>
+						<p class="talk_time">{{#readYn}}읽음 {{/readYn}}{{^readYn}}안읽음 {{/readYn}}{{inqDt}}</p>
+					</div>
+				</div>
+				{{/me}}
+				{{/inqueryList}}
+            </div>
+			<div class="talk_btn">
+				<button id="btnEdit" class="btn_no btn_mess" data-action="openCommunicationPopup" data-idx="{{projIdx}}" data-fno="{{mngId}}" data-nm="{{compNm}}" data-appidx="{{applicntidx}}" data-proidx="{{prpstIdx}}" style="cursor:pointer;position:relative;">메시지 남기기</button>
+			</div>
+        </li>
+	</ul>
+</li>
+{{/projectList}}
+{{^projectList}}
+	<div class="project_box no_data cf" style="text-align:center;">조회 결과가 없습니다.</div>
+{{/projectList}}
+</script>
+<script id="rejectListTemplate" type="text/x-mustache">
+<option>거절하신 이유를 선택하세요</option>
+{{#rejectList}}
+    <option value="{{cdValNm}}" id="reject_{{cdVal}}">{{cdValNm}}</option>
+{{/rejectList}}
+</script>
+﻿	<!-- 팝업 -->
+	<div class="pop_bg" id="popInfoData" style="display:none;">
+	</div>
+
+	<!-- 팝업 -->
+	<div class="pop_bg" id="popAlertData" style="display:none;">
+		<div class="pop pop2">
+	    	<div class="pop_header">
+	        	<h3>&nbsp;</h3>
+	            <a href="javascript:void(0);" class="close">닫기</a>
+	        </div>
+	        <div class="pop_body p-20 no_scroll" style="">
+	        	<div class="no_page_tit"></div>
+                <div class="btn_pop_box center">
+                </div>
+	        </div>
+	    </div>
+	</div>
+
+
+	<script id="popAlamnTemplate" type="text/x-mustache">
+<div class="pop">
+    <div class="pop_header">
+        <h3 id="pop-title">알림설정</h3>
+        <a href="#none" class="close">닫기</a>
+    </div>
+    <div class="pop_body">
+        <form id="popAlarmForm" name="popAlarmForm">
+        <div class="option_box">
+                <table class="t_option">
+                    <tbody>
+                        {{#data}}
+                        <tr>
+                            <th>{{alamnClsCdNm}}
+								{{#isDesc}}<p>{{alamnDesc}}</p>{{/isDesc}}
+							</th>
+                            <td>
+								<label class="optChk" for="">
+                                	<input type="checkbox" id="alamn{{alamnClsCd}}" name="alamn{{alamnClsCd}}" {{#almVal}}checked="checked"{{/almVal}} value="Y" />
+                                	<i></i>
+                            	</label>
+                            </td>
+                        </tr>
+                        {{/data}}
+                    </tbody>
+                </table>
+        </div>
+		<!-- 버튼-->
+        <div class="btn_pop_box center mt-10">
+        	<button id="btnAlamn" class="btn_apply" style="cursor:pointer;">저장</button>
+        </div>
+        </form>
+    </div>
+</div>
+	</script>
+	<script id="popClosedTemplate" type="text/x-mustache">
+<div class="pop">
+    <div class="pop_header">
+        <h3 id="pop-title">회원탈퇴</h3>
+        <a href="javascript:void(0);" class="close">닫기</a>
+    </div>
+    <div class="pop_body">
+        <form id="popForm" name="popForm">
+			<div class="option_box add_box">
+            	<div class="input_list p-0 mb-20">
+                    <ul class="input_list_in cf">
+						
+						
+							<input type="hidden" id="pincode" name="pincode" value="1" />
+						
+                        <li>
+                            <div class="input sign_box exit">
+                                <label for="">탈퇴사유</label>
+                                <div class="sign">
+                                    <textarea id="scssnDtl" name="scssnDtl"></textarea>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 동의 -->
+				<div class="join_agree">
+                    <div class="join_agree_top">
+                        <h3>탈퇴안내</h3>
+                    </div>
+                    <div class="join_agree_body">
+                        <div class="agree_list">
+                        	<ul>
+                               <li class="active has-sub">
+                                    <div class="join_check">
+                                        <label class="agrChk" for="agrChk">
+                                            <input type="checkbox" id="agrChk" name="agrChk" class="argChecked" value="Y"><i></i>
+                                        </label>
+                                    </div>
+                                    <a href="javascript:void(0);" class="joinAgreeList">회원탈퇴 안내사항 확인</a>
+                               </li>
+                               <li class="has-sub agree_detail" style="overflow:auto;height:150px;">
+                               	<h4>회원탈퇴 신청 전에 안내 사항을 확인해주세요.</h4>
+                               	<p>1. 탈퇴 후 회사 내부 방침에 의해 기업고객과의 계약 관계로 이름, 로그인 ID를 1년간 따로 보유할 수 있습니다. 이후 삭제처리 됩니다.</p>
+								<p>2. 회원의 즉시 삭제 요청시 프리몬이 확인 후 그에 따른 조치를 취합니다.</p>
+              					<p>※ 참고 : 계정의 개인정보는 관계 법령의 규정에 의하여 보유할 필요가 있는 경우 관계법령에서 정한 기간 동안 개인정보를 보관합니다.</p>
+              					<p>회원 탈퇴와 관련하여 더 궁금하신 점은 프리몬 <a href="/customer/questionRegistForm">"문의하기 > 회원정보/아이디/비밀번호"</a>로 문의를 남기거나 고객센터(<a href="mailto:freemon@freemon.co.kr">freemon@freemon.co.kr</a>) 문의해주세요.</p>
+                               </li>
+                            </ul>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+			<!-- 버튼-->
+                <div class="btn_pop_box mt-00">
+                    <button id="btnClosed" class="btn_apply" style="cursor:pointer;" onClick="return false;">회원탈퇴</button>
+                </div>
+        </form>
+    </div>
+</div>
+	</script>
+	
+    <script id="projectInTalentListTemplate" type="text/x-mustache">
+        <div class="pop">
+            <div class="pop_header">
+                <h3>프로젝트 참여자</h3>
+                <a href="#none" class="close">닫기</a>
+            </div>
+            <div class="pop_body">
+                <div class="proj_tit">
+                    <h4 class="company_name detail"><a href="#none" style="cursor:default">{{customer}}</a></h4>
+                    <h3 class="project_name cf"><a href="#none" style="cursor:default">{{projNm}}</a></h3>
+                    <p class="project_term mt-10">{{projPeriod}}</p>
+                </div>
+                
+                <div class="entry_list">
+                    <div class="entry_box">
+                        <ul class="entry cf">
+                            {{#talentList}}
+                            <li>
+                                <div class="entry_in">
+                                    <div class="profile" style="cursor:pointer; background-image:url('{{profileUrl}}')" data-value="{{userId}}" data-action="talentDetail">
+                                        프로필사진
+                                    </div>
+                                    <h4 class="man_name mt-5 ellipsis"><a href="#none" data-value="{{userId}}" data-action="talentDetail">{{userNm}}</a></h4>
+                                    <ul class="name1 cf mt-10">
+                                        <li class="old">{{#isGenderNm}}{{genderNm}}{{#age}},{{/age}} {{/isGenderNm}}{{#age}}{{age}}세{{/age}}</li>
+                                        <li>총 {{totalWorkCareer}}</li>
+                                    </ul><div class="cf"></div>
+                                    <p class="entry_tech ellipsis">
+										{{usableSkillNm}}
+                                    </p>
+                                    <span class="d_day mt-10 {{leaveStrtTermCss}}">{{leaveStrtTermTxt}}</span>
+                                </div>
+                            </li>
+                            {{/talentList}}
+                        </ul>
+						{{^talentList}}
+                	    <div class="project_box no_data cf ml-20 mr-20" style="text-align:center;">프로젝트 다른 참여자 정보가 없습니다.</div>
+                 	   {{/talentList}} 
+                    </div>                    
+                </div>
+                
+            </div>
+        </div>
+    </script>
+
+	
+
+    		
+<div id="footer">
+	<div class="footer_in box cf">
+        <section>
+	       <h3>주식회사 인사이트온</h3>
+	       <ul class="over_info cf">
+                <li>대표 : 박승래</li>
+                <li>사업자등록번호 : 522-88-00100</li>
+                <li>상표등록 제 40-1402651호</li>
+                <li>특허 제 10-2007018호</li>
+                <li class="col-12">디자인특허 제 30-2019-0048098호, 제 30-2019-0048099호</li>
+            </ul>
+            <ul class="over_menu cf">
+                <li><a href="/home/freemonIndividualTerms">회원이용약관</a></li>
+                <li><a href="/home/freemonIndividualPrivacy">개인정보보호방침</a></li>
+                <li><a href="https://m.freemon.co.kr" class="link_mobile" style="display:;">모바일버전</a></li>
+                <li>© InsightOn Corp.</li>
+            </ul>
+	   </section>
+	   <section>
+	        <h3>고객센터</h3>
+	        <p class="f_tel eng"><a href="tel:18992951">1899-2951</a></p>
+	        <p class="operate">평일 09:00 ~ 18:00 / 주말·공휴일 휴무</p>
+	        <div class="f_btn">
+                <a href="/home/freemonService" target="_blank">서비스소개</a>
+	            <a href="/customer/noticeSearch">자주묻는질문</a>
+	            <a href="/customer/questionRegistForm">문의하기</a>
+	        </div>
+	    </section>
+	    <section>
+	       <h3>앱 다운로드</h3>
+	       <div class="app_btn cf">
+	            <a href="https://play.google.com/store/apps/details?id=kr.insighton.freemonservice" target="_blank" class="play"><em>구글플레이</em></a>
+	            <a href="https://itunes.apple.com/app/id1472330588" target="_blank" class="store"><em>앱스토어</em></a>
+	        </div>
+	    </section>
+    </div>
+</div>
+</body>
+</html>
