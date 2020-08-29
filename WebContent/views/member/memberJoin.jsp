@@ -465,7 +465,7 @@
                 <h3 style="margin: 10px;">*투입가능한 날짜</h3>
                 <input type="date" id="date">
                 <br><br><br>
-                <input type="submit" value="가입완료" style="width: 200px; height: 50px;">
+                <input type="submit" value="가입완료" style="width: 200px; height: 50px; background: gray;">
 
 
             </div>
