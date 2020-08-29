@@ -8,7 +8,6 @@
 	Member m = (Member)session.getAttribute("member");
 	Calendar today = Calendar.getInstance();
 	SimpleDateFormat df = new SimpleDateFormat("yy-MM");
-	//ArrayList<Project> list = (ArrayList<Board>)request.getAttribute("list"); 
 %>
 
 <!DOCTYPE html>
@@ -35,9 +34,9 @@
 
 <body>
 <script>
-	$(function(){
-		
-	});
+	/* $(function(){
+		location.href="/myWeb/mypageLoad.bo"; // 세션에서 값 불러오기
+	}); */
 </script>
 	<!-- 헤더 include -->
 	<%@ include file="../common/header.jsp"%>
