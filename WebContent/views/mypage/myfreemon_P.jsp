@@ -10,6 +10,7 @@
 	SimpleDateFormat df = new SimpleDateFormat("yy-MM");
 	//ArrayList<Project> list = (ArrayList<Board>)request.getAttribute("list"); 
 %>
+
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -45,7 +46,7 @@
 			<ul class="man_tab my_man_tab cf">
 				<li class="active"><a href="#none">마이프리몬</a></li>		
 				<!-- 주소 변경 -->
-				<li><a href="../resume/resumeSearch.html">프로필관리</a></li>	
+				<li><a href="resumeSearch.jsp">프로필관리</a></li>	
 			</ul>
 			<!-- 카운트 -->
 			<div class="counter per_counter">

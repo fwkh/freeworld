@@ -66,9 +66,7 @@
 	<script type="text/javascript" src="../../resources/freemon/common/apply.js"></script>
 	<script type="text/javascript" src="../../resources/freemon/common/freemonPopUp9667.js?version=1.2"></script>
 	<script type="text/javascript" src="../../resources/freemon/common/input.js"></script>
-	
-	<!-- <script type="text/javascript" src="../developers.kakao.com/sdk/js/kakao.min.js"></script>  -->
-	
+		
 	<script type="text/javascript">
 		var frameworkProperties = {
 			context: '',
@@ -157,7 +155,6 @@
 	            <ul class="cf">
 	                <li class="login">
 	                	<a href="../views/member/loginForm.jsp">로그인</a>
-	                </li>
 	                <li>
 	                	<a href="../www.freemon.co.kr/login/freemonLoginbce7.html">회원가입</a>
 	                </li>

@@ -1,169 +1,19 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
+
 <!DOCTYPE html>
 <html lang="ko">
     <head>
-        <!-- Google Tag Manager -->
-        <!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'http://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-MF7LK3J');</script> -->
-        <!-- End Google Tag Manager -->	
-    
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <meta name="naver-site-verification" content="81b7cb5e5f8e2975b94b334d812bb38453749a5a"/>
-        <meta name="keywords" content="프리몬, FREEMON, SI, SM, 프리랜서, 아웃소싱 플랫폼, 상주, 프로젝트, 개발자, 시스템엔지니어, MES, 설계자, 디자이너, 타임라인, Java, C#" />
-        <meta name="description" content="SI 전문 아웃소싱 플랫폼. 일정이 딱딱 맞는 프로젝트, 프리랜서를 한눈에. 프로젝트 프리랜서 타임라인, 간편하게 작성하는 전자계약서, 이력 간편등록, 프리랜서 멘토, 쉽게 관리하는 프로젝트" />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="프리몬 - SI 전문 아웃소싱" />
-        <meta property="og:description" content="SI 전문 아웃소싱 플랫폼. 프로젝트 프리랜서 타임라인, 이력 간편등록, 프리랜서 멘토, 간편 전자계약서" />
-        <meta property="og:image" content="https://www.freemon.co.kr/resources/images/new/freemon_naver.jpg" />
-        <meta property="og:url" content="https://www.freemon.co.kr" />
-        <meta id="_csrf" name="_csrf" content="618991b6-8377-4440-92f9-de7a6ab77683"/>
-        <meta id="_csrf_header" name="_csrf_header" content="X-CSRF-TOKEN"/>
-        <meta name="viewport" content="width=1360">
-        <title>프리월드 - SI 전문 아웃소싱</title>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-137161229-1"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-        
-              gtag('config', 'UA-137161229-1', {
-                'linker': {
-                  'domains': ['www.freemon.co.kr', 'www.freemon.kr']
-                }
-              });
-        </script> -->
-    
-        <!-- <link rel="stylesheet" type="text/css" href="/resources/css/default.css?version=4.3"> -->
-        <link rel="stylesheet" type="text/css" href="../resources/css/defaulta9af.css">
-        <!-- <link rel="stylesheet" type="text/css" href="/resources/css/jquery-ui.min.css"> -->
-        <link rel="stylesheet" type="text/css" href="../resources/css/jquery-ui.mina751.css">
-        <!-- <link rel="stylesheet" type="text/css" href="/resources/css/membercd4e.css"> -->
-        <link rel="stylesheet" type="text/css" href="../resources/css/membercd4e.css">
-        <!-- <link rel="stylesheet" type="text/css" href="/resources/css/new.css?version=4.8"> -->
-        <link rel="stylesheet" type="text/css" href="../resources/css/new6d33.css">
-        <!-- <link rel="stylesheet" type="text/css" id="mobile" href="/resources/css/web_hand.css"> -->
-        <link rel="stylesheet" type="text/css" id="mobile" href="../resources/css/web_hand.css">
-        <!-- <link rel="stylesheet" type="text/css" href="/resources/css/career-ui.min.css?version=2.0" /> -->
-        <link rel="stylesheet" type="text/css" href="../resources/css/career-ui.mina751.css" />
-        <!-- <link rel="stylesheet" type="text/css" href="/resources/css/ui.jqgrid.css" /> -->
-        <!-- <link rel="stylesheet" type="text/css" href="/resources/css/ui.jqgrid.css" /> -->
-        <link rel="stylesheet" type="text/css" href="../resources/css/ui.jqgrid.css" />
-        <!-- <link rel="shortcut icon" href="/resources/images/new/favicon.ico"/> -->
-        <link rel="shortcut icon" href="../resources/images/new/favicon.ico"/>
-        
-        <style type="text/css">
-          .tooltipUI{
-            background-color:#FAF4C0;
-          }
-          .ui-tooltip {
-            padding: 8px;
-            position: absolute;
-            z-index: 999999;
-            color : #fff;
-            font-size : 12px;
-            max-width: 600px;
-            -webkit-box-shadow: 0 0 5px #aaa;
-            box-shadow: 0 0 5px #aaa;
-            /* for IE */
-            filter:alpha(opacity=80);
-            /* CSS3 standard */
-            opacity:0.8;
-            line-height:16px;
-          }
-          body .ui-tooltip {
-            border-width: 2px;
-          }
-          
-          /* .scrollOff{position:fixed;overflow:hidden;height:100%;width:100%;} */
-        </style>
-        <script type="text/javascript" src="../resources/scripts/jquery-3.3.1.min.js" charset="utf-8"></script>
-        <script type="text/javascript" src="../resources/scripts/jquery.flexslider.js"></script>
-        <script type="text/javascript" src="../resources/scripts/site_ui.js"></script>
-        <script type="text/javascript" src="../resources/js/jquery.easing.1.3.js"></script>
-        <!--Calendar-->
-        <script type="text/javascript" src="../resources/scripts/calendar/pignose.calendar.full.js"></script>
-        <script type="text/javascript" src="../resources/js/jquery-ui.min.js"></script>
-        <script type="text/javascript" src="../resources/js/jquery.ba-hashchange.min.js"></script>
-        <script type="text/javascript" src="../resources/js/jquery.json-2.3.js"></script>
-        <script type="text/javascript" src="../resources/js/jquery.validate.min.js"></script>
-        <script type="text/javascript" src="../resources/js/jquery.history.js"></script>
-        <!-- Jqgrid -->
-        <script type="text/javascript" src="../resources/js/grid.locale-kr.js"></script>
-        <script type="text/javascript" src="../resources/js/jquery.jqGrid.min.js"></script>
-        <!-- //Jqgrid -->
-        <!-- <script type="text/javascript" src="/resources/js/jquery.marquee.min.js?version=1.0"></script> -->
-        <script type="text/javascript" src="../resources/js/jquery.marquee.min9a0d.js"></script>
-        <script type="text/javascript" src="../resources/js/mustache.js"></script>
-        <script type="text/javascript" src="../resources/js/jquery.cookie.js"></script>
-        <script type="text/javascript" src="../resources/i18n/commonMessages_ko.js"></script>
-        <script type="text/javascript" src="../resources/freemon/base64.js"></script>
-        <script type="text/javascript" src="../resources/freemon/sha256.js"></script>
-        <script type="text/javascript" src="../resources/freemon/nmask.js"></script>
-        <!-- <script type="text/javascript" src="../resources/freemon/freemon.js?version=3.3"></script> -->
-        <script type="text/javascript" src="../resources/freemon/freemonc599.js"></script>
-        <!-- <script type="text/javascript" src="../resources/js/gnb_common.js?version=4.2"></script> -->
-        <script type="text/javascript" src="../resources/js/jquery.marquee.min9a0d.js"></script>
-        <script type="text/javascript" src="../resources/freemon/common/apply.js"></script>
-        <!-- <script type="text/javascript" src="../resources/freemon/common/freemonPopUp.js?version=1.2"></script> -->
-        <script type="text/javascript" src="../resources/freemon/common/freemonPopUp9667.js"></script>
-        <script type="text/javascript" src="../resources/freemon/common/input.js"></script>
-        
-        <!-- <script type="text/javascript" src="//developers.kakao.com/sdk/js/kakao.min.js"></script> -->
-        
-        <script type="text/javascript">
-            var frameworkProperties = {
-                context: '',
-                locale: 'ko',
-                defaultLang: 'ko',
-                kakaoAppKey: 'a8bf256e33657332f212fd5847dbd8c5',
-            };
-        </script>
-    
-        <script type="text/javascript">
-            $(function() {
-                $(document).tooltip({
-                    //tooltipClass: 'tooltipUI',
-                       content: function() {
-                    return $(this).prop('title');
-                       },
-                       track: true
-                });
-                
-                freemon.invoker.invoke("freemonPopUp");
-    
-                var stylesheet = document.getElementById("mobile");
-                if(freemon.ux.isMobileCheck() == false){				
-                    stylesheet.setAttribute('href', "");
-                    $(".link_mobile").hide();
-                }
-                else{
-                    var url = "../resources/css/web_hand.css";
-                    stylesheet.setAttribute('href', url);
-                    $(".link_mobile").show();
-                }
-                
-                 $('.flow_text_in').marquee({
-                    direction: 'up',
-                    speed: 200,
-                    gap: 0,
-                    delayBeforeStart: 0,
-                    duplicated: true,
-                    pauseOnHover: true
-                }); 
-            });
-            
-            // 모바일일때 모바일경로로 이동
-            $(document).ready(function(){
-                if(freemon.ux.isMobileCheck() == true && "PC" == "MOBILE"){
-                    document.location.href = "https://m.freemon.co.kr";
-                    return false;
-                }
-            });
-        </script>
+       <%@ include file="../common/header.jsp" %>
+	
+    <!-- 네비게이션바 -->
+	<style type="text/css">	  
+	  #f_management{display:none;}
+	  #p_management{display:none;}
+	  #profile{display:none;}
+	  #suggestion{display:none;}
+	</style>
     </head>
 <body>
 	<!-- Google Tag Manager (noscript) -->
@@ -177,92 +27,7 @@
 <div id="header">
 	<div class="header_top">
 	    <div class="box">
-	        <!-- 활동내역 -->
-	    	<div class="flow_text" style="padding-top:10px;">
-	    		<div class="flow_text_in" style="border:0px solid red; line-height:30px; height:22px;">
-	    			
-	    				
-	    					
-	    					
-	    					
-	    						<p class="cf"><span class="tit ellipsis">이OO님이 프로젝트‘프론트엔드 개발자 모집’에 제안 되었습니다.</span></p>
-	    					
-	    				
-					
-	    				
-	    					
-	    					
-	    					
-	    						<p class="cf"><span class="tit ellipsis">이OO님이 프로젝트‘SKC&amp;C 교육서비스(Mysuni)시스템 고도화’에 지원 되었습니다.</span></p>
-	    					
-	    				
-					
-	    				
-	    					
-	    					
-	    					
-	    						<p class="cf"><span class="tit ellipsis">황OO님이 프로젝트‘(프리랜서) 기획자 인원채용’에 지원 되었습니다.</span></p>
-	    					
-	    				
-					
-	    				
-	    					
-	    					
-	    					
-	    						<p class="cf"><span class="tit ellipsis">김OO님이 프로젝트‘국민카드 발송엔진 ’에 지원 되었습니다.</span></p>
-	    					
-	    				
-					
-	    				
-	    					
-	    					
-	    						<p class="cf"><span class="tit ellipsis">프로젝트‘반응형 웹기반 크라우드 펀딩서비스 웹사이트 개발’이 신규로 추가되었습니다.</span></p>
-	    					
-	    					
-	    				
-					
-	    				
-	    					
-	    					
-	    					
-	    						<p class="cf"><span class="tit ellipsis">유OO님이 프로젝트‘국민카드 발송엔진 ’에 지원 되었습니다.</span></p>
-	    					
-	    				
-					
-	    				
-	    					
-	    					
-	    					
-	    						<p class="cf"><span class="tit ellipsis">이OO님이 프로젝트‘국민카드 발송엔진 ’에 제안 되었습니다.</span></p>
-	    					
-	    				
-					
-	    				
-	    					
-	    					
-	    					
-	    						<p class="cf"><span class="tit ellipsis">박OO님이 프로젝트‘국민카드 발송엔진 ’에 제안 되었습니다.</span></p>
-	    					
-	    				
-					
-	    				
-	    					
-	    					
-	    					
-	    						<p class="cf"><span class="tit ellipsis">유OO님이 프로젝트‘국민카드 발송엔진 ’에 제안 되었습니다.</span></p>
-	    					
-	    				
-					
-	    				
-	    					
-	    					
-	    					
-	    						<p class="cf"><span class="tit ellipsis">이OO님이 프로젝트‘국민카드 발송엔진 ’에 제안 되었습니다.</span></p>
-	    					
-	    				
-					
-	    		</div>
-	    	</div>
+	    
 	        <div class="top_menu w_top_menu">
 	            <ul class="cf">
 	            	
@@ -287,13 +52,13 @@
 	</div>
     <div class="header_body">
     	<div class="box">
-           <h1 class="logo"><a href="/">프리몬</a></h1>
+           <h1 class="logo"><a href="../../views/main/home.jsp">프리월드</a></h1>
             <div id="gnb">
                 <nav>
                     <ul class ="gnb_in cf">
                     	
                         <li class="menu_about gnb_depth1 ">
-                        	<a href="/talent/talentSearch" class="gnb_depTxt"><em>프리랜서 검색</em></a>
+                        	<a href="../../views/freelancer/freelancerSearch.jsp" class="gnb_depTxt"><em>프리랜서 검색</em></a>
                         </li>
                         <li class="menu_about gnb_depth1 ">
                         	<a href="/talent/interestTalent" class="gnb_depTxt"><em>프리랜서 관리</em></a>
@@ -304,8 +69,6 @@
                         <li class="menu_about gnb_depth1 ">
                         	<a href="/mypage/myProjectSearch" class="gnb_depTxt"><em>프로젝트 관리</em></a>
                         </li>
-                        
-						
 						
                     </ul>
                 </nav>
@@ -313,17 +76,8 @@
 		</div>
 	</div>
 </div>
-		
-<div class="ask_box">
-	<ul>
-		<li><a href="/home/freemonService" target="_blank"><img src="/resources/images/new/r_free.gif" alt=""/><p>서비스소개 GO!</p></a></li>
-		<li><a href="/resume/resumeSearch"><img src="/resources/images/new/r_file.png" alt=""/></a></li>
-	</ul>
-	<a href="#none" class="ask kakaoPlusTalk">카톡문의</a>
-	<a href="#none" class="top_btn">TOP</a>
-</div>
 
-		
+	
 
 <script type="text/javascript" src="/resources/freemon/project/projectConfig.js?version=1.3"></script>
 <script type="text/javascript">
@@ -740,44 +494,7 @@
             </div>
         </div>
     </script>
-
-    		
-<div id="footer">
-	<div class="footer_in box cf">
-        <section>
-	       <h3>주식회사 인사이트온</h3>
-	       <ul class="over_info cf">
-                <li>대표 : 박승래</li>
-                <li>사업자등록번호 : 522-88-00100</li>
-                <li>상표등록 제 40-1402651호</li>
-                <li>특허 제 10-2007018호</li>
-                <li class="col-12">디자인특허 제 30-2019-0048098호, 제 30-2019-0048099호</li>
-            </ul>
-            <ul class="over_menu cf">
-                <li><a href="/home/freemonIndividualTerms">회원이용약관</a></li>
-                <li><a href="/home/freemonIndividualPrivacy">개인정보보호방침</a></li>
-                <li><a href="https://m.freemon.co.kr" class="link_mobile" style="display:;">모바일버전</a></li>
-                <li>© InsightOn Corp.</li>
-            </ul>
-	   </section>
-	   <section>
-	        <h3>고객센터</h3>
-	        <p class="f_tel eng"><a href="tel:18992951">1899-2951</a></p>
-	        <p class="operate">평일 09:00 ~ 18:00 / 주말·공휴일 휴무</p>
-	        <div class="f_btn">
-                <a href="/home/freemonService" target="_blank">서비스소개</a>
-	            <a href="/customer/noticeSearch">자주묻는질문</a>
-	            <a href="/customer/questionRegistForm">문의하기</a>
-	        </div>
-	    </section>
-	    <section>
-	       <h3>앱 다운로드</h3>
-	       <div class="app_btn cf">
-	            <a href="https://play.google.com/store/apps/details?id=kr.insighton.freemonservice" target="_blank" class="play"><em>구글플레이</em></a>
-	            <a href="https://itunes.apple.com/app/id1472330588" target="_blank" class="store"><em>앱스토어</em></a>
-	        </div>
-	    </section>
-    </div>
-</div>
+		
+	<%@ include file="../common/footer.jsp" %>
 </body>
 </html>

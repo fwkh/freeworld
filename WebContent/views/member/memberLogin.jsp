@@ -3,155 +3,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<!-- Google Tag Manager -->
-	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-	'../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
-	})(window,document,'script','dataLayer','GTM-MF7LK3J');</script>
-	<!-- End Google Tag Manager -->	
-
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta name="naver-site-verification" content="81b7cb5e5f8e2975b94b334d812bb38453749a5a"/>
-	<meta name="keywords" content="프리몬, FREEMON, SI, SM, 프리랜서, 아웃소싱 플랫폼, 상주, 프로젝트, 개발자, 시스템엔지니어, MES, 설계자, 디자이너, 타임라인, Java, C#" />
-	<meta name="description" content="SI 전문 아웃소싱 플랫폼. 일정이 딱딱 맞는 프로젝트, 프리랜서를 한눈에. 프로젝트 프리랜서 타임라인, 간편하게 작성하는 전자계약서, 이력 간편등록, 프리랜서 멘토, 쉽게 관리하는 프로젝트" />
-	<meta property="og:type" content="website" />
-	<meta property="og:title" content="프리몬 - SI 전문 아웃소싱" />
-	<meta property="og:description" content="SI 전문 아웃소싱 플랫폼. 프로젝트 프리랜서 타임라인, 이력 간편등록, 프리랜서 멘토, 간편 전자계약서" />
-	<meta property="og:image" content="https://www.freemon.co.kr/resources/images/new/freemon_naver.jpg" />
-	<meta property="og:url" content="https://www.freemon.co.kr" />
-    <meta id="_csrf" name="_csrf" content="45d71795-fe18-44ec-9100-ef681e66286f"/>
-	<meta id="_csrf_header" name="_csrf_header" content="X-CSRF-TOKEN"/>
-    <meta name="viewport" content="width=1360">
-    <title>프리월드 - SI 전문 아웃소싱</title>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-137161229-1"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-	  	function gtag(){dataLayer.push(arguments);}
-	  	gtag('js', new Date());
+	<%@ include file="../common/header.jsp" %>
 	
-	  	gtag('config', 'UA-137161229-1', {
-	  	  'linker': {
-	  	    'domains': ['www.freemon.co.kr', 'www.freemon.kr']
-	  	  }
-	  	});
-	</script> -->
-
-	<link rel="stylesheet" type="text/css" href="../resources/css/defaulta9af.css?version=4.3">
-	<link rel="stylesheet" type="text/css" href="../resources/css/jquery-ui.mina751.css?version=2.0">
-	<link rel="stylesheet" type="text/css" href="../resources/css/membercd4e.css?version=4.1">
-	<link rel="stylesheet" type="text/css" href="../resources/css/new6d33.css?version=4.8">
-	<link rel="stylesheet" type="text/css" id="mobile" href="../resources/css/web_hand.css">
-	<link rel="stylesheet" type="text/css" href="../resources/css/career-ui.mina751.css?version=2.0" />
-	<link rel="stylesheet" type="text/css" href="../resources/css/ui.jqgrid.css" />
-	<link rel="shortcut icon" href="../resources/images/new/favicon.ico"/>
-	
-	<style type="text/css">
-	  .tooltipUI{
-	    background-color:#FAF4C0;
-	  }
-	  .ui-tooltip {
-	    padding: 8px;
-	    position: absolute;
-	    z-index: 999999;
-	    color : #fff;
-	    font-size : 12px;
-	    max-width: 600px;
-	    -webkit-box-shadow: 0 0 5px #aaa;
-	    box-shadow: 0 0 5px #aaa;
-		/* for IE */
-		filter:alpha(opacity=80);
-		/* CSS3 standard */
-		opacity:0.8;
-		line-height:16px;
-	  }
-	  body .ui-tooltip {
-	    border-width: 2px;
-	  }
-	  
-	  /* .scrollOff{position:fixed;overflow:hidden;height:100%;width:100%;} */
+   <!-- 네비게이션바 -->
+	<style type="text/css">	  
+	  #f_management{display:none;}
+	  #p_management{display:none;}
+	  #profile{display:none;}
+	  #suggestion{display:none;}
 	</style>
-    <script type="text/javascript" src="../resources/scripts/jquery-3.3.1.min.js" charset="utf-8"></script>
-    <script type="text/javascript" src="../resources/scripts/jquery.flexslider.js"></script>
-    <script type="text/javascript" src="../resources/scripts/site_ui.js"></script>
-	<script type="text/javascript" src="../resources/js/jquery.easing.1.3.js"></script>
-    <!--Calendar-->
-    <script type="text/javascript" src="../resources/scripts/calendar/pignose.calendar.full.js"></script>
-	<script type="text/javascript" src="../resources/js/jquery-ui.min.js"></script>
-	<script type="text/javascript" src="../resources/js/jquery.ba-hashchange.min.js"></script>
-	<script type="text/javascript" src="../resources/js/jquery.json-2.3.js"></script>
-	<script type="text/javascript" src="../resources/js/jquery.validate.min.js"></script>
-	<script type="text/javascript" src="../resources/js/jquery.history.js"></script>
-	<!-- Jqgrid -->
-	<script type="text/javascript" src="../resources/js/grid.locale-kr.js"></script>
-	<script type="text/javascript" src="../resources/js/jquery.jqGrid.min.js"></script>
-	<!-- //Jqgrid -->
-	<script type="text/javascript" src="../resources/js/jquery.marquee.min9a0d.js?version=1.0"></script>
-	<script type="text/javascript" src="../resources/js/mustache.js"></script>
-	<script type="text/javascript" src="../resources/js/jquery.cookie.js"></script>
-	<script type="text/javascript" src="../resources/i18n/commonMessages_ko.js"></script>
-	<script type="text/javascript" src="../resources/freemon/base64.js"></script>
-	<script type="text/javascript" src="../resources/freemon/sha256.js"></script>
-	<script type="text/javascript" src="../resources/freemon/nmask.js"></script>
-	<script type="text/javascript" src="../resources/freemon/freemonc599.js?version=3.3"></script>
-	<script type="text/javascript" src="../resources/js/gnb_common56b8.js?version=4.2"></script>
-	<script type="text/javascript" src="../resources/freemon/common/apply.js"></script>
-	<script type="text/javascript" src="../resources/freemon/common/freemonPopUp9667.js?version=1.2"></script>
-	<script type="text/javascript" src="../resources/freemon/common/input.js"></script>
-	
-	<script type="text/javascript" src="../../developers.kakao.com/sdk/js/kakao.min.js"></script>
-	
-	<script type="text/javascript">
-		var frameworkProperties = {
-			context: '',
-			locale: 'ko',
-			defaultLang: 'ko',
-			kakaoAppKey: 'a8bf256e33657332f212fd5847dbd8c5',
-		};
-	</script>
-
-	<script type="text/javascript">
-		$(function() {
-			$(document).tooltip({
-				//tooltipClass: 'tooltipUI',
-		       	content: function() {
-		        return $(this).prop('title');
-		       	},
-		       	track: true
-			});
-			
-			freemon.invoker.invoke("freemonPopUp");
-
-			var stylesheet = document.getElementById("mobile");
-			if(freemon.ux.isMobileCheck() == false){				
-			    stylesheet.setAttribute('href', "");
-			    $(".link_mobile").hide();
-			}
-			else{
-				var url = "../resources/css/web_hand.css";
-				stylesheet.setAttribute('href', url);
-				$(".link_mobile").show();
-			}
-			
- 			$('.flow_text_in').marquee({
-				direction: 'up',
-				speed: 200,
-				gap: 0,
-				delayBeforeStart: 0,
-				duplicated: true,
-				pauseOnHover: true
-			}); 
-		});
-		
-		
-	</script>
-<meta charset="UTF-8">
-<title>Insert title here</title>
 </head>
 <body>
-<%@ include file="../common/header.jsp" %>
+
 
 <!-- Google Tag Manager (noscript) -->
 	<noscript><iframe src="http://www.googletagmanager.com/ns.html?id=GTM-MF7LK3J"
@@ -159,18 +22,6 @@
 	<!-- End Google Tag Manager (noscript) -->
 
 	<div class="load_box" style="display:none;"><div class="load_img"><img src="../resources/images/common/loading.gif" alt="loading"/></div></div>
-
-
-
-		
-<div class="ask_box">
-	<ul>
-		<li><a href="https://www.notion.so/FREEMON-4f97ecd6edb44c5cb43b921a8467f51f" target="_blank"><img src="../resources/images/new/r_free.gif" alt=""/><p>서비스소개 GO!</p></a></li>
-		<li><a href="freemonLoginbce7.html"><img src="../resources/images/new/r_file.png" alt=""/></a></li>
-	</ul>
-	<a href="#none" class="ask kakaoPlusTalk">카톡문의</a>
-	<a href="#none" class="top_btn">TOP</a>
-</div>
 
 		
 <script type="text/javascript" src="../resources/freemon/login/freemonLogin069b.js?version=1.1"></script>
@@ -260,7 +111,7 @@
 			</div>
                    
             <div class="benefit free">
-                <h3>프리랜서를 위한 프리몬의 서비스</h3>
+                <h3>프리랜서를 위한 프리월드의 서비스</h3>
                 <ul class="cf">
                     <li>상주 프로젝트<br/>정보 제공</li>
                     <li>기업고객이<br/>제안하는 프로젝트</li>
@@ -298,14 +149,14 @@
 		                <button id="companyloginBtn" class="b_login b_red" value="로그인" style="cursor:pointer;">로그인</button>
 		                <ul class="login_link">
 		                	<li><a href="#none" class="underline">아이디/비밀번호 찾기</a></li>
-		                	<li><a href="../account/companyJoin.html">기업고객 회원가입</a></li>
+		                	<li><a href="../member/companyJoin.jsp">기업고객 회원가입</a></li>
 		                </ul>
                    	</div>
 				</div>
 			</div>
                    
             <div class="benefit company">
-                <h3>기업고객 위한 프리몬의 서비스</h3>
+                <h3>기업고객 위한 프리월드의 서비스</h3>
                 <ul class="cf">
                     <li>투입가능한<br/>프리랜서 정보</li>
                     <li>실력있고 경험많은<br/>프리랜서 정보</li>
@@ -498,9 +349,9 @@
                                <li class="has-sub agree_detail" style="overflow:auto;height:150px;">
                                	<h4>회원탈퇴 신청 전에 안내 사항을 확인해주세요.</h4>
                                	<p>1. 탈퇴 후 회사 내부 방침에 의해 기업고객과의 계약 관계로 이름, 로그인 ID를 1년간 따로 보유할 수 있습니다. 이후 삭제처리 됩니다.</p>
-								<p>2. 회원의 즉시 삭제 요청시 프리몬이 확인 후 그에 따른 조치를 취합니다.</p>
+								<p>2. 회원의 즉시 삭제 요청시 프리월드이 확인 후 그에 따른 조치를 취합니다.</p>
               					<p>※ 참고 : 계정의 개인정보는 관계 법령의 규정에 의하여 보유할 필요가 있는 경우 관계법령에서 정한 기간 동안 개인정보를 보관합니다.</p>
-              					<p>회원 탈퇴와 관련하여 더 궁금하신 점은 프리몬 <a href="/customer/questionRegistForm">"문의하기 > 회원정보/아이디/비밀번호"</a>로 문의를 남기거나 고객센터(<a href="mailto:freemon@freemon.co.kr">freemon@freemon.co.kr</a>) 문의해주세요.</p>
+              					<p>회원 탈퇴와 관련하여 더 궁금하신 점은 프리월드 <a href="/customer/questionRegistForm">"문의하기 > 회원정보/아이디/비밀번호"</a>로 문의를 남기거나 고객센터(<a href="mailto:freemon@freemon.co.kr">freemon@freemon.co.kr</a>) 문의해주세요.</p>
                                </li>
                             </ul>
                             
@@ -646,7 +497,9 @@
         </div>
     </script>
 </sec:authorize>
-    		
+
+
+    <%@ include file="../common/footer.jsp" %>
 </body>
-<%@ include file="../common/footer.jsp" %>
+
 </html>
