@@ -52,13 +52,13 @@
 	</div>
     <div class="header_body">
     	<div class="box">
-           <h1 class="logo"><a href="/">프리몬</a></h1>
+           <h1 class="logo"><a href="../../views/main/home.jsp">프리월드</a></h1>
             <div id="gnb">
                 <nav>
                     <ul class ="gnb_in cf">
                     	
                         <li class="menu_about gnb_depth1 ">
-                        	<a href="/talent/talentSearch" class="gnb_depTxt"><em>프리랜서 검색</em></a>
+                        	<a href="../../views/freelancer/freelancerSearch.jsp" class="gnb_depTxt"><em>프리랜서 검색</em></a>
                         </li>
                         <li class="menu_about gnb_depth1 ">
                         	<a href="/talent/interestTalent" class="gnb_depTxt"><em>프리랜서 관리</em></a>
@@ -69,8 +69,6 @@
                         <li class="menu_about gnb_depth1 ">
                         	<a href="/mypage/myProjectSearch" class="gnb_depTxt"><em>프로젝트 관리</em></a>
                         </li>
-                        
-						
 						
                     </ul>
                 </nav>
@@ -78,6 +76,7 @@
 		</div>
 	</div>
 </div>
+
 	
 
 <script type="text/javascript" src="/resources/freemon/project/projectConfig.js?version=1.3"></script>
