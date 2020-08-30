@@ -4,7 +4,6 @@
 <html lang="ko">
 <head>
 
-    <title>프리몬 - SI 전문 아웃소싱</title>
 	<%@ include file="../common/header.jsp" %>
 	    <!-- 네비게이션바 -->
 	<style type="text/css">	  
