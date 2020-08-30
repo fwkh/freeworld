@@ -2,7 +2,7 @@
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.Calendar"%>
 <%@page import="java.util.Date"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" import="kh.semi.jsp.member.model.vo.*"%>
 <%
 	Member m = (Member)session.getAttribute("member");
@@ -17,8 +17,6 @@
 
 
 <head>
-
-	<title>프리월드 - SI 전문 아웃소싱</title>
 
 	<%@ include file="../common/header.jsp" %>
 	
@@ -39,8 +37,6 @@
 		location.href="/myWeb/mypageLoad.bo"; // 세션에서 값 불러오기
 	}); */
 </script>
-	<!-- 헤더 include -->
-	<%@ include file="../common/header.jsp"%>
 	
 	<!-- 네비게이션 바로 밑 컨테이너-->
 	<div id="container">
@@ -50,7 +46,7 @@
 				<h2><%-- <%=m.getUserName()%> --%></h2>
 			</div>
 			<ul class="man_tab my_man_tab cf">
-				<li class="active"><a href="#none">마이프리몬</a></li>		
+				<li class="active"><a href="#none">마이프리월드</a></li>		
 				<!-- 주소 변경 -->
 				<li><a href="resumeSearch.jsp">프로필관리</a></li>	
 			</ul>
