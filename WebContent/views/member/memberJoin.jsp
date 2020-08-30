@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,11 +39,7 @@
         }
 
 
-        #input_id1 {
-            background: cornflowerblue;
-            height: 35px;
-        }
-        #input_id2 {
+        #email, #name {
             background: cornflowerblue;
             height: 35px;
         }
@@ -73,12 +70,7 @@
             font-size: 45px;
         }
 
-        #input_pass1 {
-            background: cornflowerblue;
-            width: 300px;
-            height: 35px;
-        }
-        #input_pass2 {
+        #pwd, #pwdCheck  {
             background: cornflowerblue;
             width: 300px;
             height: 35px;
@@ -175,8 +167,7 @@
             /* text-align: center; */
         }
     </style>
-
-
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 <body>
 
@@ -240,16 +231,16 @@
 </script>
 
 <!--Contents-->
-<form action="${pageContext.request.contextPath}/memInsert.me" method="post">
+<form name="f"  method="post" action="memInsert.me" onsubmit="return sendIt()">
     <div id="container">
         <div id="signup_wrapper">
             <h1 style="text-align: center;" id="signup">회원가입</h1>
             <div id="id_wrapper">
                 <h3 style="margin: 10px;">*아이디(이메일형식)</h3>
-                <input type="email" id="input_id1" name="email">&nbsp;
-                <button type="submit" id="id_check">중복확인</button>
+                <input type="email" id="email" name="email">&nbsp;
+                <button type="button" id="emailCheck">중복확인</button>
                 <h3 style="margin: 10px;">*비밀번호</h3>
-                <input type="password" id="input_pass1" name="pwd" placeholder="비밀번호(숫자,영문,특수문자 조합 최소 8자)">&nbsp;
+                <input type="password" id="pwd" name="pwd" placeholder="비밀번호(숫자,영문,특수문자 조합 최소 8자)">&nbsp;
                 <h3 style="margin: 10px;">*생년월일</h3>
                 <input type="date" id="birth" name="birth" style="background: cornflowerblue; height: 40px;">
 
@@ -292,8 +283,8 @@
 
                 </select>
                 <h3 style="margin: 10px;">*보유기술</h3>
-                <select id="tech1">
-                    <option value="">1순위</option>
+                <select id="tech1" style="width: 100px;">
+                    <option value="">1순위(필수)</option>
                     <option value="JSP">JSP</option>
                     <option value="PHP">PHP</option>
                     <option value="ASP.NET">ASP.NET</option>
@@ -342,7 +333,7 @@
                 </select>&nbsp;&nbsp;
                 <input type="number" id="tech1_year" name="tech1_year" placeholder="경력(년차)" >
                 <br><br>
-                <select id="tech2">
+                <select id="tech2" style="width: 100px;">
                     <option value="">2순위</option>
                     <option value="JSP">JSP</option>
                     <option value="PHP">PHP</option>
@@ -393,7 +384,7 @@
                 &nbsp;
                 <input type="number" id="tech2_year" name="tech2_year" placeholder="경력(년차)" >
                 <br><br>
-                <select id="tech3">
+                <select id="tech3" style="width: 100px;">
                     <option value="">3순위</option>
                     <option value="JSP">JSP</option>
                     <option value="PHP">PHP</option>
@@ -449,9 +440,9 @@
             </div>
             <div id="id_wrapper2">
                 <h3 style="margin: 10px;">*이름</h3>
-                <input type="text" id="input_id2">&nbsp;
+                <input type="text" id="name">&nbsp;
                 <h3 style="margin: 10px;">*비밀번호 확인</h3>
-                <input type="password" id="input_pass2" placeholder="비밀번호 확인">&nbsp;
+                <input type="password" id="pwdCheck" placeholder="비밀번호 확인">&nbsp;
                 <h3 style="margin: 10px;">*전화번호</h3>
                 <select name="tel1" id="tel1" onchange="">
                     <option value="010">010</option>
@@ -466,12 +457,58 @@
                 <h3 style="margin: 10px;">*투입가능한 날짜</h3>
                 <input type="date" id="date">
                 <br><br><br>
-                <input type="submit" value="가입완료" style="width: 200px; height: 50px; background: gray;">
-
+                <input type="submit" onclick="sendIt()" value="회원가입" style="width: 200px; height: 50px; background: gray;">
 
                 <script>
+                    function sendIt() {
+                        var email = document.f.email.value;
+                        var name = document.f.name.value;
+                        var pwd = document.f.pwd.value;
+                        var pwdCheck = document.f.pwdCheck.value;
+                        var birth = document.f.birth.value;
+                        var sector_hope_ch = document.f.sector_hope_ch.value;
+                        var sector_area = document.f.sector_area.value();
+                        var tel = document.f.tel1.value + document.f.tel2.value + document.f.tel3.value;
+                        var tech1 = $("#tech1 option:selected").val();
+                        var tech2 = $("#tech2 option:selected").val();
+                        var tech3 = $("#tech3 option:selected").val();
+                        var date = $("#date").val();
+
+                        // 미작성란 체크
+                        if (email == "" || name == "" || pwd == "" || birth == "" ||
+                            sector_hope_ch == "" || sector_area == "" || tel == "" || tech1 == "" || date == "" ) {
+                            alert("미작성란이 있습니다.");
+                            document.f.email.focus();
+                            return false;
+                        }
+
+                        // 이메일에 공백 사용하지 않기
+                        if(email.indexOf(" ")>=0){
+                            alert("이메일에 공백을 사용할 수 없습니다.");
+                            $("#email").focus();
+                            return false;
+                        }
+
+
+                        // 비밀번호 8자 이상
+                        if(pwd.length <8){
+                            alert("비밀번호를 8자 이상 입력해주세요.");
+                            $("#pwd").focus();
+                            return false;
+
+                        }
+                        // 비밀번호 == 비밀번호 확인
+                        if(pwd !== pwdCheck){
+                            alert("비밀번호가 일치하지 않습니다.");
+                            $("#pwd").focus();
+                            return false;
+                        }
+
+                        return false;
+                    }
 
                 </script>
+
 
             </div>
         </div>
@@ -480,8 +517,8 @@
     </div>
 </form>
 
-<%@ include file="../common/footer.jsp" %>
 
 </body>
 
 </html>
+
