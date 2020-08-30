@@ -468,6 +468,10 @@
                 <input type="submit" value="가입완료" style="width: 200px; height: 50px; background: gray;">
 
 
+                <script>
+
+                </script>
+
             </div>
         </div>
 
