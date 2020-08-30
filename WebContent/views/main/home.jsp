@@ -1,16 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-    
-
-
-
-
-
-
-
-
-
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -26,6 +16,7 @@
 	  #p_management{display:none;}
 	  #profile{display:none;}
 	  #suggestion{display:none;}
+	  #logout{display:none;}
 	</style>
 </head>
 <body>
@@ -59,7 +50,7 @@
 			          <h3>다음 프로젝트 걱정이 사라졌다<i>!</i></h3>
 			          <div class="btn-wrap">
 				            <div class="inner">
-				            	<a href="https://www.notion.so/FREEMON-4f97ecd6edb44c5cb43b921a8467f51f" target="_blank">서비스 소개</a>
+				            	<a href="../../views/customer/introduction.html" target="_blank">서비스 소개</a>
 				            </div>
 				    	</div>
 			        </div>
@@ -120,13 +111,13 @@
 			<div class="m_counter_box">
 				<div class="box cf">
 					<div class="col-6 center">
-						<a href="project/projectSearch.html">
+						<a href="../../views/project/projectSearch.jsp">
                             <h3>곧 시작될 프로젝트</h3>
                             <p><span class="count" data-count="129">1</span><span class="after">건</span></p>
                         </a>
 					</div>
 					<div class="col-6 center">
-						<a href="talent/talentSearch.html">
+						<a href="../../views/freelancer/freelancerSearch.jsp">
                             <h3>즉시 투입 프리랜서</h3>
                             <p><span class="count" data-count="4,105">1</span><span class="after">명</span></p>
                         </a>
@@ -154,7 +145,7 @@
 					<h2 class="m_tit">
                                           이달의 프로젝트
                         
-                        <a href="project/projectSearch.html" class="m_more">전체보기</a>
+                        <a href="../../views/project/projectSearch.jsp" class="m_more">전체보기</a>
                         
 					</h2>
 					<div id="projectSearchList" class="cf">
@@ -217,7 +208,7 @@
 					<h2 class="m_tit">
                                         프리랜서 정보
                         
-                        <a href="talent/talentSearch.html" class="m_more">전체보기</a>
+                        <a href="../../views/freelancer/freelancerSearch.jsp" class="m_more">전체보기</a>
                         
 					</h2>
 					<div id="talentSearchList" class="relative">

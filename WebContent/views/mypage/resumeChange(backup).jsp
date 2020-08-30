@@ -1,66 +1,376 @@
-<%@page import="java.util.Calendar"%>
-<%@page import="java.text.SimpleDateFormat"%>
-<%@page import="java.util.Calendar"%>
-<%@page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8" import="kh.semi.jsp.member.model.vo.*"%>
-<%
-	Member m = (Member)session.getAttribute("member");
-	Calendar today = Calendar.getInstance();
-	SimpleDateFormat df = new SimpleDateFormat("yy-MM");
-	//ArrayList<Project> list = (ArrayList<Board>)request.getAttribute("list"); 
-%>
+    pageEncoding="UTF-8"%>
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
 
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
-	<%@ include file="../common/header.jsp" %>
-	<style type="text/css">	  
-	  #f_management{display:none;}
-	  #p_management{display:none;}
-	  #profile{display:none;}
-	  #suggestion{display:none;}
-	  #logout{display:none;}
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'http://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-MF7LK3J');</script>
+	<!-- End Google Tag Manager -->	
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="naver-site-verification" content="81b7cb5e5f8e2975b94b334d812bb38453749a5a"/>
+	<meta name="keywords" content="프리몬, FREEMON, SI, SM, 프리랜서, 아웃소싱 플랫폼, 상주, 프로젝트, 개발자, 시스템엔지니어, MES, 설계자, 디자이너, 타임라인, Java, C#" />
+	<meta name="description" content="SI 전문 아웃소싱 플랫폼. 일정이 딱딱 맞는 프로젝트, 프리랜서를 한눈에. 프로젝트 프리랜서 타임라인, 간편하게 작성하는 전자계약서, 이력 간편등록, 프리랜서 멘토, 쉽게 관리하는 프로젝트" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="프리몬 - SI 전문 아웃소싱" />
+	<meta property="og:description" content="SI 전문 아웃소싱 플랫폼. 프로젝트 프리랜서 타임라인, 이력 간편등록, 프리랜서 멘토, 간편 전자계약서" />
+	<meta property="og:image" content="https://www.freemon.co.kr/resources/images/new/freemon_naver.jpg" />
+	<meta property="og:url" content="https://www.freemon.co.kr" />
+    <meta id="_csrf" name="_csrf" content="50ba6560-02b4-4349-bf4c-6551fb9dca71"/>
+	<meta id="_csrf_header" name="_csrf_header" content="X-CSRF-TOKEN"/>
+    <meta name="viewport" content="width=1360">
+    <title>프리몬 - SI 전문 아웃소싱</title>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-137161229-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+	  	function gtag(){dataLayer.push(arguments);}
+	  	gtag('js', new Date());
+	
+	  	gtag('config', 'UA-137161229-1', {
+	  	  'linker': {
+	  	    'domains': ['www.freemon.co.kr', 'www.freemon.kr']
+	  	  }
+	  	});
+	</script> -->
+
+	<link rel="stylesheet" type="text/css" href="/resources/css/default.css?version=4.4">
+	<link rel="stylesheet" type="text/css" href="/resources/css/jquery-ui.min.css?version=2.0">
+	<link rel="stylesheet" type="text/css" href="/resources/css/member.css?version=4.1">
+	<link rel="stylesheet" type="text/css" href="/resources/css/new.css?version=4.9">
+	<link rel="stylesheet" type="text/css" id="mobile" href="/resources/css/web_hand.css">
+	<link rel="stylesheet" type="text/css" href="/resources/css/career-ui.min.css?version=2.0" />
+	<link rel="stylesheet" type="text/css" href="/resources/css/ui.jqgrid.css" />
+	<link rel="shortcut icon" href="/resources/images/new/favicon.ico"/>
+	
+	<style type="text/css">
+	  .tooltipUI{
+	    background-color:#FAF4C0;
+	  }
+	  .ui-tooltip {
+	    padding: 8px;
+	    position: absolute;
+	    z-index: 999999;
+	    color : #fff;
+	    font-size : 12px;
+	    max-width: 600px;
+	    -webkit-box-shadow: 0 0 5px #aaa;
+	    box-shadow: 0 0 5px #aaa;
+		/* for IE */
+		filter:alpha(opacity=80);
+		/* CSS3 standard */
+		opacity:0.8;
+		line-height:16px;
+	  }
+	  body .ui-tooltip {
+	    border-width: 2px;
+	  }
+	  
+	  /* .scrollOff{position:fixed;overflow:hidden;height:100%;width:100%;} */
 	</style>
-	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="/resources/scripts/jquery-3.3.1.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/resources/scripts/jquery.flexslider.js"></script>
+    <script type="text/javascript" src="/resources/scripts/site_ui.js"></script>
+	<script type="text/javascript" src="/resources/js/jquery.easing.1.3.js"></script>
+    <!--Calendar-->
+    <script type="text/javascript" src="/resources/scripts/calendar/pignose.calendar.full.js"></script>
+	<script type="text/javascript" src="/resources/js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/resources/js/jquery.ba-hashchange.min.js"></script>
+	<script type="text/javascript" src="/resources/js/jquery.json-2.3.js"></script>
+	<script type="text/javascript" src="/resources/js/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="/resources/js/jquery.history.js"></script>
+	<!-- Jqgrid -->
+	<script type="text/javascript" src="/resources/js/grid.locale-kr.js"></script>
+	<script type="text/javascript" src="/resources/js/jquery.jqGrid.min.js"></script>
+	<!-- //Jqgrid -->
+	<script type="text/javascript" src="/resources/js/jquery.marquee.min.js?version=1.0"></script>
+	<script type="text/javascript" src="/resources/js/mustache.js"></script>
+	<script type="text/javascript" src="/resources/js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="/resources/i18n/commonMessages_ko.js"></script>
+	<script type="text/javascript" src="/resources/freemon/base64.js"></script>
+	<script type="text/javascript" src="/resources/freemon/sha256.js"></script>
+	<script type="text/javascript" src="/resources/freemon/nmask.js"></script>
+	<script type="text/javascript" src="/resources/freemon/freemon.js?version=3.4"></script>
+	<script type="text/javascript" src="/resources/js/gnb_common.js?version=4.2"></script>
+	<script type="text/javascript" src="/resources/freemon/common/apply.js"></script>
+	<script type="text/javascript" src="/resources/freemon/common/freemonPopUp.js?version=1.2"></script>
+	<script type="text/javascript" src="/resources/freemon/common/input.js"></script>
+	
+	<script type="text/javascript" src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+	
+	<script type="text/javascript">
+		var frameworkProperties = {
+			context: '',
+			locale: 'ko',
+			defaultLang: 'ko',
+			kakaoAppKey: 'a8bf256e33657332f212fd5847dbd8c5',
+		};
+	</script>
+
+	<script type="text/javascript">
+		$(function() {
+			$(document).tooltip({
+				//tooltipClass: 'tooltipUI',
+		       	content: function() {
+		        return $(this).prop('title');
+		       	},
+		       	track: true
+			});
+			
+			freemon.invoker.invoke("freemonPopUp");
+
+			var stylesheet = document.getElementById("mobile");
+			if(freemon.ux.isMobileCheck() == false){				
+			    stylesheet.setAttribute('href', "");
+			    $(".link_mobile").hide();
+			}
+			else{
+				var url = "/resources/css/web_hand.css";
+				stylesheet.setAttribute('href', url);
+				$(".link_mobile").show();
+			}
+			
+ 			$('.flow_text_in').marquee({
+				direction: 'up',
+				speed: 200,
+				gap: 0,
+				delayBeforeStart: 0,
+				duplicated: true,
+				pauseOnHover: true
+			}); 
+		});
+		
+		// 모바일일때 모바일경로로 이동
+		$(document).ready(function(){
+			if(freemon.ux.isMobileCheck() == true && "PC" == "MOBILE"){
+				document.location.href = "https://m.freemon.co.kr";
+				return false;
+			}
+		});
+	</script>
 </head>
-
-
 <body>
 	<!-- Google Tag Manager (noscript) -->
 	<noscript><iframe src="http://www.googletagmanager.com/ns.html?id=GTM-MF7LK3J"
-        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-        <!-- End Google Tag Manager (noscript) -->
-    
-        <div class="load_box" style="display:none;">
-            <div class="load_img">
-                <img src="../resources/images/common/loading.gif" alt="loading"/>
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+
+	<div class="load_box" style="display:none;"><div class="load_img"><img src="/resources/images/common/loading.gif" alt="loading"/></div></div>
+<link rel="stylesheet" type="text/css" href="/resources/css/resume.css?version=4.4">
+
+
+<div id="header">
+	<div class="header_top">
+	    <div class="box">
+	        <!-- 활동내역 -->
+	    	<div class="flow_text" style="padding-top:10px;">
+	    		<div class="flow_text_in" style="border:0px solid red; line-height:30px; height:22px;">
+	    			
+	    				
+	    					
+	    					
+	    					
+	    						<p class="cf"><span class="tit ellipsis">이OO님이 프로젝트‘[안국역] GSITM U.STRA CLOUD기반 ITSM 시스템 구축 ’에 지원 되었습니다.</span></p>
+	    					
+	    				
+					
+	    				
+	    					
+	    					
+	    						<p class="cf"><span class="tit ellipsis">프로젝트‘[기흥] 삼성전자 중국 시안 SCS법인 MES 개선 운영 ’이 신규로 추가되었습니다.</span></p>
+	    					
+	    					
+	    				
+					
+	    				
+	    					
+	    					
+	    						<p class="cf"><span class="tit ellipsis">프로젝트‘[강남역] 삼성화재 보장 분석 과제(퍼블리싱/디자인) ’이 신규로 추가되었습니다.</span></p>
+	    					
+	    					
+	    				
+					
+	    				
+	    					
+	    					
+	    						<p class="cf"><span class="tit ellipsis">프로젝트‘[역삼역] CVSnet 택배(국제, 반값) 시스템 운영 ’이 신규로 추가되었습니다.</span></p>
+	    					
+	    					
+	    				
+					
+	    				
+	    					
+	    					
+	    						<p class="cf"><span class="tit ellipsis">프로젝트‘[안국역] GSITM U.STRA CLOUD기반 ITSM 시스템 구축 ’이 신규로 추가되었습니다.</span></p>
+	    					
+	    					
+	    				
+					
+	    				
+	    					
+	    					
+	    					
+	    						<p class="cf"><span class="tit ellipsis">권OO님이 프로젝트‘semi-Project’에 지원 되었습니다.</span></p>
+	    					
+	    				
+					
+	    				
+	    					
+	    					
+	    					
+	    						<p class="cf"><span class="tit ellipsis">한OO님이 프로젝트‘semi-Project’에 지원 되었습니다.</span></p>
+	    					
+	    				
+					
+	    				
+	    					
+	    					
+	    						<p class="cf"><span class="tit ellipsis">프로젝트‘semi-Project’이 신규로 추가되었습니다.</span></p>
+	    					
+	    					
+	    				
+					
+	    				
+	    					
+	    					
+	    						<p class="cf"><span class="tit ellipsis">프로젝트‘정보진흥원 해수부 빅데이타 구축’이 신규로 추가되었습니다.</span></p>
+	    					
+	    					
+	    				
+					
+	    				
+	    					
+	    					
+	    						<p class="cf"><span class="tit ellipsis">프로젝트‘국민은행 (정산, 빌링)시스템 개발’이 신규로 추가되었습니다.</span></p>
+	    					
+	    					
+	    				
+					
+	    		</div>
+	    	</div>
+	        <div class="top_menu w_top_menu">
+	            <ul class="cf">
+	            	
+	                
+	                
+	                <li>한진선님</li>
+	                <li class="login"><a href="/login/logout">로그아웃</a></li>
+	                <li><a href="/mypage/myFreemon">마이프리몬<span class="arrow"></span></a>
+	                	<ul class="top_depth2" style="display:none;">
+	                    	<p class="top_arrow"></p>
+	                    	<li><a href="/resume/resumeSearch">프로필 관리</a></li>
+	                    	<!-- <li><a href="/document/documentSelect">서류신청</a></li> -->
+	                    	<li><a href="#none" class="common-open_popup" data-div="alamn" data-user-div="freelancer">알림설정</a></li>
+	                    </ul>
+	                </li>
+					
+	                <li><a href="/customer/noticeSearch">고객센터<span class="arrow"></span></a>
+	                	<ul class="top_depth2" style="display:none;">
+	                    	<p class="top_arrow"></p>
+	                    	<li><a href="/customer/noticeSearch">자주묻는질문</a></li>
+	                        <li><a href="/customer/questionRegistForm">문의하기</a></li>
+	                    </ul>
+	                </li>
+	                <li class="blog"><a href="http://blog.freemon.co.kr" target="_blank">블로그</a></li>
+	            </ul>
+	        </div>
+	    </div>
+	</div>
+    <div class="header_body">
+    	<div class="box">
+           <h1 class="logo"><a href="/">프리몬</a></h1>
+            <div id="gnb">
+                <nav>
+                    <ul class ="gnb_in cf">
+                    	
+						
+						<li class="menu_about gnb_depth1 ">
+                        	<a href="/project/projectSearch" class="gnb_depTxt"><em>프로젝트 검색</em></a>
+                        </li>
+						<li class="menu_about gnb_depth1 ">
+                        	<a href="/project/projectMap" class="gnb_depTxt"><em>프로젝트 맵</em></a>
+                        </li>
+                        <li class="menu_about gnb_depth1 ">
+                        	<a href="/applicant/talentApplicantSearch" class="gnb_depTxt"><em>제안 및 지원 현황</em></a>
+                        </li>
+                       <!--  <li class="menu_about gnb_depth1 ">
+                        	<a href="/home/freemonSupport" class="gnb_depTxt"><em>출장지원</em></a> 
+                        </li>-->
+                        <li class="menu_about gnb_depth1 active">
+                        	<a href="/resume/resumeSearch" class="gnb_depTxt"><em>프로필 관리</em></a>
+                        </li>
+						
+						
+                    </ul>
+                </nav>
             </div>
-        </div>
-        <link rel="stylesheet" type="text/css" href="../resources/css/resume.css">
-    
-<script type="text/javascript" src="../resources/js/Chart.js"></script>
-<script type="text/javascript" src="../resources/js/resumeSearch.js"></script>
+		</div>
+	</div>
+</div>
+		
+<div class="ask_box">
+	<ul>
+		<li><a href="/home/freemonService" target="_blank"><img src="/resources/images/new/r_free.gif" alt=""/><p>서비스소개 GO!</p></a></li>
+		<li><a href="/resume/resumeSearch"><img src="/resources/images/new/r_file.png" alt=""/></a></li>
+	</ul>
+	<a href="#none" class="ask kakaoPlusTalk">카톡문의</a>
+	<a href="#none" class="top_btn">TOP</a>
+</div>
+
+		
+
+
+<script type="text/javascript" src="/resources/js/Chart.js"></script>
+<script type="text/javascript" src="/resources/freemon/resume/resumeSearch.js?version=4.0"></script>
 <script type="text/javascript">
 	$(function() {
 	    var skills = [], areas = [];
 		
+		skills.push({'skillId':'17', 'skillNm':'Java'});
+		
+		skills.push({'skillId':'34', 'skillNm':'Oracle'});
+		
+		
+		areas.push({'workAreaCd':'10', 'workAreaNm':'서울', 'workUpperAddr':''});
+		
+		areas.push({'workAreaCd':'436', 'workAreaNm':'파주시', 'workUpperAddr':'경기'});
+		
+		areas.push({'workAreaCd':'431', 'workAreaNm':'고양시', 'workUpperAddr':'경기'});
 		
 		freemon.invoker.invoke("resumeSearch", "talent", {
-		    'userId':'1444427072',
+		    'userId':'1413481352',
             'selectSkills': skills,
             'selectArea': areas,
-            'korNm' : '아무개',
-            'birthDay' : '1990',
-            'genderCd' : '',
-            'telNo' : '01011112222',
-            'email' : 'test@test.com',
-            'joinPsblDt' : '2020-12-09',
-            'keyword' : '',
-            'genderCd' : '',
-            'hldSkill' : '',
-            'workAreaNm' : ''
+            'korNm' : '한진선',
+            'birthDay' : '1989',
+            'genderCd' : '남',
+            'telNo' : '01031506595',
+            'email' : 'tap2@naver.com',
+            'joinPsblDt' : '2020-10-23',
+            'keyword' : '#장기',
+            'genderCd' : '남',
+            'hldSkill' : '17, 34',
+            'workAreaNm' : '10,431,436'
 		});
 	});
 
@@ -79,48 +389,49 @@
             <!-- 이력서 파일 -->
             <div class="card no_over p-20 cf">
                 <div class="profile_big">
-                    <div class="profile" style="background-image:url()">프로필사진</div>
+                    <div class="profile" style="background-image:url(
+                        
+                            
+                            '/resources/images/common/profile.png'
+                        )">프로필사진</div>
                     <div class="btn_box no_gap mt-10 cf">
-                        <a href="" data-action="profile" data-value="Y" class="btn b_xs b_red">보임</a>
-                        <a href="" data-action="profile" data-value="N" class="btn b_xs ">숨김</a>
+                        <a href="" data-action="profile" data-value="Y" class="btn b_xs ">보임</a>
+                        <a href="" data-action="profile" data-value="N" class="btn b_xs b_red">숨김</a>
                     </div>
                 </div>
                 <!-- 기본정보 출력 -->
                 <div class="free_con" id="freelancerShow">
-                    <h3>아무개</h3>
+                    <h3>한진선</h3>
                     <div class="gray_box mt-10">
-	                    <p class="small"> 20세</p>
+	                    <p class="small">남, 32세</p>
 	                    <ul class="ul_detail no_line cf">
-		                    <li><span class="tit">전화</span>01011112222</li>
-		                    <li><span class="tit">이메일</span>test@test.com</li>
+		                    <li><span class="tit">전화</span>01031506595</li>
+		                    <li><span class="tit">이메일</span>tap2@naver.com</li>
 		                </ul>
 	                </div>
 	                <ul class="ul_detail no_line cf">
-	                    <li><span class="tit">희망지역</span></li>
-	                    <li><span class="tit">전문기술</span></li>
-	                    <li><span class="tit">투입가능일</span>2020-12-09<span class="add_info org">999 일후</span></li>
+	                    <li><span class="tit">희망지역</span>서울,경기 고양시,경기 파주시</li>
+	                    <li><span class="tit">전문기술</span>Java, Oracle</li>
+	                    <li><span class="tit">투입가능일</span>2020-10-23<span class="add_info org">55일후</span></li>
 	                </ul>
 	                <div class="add_con cf mt-10">
 			            <div class="hash hash_detail">
 			                <ul class="cf">
 			                   
+			                        <li>#장기</li>
+                                
 			                </ul>
 			            </div>
 			        </div>
                     <!-- 프로필 미리보기 버튼 -->
 			        <div class="btn_box left">
-			            <a class="btn b_m b_red" href="/talent/openTalentDetail?fno=1444427072" target="_blank">프로필 미리보기</a>
+			            <a class="btn b_m b_red" href="/talent/openTalentDetail?fno=1413481352" target="_blank">프로필 미리보기</a>
 			            <a href="javascript:void(0);" class="i_note">
 			                <span>등록된 경력을 기준으로 기업고객에게 보여지는 이력정보 화면입니다.</span>
 			            </a>
 			        </div>
 			            <a href="" class="btn b_s absolute" id="modifyButton">수정하기</a>
                 </div>
-                <script type="text/javascript">
-                	$("#modifyButton").click(function(){
-                		
-                	});
-                </script>
                 <!-- /기본정보 출력 -->
                 <!-- 기본정보 입력 -->
                 <div class="free_con" id="freelancerUpdate" style="display:none;">
@@ -138,10 +449,10 @@
 	                                
 	                                
 	                                <select id="birthDay" name="birthDay">
-	                                    <option value="1992">
+	                                    <option value="1989">
 	                                    
 	                                        
-	                                            1992
+	                                            1989
 	                                        
 	                                        
 	                                    
@@ -271,13 +582,13 @@
 	                            </li>
 	                            <li class="col-6 pr-5">
 	                                <!-- <label for="">휴대폰번호<span class="need orange">(필수)</span></label> -->
-	                                <input type="text" id="telNo" name="telNo" value="01051876305" placeholder="-없이 입력바랍니다."/>
+	                                <input type="text" id="telNo" name="telNo" value="01031506595" placeholder="-없이 입력바랍니다."/>
 	                            </li>
 	                            <li class="col-6 pl-5">
 	                                <!-- <label for="">이메일주소<span class="need orange">(필수)</span></label> -->
-	                                <input type="hidden" id="userId" name="userId" value="1444427072"/>
-	                                <input type="hidden" id="prfPhotoYn" name="prfPhotoYn" value="Y"/>
-	                                <input type="text" id="email" name="email" value="keh9208@naver.com" placeholder="이메일 형식에 맞춰 입력바랍니다."/>
+	                                <input type="hidden" id="userId" name="userId" value="1413481352"/>
+	                                <input type="hidden" id="prfPhotoYn" name="prfPhotoYn" value="N"/>
+	                                <input type="text" id="email" name="email" value="tap2@naver.com" placeholder="이메일 형식에 맞춰 입력바랍니다."/>
 	                            </li>
 							</ul>
 						</div>
@@ -324,9 +635,12 @@
                             </li>
                             <li class="col-6 pr-5">
                                 <label for="">투입가능일<span class="need orange">(필수)</span></label>
-                                <input type="text" class="input_day" id="joinPsblDt" name="joinPsblDt" value="2020-12-09" placeholder="투입가능일자를 선택하시면 회원님의 일정에 반영됩니다." readonly="readonly"/>
+                                <input type="text" class="input_day" id="joinPsblDt" name="joinPsblDt" value="2020-10-23" placeholder="투입가능일자를 선택하시면 회원님의 일정에 반영됩니다." readonly="readonly"/>
                             </li>
-                           
+                            <li class="col-6 pl-5">
+                                <label for="">해시태그<span class="need orange">(필수)</span></label>
+                                <input type="text" id="keyword" name="keyword" value="#장기" placeholder="예)#단기선호 #PL/PM전문 #해외출장경험자" />
+                            </li>
                         </ul>
 
                     </div>
@@ -564,11 +878,7 @@
 
         	<!-- 경력 정보 -->
         	<div id="resumeSearchList">
-                <div class="project_box cf" style="text-align:center; vertical-align:middle!important;height:100px;">
-                    <span class="red" style="line-height:30px;font-size:16px;">
-                        <p style="padding-top:15px;">이력서 파일을 첨부하시면 프리몬에서 이력정보를 업데이트 해 드립니다.</p>
-                    </span>
-                </div>
+
             </div>
 
             <!-- 더보기 -->
@@ -601,7 +911,7 @@
                                 </li>
                                 <li class="col-6 pr-5">
                                      <label for="">전공</label>
-                                     <input type="hidden" id="userId" name="userId" value="1444427072"/>
+                                     <input type="hidden" id="userId" name="userId" value="1413481352"/>
                                      <input type="text" id="major" name="major"/>
                                 </li>
                                 <li class="col-2 pl-5 pr-5">
@@ -640,11 +950,6 @@
 			</div>
 			<!-- 학력 출력 -->
 			<div id="schoolList">
-                <div class="project_box cf" style="text-align:center; vertical-align:middle!important;height:100px;">
-                    <span class="red" style="line-height:30px;font-size:16px;">
-                        <p style="padding-top:15px;">이력서 파일을 첨부하시면 프리몬에서 이력정보를 업데이트 해 드립니다.</p>
-                    </span>
-                </div>
 			</div>
 		</div>
         <!-- /학력 -->
@@ -681,11 +986,6 @@
 			</div>
 			<!-- 자격증 출력 -->
 			<div id="certList">
-                <div class="project_box cf" style="text-align:center; vertical-align:middle!important;height:100px;">
-                    <span class="red" style="line-height:30px;font-size:16px;">
-                        <p style="padding-top:15px;">이력서 파일을 첨부하시면 프리몬에서 이력정보를 업데이트 해 드립니다.</p>
-                    </span>
-                </div>
 			</div>
 
 		</div>
@@ -719,11 +1019,6 @@
 			</div>
 			<!-- 기타 출력 -->
 			<div id="etcViewList">
-                <div class="project_box cf" style="text-align:center; vertical-align:middle!important;height:100px;">
-                    <span class="red" style="line-height:30px;font-size:16px;">
-                        <p style="padding-top:15px;">이력서 파일을 첨부하시면 프리몬에서 이력정보를 업데이트 해 드립니다.</p>
-                    </span>
-                </div>
 		    </div>
 		</div>
         <!-- /기타 -->
@@ -890,10 +1185,10 @@
 {{#etcList}}
 <div class="card no_over over_hidden">
     <div class="card_info">
-        <ul class="pro_name">
+        <ul class="pro_name mb-0">
             <li>{{subject}}</li>
         </ul>
-        <p style="word-break: break-word;white-space: pre-wrap;">{{contents}}</p>
+        <p class="word_break">{{contents}}</p>
     </div>
     <div class="absolute">
         <button id="" class="btn b_s" data-action="editEtcClick" data-idx="{{idx}}" data-title="{{subject}}" data-contents="{{contents}}" onclick="return false;">수정</button>
@@ -989,7 +1284,7 @@
 <div class="pop">
     <div class="pop_header">
         <h3 id="pop-title">회원탈퇴</h3>
-        <a href="#none" class="close">닫기</a>
+        <a href="javascript:void(0);" class="close">닫기</a>
     </div>
     <div class="pop_body">
         <form id="popForm" name="popForm">
@@ -1025,7 +1320,7 @@
                                             <input type="checkbox" id="agrChk" name="agrChk" class="argChecked" value="Y"><i></i>
                                         </label>
                                     </div>
-                                    <a href="#none" class="joinAgreeList">회원탈퇴 안내사항 확인</a>
+                                    <a href="javascript:void(0);" class="joinAgreeList">회원탈퇴 안내사항 확인</a>
                                </li>
                                <li class="has-sub agree_detail" style="overflow:auto;height:150px;">
                                	<h4>회원탈퇴 신청 전에 안내 사항을 확인해주세요.</h4>
@@ -1096,7 +1391,44 @@
     </script>
 
 	
-<%@ include file="../common/footer.jsp"%>		
 
+    		
+<div id="footer">
+	<div class="footer_in box cf">
+        <section>
+	       <h3>주식회사 인사이트온</h3>
+	       <ul class="over_info cf">
+                <li>대표 : 박승래</li>
+                <li>사업자등록번호 : 522-88-00100</li>
+                <li>상표등록 제 40-1402651호</li>
+                <li>특허 제 10-2007018호</li>
+                <li class="col-12">디자인특허 제 30-1066688호, 제 30-1066689호</li>
+            </ul>
+            <ul class="over_menu cf">
+                <li><a href="/home/freemonIndividualTerms">회원이용약관</a></li>
+                <li><a href="/home/freemonIndividualPrivacy">개인정보보호방침</a></li>
+                <li><a href="https://m.freemon.co.kr" class="link_mobile" style="display:;">모바일버전</a></li>
+                <li>© InsightOn Corp.</li>
+            </ul>
+	   </section>
+	   <section>
+	        <h3>고객센터</h3>
+	        <p class="f_tel eng"><a href="tel:18992951">1899-2951</a></p>
+	        <p class="operate">평일 09:00 ~ 18:00 / 주말·공휴일 휴무</p>
+	        <div class="f_btn">
+                <a href="/home/freemonService" target="_blank">서비스소개</a>
+	            <a href="/customer/noticeSearch">자주묻는질문</a>
+	            <a href="/customer/questionRegistForm">문의하기</a>
+	        </div>
+	    </section>
+	    <section>
+	       <h3>앱 다운로드</h3>
+	       <div class="app_btn cf">
+	            <a href="https://play.google.com/store/apps/details?id=kr.insighton.freemonservice" target="_blank" class="play"><em>구글플레이</em></a>
+	            <a href="https://itunes.apple.com/app/id1472330588" target="_blank" class="store"><em>앱스토어</em></a>
+	        </div>
+	    </section>
+    </div>
+</div>
 </body>
 </html>

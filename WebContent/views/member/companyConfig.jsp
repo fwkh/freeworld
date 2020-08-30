@@ -1,17 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
-
+    
 <!DOCTYPE html>
 <html lang="ko">
     <head>
-       <%@ include file="../common/header.jsp" %>
+	<%@ include file="../common/header.jsp" %>
 	
     <!-- 네비게이션바 -->
 	<style type="text/css">	  
-	  #f_management{display:none;}
+	  #p_search{display:none;}
 	  #p_management{display:none;}
-	  #profile{display:none;}
+	  #notice{display:none;}
+	  #service{display:none;}
 	  #suggestion{display:none;}
 	  #login{display:none;}
 	</style>
@@ -25,224 +25,96 @@
 	<div class="load_box" style="display:none;"><div class="load_img"><img src="/resources/images/common/loading.gif" alt="loading"/></div></div>
 
 
-<div id="header">
-	<div class="header_top">
-	    <div class="box">
-	    
-	        <div class="top_menu w_top_menu">
-	            <ul class="cf">
-	            	
-	                
-	                <li>GSteletech님</li>
-	                <li class="login"><a href="/login/logout">로그아웃</a></li>
-	                <li><a href="/mypage/myFreemon">마이프리몬</a>
-	                </li>
-	                
-	                
-	                <!-- <li><a href="/customer/noticeSearch">고객센터<span class="arrow"></span></a> -->
-	                	<ul class="top_depth2" style="display:none;">
-	                    	<p class="top_arrow"></p>
-	                    	<li><a href="/customer/noticeSearch">자주묻는질문</a></li>
-	                        <li><a href="/customer/questionRegistForm">문의하기</a></li>
-	                    </ul>
-	                </li>
-	                <!-- <li class="blog"><a href="http://blog.freemon.co.kr" target="_blank">블로그</a></li> -->
-	            </ul>
-	        </div>
-	    </div>
-	</div>
-    <div class="header_body">
-    	<div class="box">
-           <h1 class="logo"><a href="../../views/main/home.jsp">프리월드</a></h1>
-            <div id="gnb">
-                <nav>
-                    <ul class ="gnb_in cf">
-                    	
-                        <li class="menu_about gnb_depth1 ">
-                        	<a href="../../views/freelancer/freelancerSearch.jsp" class="gnb_depTxt"><em>프리랜서 검색</em></a>
-                        </li>
-                        <li class="menu_about gnb_depth1 ">
-                        	<a href="/talent/interestTalent" class="gnb_depTxt"><em>프리랜서 관리</em></a>
-                        </li>
-                        <li class="menu_about gnb_depth1 ">
-                        	<a href="/applicant/compApplicantSearch" class="gnb_depTxt"><em>제안 및 지원자 현황</em></a>
-                        </li>
-                        <li class="menu_about gnb_depth1 ">
-                        	<a href="/mypage/myProjectSearch" class="gnb_depTxt"><em>프로젝트 관리</em></a>
-                        </li>
-						
-                    </ul>
-                </nav>
-            </div>
-		</div>
-	</div>
-</div>
-
-	
-
-<script type="text/javascript" src="/resources/freemon/project/projectConfig.js?version=1.3"></script>
+<script type="text/javascript" src="/resources/freemon/account/companyConfig.js?version=1.2"></script>
 <script type="text/javascript">
 	$(function() {
-		freemon.invoker.invoke("projectConfig");
-		
-		$('.input_day').datepicker({
-			 format: "yyyy-mm-dd",
-			 language: "kr",
-			 minDate: freemon.util.getDateString(new Date(), '-'),
-			 autoclose: true
-		});
-		
- 		$("#projDtl").load("/resources/freemon/editer.html?version=1.1", function( response, status, xhr ) {
-			if ( status == "error" ) {
-				var msg = "Sorry but there was an error: ";
-				$("#projDtl").html( msg + xhr.status + " " + xhr.statusText );
-				$("#projDtl").hide();
-			}
-		});
+		freemon.invoker.invoke("companyConfig");
 	});
 </script>
-
-<div id = "container">
-	<section class="project_in">
-    	<!-- 제목부분 -->
-    	<div class="pro_tit mb-0">
-        	<h2>프로젝트 등록</h2>
-        </div>
-        
-        <!-- 프로젝트 입력폼 -->
-        <div class="input_list">
-        	<form id="registForm" name="registForm">
-        	<ul class="input_list_in cf">
-                <li class="col-6 xs-col-12 pr-16 xs-pr-0">
-                	<div class="input">
-                    	<label for="projNm">프로젝트명<span>*</span></label>
-                        <input type="text" id="projNm" name="projNm" required="required" />
-                    </div>
-                </li>
-                <li class="col-6 xs-col-12 pl-16 xs-pl-0">
-                	<div class="input">
-                    	<label for="projStrtDt">투입기간<span>*</span></label>
-                        <input type="text" class="input_day" id="projStrtDt" name="projStrtDt" required="required" readonly="readonly" />
-                        <span class="pl-16 pr-16  xs-pl-0  xs-pr-0"> ~ </span>
-                        <input type="text" class="input_day" id="projCloseDt" name="projCloseDt" required="required" readonly="readonly" /> 
-                        <span class="input_add" style="padding-left:10px;"><input type="checkbox" id="cntiPlanYn" name="cntiPlanYn" value="Y" /> <label for="cntiPlanYn">연장가능</label></span>
-                    </div>
-                </li>
-                <li class="col-6 xs-col-12 pr-16 xs-pr-0">
-                	<div class="input">
-                    	<label for="customer">고객사</label>
-                        <input type="text" id="customer" name="customer" />
-                    </div>
-                </li>
-                <li class="col-6 xs-col-12 pl-16 xs-pl-0">
-                	<div class="input won">
-                    	<label for="unitPrice">단가<span>*</span></label>
-                        <input type="text" id="unitPrice" name="unitPrice" value="0" style="width: 263px;"/> <span>만원</span> 
-                        <span class="input_add" style="padding-left:10px;"><input type="checkbox" id="negoYn" name="negoYn" value="Y" checked="checked"/> <label for="negoYn">협의가능</label></span>
-                        <span class="input_add"><input type="checkbox" id="travelExpYn" name="travelExpYn" value="Y" checked="checked"/> <label for="travelExpYn">출장비포함</label></span>
-                    </div>
-                </li>
-                <li class="col-6 xs-col-12 pr-16 xs-pr-0">
-                	<div class="input cf">
-                    	<label for="skills">전문기술<span>*</span></label>
-                        <input type="text" id="skills" name="skills" class="input_tech" required="required" readonly="readonly" style="cursor:pointer;"/>
-                    </div>
-                    <div class="option depth2 multi" id="skillPartList" style="display: none;">
-							<div class="select_box cf">
-								<ul class="cf" id="memberConfigJobList">
-								</ul>
-								<ul class="cf" id="memberConfigSkillList">
-								</ul>
-							</div>
-							<div class="view_box">
-								<ul class="cf">
-								</ul>
-								<div id="btnSkill" class="btn_close">선택</div>
-							</div>
-						</div>
-					</li>
-                <li class="col-6 xs-col-12 pl-16 xs-pl-0">
-                	<div class="input">
-                    	<label for="area">위치<span>*</span></label>
-                        <input type="text" id="area" name="area" class="input_local" required="required" readonly="readonly" style="cursor:pointer;"/>
-                    </div>
-						<div class="option depth2 multi" id="workAreaList" style="display: none;">
-							<div class="select_box cf">
-								<ul class="cf" id="memberConfigAreaList">
-								</ul>
-								<ul class="cf" id="memberConfigArea2List">
-								</ul>
-							</div>
-						</div>
-					</li>
-                <li class="col-6 xs-col-12 pr-16 xs-pr-0">
-                	<div class="input">
-                    	<label for="recrtrQm">모집요건</label>
-                        <input type="text" id="recrtrQm" name="recrtrQm" placeholder="예) 자바 경력 3년 이상"/>
-                    </div>
-                </li>
-                <li class="col-6 xs-col-12 pl-16 xs-pl-0">
-                	<div class="input">
-                    	<label for="recrtNum">모집인원</label>
-                        <input type="text" id="recrtNum" name="recrtNum" placeholder="예) c# 중급 1명, 고급 1명"/>
-                    </div>
-                </li>
-                <li class="col-12 xs-col-12 pr-16 xs-pr-0">
-                	<div class="input">
-                    	<label for="accptStrtDt">모집기간<span>*</span></label>
-                        <input type="text" class="input_day" id="accptStrtDt" name="accptStrtDt" required="required" readonly="readonly" />
-                        <span class="pl-16 pr-16  xs-pl-0  xs-pr-0"> ~ </span>
-                        <input type="text" class="input_day" id="accptCloseDt" name="accptCloseDt" required="required" readonly="readonly" /> 
-                        <span class="input_add" style="padding-left:20px;line-height:18px; color:#ff6600;">
-                        	* 모집기간은 기본 등록일로부터 한달이며 모집기간 종료일 이후 자동 마감됩니다. <br/>
-                       	 	* 모집기간 변경시 클릭하여 수정하시기 바랍니다.
-                        </span>
-                    </div>
-                </li>
-                <li>
-                	<div class="input sign_box">
-                    	<label for="projDtl">프로젝트 상세 내용</label>
-                        <div class="sign">
-							<textarea name="projDtl" id="projDtl" cols="100" rows="50" autofocus required style="height:700px;"></textarea>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-            
-            <!-- 버튼 -->
-            <div class="btn_box right">
-            	<button type="submit" id="btn" class="btn_normal btn_blue">등록하기</button>
-                <button id="btn" class="btn_normal btn_gray" onClick="location.href='/mypage/myProjectSearch';return false;";>프로젝트 목록</button>
+<!--Contents-->
+<div id="container">
+	<section class="join">
+    	<div class="join_in">
+            <!-- 제목부분 -->
+            <div class="join_tit">
+                <h2>회원정보 수정</h2>
             </div>
-            </form>
+            
+            <!-- 기업회원가입 -->
+            <div class="tab_con">
+            	<form class="login_form" id="registForm" name="registForm" action="">
+                <div class="input_list p-0 mb-20">
+                    <ul class="input_list_in cf">
+                    	<li class="col-6 xs-col-12 pr-16 xs-pr-0">
+                            <div class="input">
+                                <label for="">사업자번호<span>*</span></label>
+                                <input type="text" id="bzRegNo" name="bzRegNo" readonly="readonly" placeholder="&quot;-&quot;없이 입력바랍니다."  style="color:#999;" value="2158828373" />
+                            </div>
+                        </li>
+                        <li class="col-6 xs-col-12 pl-16 xs-pl-0">
+                            <div class="input">
+                                <label for="">회사명<span>*</span></label>
+                                <input type="text" id="compNm" name="compNm" value="Samsoung" placeholder="&quot;(주)&quot;없이 입력바랍니다."/>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="input">
+                                <label for="">이메일 주소<span>*</span></label>
+                                <input type="text" id="mngId" name="mgrId" readonly="readonly" placeholder="이메일 형식에 맞춰 입력바랍니다." style="color:#999;" value="kch@gsteletech.com" />
+                            </div>
+                        </li>
+                        <li class="col-6 xs-col-12 pr-16 xs-pr-0">
+                            <div class="input">
+                                <label for="">비밀번호<span>*</span></label>
+                                <input type="password" id="pwd" name="pwd" placeholder="최소 8자이상으로 문자,숫자,특수문자를 포함하여 입력바랍니다."/>
+                            </div>
+                        </li>
+                        <li class="col-6 xs-col-12 pl-16 xs-pl-0">
+                            <div class="input">
+                                <label for="">비밀번호 확인<span>*</span></label>
+                                <input type="password" id="pwdCheck" name="pwdCheck" placeholder="비밀번호를 한번더 입력해주세요." />
+                            </div>
+                        </li>
+                        <li class="col-6 xs-col-12 pr-16 xs-pr-0">
+                            <div class="input">
+                                <label for="">담당자이름<span>*</span></label>
+                                <input type="text" id="mngNm" name="mgrNm" placeholder="담당자 이름은 어떻게 되나요?" value="김인사" style="ime-mode:active !important;" />
+                            </div>
+                        </li>
+                        <li class="col-6 xs-col-12 pl-16 xs-pl-0">
+                            <div class="input">
+                                <label for="">담당자 휴대폰<span>*</span></label>
+                                <input type="text" id="telNo" name="telNo" placeholder="&quot;-&quot;없이 입력바랍니다." value="01023456789" />
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="input_list p-0 mb-20">
+                    <ul class="input_list_in cf">
+                        <li >
+                            <div class="input sign_box">
+                                <label for="compDtl">회사소개</label>
+                                <div class="sign">
+		                        	<textarea id="compDtl" name="compDtl" style="height:200px;"></textarea>
+		                        </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- 버튼 -->
+                <div class="btn_box xs-mt-20">
+                	<button type="submit" id="btn" class="btn_login btn_blue">정보수정</button>
+                </div>
+                
+                <div class="input_etc cf">
+                    <div class="id_fine col-12"><a href="#none" class="underline common-open_popup" data-div="closed" data-user-div="company">회원탈퇴</a></div>
+                </div>
+            	</form>
+            </div>
         </div>
     </section>
 </div>
-
-<script id="memberConfigJobListTemplate" type="text/x-mustache">
-	{{#jobList}}
-		<li class="configSelect {{#index}}active{{/index}}" data-value="{{cdVal}}" style="cursor:pointer;">{{cdValNm}}</li>
-	{{/jobList}}
-</script>
-<script id="memberConfigSkillListTemplate" type="text/x-mustache">
-	{{#jobList}}
-    	<li class="skillSelect" id="skillSelectList_{{cdVal}}" data-id="{{cdVal}}" data-value="{{cdValNm}}" style="cursor:pointer;">{{cdValNm}}</li>
-	{{/jobList}}
-</script>
-<script id="memberConfigAreaListTemplate" type="text/x-mustache">
-{{#areaList}}
-	<li class="areaSelect" data-id="{{cdVal}}" data-value="{{cdValNm}}" style="cursor:pointer;">{{cdValNm}}</li>
-{{/areaList}}
-</script>
-<script id="memberConfigArea2ListTemplate" type="text/x-mustache">
-    {{#areaList}}
-        <li class="area2Select" id="areaSelectList_{{cdVal}}" data-id="{{cdVal}}" data-value="{{cdValNm}}" style="cursor:pointer;">{{cdValNm}}</li>
-    {{/areaList}}
-</script>
-<script>
-	//initCkeditor();
-</script>
-
 ﻿	<!-- 팝업 -->
 	<div class="pop_bg" id="popInfoData" style="display:none;">
 	</div>
@@ -495,7 +367,8 @@
             </div>
         </div>
     </script>
-		
+
 	<%@ include file="../common/footer.jsp" %>
+
 </body>
 </html>

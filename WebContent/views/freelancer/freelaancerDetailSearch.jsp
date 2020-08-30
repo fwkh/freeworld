@@ -8,10 +8,12 @@
 	
     <!-- 네비게이션바 -->
 	<style type="text/css">	  
-	  #f_management{display:none;}
+	  #p_search{display:none;}
 	  #p_management{display:none;}
-	  #profile{display:none;}
+	  #notice{display:none;}
+	  #service{display:none;}
 	  #suggestion{display:none;}
+	  #login{display:none;}
 	</style>
     </head>
 <body>
@@ -21,62 +23,6 @@
 	<!-- End Google Tag Manager (noscript) -->
 
 	<div class="load_box" style="display:none;"><div class="load_img"><img src="/resources/images/common/loading.gif" alt="loading"/></div></div>
-
-
-<div id="header">
-	<div class="header_top">
-	    <div class="box">
-
-	        <div class="top_menu w_top_menu">
-	            <ul class="cf">
-	            	
-	                
-	                <li>GSteletech님</li>
-	                <li class="login"><a href="/login/logout">로그아웃</a></li>
-	                <li><a href="/mypage/myFreemon">마이프리월드</a>
-	                </li>
-	                
-	                
-	                <li><a href="/customer/noticeSearch">고객센터<span class="arrow"></span></a>
-	                	<ul class="top_depth2" style="display:none;">
-	                    	<p class="top_arrow"></p>
-	                    	<li><a href="/customer/noticeSearch">자주묻는질문</a></li>
-	                        <li><a href="/customer/questionRegistForm">문의하기</a></li>
-	                    </ul>
-	                </li>
-	                <li class="blog"><a href="http://blog.freemon.co.kr" target="_blank">블로그</a></li>
-	            </ul>
-	        </div>
-	    </div>
-	</div>
-    <div class="header_body">
-    	<div class="box">
-           <h1 class="logo"><a href="../../views/main/home.jsp">프리월드</a></h1>
-            <div id="gnb">
-                <nav>
-                    <ul class ="gnb_in cf">
-                    	
-                        <li class="menu_about gnb_depth1 active">
-                        	<a href="../../views/freelancer/freelancerSearch.jsp" class="gnb_depTxt"><em>프리랜서 검색</em></a>
-                        </li>
-                        <li class="menu_about gnb_depth1 ">
-                        	<a href="/talent/interestTalent" class="gnb_depTxt"><em>프리랜서 관리</em></a>
-                        </li>
-                        <li class="menu_about gnb_depth1 ">
-                        	<a href="/applicant/compApplicantSearch" class="gnb_depTxt"><em>제안 및 지원자 현황</em></a>
-                        </li>
-                        <li class="menu_about gnb_depth1 ">
-                        	<a href="/mypage/myProjectSearch" class="gnb_depTxt"><em>프로젝트 관리</em></a>
-                        </li>
-                        
-						
-						
-                    </ul>
-                </nav>
-            </div>
-		</div>
-	</div>
-</div>
 				
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript" src="/resources/js/Chart.js"></script>

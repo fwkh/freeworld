@@ -4,135 +4,19 @@
 <html lang="ko">
 <head>
 
-    <title>프리몬 - SI 전문 아웃소싱</title>
 	<%@ include file="../common/header.jsp" %>
 	    <!-- 네비게이션바 -->
 	<style type="text/css">	  
+	  #f_search{display:none;}
+	  #notice{display:none;}
 	  #f_management{display:none;}
 	  #p_management{display:none;}
-	  #profile{display:none;}
-	  #suggestion{display:none;}
+	  #login{display:none;}
+	  #service{display:none;}
 	</style>
-<!-- 페이지 적용 CSS -->
-<link rel="stylesheet" type="text/css"
-	href="../../resources/css/defaulta9af.css">
-<link rel="stylesheet" type="text/css"
-	href="../../resources/css/jquery-ui.mina751.css">
-<link rel="stylesheet" type="text/css"
-	href="../../resources/css/membercd4e.css">
-<link rel="stylesheet" type="text/css"
-	href="../../resources/css/new6d33.css">
-<link rel="stylesheet" type="text/css" id="mobile"
-	href="../../resources/css/web_hand.css">
-<link rel="stylesheet" type="text/css"
-	href="../../resources/css/career-ui.mina751.css" />
-<link rel="stylesheet" type="text/css"
-	href="../../resources/css/ui.jqgrid.css" />
-<link rel="shortcut icon" href="../../resources/images/new/favicon.ico" />
-	
-	<style type="text/css">
-	  .tooltipUI{
-	    background-color:#FAF4C0;
-	  }
-	  .ui-tooltip {
-	    padding: 8px;
-	    position: absolute;
-	    z-index: 999999;
-	    color : #fff;
-	    font-size : 12px;
-	    max-width: 600px;
-	    -webkit-box-shadow: 0 0 5px #aaa;
-	    box-shadow: 0 0 5px #aaa;
-		/* for IE */
-		filter:alpha(opacity=80);
-		/* CSS3 standard */
-		opacity:0.8;
-		line-height:16px;
-	  }
-	  body .ui-tooltip {
-	    border-width: 2px;
-	  }
-	  
-	  /* .scrollOff{position:fixed;overflow:hidden;height:100%;width:100%;} */
-	</style>
-
-	<script type="text/javascript">
-		var frameworkProperties = {
-			context: '',
-			locale: 'ko',
-			defaultLang: 'ko',
-			kakaoAppKey: 'a8bf256e33657332f212fd5847dbd8c5',
-		};
-	</script>
 
 </head>
-<body>
-	<!-- Google Tag Manager (noscript) -->
-	
-
-	        <div class="top_menu w_top_menu">
-	            <ul class="cf">
-	            	
-	                
-	                
-	                <li>한진선님</li>
-	                <li class="login"><a href="/login/logout">로그아웃</a></li>
-	                <li><a href="/mypage/myFreemon">마이프리몬<span class="arrow"></span></a>
-	                	<ul class="top_depth2" style="display:none;">
-	                    	<p class="top_arrow"></p>
-	                    	<li><a href="/resume/resumeSearch">프로필 관리</a></li>
-	                    	<!-- <li><a href="/document/documentSelect">서류신청</a></li> -->
-	                    	<li><a href="#none" class="common-open_popup" data-div="alamn" data-user-div="freelancer">알림설정</a></li>
-	                    </ul>
-	                </li>
-					
-	                <li><a href="/customer/noticeSearch">고객센터<span class="arrow"></span></a>
-	                	<ul class="top_depth2" style="display:none;">
-	                    	<p class="top_arrow"></p>
-	                    	<li><a href="/customer/noticeSearch">자주묻는질문</a></li>
-	                        <li><a href="/customer/questionRegistForm">문의하기</a></li>
-	                    </ul>
-	                </li>
-	                <li class="blog"><a href="http://blog.freemon.co.kr" target="_blank">블로그</a></li>
-	            </ul>
-	        </div>
-	    </div>
-	</div>
-    <div class="header_body">
-    	<div class="box">
-           <h1 class="logo"><a href="/">프리몬</a></h1>
-            <div id="gnb">
-                <nav>
-                    <ul class ="gnb_in cf">
-                    	
-						
-						<li class="menu_about gnb_depth1 ">
-                        	<a href="/project/projectSearch" class="gnb_depTxt"><em>프로젝트 검색</em></a>
-                        </li>
-						<li class="menu_about gnb_depth1 ">
-                        	<a href="/project/projectMap" class="gnb_depTxt"><em>프로젝트 맵</em></a>
-                        </li>
-                        <li class="menu_about gnb_depth1 active">
-                        	<a href="/applicant/talentApplicantSearch" class="gnb_depTxt"><em>제안 및 지원 현황</em></a>
-                        </li>
-                       <!--  <li class="menu_about gnb_depth1 ">
-                        	<a href="/home/freemonSupport" class="gnb_depTxt"><em>출장지원</em></a> 
-                        </li>-->
-                        <li class="menu_about gnb_depth1 ">
-                        	<a href="/resume/resumeSearch" class="gnb_depTxt"><em>프로필 관리</em></a>
-                        </li>
-						
-						
-                    </ul>
-                </nav>
-            </div>
-		</div>
-	</div>
-</div>
-		
-
-
-		
+<body>	
 
 <div id="container">
 	<section class="project_in">
