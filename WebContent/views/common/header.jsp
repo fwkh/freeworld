@@ -158,7 +158,7 @@
                     <li id="logout">한진선님</li>
 	                <li class="login" id="logout"><a href="/login/logout">로그아웃</a></li>
 	                <li class="login" id="login"><a href="../../views/member/memberLogin.jsp">로그인</a></li>
-	                <li id="logout"><a href="/mypage/myFreemon">마이프리몬<span class="arrow"></span></a>
+	                <li id="logout"><a href="/mypage/myFreemon">마이프리월드<span class="arrow"></span></a>
 	                <li id="login"><a href="../../views/member/joinSelect.jsp">회원가입</a></li>
 	                <li class="coustomer"><a href="../customer/noticeSearch.html"><span class="arrow"></span></a>
 	                	<ul class="top_depth2" style="display:none;">
