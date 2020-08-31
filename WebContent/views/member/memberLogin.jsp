@@ -92,7 +92,7 @@
 		                        </li>
 		                        <li class="pb-0">
 	                                <!-- <label for="companyPwd">비밀번호</label> -->
-	                                <input type="password" id="userPwd" name="userPwd" placeholder="비밀번호" />
+	                                <input type="password" id="userPwd" name="userPwd" placeholder="비밀번호"/>
 		                        </li>
 		                    </ul>
 						</form>
