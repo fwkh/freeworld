@@ -21,7 +21,7 @@ import kh.semi.project.model.vo.Project;
 @WebServlet("/projectSearch.do")
 public class ProjectSearch extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -36,8 +36,6 @@ public class ProjectSearch extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		ArrayList<Project> list = null;
-		
-		System.out.println("link test");
 		
 		ProjectService ps = new ProjectService();
 		
