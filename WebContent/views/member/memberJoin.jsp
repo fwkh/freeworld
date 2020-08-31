@@ -2,6 +2,7 @@
          pageEncoding="UTF-8" %>
 
 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -516,7 +517,7 @@
     </div>
 </form>
 
-
+<%@ include file="../common/header.jsp" %>
 </body>
 
 </html>
