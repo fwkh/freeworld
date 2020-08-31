@@ -25,6 +25,15 @@
 	  #suggestion{display:none;}
 	  #logout{display:none;}
 	</style>
+	<style>
+	li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+}
+	</style>
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 
@@ -285,7 +294,7 @@
 	                                <!-- <label for="">이메일주소<span class="need orange">(필수)</span></label> -->
 	                                <input type="hidden" id="userId" name="userId" value="1444427072"/>
 	                                <input type="hidden" id="prfPhotoYn" name="prfPhotoYn" value="Y"/>
-	                                <input type="text" id="email" name="email" value="keh9208@naver.com" placeholder="이메일 형식에 맞춰 입력바랍니다."/>
+	                                <input type="text" id="email" name="email" value="<=m.getEmail()%>" placeholder="이메일 형식에 맞춰 입력바랍니다."/>
 	                            </li>
 							</ul>
 						</div>
@@ -306,26 +315,64 @@
                                 " readonly="readonly"/>
 
                                 <div class="option depth2 multi" id="skillListModify" style="display: none;">
-                                    <div class="select_box cf">
-                                        <ul class="cf memberConfigJobList" id="memberModifyJobList">
-                                            <!-- 스킬 대분류 -->
-                                        </ul>
-                                        <ul class="cf memberConfigSkillList" id="memberModifySkillList">
-                                            <!-- 스킬 소분류 -->
-                                        </ul>
-                                    </div>
+                                    
                                     <div class="view_box">
-                                        <ul class="cf">
-                                            <!-- 스킬 선택 정보 -->
-                                        </ul>
+                                        	<ul id ="skillTable" style="display:none;">
+										
+												<li><input type="checkbox" value="ASP">ASP</li>
+												<li><input type="checkbox" value="JSP">JSP</li>
+												<li><input type="checkbox" value="PHP">PHP</li>
+												<li><input type="checkbox" value="JAVA">JAVA</li>
+												<li><input type="checkbox" value="C">C</li>
+												<li><input type="checkbox" value="C++">C++</li>
+												<li><input type="checkbox" value="C#">C#</li>
+												<li><input type="checkbox" value="ASP.NET">ASP.NET</li>
+												<li><input type="checkbox" value="JavaScript">JavaScript</li>
+												<li><input type="checkbox" value="Ajax">Ajax</li>
+												<li><input type="checkbox" value="Jquery">Jquery</li>
+												<li><input type="checkbox" value="NodeJS">NodeJS</li>
+												<li><input type="checkbox" value="vue.js">vue.js</li>
+												<li><input type="checkbox" value="React.js">React.js</li>
+												<li><input type="checkbox" value="Ruby">Ruby</li>
+												<li><input type="checkbox" value="RubyonRails">RubyonRails</li>
+												<li><input type="checkbox" value="MiPlatform">MiPlatform</li>
+												<li><input type="checkbox" value="Nexacro">Nexacro</li>
+												<li><input type="checkbox" value="XPLATFORM">XPLATFORM</li>
+												<li><input type="checkbox" value="GO">GO</li>
+												<li><input type="checkbox" value="Oracle">Oracle</li>
+												<li><input type="checkbox" value="MS-SQL">MS-SQL</li>
+												<li><input type="checkbox" value="MySQL">MySQL</li>
+												<li><input type="checkbox" value="DB2">DB2</li>
+												<li><input type="checkbox" value="Pro-C">Pro-C</li>
+												<li><input type="checkbox" value="Python">Python</li>
+												<li><input type="checkbox" value="VB">VB</li>
+												<li><input type="checkbox" value="VB.NET">VB.NET</li>
+												<li><input type="checkbox" value="POS">POS</li>
+												<li><input type="checkbox" value="ABAP">ABAP</li>
+												<li><input type="checkbox" value="EJB">EJB</li>
+												<li><input type="checkbox" value="Kotlin">Kotlin</li>
+												<li><input type="checkbox" value="F#">F#</li>
+												<li><input type="checkbox" value="SAP">SAP</li>
+												<li><input type="checkbox" value="PowerBulder">PowerBulder</li>
+												<li><input type="checkbox" value="MFC">MFC</li>
+												<li><input type="checkbox" value="어셈블리">어셈블리</li>
+												<li><input type="checkbox" value="임베디드">임베디드</li>
+												<li><input type="checkbox" value="펌웨어">펌웨어</li>
+												<li><input type="checkbox" value="HMI">HMI</li>
+												<li><input type="checkbox" value="PLC">PLC</li>
+												<li><input type="checkbox" value="Android">Android</li>
+												<li><input type="checkbox" value="Objective-C">Objective-C</li>
+												<li><input type="checkbox" value="Swift">Swift</li>
+												
+											</ul>
                                         <div id="btnModifySkill" class="btn_close">닫기</div>
                                     </div>
                                 </div>
                             </li>
                             <li class="col-6 pl-5">
                                 <label for="">희망근무지역<span class="need orange">(필수)</span></label>
-                                <input type="text" class="input_local" id="area" name="area" placeholder="선택하세요.(여러개 선택 가능)" value="" readonly="readonly"/>
-
+                                <input type="text" class="input_local" id="area" name="area" placeholder="지역을 선택하세요." value="<=m.getArea()%>" />
+								
                                 <div class="option depth2 multi" id="workAreaList" style="display: none;">
                                     <div class="select_box cf">
                                         <ul class="cf" id="memberConfigAreaList">
@@ -336,8 +383,33 @@
                                     <div class="view_box">
                                         <ul class="cf">
                                             <!-- 지역 선택 정보 -->
-                                        </ul>
-                                        <div id="btnArea" class="btn_close">닫기</div>
+                                        <select id="area1" name="area1" placeholder="선택하세요.(여러개 선택 가능)" value="<=m.getArea()%>">
+	                                    
+	                                    <option value="강남구">강남구</option>
+	                                    <option value="강동구">강동구</option>
+	                                    <option value="강서구">강서구</option>
+	                                    <option value="구로구">구로구</option>
+	                                    <option value="금천구">금천구</option>
+	                                    <option value="노원구">노원구</option>
+	                                    <option value="관악구">관악구</option>
+	                                    <option value="광진구">광진구</option>
+	                                    <option value="도봉구">도봉구</option>
+	                                    <option value="동대문구">동대문구</option>
+	                                    <option value="동작구">동작구</option>
+	                                    <option value="마포구">마포구</option>
+	                                    <option value="서대문구">서대문구</option>
+	                                    <option value="서초구">서초구</option>
+	                                    <option value="성동구">성동구</option>
+	                                    <option value="성북구">성북구</option>
+	                                    <option value="송파구">송파구</option>
+	                                    <option value="양천구">양천구</option>
+	                                    <option value="영등포구">영등포구</option>
+	                                    <option value="용산구">용산구</option>
+	                                    <option value="은평구">은평구</option>
+	                                    <option value="중랑구">중랑구</option>
+	                                    <option value="종로구">종로구</option>
+	                                    <option value="중구">중구</option>
+	                                </select>
                                     </div>
                                 </div>
                             </li>
