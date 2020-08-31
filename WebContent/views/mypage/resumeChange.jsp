@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<script type="text/javascript" src="../../resources/freemon/common/freemonSearch9667.js?version=1.2"></script>
                 <!-- 기본정보 입력 -->
                 <div class="free_con" id="freelancerUpdate" >
                     <form id="updateForm" name="updateForm">
