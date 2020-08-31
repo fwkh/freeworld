@@ -13,7 +13,7 @@
 </head>
 <body>
 	<%@ include file="../common/header.jsp" %>
-	<script type="text/javascript" src="../../resources/js/f_Search.js" charset="utf-8"></script>
+	<script type="text/javascript" src="../../resources/js/f_Search.js" charset="UTF-8"></script>
 
 		
 <!-- Bootstrap css -->
