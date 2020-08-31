@@ -25,7 +25,7 @@
 	<div id="wrap" >
 		<div id="modal-wrap" class="modal-wrap"></div>
 
-	
+
 	<!-- 풀페이지 -->
 	<div id="m-container" class="main-wrap">
 		<div class="section-wrap">
@@ -469,7 +469,6 @@
 			</map>
 		</div>
 </script>
-
 	<%@ include file="../common/footer.jsp" %>
 
 </body>
