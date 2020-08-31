@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -231,7 +232,7 @@
 </script>
 
 <!--Contents-->
-<form name="f"  method="post" action="memInsert.me" onsubmit="return sendIt()">
+<form name="f"  method="post" action="memInsert.me" onsubmit="return sendIt()" novalidate>
     <div id="container">
         <div id="signup_wrapper">
             <h1 style="text-align: center;" id="signup">회원가입</h1>
@@ -457,7 +458,7 @@
                 <h3 style="margin: 10px;">*투입가능한 날짜</h3>
                 <input type="date" id="date">
                 <br><br><br>
-                <input type="submit" onclick="sendIt()" value="회원가입" style="width: 200px; height: 50px; background: gray;">
+                <input type="submit" value="회원가입" style="width: 200px; height: 50px; background: gray;">
 
                 <script>
                     function sendIt() {
@@ -467,13 +468,12 @@
                         var pwdCheck = document.f.pwdCheck.value;
                         var birth = document.f.birth.value;
                         var sector_hope_ch = document.f.sector_hope_ch.value;
-                        var sector_area = document.f.sector_area.value();
+                        var sector_area = document.f.sector_area.value;
                         var tel = document.f.tel1.value + document.f.tel2.value + document.f.tel3.value;
                         var tech1 = $("#tech1 option:selected").val();
                         var tech2 = $("#tech2 option:selected").val();
                         var tech3 = $("#tech3 option:selected").val();
-                        var date = $("#date").val();
-
+                        var date = document.f.date.value;
                         // 미작성란 체크
                         if (email == "" || name == "" || pwd == "" || birth == "" ||
                             sector_hope_ch == "" || sector_area == "" || tel == "" || tech1 == "" || date == "" ) {
@@ -485,7 +485,7 @@
                         // 이메일에 공백 사용하지 않기
                         if(email.indexOf(" ")>=0){
                             alert("이메일에 공백을 사용할 수 없습니다.");
-                            $("#email").focus();
+                            document.f.email.focus();
                             return false;
                         }
 
@@ -493,7 +493,7 @@
                         // 비밀번호 8자 이상
                         if(pwd.length <8){
                             alert("비밀번호를 8자 이상 입력해주세요.");
-                            $("#pwd").focus();
+                            document.f.pwd.focus();
                             return false;
 
                         }
@@ -504,7 +504,6 @@
                             return false;
                         }
 
-                        return false;
                     }
 
                 </script>
