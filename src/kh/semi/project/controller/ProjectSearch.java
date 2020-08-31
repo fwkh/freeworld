@@ -51,7 +51,7 @@ public class ProjectSearch extends HttpServlet {
 			
 			response.sendRedirect("views/project/projectSearch.jsp");
 			
-		}catch(MemberException e) {
+		}catch(Exception e) {
 			request.setAttribute("msg", "프로젝트 검색 실패!");
 			request.setAttribute("exception", e);
 			
