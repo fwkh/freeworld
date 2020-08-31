@@ -49,29 +49,17 @@ public class ProjectSearch extends HttpServlet {
 			HttpSession session = request.getSession();
 			session.setAttribute("list", list);
 			
-			response.sendRedirect("home.jsp");
+			response.sendRedirect("views/project/projectSearch.jsp");
 			
 		}catch(MemberException e) {
-			request.setAttribute("msg", "회원 로그인 실패!");
+			request.setAttribute("msg", "프로젝트 검색 실패!");
 			request.setAttribute("exception", e);
 			
 			request.getRequestDispatcher("views/common/errorPage.jsp")
 			.forward(request, response);
 		}
 		
-//		String page ="";
-		
-//		if(list != null) {
-//			page = "views/project/projectSearch.jsp";
-//			request.setAttribute("list", list);
-//			
-//
-//		} else {
-//			page = "views/common/errorPage.jsp";
-//			request.setAttribute("msg", "게시글 목록 조회 실패!");
-//		}
-//		
-//		request.getRequestDispatcher(page).forward(request, response);;
+		request.getRequestDispatcher("views/project/projectSearch.jsp").forward(request, response);;
 
 	}
 
