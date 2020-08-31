@@ -1,32 +1,63 @@
 $(function()
 {
 	// 지역
-    $('#area').click(function()
+    $('#area').mouseenter(function()
     {
-        $('#workAreaList').toggle(0, function()
-        {
-            $('#skillList').hide();
-            $('#careerList').hide();
-        });
+        $('#workAreaList').show();
+    });
+    $('#area').mouseleave(function()
+    {
+    	$('#workAreaList').hide();
+    });
+    
+    $('#workAreaList').mouseenter(function()
+    {
+    	$('#workAreaList').show();
+    });
+    $('#workAreaList').mouseleave(function()
+    {
+    	$('#workAreaList').hide();
     });
     
     // 전문기술
-    $('#skill').click(function()
+    $('#skill').mouseenter(function()
     {
-    	$('#skillList').toggle(0, function()
-    	{
-    		$('#workAreaList').hide();
-    		$('#careerList').hide();
-    	});
+    	$('#skillList').show();
+    });
+    $('#skill').mouseleave(function()
+    {
+    	$('#skillList').hide();
+    });
+    
+    $('#skillList').mouseenter(function()
+    {
+    	$('#skillList').show();
+    });
+    $('#skillList').mouseleave(function()
+    {
+    	$('#skillList').hide();
     });
     
     // 경력
-    $('#careerDate').click(function()
+    $('#careerDate').mouseenter(function()
 	{
-    	$('#careerList').toggle(0, function()
-		{
-    		$('#skillList').hide();
-    		$('#workAreaList').hide();
-		});
+    	$('#careerList').show();
 	});
+    $('#careerDate').mouseleave(function()
+    {
+    	$('#careerList').hide();
+    });
+    
+    $('#careerList').mouseenter(function()
+    {
+    	$('#careerList').show();
+    });
+    $('#careerList').mouseleave(function()
+    {
+    	$('#careerList').hide();
+    });
+    
+    $('#areaSelect').click(function(){
+    	console.log($('#area0').dataset.value);
+    });
 });

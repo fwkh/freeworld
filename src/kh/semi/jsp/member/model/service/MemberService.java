@@ -8,8 +8,8 @@ import kh.semi.jsp.member.exception.MemberException;
 import kh.semi.jsp.member.model.dao.MemberDao;
 import kh.semi.jsp.member.model.vo.Member;
 
-public class MemberService {
-
+public class MemberService 
+{
 	private Connection con;
 	private MemberDao mDao = new MemberDao();
 	
@@ -25,5 +25,4 @@ public class MemberService {
 		}
 		return result;
 	}
-
 }

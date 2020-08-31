@@ -9,6 +9,7 @@
 	  #p_management{display:none;}
 	  #profile{display:none;}
 	  #suggestion{display:none;}
+	  #logout{display:none;}
 	</style>
 </head>
 <body>
@@ -84,32 +85,32 @@
                     <div class="option depth1 single" id="workAreaList" style="display: none;">
                         <div class="select_box cf">
                             <ul class="cf" id="memberSearchAreaList">
-								<li class="areaSelect" data-id="0" data-value="서울 전체" style="cursor:pointer;">서울 전체</li>
-								<li class="areaSelect" data-id="1" data-value="중구" style="cursor:pointer;">중구</li>
-								<li class="areaSelect" data-id="2" data-value="종로구" style="cursor:pointer;">종로구</li>
-								<li class="areaSelect" data-id="3" data-value="용산구" style="cursor:pointer;">용산구</li>
-								<li class="areaSelect" data-id="4" data-value="성동구" style="cursor:pointer;">성동구</li>
-								<li class="areaSelect" data-id="5" data-value="광진구" style="cursor:pointer;">광진구</li>
-								<li class="areaSelect" data-id="6" data-value="동대문구" style="cursor:pointer;">동대문구</li>
-								<li class="areaSelect" data-id="7" data-value="중랑구" style="cursor:pointer;">중랑구</li>
-								<li class="areaSelect" data-id="8" data-value="성북구" style="cursor:pointer;">성북구</li>
-								<li class="areaSelect" data-id="9" data-value="강북구" style="cursor:pointer;">강북구</li>
-								<li class="areaSelect" data-id="10" data-value="도봉구" style="cursor:pointer;">도봉구</li>
-								<li class="areaSelect" data-id="11" data-value="노원구" style="cursor:pointer;">노원구</li>
-								<li class="areaSelect" data-id="12" data-value="은평구" style="cursor:pointer;">은평구</li>
-								<li class="areaSelect" data-id="13" data-value="서대문구" style="cursor:pointer;">서대문구</li>
-								<li class="areaSelect" data-id="14" data-value="양천구" style="cursor:pointer;">양천구</li>
-								<li class="areaSelect" data-id="15" data-value="강서구" style="cursor:pointer;">강서구</li>
-								<li class="areaSelect" data-id="16" data-value="구로구" style="cursor:pointer;">구로구</li>
-								<li class="areaSelect" data-id="17" data-value="금천구" style="cursor:pointer;">금천구</li>
-								<li class="areaSelect" data-id="18" data-value="제주" style="cursor:pointer;">영등포구</li>
-								<li class="areaSelect" data-id="19" data-value="영등포구" style="cursor:pointer;">동작구</li>
-								<li class="areaSelect" data-id="20" data-value="관악구" style="cursor:pointer;">관악구</li>
-								<li class="areaSelect" data-id="21" data-value="서초구" style="cursor:pointer;">서초구</li>
-								<li class="areaSelect" data-id="22" data-value="강남구" style="cursor:pointer;">강남구</li>
-								<li class="areaSelect" data-id="23" data-value="송파구" style="cursor:pointer;">송파구</li>
-								<li class="areaSelect" data-id="24" data-value="강동구" style="cursor:pointer;">강동구</li>
-								<li class="areaSelect" data-id="25" data-value="마포구" style="cursor:pointer;">마포구</li>
+								<li class="areaSelect" id="area0" data-value="서울 전체" style="cursor:pointer;">서울 전체</li>
+								<li class="areaSelect" id="area1" data-value="중구" style="cursor:pointer;">중구</li>
+								<li class="areaSelect" id="area2" data-value="종로구" style="cursor:pointer;">종로구</li>
+								<li class="areaSelect" id="area3" data-value="용산구" style="cursor:pointer;">용산구</li>
+								<li class="areaSelect" id="area4" data-value="성동구" style="cursor:pointer;">성동구</li>
+								<li class="areaSelect" id="area5" data-value="광진구" style="cursor:pointer;">광진구</li>
+								<li class="areaSelect" id="area6" data-value="동대문구" style="cursor:pointer;">동대문구</li>
+								<li class="areaSelect" id="area7" data-value="중랑구" style="cursor:pointer;">중랑구</li>
+								<li class="areaSelect" id="area8" data-value="성북구" style="cursor:pointer;">성북구</li>
+								<li class="areaSelect" id="area9" data-value="강북구" style="cursor:pointer;">강북구</li>
+								<li class="areaSelect" id="area10" data-value="도봉구" style="cursor:pointer;">도봉구</li>
+								<li class="areaSelect" id="area11" data-value="노원구" style="cursor:pointer;">노원구</li>
+								<li class="areaSelect" id="area12" data-value="은평구" style="cursor:pointer;">은평구</li>
+								<li class="areaSelect" id="area13" data-value="서대문구" style="cursor:pointer;">서대문구</li>
+								<li class="areaSelect" id="area14" data-value="양천구" style="cursor:pointer;">양천구</li>
+								<li class="areaSelect" id="area15" data-value="강서구" style="cursor:pointer;">강서구</li>
+								<li class="areaSelect" id="area16" data-value="구로구" style="cursor:pointer;">구로구</li>
+								<li class="areaSelect" id="area17" data-value="금천구" style="cursor:pointer;">금천구</li>
+								<li class="areaSelect" id="area18" data-value="제주" style="cursor:pointer;">영등포구</li>
+								<li class="areaSelect" id="area19" data-value="영등포구" style="cursor:pointer;">동작구</li>
+								<li class="areaSelect" id="area20" data-value="관악구" style="cursor:pointer;">관악구</li>
+								<li class="areaSelect" id="area21" data-value="서초구" style="cursor:pointer;">서초구</li>
+								<li class="areaSelect" id="area22" data-value="강남구" style="cursor:pointer;">강남구</li>
+								<li class="areaSelect" id="area23" data-value="송파구" style="cursor:pointer;">송파구</li>
+								<li class="areaSelect" id="area24" data-value="강동구" style="cursor:pointer;">강동구</li>
+								<li class="areaSelect" id="area25" data-value="마포구" style="cursor:pointer;">마포구</li>
 							</ul>
                         </div>
                     </div>
@@ -178,12 +179,12 @@
                     <div class="option depth1 single" id="careerList" style="display: none;">
                         <div class="select_box cf">
                             <ul class="cf">
-                                <li class="setRangeValue" data-action="setRangeValue" data-value="1" id="1" data-html="5년이하">5년이하</li>
-				                <li class="setRangeValue" data-action="setRangeValue" data-value="2" id="2" data-html="6~10년">6~10년</li>
-				                <li class="setRangeValue" data-action="setRangeValue" data-value="3" id="3" data-html="11~15년">11~15년</li>
-				                <li class="setRangeValue" data-action="setRangeValue" data-value="4" id="4" data-html="16~20년">16~20년</li>
-				                <li class="setRangeValue" data-action="setRangeValue" data-value="5" id="5" data-html="21년이상">21년이상</li>
-				                <li class="setRangeValue" data-action="setRangeValue" data-value="0" id="0" data-html="경력무관">경력무관</li>
+                                <li class="setRangeValue" data-action="setRangeValue" data-value="1" id="career1" data-html="5년이하">5년이하</li>
+				                <li class="setRangeValue" data-action="setRangeValue" data-value="2" id="career2" data-html="6~10년">6~10년</li>
+				                <li class="setRangeValue" data-action="setRangeValue" data-value="3" id="career3" data-html="11~15년">11~15년</li>
+				                <li class="setRangeValue" data-action="setRangeValue" data-value="4" id="career4" data-html="16~20년">16~20년</li>
+				                <li class="setRangeValue" data-action="setRangeValue" data-value="5" id="career5" data-html="21년이상">21년이상</li>
+				                <li class="setRangeValue" data-action="setRangeValue" data-value="0" id="career6" data-html="경력무관">경력무관</li>
                             </ul>
                         </div>
                     </div>
@@ -268,12 +269,12 @@
 						</div>
 					</div>
 				</div>
-				<div class="card cf">
+				<div class="card cf" style=" cursor: pointer;" onclick="location.href='../member/memberLogin.jsp'">
                     <div class="free_info cf">
-                        <div class="profile" style="cursor:pointer;background-image:url(http://th-p.talk.kakao.co.kr/th/talkp/wlBaG95K4G/8Ttz5G4v91tdCDYBGwYNFK/hpj5e3_110x110_c.jpg)" data-action="talentDetail" data-value="1443141222">프로필사진</div>
+                        <div class="profile" style="cursor:pointer; background-image:url(http://th-p.talk.kakao.co.kr/th/talkp/wlBaG95K4G/8Ttz5G4v91tdCDYBGwYNFK/hpj5e3_110x110_c.jpg)" data-action="talentDetail" data-value="1443141222">프로필사진</div>
                         <div class="free_con">
                             <h3 data-action="talentDetail" data-value="1443141222">
-                                <a href="#none" data-action="talentDetail" data-value="1443141222">김**</a>
+                                <a href="../member/memberLogin.jsp" data-action="talentDetail" data-value="1443141222">김**</a>
                                 <ul class="f_nature cf">
                                     <li>36세</li>
                                     <li class="ellipsis">**</li>
@@ -340,7 +341,7 @@
                         </div>
                     </div>
 				</div>
-				<div class="card cf">
+				<div class="card cf" style=" cursor: pointer;" onclick="location.href='../member/memberLogin.jsp'">
                     <div class="free_info cf">
                         <div class="profile" style="cursor:pointer;background-image:url(/resources/images/new/no-pic.png)" data-action="talentDetail" data-value="1413120282">프로필사진</div>
                         <div class="free_con">
@@ -404,7 +405,7 @@
                         </div>
                     </div>
 				</div>
-				<div class="card cf">
+				<div class="card cf" style=" cursor: pointer;" onclick="location.href='../member/memberLogin.jsp'">
                     <div class="free_info cf">
                         <div class="profile" style="cursor:pointer;background-image:url(http://th-p.talk.kakao.co.kr/th/talkp/wkTe9ganri/RLUKJr1XNRu8EycEPMFdFK/ov0djy_110x110_c.jpg)" data-action="talentDetail" data-value="1407998569">프로필사진</div>
                         <div class="free_con">
@@ -484,7 +485,7 @@
                         </div>
                     </div>
 				</div>
-				<div class="card cf">
+				<div class="card cf" style=" cursor: pointer;" onclick="location.href='../member/memberLogin.jsp'">
                     <div class="free_info cf">
                         <div class="profile" style="cursor:pointer;background-image:url(http://th-p.talk.kakao.co.kr/th/talkp/wlB2QYnj7f/NSmL6HT1YjotCdheKAWgBk/ouzjh9_110x110_c.jpg)" data-action="talentDetail" data-value="1388066362">프로필사진</div>
                         <div class="free_con">

@@ -11,6 +11,7 @@
 	  #p_management{display:none;}
 	  #profile{display:none;}
 	  #suggestion{display:none;}
+	  #logout{display:none;}
 	</style>
 </head>
 <body>
@@ -91,7 +92,7 @@
 		                        </li>
 		                        <li class="pb-0">
 	                                <!-- <label for="companyPwd">비밀번호</label> -->
-	                                <input type="password" id="userPwd" name="userPwd" placeholder="비밀번호" />
+	                                <input type="password" id="userPwd" name="userPwd" placeholder="비밀번호"/>
 		                        </li>
 		                    </ul>
 						</form>
@@ -103,7 +104,7 @@
                         </div>
 		                <button id="userLoginBtn" class="b_login b_red" value="로그인" style="cursor:pointer;">로그인</button>
 		                <ul class="login_link">
-		                	<li><a href="#none" class="underline">아이디/비밀번호 찾기</a></li>
+		                	<li><a href="../member/signEmail.jsp" class="underline">아이디/비밀번호 찾기</a></li>
 		                	<li><a href="../member/memberJoin.jsp">프리랜서 회원가입</a></li>
 		                </ul>
                    	</div>
@@ -148,7 +149,7 @@
                         </div>
 		                <button id="companyloginBtn" class="b_login b_red" value="로그인" style="cursor:pointer;">로그인</button>
 		                <ul class="login_link">
-		                	<li><a href="#none" class="underline">아이디/비밀번호 찾기</a></li>
+		                	<li><a href="../member/signEmail.jsp" class="underline">아이디/비밀번호 찾기</a></li>
 		                	<li><a href="../member/companyJoin.jsp">기업고객 회원가입</a></li>
 		                </ul>
                    	</div>

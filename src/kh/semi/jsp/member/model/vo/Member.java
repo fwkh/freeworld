@@ -173,18 +173,10 @@ public class Member implements Serializable{
 	}
 
 	@Override
-	public String toString() {
+	public String toString() 
+	{
 		return "Member [userNo=" + userNo + ", userPwd=" + userPwd + ", userName=" + userName + ", birth=" + birth
 				+ ", phone=" + phone + ", email=" + email + ", area=" + area + ", hope=" + hope + ", future=" + future
 				+ ", enrolldate=" + enrolldate + ", career=" + career + ", total=" + total + ", join=" + join + "]";
-	}
-
-	
-	
+	}	
 }
-
-
-
-
-
-

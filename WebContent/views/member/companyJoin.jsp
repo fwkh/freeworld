@@ -2,15 +2,6 @@
     pageEncoding="UTF-8"%>
     
 
-
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -23,45 +14,9 @@
 	  #p_management{display:none;}
 	  #profile{display:none;}
 	  #suggestion{display:none;}
+	  #logout{display:none;}
 	</style>
 
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta name="naver-site-verification" content="81b7cb5e5f8e2975b94b334d812bb38453749a5a"/>
-	<meta name="keywords" content="프리몬, FREEMON, SI, SM, 프리랜서, 아웃소싱 플랫폼, 상주, 프로젝트, 개발자, 시스템엔지니어, MES, 설계자, 디자이너, 타임라인, Java, C#" />
-	<meta name="description" content="SI 전문 아웃소싱 플랫폼. 일정이 딱딱 맞는 프로젝트, 프리랜서를 한눈에. 프로젝트 프리랜서 타임라인, 간편하게 작성하는 전자계약서, 이력 간편등록, 프리랜서 멘토, 쉽게 관리하는 프로젝트" />
-	<meta property="og:type" content="website" />
-	<meta property="og:title" content="프리몬 - SI 전문 아웃소싱" />
-	<meta property="og:description" content="SI 전문 아웃소싱 플랫폼. 프로젝트 프리랜서 타임라인, 이력 간편등록, 프리랜서 멘토, 간편 전자계약서" />
-	<meta property="og:image" content="https://www.freemon.co.kr/resources/images/new/freemon_naver.jpg" />
-	<meta property="og:url" content="https://www.freemon.co.kr" />
-    <meta id="_csrf" name="_csrf" content="45d71795-fe18-44ec-9100-ef681e66286f"/>
-	<meta id="_csrf_header" name="_csrf_header" content="X-CSRF-TOKEN"/>
-    <meta name="viewport" content="width=1360">
-    <title>프리몬 - SI 전문 아웃소싱</title>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-137161229-1"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-	  	function gtag(){dataLayer.push(arguments);}
-	  	gtag('js', new Date());
-	
-	  	gtag('config', 'UA-137161229-1', {
-	  	  'linker': {
-	  	    'domains': ['www.freemon.co.kr', 'www.freemon.kr']
-	  	  }
-	  	});
-	</script> -->
-
-	<link rel="stylesheet" type="text/css" href="../resources/css/defaulta9af.css?version=4.3">
-	<link rel="stylesheet" type="text/css" href="../resources/css/jquery-ui.mina751.css?version=2.0">
-	<link rel="stylesheet" type="text/css" href="../resources/css/membercd4e.css?version=4.1">
-	<link rel="stylesheet" type="text/css" href="../resources/css/new6d33.css?version=4.8">
-	<link rel="stylesheet" type="text/css" id="mobile" href="../resources/css/web_hand.css">
-	<link rel="stylesheet" type="text/css" href="../resources/css/career-ui.mina751.css?version=2.0" />
-	<link rel="stylesheet" type="text/css" href="../resources/css/ui.jqgrid.css" />
-	<link rel="shortcut icon" href="../resources/images/new/favicon.ico"/>
-	
 	<style type="text/css">
       
       #com_wrapper{
@@ -215,7 +170,7 @@
                                         </label>
                                     </div>
 									<a href="#none" class="joinAgreeList">회원약관(필수)</a>
-									<a href="/home/freemonIndividualTerms" target="_blank" class="btn_open">전문보기</a>
+									<a href="../home/freeworldInvidualPrivacy.jsp" target="_blank" class="btn_open">전문보기</a>
                                </li>
                                <li class="active has-sub">
                                     <div class="join_check">
@@ -224,7 +179,7 @@
                                         </label>
                                     </div>
                                     <a href="#none" class="joinAgreeList">개인정보 수집 및 이용동의(필수)</a>
-                                    <a href="/home/freemonIndividualPrivacy" target="_blank" class="btn_open">전문보기</a>
+                                    <a href="../home/freeworldIndivdualTerms.jsp" target="_blank" class="btn_open">전문보기</a>
                                </li>
                                <li class="active has-sub">
                                     <div class="join_check">

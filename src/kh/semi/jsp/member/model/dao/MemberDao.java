@@ -37,14 +37,16 @@ public class MemberDao {
 		ResultSet rset = null;
 		
 		String sql = prop.getProperty("selectMember");
-		try {
+		try
+		{
 			pstmt.getConnection().prepareStatement(sql);
 			pstmt.setString(1, m.getEmail());
 			pstmt.setString(2, m.getUserPwd());
 			
 			rset = pstmt.executeQuery();
 			
-			if(rset.next()) {
+			if(rset.next())
+			{
 				result = new Member();
 				result.setEmail(m.getEmail());
 				result.setUserPwd(m.getUserPwd());
@@ -59,17 +61,16 @@ public class MemberDao {
 				result.setCareer(rset.getInt("career"));
 				result.setTotal(rset.getInt("total"));
 				result.setJoin(rset.getString("join"));
-			
-				
 			}
-		} catch (Exception e) {
+		} catch (Exception e)
+		{
 			throw new MemberException(e.getMessage());
-		}finally {
+		}finally
+		{
 			close(rset);
 			close(pstmt);
 		}
 		
 		return result;
 	}
-
 }
