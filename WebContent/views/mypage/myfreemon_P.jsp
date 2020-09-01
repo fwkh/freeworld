@@ -101,8 +101,7 @@
 					 <div class="dash">
 						<div class="dash_tit">
 							<h3>
-								나의 타임라인 <a class="btn_close" href="/talent/openTalentDetail?fno=1414045769" 
-								target="_blank">프로필 미리보기</a> <a href="javascript:void(0);" class="note_q">
+								나의 타임라인 <a class="btn_close" href="">프로필 미리보기</a> <a href="javascript:void(0);" class="note_q">
 									<p class="note_a">
 										등록된 경력을 기준으로<br>기업고객에게 보여지는<br>이력정보 화면입니다.<span class="a_arrow"></span>
 									</p>
