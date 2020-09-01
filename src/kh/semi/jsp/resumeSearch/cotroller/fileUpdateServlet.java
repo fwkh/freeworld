@@ -1,4 +1,4 @@
-package kh.semi.jsp.mypage.cotroller;
+package kh.semi.jsp.resumeSearch.cotroller;
 
 import java.io.IOException;
 
@@ -14,7 +14,8 @@ import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 import kh.semi.jsp.member.model.vo.Member;
-
+import kh.semi.jsp.resumeSearch.model.service.MypageService;
+import javax.servlet.http.*;
 /**
  * Servlet implementation class fileUpdateServlet
  */
@@ -68,14 +69,26 @@ public class fileUpdateServlet extends HttpServlet {
 																// 기존의 파일과 구분하기 위해
 																// 새로운 파일명 뒤에 숫자를 붙이도록 규칙을 만들었다.
 																); 
-				// 파일 업로드 시작!!
 				
-				
-				
+				HttpSession session = request.getSession();
+
+				Member user = (Member)session.getAttribute("member");
+				int userNo = user.getUserNo();
 				String fileName = mrequest.getFilesystemName("file"); // "file" = > input태그의 이름 
 				
 				Member m = new Member();
 				m.setFiles(fileName);
+				m.setUserNo(userNo);
+				
+				// 9. 서비스 결과 처리
+				int result = new MypageService().fileUpdate(m);
+				
+				if(result >0) {
+					response.sendRedirect("resumeSearch.jsp"); 
+				}else {
+					request.setAttribute("msg", "파일 업로드 실패!");
+					request.getRequestDispatcher("views/common/errorPage.jsp").forward(request, response);
+				}
 	}
 
 	/**
