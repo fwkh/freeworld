@@ -2,12 +2,15 @@
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.Calendar"%>
 <%@page import="java.util.Date"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="kh.semi.project.model.vo.*"%>
 <%@page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" import="kh.semi.jsp.member.model.vo.*"%>
 <%
 	Member m = (Member)session.getAttribute("member");
 	Calendar today = Calendar.getInstance();
 	SimpleDateFormat df = new SimpleDateFormat("yy-MM");
+	//ArrayList<Project> list = (ArrayList<Project>)request.getAttribute("list"); // 확인했던 프로젝트들을 담아 놓는 객체
 %>
 
 <!DOCTYPE html>
@@ -32,6 +35,17 @@
 </head>
 
 <body>
+
+<script type="text/javascript" src="../../resources/freemon/common/freemonSearch9667.js?version=1.2"></script>
+<script type="text/javascript">
+	$(function() {
+		freemon.invoker.invoke("freemonSearch");
+		$('.dateRangePicker').datepicker({
+			 format: "yyyy-mm-dd",
+			 language: "kr",
+		});
+	});
+</script>
 <script>
 	/* $(function(){
 		location.href="/myWeb/mypageLoad.bo"; // 세션에서 값 불러오기

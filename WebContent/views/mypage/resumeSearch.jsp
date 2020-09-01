@@ -1,14 +1,16 @@
+
 <%@page import="java.util.Calendar"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.Calendar"%>
 <%@page import="java.util.Date"%>
+
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" import="kh.semi.jsp.member.model.vo.*"%>
 <%
 	Member m = (Member)session.getAttribute("member");
 	Calendar today = Calendar.getInstance();
 	SimpleDateFormat df = new SimpleDateFormat("yy-MM");
-	//ArrayList<Project> list = (ArrayList<Board>)request.getAttribute("list"); 
 %>
 
 <!DOCTYPE html>
@@ -22,6 +24,15 @@
 	  #profile{display:none;}
 	  #suggestion{display:none;}
 	  #logout{display:none;}
+	</style>
+	<style>
+	li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+}
 	</style>
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
@@ -43,7 +54,7 @@
 <script type="text/javascript" src="../resources/js/Chart.js"></script>
 <script type="text/javascript" src="../resources/js/resumeSearch.js"></script>
 <script type="text/javascript">
-	$(function() {
+	/* $(function() {
 	    var skills = [], areas = [];
 		
 		
@@ -62,14 +73,14 @@
             'hldSkill' : '',
             'workAreaNm' : ''
 		});
-	});
+	}); */
 
-	function clickFile() {
+/* 	function clickFile() {
 		registForm.file.click();
 	}
 	function fillFile() {
 		registForm.virtu_text.value = registForm.file.value;
-	}
+	} */
 </script>
 <div id="container">
 	<section class="project_in">
@@ -77,7 +88,7 @@
 
         <div class="layer-2">
             <!-- 이력서 파일 -->
-            <div class="card no_over p-20 cf">
+            <div class="card no_over p-20 cf" style="display:block;">
                 <div class="profile_big">
                     <div class="profile" style="background-image:url()">프로필사진</div>
                     <div class="btn_box no_gap mt-10 cf">
@@ -86,7 +97,7 @@
                     </div>
                 </div>
                 <!-- 기본정보 출력 -->
-                <div class="free_con" id="freelancerShow">
+                <div class="free_con" id="freelancerShow"  id="freelancerShow">
                     <h3>아무개</h3>
                     <div class="gray_box mt-10">
 	                    <p class="small"> 20세</p>
@@ -114,23 +125,29 @@
 			                <span>등록된 경력을 기준으로 기업고객에게 보여지는 이력정보 화면입니다.</span>
 			            </a>
 			        </div>
-			            <a href="" class="btn b_s absolute" id="modifyButton">수정하기</a>
+			            <a href="" class="btn b_s absolute" id="modifyButton" onclick="changeInfo()">수정하기</a>
                 </div>
-                <script type="text/javascript">
-                	$("#modifyButton").click(function(){
-                		
-                	});
+                <script>
+	                function changeInfo(){
+	                	if($('#freelancerUpdate').css("display")=="none"){
+	                		$('#freelancerUpdate').show();
+	                		$('#freelancerShow').hide();
+	                	}
+	                	// 버튼 클릭시 diplay 전환
+	            		// #freelancerUpdate  => display:inline로 변경
+	            		// #profile_big=> display : none으로 변경 
+	            	}
                 </script>
                 <!-- /기본정보 출력 -->
                 <!-- 기본정보 입력 -->
                 <div class="free_con" id="freelancerUpdate" style="display:none;">
-                <form id="updateForm" name="updateForm">
+                <form id="updateForm" name="updateForm" action="/myWeb/mUpdate.me" method="post">
                     <div class="member_input input_small">
                     	<div class="gray_box mb-5">
 	                        <ul class="cf">
 	                            <li class="col-6 pr-5">
 	                                <!-- <label for="">이름<span class="need orange">(필수)</span></label> -->
-	                                <input type="text" id="korNm" name="korNm" value="" placeholder="실명으로 입력바랍니다."/>
+	                                <input type="text" id="korNm" name="korNm" value=" <=m.getName()%>" placeholder="실명으로 입력바랍니다."/>
 	                            </li>
 	                            <li class="col-6 pl-5">
 	                                <!-- <label for="">출생년도<span class="need orange">(필수)</span></label> -->
@@ -138,10 +155,10 @@
 	                                
 	                                
 	                                <select id="birthDay" name="birthDay">
-	                                    <option value="1992">
+	                                    <option value="<=m.getBirth()%>"> 
 	                                    
 	                                        
-	                                            1992
+	                                           <=m.getBirth()%>
 	                                        
 	                                        
 	                                    
@@ -271,42 +288,91 @@
 	                            </li>
 	                            <li class="col-6 pr-5">
 	                                <!-- <label for="">휴대폰번호<span class="need orange">(필수)</span></label> -->
-	                                <input type="text" id="telNo" name="telNo" value="01051876305" placeholder="-없이 입력바랍니다."/>
+	                                <input type="text" id="telNo" name="telNo" value="<=m.getPhone()%>" placeholder="-없이 입력바랍니다."/>
 	                            </li>
 	                            <li class="col-6 pl-5">
 	                                <!-- <label for="">이메일주소<span class="need orange">(필수)</span></label> -->
 	                                <input type="hidden" id="userId" name="userId" value="1444427072"/>
 	                                <input type="hidden" id="prfPhotoYn" name="prfPhotoYn" value="Y"/>
-	                                <input type="text" id="email" name="email" value="keh9208@naver.com" placeholder="이메일 형식에 맞춰 입력바랍니다."/>
+	                                <input type="text" id="email" name="email" value="<=m.getEmail()%>" placeholder="이메일 형식에 맞춰 입력바랍니다."/>
 	                            </li>
 							</ul>
 						</div>
 						<ul class="cf">
                             <li class="col-6 pr-5">
                                 <label for="">전문기술<span class="need orange">(필수)</span></label>
-                                <input type="text" id="skills" name="skills" placeholder="선택하세요.(여러개 선택 가능)" value="" readonly="readonly"/>
+                                <input type="text" id="skills" name="skills" placeholder="선택하세요.(여러개 선택 가능)" value="<=m.getSkill1()%>
+                                
+                               <%--  <% if(m.getSkill2()!=null){ %>
+                                  , <%=m.getSkill2() %>
+                                                                
+                                <%} %>
+                                <% if(m.getSkill3()!=null){ %>
+                                  , <%=m.getSkill3() %>
+                                                                
+                                <%} %> --%>
+                                
+                                " readonly="readonly"/>
 
                                 <div class="option depth2 multi" id="skillListModify" style="display: none;">
-                                    <div class="select_box cf">
-                                        <ul class="cf memberConfigJobList" id="memberModifyJobList">
-                                            <!-- 스킬 대분류 -->
-                                        </ul>
-                                        <ul class="cf memberConfigSkillList" id="memberModifySkillList">
-                                            <!-- 스킬 소분류 -->
-                                        </ul>
-                                    </div>
+                                    
                                     <div class="view_box">
-                                        <ul class="cf">
-                                            <!-- 스킬 선택 정보 -->
-                                        </ul>
+                                        	<ul id ="skillTable" style="display:none;">
+										
+												<li><input type="checkbox" value="ASP">ASP</li>
+												<li><input type="checkbox" value="JSP">JSP</li>
+												<li><input type="checkbox" value="PHP">PHP</li>
+												<li><input type="checkbox" value="JAVA">JAVA</li>
+												<li><input type="checkbox" value="C">C</li>
+												<li><input type="checkbox" value="C++">C++</li>
+												<li><input type="checkbox" value="C#">C#</li>
+												<li><input type="checkbox" value="ASP.NET">ASP.NET</li>
+												<li><input type="checkbox" value="JavaScript">JavaScript</li>
+												<li><input type="checkbox" value="Ajax">Ajax</li>
+												<li><input type="checkbox" value="Jquery">Jquery</li>
+												<li><input type="checkbox" value="NodeJS">NodeJS</li>
+												<li><input type="checkbox" value="vue.js">vue.js</li>
+												<li><input type="checkbox" value="React.js">React.js</li>
+												<li><input type="checkbox" value="Ruby">Ruby</li>
+												<li><input type="checkbox" value="RubyonRails">RubyonRails</li>
+												<li><input type="checkbox" value="MiPlatform">MiPlatform</li>
+												<li><input type="checkbox" value="Nexacro">Nexacro</li>
+												<li><input type="checkbox" value="XPLATFORM">XPLATFORM</li>
+												<li><input type="checkbox" value="GO">GO</li>
+												<li><input type="checkbox" value="Oracle">Oracle</li>
+												<li><input type="checkbox" value="MS-SQL">MS-SQL</li>
+												<li><input type="checkbox" value="MySQL">MySQL</li>
+												<li><input type="checkbox" value="DB2">DB2</li>
+												<li><input type="checkbox" value="Pro-C">Pro-C</li>
+												<li><input type="checkbox" value="Python">Python</li>
+												<li><input type="checkbox" value="VB">VB</li>
+												<li><input type="checkbox" value="VB.NET">VB.NET</li>
+												<li><input type="checkbox" value="POS">POS</li>
+												<li><input type="checkbox" value="ABAP">ABAP</li>
+												<li><input type="checkbox" value="EJB">EJB</li>
+												<li><input type="checkbox" value="Kotlin">Kotlin</li>
+												<li><input type="checkbox" value="F#">F#</li>
+												<li><input type="checkbox" value="SAP">SAP</li>
+												<li><input type="checkbox" value="PowerBulder">PowerBulder</li>
+												<li><input type="checkbox" value="MFC">MFC</li>
+												<li><input type="checkbox" value="어셈블리">어셈블리</li>
+												<li><input type="checkbox" value="임베디드">임베디드</li>
+												<li><input type="checkbox" value="펌웨어">펌웨어</li>
+												<li><input type="checkbox" value="HMI">HMI</li>
+												<li><input type="checkbox" value="PLC">PLC</li>
+												<li><input type="checkbox" value="Android">Android</li>
+												<li><input type="checkbox" value="Objective-C">Objective-C</li>
+												<li><input type="checkbox" value="Swift">Swift</li>
+												
+											</ul>
                                         <div id="btnModifySkill" class="btn_close">닫기</div>
                                     </div>
                                 </div>
                             </li>
                             <li class="col-6 pl-5">
                                 <label for="">희망근무지역<span class="need orange">(필수)</span></label>
-                                <input type="text" class="input_local" id="area" name="area" placeholder="선택하세요.(여러개 선택 가능)" value="" readonly="readonly"/>
-
+                                <input type="text" class="input_local" id="area" name="area" placeholder="지역을 선택하세요." value="<=m.getArea()%>" />
+								
                                 <div class="option depth2 multi" id="workAreaList" style="display: none;">
                                     <div class="select_box cf">
                                         <ul class="cf" id="memberConfigAreaList">
@@ -317,14 +383,39 @@
                                     <div class="view_box">
                                         <ul class="cf">
                                             <!-- 지역 선택 정보 -->
-                                        </ul>
-                                        <div id="btnArea" class="btn_close">닫기</div>
+                                        <select id="area1" name="area1" placeholder="선택하세요.(여러개 선택 가능)" value="<=m.getArea()%>">
+	                                    
+	                                    <option value="강남구">강남구</option>
+	                                    <option value="강동구">강동구</option>
+	                                    <option value="강서구">강서구</option>
+	                                    <option value="구로구">구로구</option>
+	                                    <option value="금천구">금천구</option>
+	                                    <option value="노원구">노원구</option>
+	                                    <option value="관악구">관악구</option>
+	                                    <option value="광진구">광진구</option>
+	                                    <option value="도봉구">도봉구</option>
+	                                    <option value="동대문구">동대문구</option>
+	                                    <option value="동작구">동작구</option>
+	                                    <option value="마포구">마포구</option>
+	                                    <option value="서대문구">서대문구</option>
+	                                    <option value="서초구">서초구</option>
+	                                    <option value="성동구">성동구</option>
+	                                    <option value="성북구">성북구</option>
+	                                    <option value="송파구">송파구</option>
+	                                    <option value="양천구">양천구</option>
+	                                    <option value="영등포구">영등포구</option>
+	                                    <option value="용산구">용산구</option>
+	                                    <option value="은평구">은평구</option>
+	                                    <option value="중랑구">중랑구</option>
+	                                    <option value="종로구">종로구</option>
+	                                    <option value="중구">중구</option>
+	                                </select>
                                     </div>
                                 </div>
                             </li>
                             <li class="col-6 pr-5">
                                 <label for="">투입가능일<span class="need orange">(필수)</span></label>
-                                <input type="text" class="input_day" id="joinPsblDt" name="joinPsblDt" value="2020-12-09" placeholder="투입가능일자를 선택하시면 회원님의 일정에 반영됩니다." readonly="readonly"/>
+                                <input type="text" class="input_day" id="joinPsblDt" name="joinPsblDt" value="<=m.getBirth()%>" placeholder="투입가능일자를 선택하시면 회원님의 일정에 반영됩니다." readonly="readonly"/>
                             </li>
                            
                         </ul>
@@ -332,10 +423,11 @@
                     </div>
                     <!-- 프로필 미리보기 버튼 -->
                     <div class="btn_box left mt-10">
-                        <button type="submit" class="btn b_m b_red">저장</button>
+                        <button type="submit" class="btn b_m b_red" id="save">저장</button>
                         <button class="btn b_m b" href="" id="cancel">취소</button>
                     </div>
                     </form>
+                 
                 </div>
                 <!-- /기본정보 입력 -->
             </div>
@@ -729,372 +821,6 @@
         <!-- /기타 -->
     </section>
 </div>
-
-<script id="resumeSkillListTemplate" type="text/x-mustache">
-{{#careerObj}}
-					<h3 class="man_detail_tit">보유기술</h3>
-			    	<div class="graph xs-col-12 center">
-			        	<!-- 그래프자리 -->
-			            <canvas id="marksChart" width="325" height="300"></canvas>
-                    </div>
-                    <div class="graph_table xs-col-12" >
-                    	<h5 class="career_text">
-							기술경력<span style="color:#7a7a7a;">(개월)</span>
-							<a href="#none" class="note_q">
-                            	<p class="note_a">등록된 경력을 기준으로<br />진행한 프로젝트의 기술을<br />계산하여 보여줍니다.<span class="a_arrow"></span></p>
-                            </a>
-						</h5>
-                        <table class="board_g">
-                        	<tbody>
-								{{#detailCareerArr.skillCareerArr}}
-                            	<tr>
-                                	<td>
-                                    	<h5>{{SkillYear}}</h5>
-                                    </td>
-									<td>
-										<p>{{lang}}</p>
-									</td>
-                                </tr>
-								{{/detailCareerArr.skillCareerArr}}
-                            </tbody>
-                        </table>
-						{{#isDbms}}
-						<h5 class="career_text mt-10">
-							DBMS<span style="color:#7a7a7a;">(개월)</span>
-							<a href="#none" class="note_q">
-                            	<p class="note_a">등록된 경력을 기준으로<br />진행한 프로젝트의 DBMS<br />사용을 계산하여 보여줍니다.<span class="a_arrow"></span></p>
-                            </a>
-						</h5>
-                        <table class="board_g">
-                        	<tbody>
-								{{#detailCareerArr.dbmsCareerArr}}
-                            	<tr>
-                                	<td>
-                                    	<h5>{{SkillYear}}</h5>
-                                    </td>
-									<td>
-										<p>{{lang}}</p>
-									</td>
-                                </tr>
-								{{/detailCareerArr.dbmsCareerArr}}
-                            </tbody>
-                        </table>
-						{{/isDbms}}
-	                </div>
-{{/careerObj}}
-</script>
-
-<script id="resumeSearchListTemplate" type="text/x-mustache">
-{{#resumeList}}
-    <div class="card no_over over_hidden">
-        <div class="card_info">
-            {{#isoccDomain}}
-            <ul class="pro_section">
-                {{#occupationDiv}}<li>{{occupationDiv}}</li>{{/occupationDiv}}
-                {{#domainDiv}}<li>{{domainDiv}}</li>{{/domainDiv}}
-            </ul>
-            {{/isoccDomain}}
-            <p class="pro_term">{{strtDtTxt}} ~ {{endDtTxt}}<span class="add_info">{{prtcptTerm}}개월</span></p>
-            <ul class="pro_name">
-                {{#customer}}<li>{{customer}}</li>{{/customer}}
-                <li>{{projNm}}</li>
-            </ul>
-            <ul class="pro_detail">
-				{{#workCompNm}}<li class="company">{{workCompNm}}</li>{{/workCompNm}}
-                {{#jobPos}}<li class="job">{{jobPos}}</li>{{/jobPos}}
-            </ul>
-            <ul class="pro_detail">
-                {{#lang}}<li class="tech">{{lang}}</li>{{/lang}}
-            </ul>
-        </div>
-        <div class="pro_etc">
-            <ul>
-            {{#isrole}}<li><h6>주요업무</h6><p style="word-break: break-word;white-space: pre-wrap;">{{{role}}}</p></li>{{/isrole}}
-            {{#isprojectDtl}}<li><h6>프로젝트 설명</h6><p style="word-break: break-word;white-space: pre-wrap;">{{{projectDtl}}}</p></li>{{/isprojectDtl}}
-            {{#isetc}}<li><h6>비고</h6><p style="word-break: break-word;white-space: pre-wrap;">{{{etc}}}</p></li>{{/isetc}}
-            </ul>
-        </div>
-        <div class="absolute">
-            <span class="small mr-10"><span class="mr-5">입력</span> {{regDt}}</span>
-            <button id="btn" class="btn b_s" data-action="editViewClick" data-fno="{{crrIdx}}" onClick="return false;">수정</button>
-            <button id="btn" class="btn b_s" data-action="delClick" data-fno="{{crrIdx}}" style="cursor:pointer;" onClick="return false;">삭제</button>
-        </div>
-    </div>
-{{/resumeList}}
-{{^resumeList}}
-	<div class="project_box cf" style="text-align:center; vertical-align:middle!important;height:100px;">
-		<span class="red" style="line-height:30px;font-size:16px;"><p style="padding-top:15px;">이력서 파일을 첨부하시면 프리몬에서 이력정보를 업데이트 해 드립니다.</p></span>
-		
-	</div>
-{{/resumeList}}
-</script>
-
-<script id="schoolListTemplate" type="text/x-mustache">
-{{#schoolList}}
-<div class="card no_over over_hidden">
-    <div class="card_info" id="educationEdit">
-        {{#isStateNm}}
-            <ul class="pro_section">
-                <li>{{stateNm}}</li>
-		    </ul>
-		{{/isStateNm}}
-		    <p class="pro_term">{{entrncDt}} ~ {{finishDt}}</p>
-		    <ul class="pro_name">
-		        <li>{{schoolNm}}</li>
-		        <li>{{major}}</li>
-		    </ul>
-		    <ul class="pro_detail">
-		        <li class="grade">{{score}}/{{^grade}}0{{/grade}}{{grade}}</li>
-		    </ul>
-	</div>
-	<div class="absolute">
-	    <button id="" class="btn b_s" data-action="editSchoolClick" data-idx="{{schIdx}}" data-fno="{{userId}}" data-nm="{{schoolNm}}" data-entrnc-dt="{{entrncDt}}" data-finish-dt="{{finishDt}}"
-		            data-major="{{major}}" data-score="{{score}}" data-grade="{{grade}}" data-state="{{state}}" onclick="return false;">수정</button>
-		<button id="" class="btn b_s" data-action="delSchoolClick" data-fno="{{schIdx}}" onclick="return false;">삭제</button>
-	</div>
-</div>
-{{/schoolList}}
-{{^schoolList}}
-	<div class="project_box cf" style="text-align:center; vertical-align:middle!important;height:100px;">
-		<span class="red" style="line-height:30px;font-size:16px;"><p style="padding-top:15px;">이력서 파일을 첨부하시면 프리몬에서 이력정보를 업데이트 해 드립니다.</p></span>
-		
-	</div>
-{{/schoolList}}
-</script>
-
-<script id="certListTemplate" type="text/x-mustache">
-{{#certList}}
-<div class="card no_over over_hidden">
-    <div class="card_info">
-        <p class="pro_term">{{acqrDt}}</p>
-        <ul class="pro_name">
-             <li>{{quilifNm}}</li>
-             <li class="small">{{publOrg}}</li>
-		</ul>
-    </div>
-    <div class="absolute">
-		<button id="" class="btn b_s" data-action="editCertClick" data-idx="{{crtIdx}}" data-nm="{{quilifNm}}" data-acqr-dt="{{acqrDt}}" data-publ-org="{{publOrg}}" onclick="return false;">수정</button>
-		<button id="" class="btn b_s" data-action="delCertClick" data-idx="{{crtIdx}}" onclick="return false;">삭제</button>
-	</div>
-</div>
-{{/certList}}
-{{^certList}}
-	<div class="project_box cf" style="text-align:center; vertical-align:middle!important;height:100px;">
-		<span class="red" style="line-height:30px;font-size:16px;"><p style="padding-top:15px;">이력서 파일을 첨부하시면 프리몬에서 이력정보를 업데이트 해 드립니다.</p></span>
-		
-	</div>
-{{/certList}}
-</script>
-
-<script id="etcListTemplate" type="text/x-mustache">
-{{#etcList}}
-<div class="card no_over over_hidden">
-    <div class="card_info">
-        <ul class="pro_name">
-            <li>{{subject}}</li>
-        </ul>
-        <p style="word-break: break-word;white-space: pre-wrap;">{{contents}}</p>
-    </div>
-    <div class="absolute">
-        <button id="" class="btn b_s" data-action="editEtcClick" data-idx="{{idx}}" data-title="{{subject}}" data-contents="{{contents}}" onclick="return false;">수정</button>
-		<button id="" class="btn b_s" data-action="delEtcClick" data-idx="{{idx}}" data-title="{{subject}}" data-contents="{{contents}}" onclick="return false;">삭제</button>
-	</div>
-</div>
-{{/etcList}}
-{{^etcList}}
-	<div class="project_box cf" style="text-align:center; vertical-align:middle!important;height:100px;">
-		<span class="red" style="line-height:30px;font-size:16px;"><p style="padding-top:15px;">이력서 파일을 첨부하시면 프리몬에서 이력정보를 업데이트 해 드립니다.</p></span>
-		
-	</div>
-{{/etcList}}
-</script>
-
-<script id="memberConfigJobListTemplate" type="text/x-mustache">
-	{{#jobList}}
-		<li class="configSelect {{#index}}active{{/index}}" data-value="{{cdVal}}" style="cursor:pointer;">{{cdValNm}}</li>
-	{{/jobList}}
-</script>
-<script id="memberConfigSkillListTemplate" type="text/x-mustache">
-	{{#jobList}}
-    	<li class="skillSelect" id="skillSelectList_{{cdVal}}" data-id="{{cdVal}}" data-value="{{cdValNm}}" style="cursor:pointer;">{{cdValNm}}</li>
-	{{/jobList}}
-</script>
-
-<script id="memberConfigAreaListTemplate" type="text/x-mustache">
-{{#areaList}}
-	<li class="areaSelect {{#index}}active{{/index}}" data-id="{{cdVal}}" data-value="{{cdValNm}}" style="cursor:pointer;">{{cdValNm}}</li>
-{{/areaList}}
-</script>
-<script id="memberConfigArea2ListTemplate" type="text/x-mustache">
-{{#areaList}}
-    <li class="area2Select" id="areaSelectList_{{cdVal}}" data-id="{{cdVal}}" data-value="{{cdValNm}}"  data-uppervalue="{{workUpperAddr}}" data-upperId="{{upperCdVal}}" style="cursor:pointer;">{{cdValNm}}</li>
-{{/areaList}}
-</script>
-﻿	<!-- 팝업 -->
-	<div class="pop_bg" id="popInfoData" style="display:none;">
-	</div>
-
-	<!-- 팝업 -->
-	<div class="pop_bg" id="popAlertData" style="display:none;">
-		<div class="pop pop2">
-	    	<div class="pop_header">
-	        	<h3>&nbsp;</h3>
-	            <a href="javascript:void(0);" class="close">닫기</a>
-	        </div>
-	        <div class="pop_body p-20 no_scroll" style="">
-	        	<div class="no_page_tit"></div>
-                <div class="btn_pop_box center">
-                </div>
-	        </div>
-	    </div>
-	</div>
-
-
-	<script id="popAlamnTemplate" type="text/x-mustache">
-<div class="pop">
-    <div class="pop_header">
-        <h3 id="pop-title">알림설정</h3>
-        <a href="#none" class="close">닫기</a>
-    </div>
-    <div class="pop_body">
-        <form id="popAlarmForm" name="popAlarmForm">
-        <div class="option_box">
-                <table class="t_option">
-                    <tbody>
-                        {{#data}}
-                        <tr>
-                            <th>{{alamnClsCdNm}}
-								{{#isDesc}}<p>{{alamnDesc}}</p>{{/isDesc}}
-							</th>
-                            <td>
-								<label class="optChk" for="">
-                                	<input type="checkbox" id="alamn{{alamnClsCd}}" name="alamn{{alamnClsCd}}" {{#almVal}}checked="checked"{{/almVal}} value="Y" />
-                                	<i></i>
-                            	</label>
-                            </td>
-                        </tr>
-                        {{/data}}
-                    </tbody>
-                </table>
-        </div>
-		<!-- 버튼-->
-        <div class="btn_pop_box center mt-10">
-        	<button id="btnAlamn" class="btn_apply" style="cursor:pointer;">저장</button>
-        </div>
-        </form>
-    </div>
-</div>
-	</script>
-	<script id="popClosedTemplate" type="text/x-mustache">
-<div class="pop">
-    <div class="pop_header">
-        <h3 id="pop-title">회원탈퇴</h3>
-        <a href="#none" class="close">닫기</a>
-    </div>
-    <div class="pop_body">
-        <form id="popForm" name="popForm">
-			<div class="option_box add_box">
-            	<div class="input_list p-0 mb-20">
-                    <ul class="input_list_in cf">
-						
-						
-							<input type="hidden" id="pincode" name="pincode" value="1" />
-						
-                        <li>
-                            <div class="input sign_box exit">
-                                <label for="">탈퇴사유</label>
-                                <div class="sign">
-                                    <textarea id="scssnDtl" name="scssnDtl"></textarea>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- 동의 -->
-				<div class="join_agree">
-                    <div class="join_agree_top">
-                        <h3>탈퇴안내</h3>
-                    </div>
-                    <div class="join_agree_body">
-                        <div class="agree_list">
-                        	<ul>
-                               <li class="active has-sub">
-                                    <div class="join_check">
-                                        <label class="agrChk" for="agrChk">
-                                            <input type="checkbox" id="agrChk" name="agrChk" class="argChecked" value="Y"><i></i>
-                                        </label>
-                                    </div>
-                                    <a href="#none" class="joinAgreeList">회원탈퇴 안내사항 확인</a>
-                               </li>
-                               <li class="has-sub agree_detail" style="overflow:auto;height:150px;">
-                               	<h4>회원탈퇴 신청 전에 안내 사항을 확인해주세요.</h4>
-                               	<p>1. 탈퇴 후 회사 내부 방침에 의해 기업고객과의 계약 관계로 이름, 로그인 ID를 1년간 따로 보유할 수 있습니다. 이후 삭제처리 됩니다.</p>
-								<p>2. 회원의 즉시 삭제 요청시 프리몬이 확인 후 그에 따른 조치를 취합니다.</p>
-              					<p>※ 참고 : 계정의 개인정보는 관계 법령의 규정에 의하여 보유할 필요가 있는 경우 관계법령에서 정한 기간 동안 개인정보를 보관합니다.</p>
-              					<p>회원 탈퇴와 관련하여 더 궁금하신 점은 프리몬 <a href="/customer/questionRegistForm">"문의하기 > 회원정보/아이디/비밀번호"</a>로 문의를 남기거나 고객센터(<a href="mailto:freemon@freemon.co.kr">freemon@freemon.co.kr</a>) 문의해주세요.</p>
-                               </li>
-                            </ul>
-                            
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-			<!-- 버튼-->
-                <div class="btn_pop_box mt-00">
-                    <button id="btnClosed" class="btn_apply" style="cursor:pointer;" onClick="return false;">회원탈퇴</button>
-                </div>
-        </form>
-    </div>
-</div>
-	</script>
-	
-    <script id="projectInTalentListTemplate" type="text/x-mustache">
-        <div class="pop">
-            <div class="pop_header">
-                <h3>프로젝트 참여자</h3>
-                <a href="#none" class="close">닫기</a>
-            </div>
-            <div class="pop_body">
-                <div class="proj_tit">
-                    <h4 class="company_name detail"><a href="#none" style="cursor:default">{{customer}}</a></h4>
-                    <h3 class="project_name cf"><a href="#none" style="cursor:default">{{projNm}}</a></h3>
-                    <p class="project_term mt-10">{{projPeriod}}</p>
-                </div>
-                
-                <div class="entry_list">
-                    <div class="entry_box">
-                        <ul class="entry cf">
-                            {{#talentList}}
-                            <li>
-                                <div class="entry_in">
-                                    <div class="profile" style="cursor:pointer; background-image:url('{{profileUrl}}')" data-value="{{userId}}" data-action="talentDetail">
-                                        프로필사진
-                                    </div>
-                                    <h4 class="man_name mt-5 ellipsis"><a href="#none" data-value="{{userId}}" data-action="talentDetail">{{userNm}}</a></h4>
-                                    <ul class="name1 cf mt-10">
-                                        <li class="old">{{#isGenderNm}}{{genderNm}}{{#age}},{{/age}} {{/isGenderNm}}{{#age}}{{age}}세{{/age}}</li>
-                                        <li>총 {{totalWorkCareer}}</li>
-                                    </ul><div class="cf"></div>
-                                    <p class="entry_tech ellipsis">
-										{{usableSkillNm}}
-                                    </p>
-                                    <span class="d_day mt-10 {{leaveStrtTermCss}}">{{leaveStrtTermTxt}}</span>
-                                </div>
-                            </li>
-                            {{/talentList}}
-                        </ul>
-						{{^talentList}}
-                	    <div class="project_box no_data cf ml-20 mr-20" style="text-align:center;">프로젝트 다른 참여자 정보가 없습니다.</div>
-                 	   {{/talentList}} 
-                    </div>                    
-                </div>
-                
-            </div>
-        </div>
-    </script>
-
 	
 <%@ include file="../common/footer.jsp"%>		
 

@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<script type="text/javascript" src="../../resources/freemon/common/freemonSearch9667.js?version=1.2"></script>
                 <!-- 기본정보 입력 -->
                 <div class="free_con" id="freelancerUpdate" >
                     <form id="updateForm" name="updateForm">
@@ -190,7 +191,7 @@
                                 </li>
                                 <li class="col-6 pl-5">
                                     <label for="">희망근무지역<span class="need orange">(필수)</span></label>
-                                    <input type="text" class="input_local" id="area" name="area" placeholder="선택하세요.(여러개 선택 가능)" value="" readonly="readonly"/>
+                                    <input type="text" class="input_local" id="area" name="area" placeholder="지역을 선택하세요." value="" readonly="readonly"/>
                                     
                                     <div class="option depth2 multi" id="workAreaList" style="display: none;">
                                         <div class="select_box cf">
