@@ -17,13 +17,13 @@
 <html lang="ko">
 
 <head>
-	<%@ include file="../common/header.jsp" %>
+	
 	<style type="text/css">	  
 	  #f_management{display:none;}
 	  #p_management{display:none;}
 	  #profile{display:none;}
 	  #suggestion{display:none;}
-	  #logout{display:none;}
+	  #logout{display:none;} 
 	</style>
 	<style>
 	li {
@@ -32,57 +32,25 @@
     padding: 0;
     width: 200px;
     background-color: #f1f1f1;
-}
+}  <link rel="stylesheet" type="text/css" href="../resources/css/resume.css">
 	</style>
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 
 
 <body>
-	<!-- Google Tag Manager (noscript) -->
-	<noscript><iframe src="http://www.googletagmanager.com/ns.html?id=GTM-MF7LK3J"
-        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-        <!-- End Google Tag Manager (noscript) -->
-    
+
         <div class="load_box" style="display:none;">
             <div class="load_img">
                 <img src="../resources/images/common/loading.gif" alt="loading"/>
             </div>
         </div>
-        <link rel="stylesheet" type="text/css" href="../resources/css/resume.css">
-    
+   
 <script type="text/javascript" src="../resources/js/Chart.js"></script>
 <script type="text/javascript" src="../resources/js/resumeSearch.js"></script>
-<script type="text/javascript">
-	/* $(function() {
-	    var skills = [], areas = [];
-		
-		
-		freemon.invoker.invoke("resumeSearch", "talent", {
-		    'userId':'1444427072',
-            'selectSkills': skills,
-            'selectArea': areas,
-            'korNm' : '아무개',
-            'birthDay' : '1990',
-            'genderCd' : '',
-            'telNo' : '01011112222',
-            'email' : 'test@test.com',
-            'joinPsblDt' : '2020-12-09',
-            'keyword' : '',
-            'genderCd' : '',
-            'hldSkill' : '',
-            'workAreaNm' : ''
-		});
-	}); */
 
-/* 	function clickFile() {
-		registForm.file.click();
-	}
-	function fillFile() {
-		registForm.virtu_text.value = registForm.file.value;
-	} */
-</script>
 <div id="container">
+<%@ include file="../common/header.jsp" %>   
 	<section class="project_in">
         <h5 class="mb-20 ml-5">기본정보</h5>
 
@@ -138,10 +106,10 @@
 	            		// #profile_big=> display : none으로 변경 
 	            	}
                 </script>
-                <!-- /기본정보 출력 -->
+
                 <!-- 기본정보 입력 -->
                 <div class="free_con" id="freelancerUpdate" style="display:none;">
-                <form id="updateForm" name="updateForm" action="/myWeb/mUpdate.me" method="post">
+                	<form id="updateForm" name="updateForm" action="/myWeb/mUpdate.me" method="post">
                     <div class="member_input input_small">
                     	<div class="gray_box mb-5">
 	                        <ul class="cf">
@@ -271,7 +239,7 @@
 	                            </li>
 	                            <li class="col-12">
 	                                <!-- <label for="">성별</label> -->
-	                                <div class="radio member_check">
+	                            	<div class="radio member_check">
 		                                <label for="genderCd01">
 		                                <input type="radio" id="genderCd01" name="genderCd" value="M" checked=""/>
 		                                <i></i>
@@ -284,7 +252,7 @@
 		                                <input type="radio" id="genderCd03" name="genderCd" value="" checked=""/>
 		                                <i></i>
 		                                                        선택안함</label>
-		                            </div>
+		                        	</div>
 	                            </li>
 	                            <li class="col-6 pr-5">
 	                                <!-- <label for="">휴대폰번호<span class="need orange">(필수)</span></label> -->
@@ -298,6 +266,7 @@
 	                            </li>
 							</ul>
 						</div>
+						<div>
 						<ul class="cf">
                             <li class="col-6 pr-5">
                                 <label for="">전문기술<span class="need orange">(필수)</span></label>
@@ -417,7 +386,12 @@
                                 <label for="">투입가능일<span class="need orange">(필수)</span></label>
                                 <input type="text" class="input_day" id="joinPsblDt" name="joinPsblDt" value="<=m.getBirth()%>" placeholder="투입가능일자를 선택하시면 회원님의 일정에 반영됩니다." readonly="readonly"/>
                             </li>
-                           
+                           <li>
+                       
+                        <button type="submit" class="btn b_m b_red" id="save">저장</button>
+                        <button class="btn b_m b" href="" id="cancel">취소</button>
+                	    				
+                           </li>
                         </ul>
 
                     </div>
@@ -426,7 +400,8 @@
                         <button type="submit" class="btn b_m b_red" id="save">저장</button>
                         <button class="btn b_m b" href="" id="cancel">취소</button>
                     </div>
-                    </form>
+				</div>
+                </form>
                  
                 </div>
                 <!-- /기본정보 입력 -->

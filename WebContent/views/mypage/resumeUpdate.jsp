@@ -61,26 +61,7 @@
 
 	<script type="text/javascript" src="../resources/js/Chart.js"></script>
 	<script type="text/javascript" src="../resources/js/resumeSearch.js"></script>
-	<script type="text/javascript">
-		$(function() {
-			var skills = [], areas = [];
-
-			freemon.invoker.invoke("resumeSearch", "talent", {
-				'userId' : '1444427072',
-				'selectSkills' : skills,
-				'selectArea' : areas,
-				'korNm' : '아무개',
-				'birthDay' : '1990',
-				'genderCd' : '',
-				'telNo' : '01011112222',
-				'email' : 'test@test.com',
-				'joinPsblDt' : '2020-12-09',
-				'keyword' : '',
-				'genderCd' : '',
-				'hldSkill' : '',
-				'workAreaNm' : ''
-			});
-		});
+	
 
 		function clickFile() {
 			registForm.file.click();
@@ -138,8 +119,23 @@
 						<a href="" class="btn b_s absolute" id="modifyButton"
 							onclick="changeInfo()">수정하기</a>
 					</div>
-					<script>
-						
+					<script type="text/javascript">
+											// 선택된 값들 추가하는 로직
+											
+											var maxChecked = 3;   //선택가능한 체크박스 갯수
+											var totalChecked = 0; // 설정 끝
+											
+											function CountChecked(field) {
+											    if (field.checked) // input check 박스가 체크되면 
+											        totalChecked += 1; // totalChecked 증가
+											    else // 체크가 아니면
+											        totalChecked -= 1; // totalChecked 감소
+											
+											    if (totalChecked > maxChecked) { // totalchecked 수가 maxchecked수보다 크다면
+											        alert ("최대 3개 까지만 가능합니다."); // 팝업창 띄움
+											    field.checked = false;
+											    totalChecked -= 1;
+											    }
 					</script>
 					<!-- /기본정보 출력 -->
 					<!-- 기본정보 입력 -->
@@ -296,15 +292,12 @@
 									</ul>
 								</div>
 								<ul class="cf">
-									<li class="col-6 pr-5"><label for="">전문기술<span
-											class="need orange">(필수)</span></label> 
-											<input type="button"
-										id="skills" name="skills"  value="스킬을 선택해주세요" style="display:block" onclick="document.getElementById('skillTable').style.display=(document.getElementById('skillTable').style.display=='block') ? 'none' : 'block';">
-										
-										
+									<li class="col-6 pr-5">
+									<label for="">전문기술<span class="need orange">(필수)</span></label> 
+											<input type="button" id="skills" name="skills"  value="스킬을 선택해주세요" style="display:block" onclick="document.getElementById('skillTable').style.display=(document.getElementById('skillTable').style.display=='block') ? 'none' : 'block';">							
 											<div class="view_box">
 
-												<!-- 스킬 선택 정보 -->
+											<!-- 스킬 선택 정보 -->
 											<ul id ="skillTable" style="display:none;">
 										
 												<li><input type="checkbox" value="ASP">ASP</li>
@@ -353,25 +346,8 @@
 												<li><input type="checkbox" value="Swift">Swift</li>
 												
 											</ul>
-										</div></li>
-										<script type="text/javascript">
-											// 선택된 값들 추가하는 로직
-											
-											var maxChecked = 3;   //선택가능한 체크박스 갯수
-											var totalChecked = 0; // 설정 끝
-											
-											function CountChecked(field) {
-											    if (field.checked) // input check 박스가 체크되면 
-											        totalChecked += 1; // totalChecked 증가
-											    else // 체크가 아니면
-											        totalChecked -= 1; // totalChecked 감소
-											
-											    if (totalChecked > maxChecked) { // totalchecked 수가 maxchecked수보다 크다면
-											        alert ("최대 3개 까지만 가능합니다."); // 팝업창 띄움
-											    field.checked = false;
-											    totalChecked -= 1;
-											    }
-										</script>
+										</div>
+										
 									<li class="col-6 pl-5"><label for="">희망근무지역<span
 											class="need orange">(필수)</span></label> <!-- 지역 선택 정보 --> <select
 										id="area1" name="area1" placeholder="선호 지역을 선택하세요."
@@ -404,14 +380,15 @@
 									</select>
 							</div>
 					</div>
-					</li>
-					<li class="col-6 pr-5"><label for="">투입가능일<span
-							class="need orange">(필수)</span></label> <input type="text"
-						class="input_day" id="joinPsblDt" name="joinPsblDt"
-						value="2020-12-09" placeholder="투입가능일자를 선택하시면 회원님의 일정에 반영됩니다."
-						readonly="readonly" /></li>
-
+					
+					<ul>
+						<li class="col-6 pr-5">
+							<label for="">투입가능일<span class="need orange">(필수)</span></label> 
+							<input type="text" class="input_day" id="joinPsblDt" name="joinPsblDt" value="<=m.getFuture()" placeholder="ex) 2020-08-02">
+						</li>
 					</ul>
+					
+					</div>
 
 				</div>
 				<!-- 프로필 미리보기 버튼 -->
@@ -420,8 +397,8 @@
 						onclick="resumeUpdate()">저장</button>
 					<button class="btn b_m b" href="" id="cancel">취소</button>
 				</div>
-				</form>
-			</div>
+				
+			</form>
 			<!-- /기본정보 입력 -->
 		</section>
 
