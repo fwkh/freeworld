@@ -23,7 +23,16 @@ public class Member implements Serializable{
 	private int career;
 	private int total;
 	private String join;
+	private String files;
 	
+	public String getFiles() {
+		return files;
+	}
+
+	public void setFiles(String files) {
+		this.files = files;
+	}
+
 	public Member() {
 	}
 
@@ -48,6 +57,25 @@ public class Member implements Serializable{
 		this.career = career;
 		this.total = total;
 		this.join = join;
+	}
+
+	public Member(int userNo, String userPwd, String userName, Date birth, String phone, String email, String area,
+			String hope, Date future, Date enrolldate, int career, int total, String join, String files) {
+		super();
+		this.userNo = userNo;
+		this.userPwd = userPwd;
+		this.userName = userName;
+		this.birth = birth;
+		this.phone = phone;
+		this.email = email;
+		this.area = area;
+		this.hope = hope;
+		this.future = future;
+		this.enrolldate = enrolldate;
+		this.career = career;
+		this.total = total;
+		this.join = join;
+		this.files = files;
 	}
 
 	public Member(int userNo, String userPwd, String userName, Date birth, String phone, String email, String area,
