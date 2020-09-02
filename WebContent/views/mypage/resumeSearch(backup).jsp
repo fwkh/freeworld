@@ -351,12 +351,9 @@
 												<li><input type="checkbox" class="skillbox" value="Swift">Swift</li>
 												
 											</ul>
-                                        <div id="btnModifySkill" class="btn_close" onclick="closeSkill();">닫기</div>
+                                        <div id="btnModifySkill" class="btn_close" onclick="this.parentNode.style.display='none';">닫기</div>
                                     </div>
                                 </div>
-                                <script>
-                                	
-                                </script>
                             </li>
                             <li class="col-6 pl-5">
                                 <label for="">희망근무지역<span class="need orange">(필수)</span></label>
@@ -414,11 +411,8 @@
                                  <script>
                               	function display_change(){
                               		document.getElementById("test1").style.display='block';
-                               	}
-                              	function closeSkill(){
-                            		document.getElementById("test1").style.display='none';
-                            		
-                            	}
+                              	}
+                              	
                               </script>   
 				</div>
                 </form>
