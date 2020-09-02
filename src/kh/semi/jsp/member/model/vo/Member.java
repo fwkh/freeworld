@@ -23,7 +23,20 @@ public class Member implements Serializable{
 	private int career;
 	private int total;
 	private String join;
-	
+
+	// 가입시 필요한 생성자
+	public Member(String userPwd, String userName, Date birth, String phone, String email, String area, String hope, Date future, int total) {
+		this.userPwd = userPwd;
+		this.userName = userName;
+		this.birth = birth;
+		this.phone = phone;
+		this.email = email;
+		this.area = area;
+		this.hope = hope;
+		this.future = future;
+		this.total = total;
+	}
+
 	public Member() {
 	}
 
@@ -174,13 +187,19 @@ public class Member implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Member [userNo=" + userNo + ", userPwd=" + userPwd + ", userName=" + userName + ", birth=" + birth
-				+ ", phone=" + phone + ", email=" + email + ", area=" + area + ", hope=" + hope + ", future=" + future
-				+ ", enrolldate=" + enrolldate + ", career=" + career + ", total=" + total + ", join=" + join + "]";
+		return "Member{" +
+				"userPwd='" + userPwd + '\'' +
+				", userName='" + userName + '\'' +
+				", birth=" + birth +
+				", phone='" + phone + '\'' +
+				", email='" + email + '\'' +
+				", area='" + area + '\'' +
+				", hope='" + hope + '\'' +
+				", future=" + future +
+				", enrolldate=" + enrolldate +
+				", total=" + total +
+				'}';
 	}
-
-	
-	
 }
 
 

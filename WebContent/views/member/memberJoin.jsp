@@ -1,12 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8" %>
-
-
-
-<!DOCTYPE html>
+         pageEncoding="UTF-8"%>
+<% request.setCharacterEncoding("UTF-8"); %>
 <html>
 <head>
-
     <meta charset="UTF-8">
     <%@ include file="../common/header.jsp" %>
 
@@ -233,7 +229,7 @@
 </script>
 
 <!--Contents-->
-<form name="f"  method="post" action="memInsert.me" onsubmit="return sendIt()" novalidate>
+<form name="f"  accept-charset="서버로 보낼 인코딩" method="post" action="${pageContext.request.contextPath}/mInsert.me" onsubmit="return sendIt()" novalidate>
     <div id="container">
         <div id="signup_wrapper">
             <h1 style="text-align: center;" id="signup">회원가입</h1>
@@ -442,7 +438,7 @@
             </div>
             <div id="id_wrapper2">
                 <h3 style="margin: 10px;">*이름</h3>
-                <input type="text" id="name">&nbsp;
+                <input type="text" id="name" name="name">&nbsp;
                 <h3 style="margin: 10px;">*비밀번호 확인</h3>
                 <input type="password" id="pwdCheck" placeholder="비밀번호 확인">&nbsp;
                 <h3 style="margin: 10px;">*전화번호</h3>
@@ -457,7 +453,7 @@
                 <h3 style="margin: 10px;">*거주 지역</h3>
                 <input type="text" id="sector_area" name="sector_area" placeholder="시, 구 까지" style="width: 200px;">
                 <h3 style="margin: 10px;">*투입가능한 날짜</h3>
-                <input type="date" id="date">
+                <input type="date" id="date" name="date">
                 <br><br><br>
                 <input type="submit" value="회원가입" style="width: 200px; height: 50px; background: gray;">
 
@@ -517,7 +513,7 @@
     </div>
 </form>
 
-<%@ include file="../common/header.jsp" %>
+<%@ include file="../common/footer.jsp" %>
 </body>
 
 </html>
