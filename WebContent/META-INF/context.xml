@@ -48,7 +48,11 @@
 			  driverClassName="oracle.jdbc.driver.OracleDriver"
 			  url="jdbc:oracle:thin:@javachip.iptime.org:1521:XE"
 			  username="FREEWORLD"
+<<<<<<< HEAD
 			  password="FREEWORLD"></Resource>
+=======
+			  password="FREEWORLD"/>
+>>>>>>> branch 'master' of https://github.com/fwkh/freeworld.git
 
 
 

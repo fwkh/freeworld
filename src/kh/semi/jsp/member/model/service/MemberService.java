@@ -26,6 +26,7 @@ public class MemberService
 		return result;
 	}
 
+<<<<<<< HEAD
 	public Member f_searchOne(Member m) throws MemberException
 	{
 		con = getConnection();
@@ -40,3 +41,19 @@ public class MemberService
 		return result;
 	}
 }
+=======
+	public int insertMember(Member m) throws MemberException {
+		con = getConnection();
+
+		int result = mDao.insertMember(con,m);
+
+		if(result > 0) commit(con);
+		else rollback(con);
+
+		close(con);
+
+		return result;
+
+	}
+}
+>>>>>>> branch 'master' of https://github.com/fwkh/freeworld.git

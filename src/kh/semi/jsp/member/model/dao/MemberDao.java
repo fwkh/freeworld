@@ -44,9 +44,14 @@ public class MemberDao
 		ResultSet rset = null;
 		
 		String sql = prop.getProperty("selectMember");
+<<<<<<< HEAD
 		try
 		{
 			pstmt.getConnection().prepareStatement(sql);
+=======
+		try {
+			pstmt = con.prepareStatement(sql);
+>>>>>>> branch 'master' of https://github.com/fwkh/freeworld.git
 			pstmt.setString(1, m.getEmail());
 			pstmt.setString(2, m.getUserPwd());
 			
@@ -58,6 +63,7 @@ public class MemberDao
 				result.setEmail(m.getEmail());
 				result.setUserPwd(m.getUserPwd());
 				
+<<<<<<< HEAD
 				result.setUserNo(rset.getInt("userNo"));
 				result.setUserName(rset.getString(3));
 				result.setBirth(rset.getDate("birth"));
@@ -68,6 +74,23 @@ public class MemberDao
 				result.setCareer(rset.getInt("career"));
 				result.setTotal(rset.getInt("total"));
 				result.setJoin(rset.getString("join"));
+=======
+				result.setUserNo(rset.getInt("F_NO"));
+				result.setUserName(rset.getString("F_USERNAME"));
+				result.setBirth(rset.getDate("F_BIRTH"));
+				result.setPhone(rset.getString("F_PHOBE"));
+				result.setEmail(rset.getString("F_EMAIL"));
+				result.setArea(rset.getString("F_AREA"));
+				result.setHope(rset.getString("F_HOPE"));
+				result.setFuture(rset.getDate("F_FUTURE"));
+				result.setCareer(rset.getInt("F_CAREER"));
+				result.setTotal(rset.getInt("F_TOTAL"));
+				result.setJoin(rset.getString("F_JOIN"));
+				result.setFiles(rset.getString("F_FILE"));
+			
+				
+				
+>>>>>>> branch 'master' of https://github.com/fwkh/freeworld.git
 			}
 		} catch (Exception e)
 		{
@@ -80,6 +103,7 @@ public class MemberDao
 		
 		return result;
 	}
+<<<<<<< HEAD
 	public Member f_searchOne(Connection con, Member m)
 	{
 		Member result = null;
@@ -125,3 +149,35 @@ public class MemberDao
 		return result;
 	}
 }
+=======
+
+	public int insertMember(Connection con, Member m) throws MemberException {
+		int result = 0;
+
+		PreparedStatement pstmt = null;
+
+		String sql = prop.getProperty("insertMember");
+
+		try{
+			pstmt = con.prepareStatement(sql);
+
+			pstmt.setString(1,m.getUserPwd());
+			pstmt.setString(2,m.getUserName());
+			pstmt.setDate(3,m.getBirth());
+			pstmt.setString(4,m.getPhone());
+			pstmt.setString(5,m.getEmail());
+			pstmt.setString(6,m.getArea());
+			pstmt.setString(7,m.getHope());
+			pstmt.setDate(8,m.getFuture());
+			pstmt.setInt(9,m.getTotal());
+
+			result = pstmt.executeUpdate();
+		}catch (SQLException e){
+			throw new MemberException(e.getMessage());
+		}finally {
+			close(pstmt);
+		}
+		return result;
+	}
+}
+>>>>>>> branch 'master' of https://github.com/fwkh/freeworld.git
