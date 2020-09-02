@@ -411,7 +411,7 @@
                         </ul>
 
                     </div>
-                                 <script>
+                               <script>
                               	function display_change(){
                               		document.getElementById("test1").style.display='block';
                                	}
