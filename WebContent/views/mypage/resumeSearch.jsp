@@ -24,6 +24,12 @@
 	  #profile{display:none;}
 	  #suggestion{display:none;}
 	  #logout{display:none;} 
+	  
+	  ul, ol, li { list-style:none; margin:0; padding:0; }
+   
+	    ul.skillTable {}
+	    ul.skillTable > li { display:inline-block; width:80px; padding:5px 10px; background:#eee; text-align:center; }
+	  /*   ul.skillTable > li ul.submenu { display:none; } */
 	</style>
 	<style>
 	li {
@@ -65,7 +71,7 @@
                     </div>
                 </div>
                 <!-- 기본정보 출력 -->
-                <div class="free_con" id="freelancerShow"  id="freelancerShow">
+                <div class="free_con" id="freelancerShow"  id="freelancerShow" style="display:none;">
                     <h3><=m.getName()%></h3>
                     <div class="gray_box mt-10">
 	                    <p class="small"> <=Integer.parseInt(m.getBirth())%></p>
@@ -104,10 +110,11 @@
 			        </div>
 			            <a href="" class="btn b_s absolute" id="modifyButton" onclick="changeInfo()">수정하기</a>
                 </div>
-                <script>
+                <script type="text/javascript">
 	                function changeInfo(){
 	                	if($('#freelancerUpdate').css("display")=="none"){
-	                		$('#freelancerUpdate').show();
+	                		
+		                	$('#freelancerUpdate').show();
 	                		$('#freelancerShow').hide();
 	                	}
 	                	// 버튼 클릭시 diplay 전환
@@ -117,14 +124,14 @@
                 </script>
 
                 <!-- 기본정보 입력 -->
-                <div class="free_con" id="freelancerUpdate" style="display:none;">
+                <div class="free_con" id="freelancerUpdate"><!-- style="display:none;" -->>
                 	<form id="updateForm" name="updateForm" action="/myWeb/mUpdate.me" method="post">
                     <div class="member_input input_small">
                     	<div class="gray_box mb-5">
 	                        <ul class="cf">
 	                            <li class="col-6 pr-5">
 	                                <!-- <label for="">이름<span class="need orange">(필수)</span></label> -->
-	                                <input type="text" id="korNm" name="korNm" value=" <=m.getName()%>" placeholder="실명으로 입력바랍니다."/>
+	                                <input type="text" id="korNm" name="korNm" value=" <=m.getName()%>" placeholder="실명으로 입력바랍니다." readonly="readonly"/>
 	                            </li>
 	                            <li class="col-6 pl-5">
 	                                <!-- <label for="">출생년도<span class="need orange">(필수)</span></label> -->
@@ -134,7 +141,7 @@
 	                                <select id="birthDay" name="birthDay">
 	                                    <option value="<=m.getBirth()%>"> 
 	                                    
-	                                        
+	                                         
 	                                           <=m.getBirth()%>
 	                                        
 	                                        
@@ -275,13 +282,14 @@
 	                            </li>
 							</ul>
 						</div>
+						
 						<div>
 						<ul class="cf">
                             <li class="col-6 pr-5">
                                 <label for="">전문기술<span class="need orange">(필수)</span></label>
-                                <input type="text" id="skills" name="skills" placeholder="선택하세요.(여러개 선택 가능)" value="<=m.getSkill1()%>
                                 
-                               <%--  <% if(m.getSkill2()!=null){ %>
+                                <input type="text"  onclick="display_change()" id="skills" name="skills" placeholder="선택하세요.(여러개 선택 가능)" value="<=m.getSkill1()%>" 
+                                <%--  <% if(m.getSkill2()!=null){ %>
                                   , <%=m.getSkill2() %>
                                                                 
                                 <%} %>
@@ -289,13 +297,19 @@
                                   , <%=m.getSkill3() %>
                                                                 
                                 <%} %> --%>
+                                readonly="readonly" >
+                              <script>
+                              	function display_change(){
+                              		document.getElementById("skillListModify").style.display=='block';
+                              	}
+                              </script>
+                               
                                 
-                                " readonly="readonly"/>
-
-                                <div class="option depth2 multi" id="skillListModify" style="display: none;">
-                                    
-                                    <div class="view_box">
-                                        	<ul id ="skillTable" style="display:none;">
+					
+                                <div class="option depth2 multi" id="skillListModify" style="display:none" >
+                                   
+                                    <div class="view_box" >
+                                        	<ul id ="skillTable"> <!--  checked 조건 걸어준다. -->
 										
 												<li><input type="checkbox" value="ASP">ASP</li>
 												<li><input type="checkbox" value="JSP">JSP</li>
@@ -343,7 +357,7 @@
 												<li><input type="checkbox" value="Swift">Swift</li>
 												
 											</ul>
-                                        <div id="btnModifySkill" class="btn_close">닫기</div>
+                                        <div id="btnModifySkill" class="btn_close" onclick="this.parentNode.style.display='none';">닫기</div>
                                     </div>
                                 </div>
                             </li>
@@ -389,7 +403,7 @@
                             </li>
                             <li class="col-6 pr-5">
                                 <label for="">투입가능일<span class="need orange">(필수)</span></label>
-                                <input type="text" class="input_day" id="joinPsblDt" name="joinPsblDt" value="<=m.getBirth()%>" placeholder="투입가능일자를 선택하시면 회원님의 일정에 반영됩니다." readonly="readonly"/>
+                                <input type="text" class="input_day" id="joinPsblDt" name="joinPsblDt" value="<=m.getFuture()%>" placeholder="투입가능일자를 선택하시면 회원님의 일정에 반영됩니다." />
                             </li>
                            <li>
                        
@@ -400,11 +414,7 @@
                         </ul>
 
                     </div>
-                    <!-- 프로필 미리보기 버튼 -->
-                    <div class="btn_box left mt-10">
-                        <button type="submit" class="btn b_m b_red" id="save">저장</button>
-                        <button class="btn b_m b" href="" id="cancel">취소</button>
-                    </div>
+                                    
 				</div>
                 </form>
                  
@@ -417,12 +427,12 @@
 	            <div class="card_info">
 	                <h3><span class="orange">파일 등록</span>으로 프로필을 <span class="orange">10초 완성</span>하세요~</h3>
 	                <div class="file_btn cf">
-	                    <form id="registForm" name="registForm" enctype="multipart/form-data" action="<%= request.getContextPath() %>/fileUpdate.bo" >
+	                <!--  경로 재설정 필요 -->
+	                    <form id="registForm" name="registForm" enctype="multipart/form-data" action="<%= request.getContextPath() %>/fileUpdate.bo" > 
 	                       <input type="file" name="file" id="file" />
-	                        <input type="text" name="virtu_text" />
-	                        <button type="submit" id="btn" class="btn b_m b_red" style="cursor:pointer;">등록</button>
+	                        <button type="submit"style="size:10; cursor:pointer;">등록</button>
 	                    </form>
-	                    <button id="btnMail" class="btn b_red" style="display:none;cursor:pointer;">이력서 메일로 첨부하기</button>
+	                  
 	                </div>
 	                <h6>이력서 파일을 올려주시면 프리몬에서 프로필을 완성해드립니다.</h6>
 	                <p class="small">(최대 2~3일 소요, 프로필 완성 후 카카오톡 메시지로 안내드립니다.)</p>
