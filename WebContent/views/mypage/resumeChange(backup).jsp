@@ -54,14 +54,13 @@
 	  	});
 	</script> -->
 
-	<link rel="stylesheet" type="text/css" href="/resources/css/default.css?version=4.4">
-	<link rel="stylesheet" type="text/css" href="/resources/css/jquery-ui.min.css?version=2.0">
-	<link rel="stylesheet" type="text/css" href="/resources/css/member.css?version=4.1">
-	<link rel="stylesheet" type="text/css" href="/resources/css/new.css?version=4.9">
-	<link rel="stylesheet" type="text/css" id="mobile" href="/resources/css/web_hand.css">
-	<link rel="stylesheet" type="text/css" href="/resources/css/career-ui.min.css?version=2.0" />
-	<link rel="stylesheet" type="text/css" href="/resources/css/ui.jqgrid.css" />
-	<link rel="shortcut icon" href="/resources/images/new/favicon.ico"/>
+	<link rel="stylesheet" type="text/css" href="../resources/css/default.css?version=4.4">
+	<link rel="stylesheet" type="text/css" href="../resources/css/jquery-ui.min.css?version=2.0">
+	<link rel="stylesheet" type="text/css" href="../resources/css/member.css?version=4.1">
+	<link rel="stylesheet" type="text/css" href="../resources/css/new.css?version=4.9">
+	<link rel="stylesheet" type="text/css" href="../resources/css/career-ui.min.css?version=2.0" />
+	<link rel="stylesheet" type="text/css" href="../resources/css/ui.jqgrid.css" />
+	<link rel="shortcut icon" href="../resources/images/new/favicon.ico"/>
 	
 	<style type="text/css">
 	  .tooltipUI{
@@ -88,35 +87,35 @@
 	  
 	  /* .scrollOff{position:fixed;overflow:hidden;height:100%;width:100%;} */
 	</style>
-    <script type="text/javascript" src="/resources/scripts/jquery-3.3.1.min.js" charset="utf-8"></script>
-    <script type="text/javascript" src="/resources/scripts/jquery.flexslider.js"></script>
-    <script type="text/javascript" src="/resources/scripts/site_ui.js"></script>
-	<script type="text/javascript" src="/resources/js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="../resources/scripts/jquery-3.3.1.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../resources/scripts/jquery.flexslider.js"></script>
+    <script type="text/javascript" src="../resources/scripts/site_ui.js"></script>
+	<script type="text/javascript" src="../resources/js/jquery.easing.1.3.js"></script>
     <!--Calendar-->
-    <script type="text/javascript" src="/resources/scripts/calendar/pignose.calendar.full.js"></script>
-	<script type="text/javascript" src="/resources/js/jquery-ui.min.js"></script>
-	<script type="text/javascript" src="/resources/js/jquery.ba-hashchange.min.js"></script>
-	<script type="text/javascript" src="/resources/js/jquery.json-2.3.js"></script>
-	<script type="text/javascript" src="/resources/js/jquery.validate.min.js"></script>
-	<script type="text/javascript" src="/resources/js/jquery.history.js"></script>
+    <script type="text/javascript" src="../resources/scripts/calendar/pignose.calendar.full.js"></script>
+	<script type="text/javascript" src="../resources/js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="../resources/js/jquery.ba-hashchange.min.js"></script>
+	<script type="text/javascript" src="../resources/js/jquery.json-2.3.js"></script>
+	<script type="text/javascript" src="../resources/js/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="../resources/js/jquery.history.js"></script>
 	<!-- Jqgrid -->
-	<script type="text/javascript" src="/resources/js/grid.locale-kr.js"></script>
-	<script type="text/javascript" src="/resources/js/jquery.jqGrid.min.js"></script>
+	<script type="text/javascript" src="../resources/js/grid.locale-kr.js"></script>
+	<script type="text/javascript" src="../resources/js/jquery.jqGrid.min.js"></script>
 	<!-- //Jqgrid -->
-	<script type="text/javascript" src="/resources/js/jquery.marquee.min.js?version=1.0"></script>
-	<script type="text/javascript" src="/resources/js/mustache.js"></script>
-	<script type="text/javascript" src="/resources/js/jquery.cookie.js"></script>
-	<script type="text/javascript" src="/resources/i18n/commonMessages_ko.js"></script>
-	<script type="text/javascript" src="/resources/freemon/base64.js"></script>
-	<script type="text/javascript" src="/resources/freemon/sha256.js"></script>
-	<script type="text/javascript" src="/resources/freemon/nmask.js"></script>
-	<script type="text/javascript" src="/resources/freemon/freemon.js?version=3.4"></script>
-	<script type="text/javascript" src="/resources/js/gnb_common.js?version=4.2"></script>
-	<script type="text/javascript" src="/resources/freemon/common/apply.js"></script>
-	<script type="text/javascript" src="/resources/freemon/common/freemonPopUp.js?version=1.2"></script>
-	<script type="text/javascript" src="/resources/freemon/common/input.js"></script>
+	<script type="text/javascript" src="../resources/js/jquery.marquee.min.js?version=1.0"></script>
+	<script type="text/javascript" src="../resources/js/mustache.js"></script>
+	<script type="text/javascript" src="../resources/js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="../resources/i18n/commonMessages_ko.js"></script>
+	<script type="text/javascript" src="../resources/freemon/base64.js"></script>
+	<script type="text/javascript" src="../resources/freemon/sha256.js"></script>
+	<script type="text/javascript" src="../resources/freemon/nmask.js"></script>
+	<script type="text/javascript" src="../resources/freemon/freemon.js?version=3.4"></script>
+	<script type="text/javascript" src="../resources/js/gnb_common.js?version=4.2"></script>
+	<script type="text/javascript" src="../resources/freemon/common/apply.js"></script>
+	<script type="text/javascript" src="../resources/freemon/common/freemonPopUp.js?version=1.2"></script>
+	<script type="text/javascript" src="../resources/freemon/common/input.js"></script>
 	
-	<script type="text/javascript" src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+
 	
 	<script type="text/javascript">
 		var frameworkProperties = {
