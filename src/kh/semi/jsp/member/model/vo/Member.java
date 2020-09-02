@@ -19,13 +19,13 @@ public class Member implements Serializable{
 	private String area;		// 거주지역
 	private String hope;		// 희망지역
 	private Date future;		// 투입가능날
+	private boolean withdraw;
 	private Date enrolldate;
 	private int career;
 	private int total;
 	private String join;
 	
-	public Member() {
-	}
+	public Member() {}
 
 	public Member(String userPwd, String email) {
 		super();

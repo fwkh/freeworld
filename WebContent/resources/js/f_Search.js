@@ -3,20 +3,20 @@ $(function()
 	// 지역
     $('#area').mouseenter(function()
     {
-        $('#workAreaList').show();
+        $('#areaList').show();
     });
     $('#area').mouseleave(function()
     {
-    	$('#workAreaList').hide();
+    	$('#areaList').hide();
     });
     
-    $('#workAreaList').mouseenter(function()
+    $('#areaList').mouseenter(function()
     {
-    	$('#workAreaList').show();
+    	$('#areaList').show();
     });
-    $('#workAreaList').mouseleave(function()
+    $('#areaList').mouseleave(function()
     {
-    	$('#workAreaList').hide();
+    	$('#areaList').hide();
     });
     
     // 전문기술
@@ -57,7 +57,39 @@ $(function()
     	$('#careerList').hide();
     });
     
-    $('#areaSelect').click(function(){
-    	console.log($('#area0').dataset.value);
+    // 클릭 이벤트
+    $('#areaList').each(function(i, e)
+    {
+    	$('.areaSelect').click(function()
+		{
+    		console.log($(this).text());
+    		$('#searchWord').append($("<p id=ps"+ i + ">" + $(this).text() + "<a href='' class=del id=delSelect'>삭제</a>" + "</p>"));
+    		i += 1;
+		});
+    });
+    
+    $('#skillList').each(function(i, e)
+    {
+	    $('.jobSelect').click(function()
+		{
+    		console.log($(this).text());
+    		$('#searchWord').append($("<p id=ps"+ i + ">" + $(this).text() + "<a href='' class=del id=delSelect'>삭제</a>" + "</p>"));
+    		i += 1;
+		});
+    });
+    
+    $('#careerList').each(function(i, e)
+	{
+		$('.setRangeValue').click(function()
+		{
+    		console.log($(this).text());
+    		$('#searchWord').append($("<p id=ps"+ i + ">" + $(this).text() + "<a href='' class=del id=delSelect'>삭제</a>" + "</p>"));
+    		i += 1;
+		});
+	});
+    
+    $('#delSelect').click(function()
+    {
+    	$('#ps1').remove();
     });
 });

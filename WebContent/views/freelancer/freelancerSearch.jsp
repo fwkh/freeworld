@@ -10,11 +10,12 @@
 	  #profile{display:none;}
 	  #suggestion{display:none;}
 	  #logout{display:none;}
+	  #delSelect{display:none;}
 	</style>
 </head>
 <body>
 	<%@ include file="../common/header.jsp" %>
-	<script type="text/javascript" src="../../resources/js/f_Search.js" charset="UTF-8"></script>
+
 
 		
 <!-- Bootstrap css -->
@@ -34,9 +35,10 @@
 	display:none;
 }
 </style>
-<link rel="stylesheet" type="text/css" href="../resources/css/bootstrap-slider.css">
-<script type="text/javascript" src="../resources/js/bootstrap-slider.min.js"></script>
-<script type="text/javascript" src="../resources/freemon/talent/talentSearch29d4.js?version=1.16"></script>
+<link rel="stylesheet" type="text/css" href="../../resources/css/bootstrap-slider.css">
+<script type="text/javascript" src="../../resources/js/bootstrap-slider.min.js"></script>
+<script type="text/javascript" src="../../resources/js/f_Search.js" charset="UTF-8"></script>
+<script type="text/javascript" src="../../resources/scripts/jquery-3.3.1.min.js" charset="UTF-8"></script>
 <script type="text/javascript">
 	$(function() {
 		freemon.invoker.invoke("talentSearch");
@@ -82,7 +84,7 @@
                 <div class="sel_option">
                     <a href="#none" id="area">지역선택</a>
                     <!-- 옵션 -->
-                    <div class="option depth1 single" id="workAreaList" style="display: none;">
+                    <div class="option depth1 single" id="areaList" style="display: none;">
                         <div class="select_box cf">
                             <ul class="cf" id="memberSearchAreaList">
 								<li class="areaSelect" id="area0" data-value="서울 전체" style="cursor:pointer;">서울 전체</li>
@@ -122,51 +124,51 @@
                     <div class="option depth1 single" id="skillList" style="display: none;">
                         <div class="select_box cf">
                             <ul class="cf" id="memberSearchJobList">
-								<li class="jobSelect" data-value="1" style="cursor:pointer;">JSP</li>
-								<li class="jobSelect" data-value="2" style="cursor:pointer;">PHP</li>
-								<li class="jobSelect" data-value="3" style="cursor:pointer;">ASP.NET</li>
-								<li class="jobSelect" data-value="4" style="cursor:pointer;">ASP</li>
-								<li class="jobSelect" data-value="5" style="cursor:pointer;">JavaScript</li>
-								<li class="jobSelect" data-value="6" style="cursor:pointer;">Ajax</li>
-								<li class="jobSelect" data-value="7" style="cursor:pointer;">Jquery</li>
-								<li class="jobSelect" data-value="8" style="cursor:pointer;">NodeJS</li>
-								<li class="jobSelect" data-value="9" style="cursor:pointer;">Vue.js</li>
-								<li class="jobSelect" data-value="10" style="cursor:pointer;">React.js</li>
-								<li class="jobSelect" data-value="11" style="cursor:pointer;">Ruby</li>
-								<li class="jobSelect" data-value="12" style="cursor:pointer;">RubyonRails</li>
-								<li class="jobSelect" data-value="13" style="cursor:pointer;">MiPlatform</li>
-								<li class="jobSelect" data-value="14" style="cursor:pointer;">Nexacro</li>
-								<li class="jobSelect" data-value="15" style="cursor:pointer;">XPLATFORM</li>
-								<li class="jobSelect" data-value="16" style="cursor:pointer;">GO</li>
-								<li class="jobSelect" data-value="17" style="cursor:pointer;">Oracle</li>
-								<li class="jobSelect" data-value="18" style="cursor:pointer;">MS-SQL</li>
-								<li class="jobSelect" data-value="19" style="cursor:pointer;">MySQL</li>
-								<li class="jobSelect" data-value="20" style="cursor:pointer;">DB2</li>
-								<li class="jobSelect" data-value="21" style="cursor:pointer;">Pro-C</li>
-								<li class="jobSelect" data-value="22" style="cursor:pointer;">Python</li>
-								<li class="jobSelect" data-value="23" style="cursor:pointer;">VB</li>
-								<li class="jobSelect" data-value="24" style="cursor:pointer;">VB.NET</li>
-								<li class="jobSelect" data-value="25" style="cursor:pointer;">POS</li>
-								<li class="jobSelect" data-value="26" style="cursor:pointer;">ABAP</li>
-								<li class="jobSelect" data-value="27" style="cursor:pointer;">EJB</li>
-								<li class="jobSelect" data-value="28" style="cursor:pointer;">JAVA</li>
-								<li class="jobSelect" data-value="29" style="cursor:pointer;">C#</li>
-								<li class="jobSelect" data-value="30" style="cursor:pointer;">SAP</li>
-								<li class="jobSelect" data-value="31" style="cursor:pointer;">C++</li>
-								<li class="jobSelect" data-value="32" style="cursor:pointer;">Kotlin</li>
-								<li class="jobSelect" data-value="33" style="cursor:pointer;">F#</li>
-								<li class="jobSelect" data-value="34" style="cursor:pointer;">C</li>
-								<li class="jobSelect" data-value="35" style="cursor:pointer;">PowerBuilder</li>
-								<li class="jobSelect" data-value="36" style="cursor:pointer;">MFC</li>
-								<li class="jobSelect" data-value="37" style="cursor:pointer;">어셈블리</li>
-								<li class="jobSelect" data-value="38" style="cursor:pointer;">임베디드</li>
-								<li class="jobSelect" data-value="39" style="cursor:pointer;">펌웨어</li>
-								<li class="jobSelect" data-value="40" style="cursor:pointer;">HMI</li>
-								<li class="jobSelect" data-value="41" style="cursor:pointer;">MMI</li>
-								<li class="jobSelect" data-value="42" style="cursor:pointer;">PLC</li>
-								<li class="jobSelect" data-value="43" style="cursor:pointer;">Android</li>
-								<li class="jobSelect" data-value="44" style="cursor:pointer;">Objective-C</li>
-								<li class="jobSelect" data-value="45" style="cursor:pointer;">Swift</li>
+								<li class="jobSelect" id="skill1" data-value="1" style="cursor:pointer;">JSP</li>
+								<li class="jobSelect" id="skill2" data-value="2" style="cursor:pointer;">PHP</li>
+								<li class="jobSelect" id="skill3" data-value="3" style="cursor:pointer;">ASP.NET</li>
+								<li class="jobSelect" id="skill4" data-value="4" style="cursor:pointer;">ASP</li>
+								<li class="jobSelect" id="skill5" data-value="5" style="cursor:pointer;">JavaScript</li>
+								<li class="jobSelect" id="skill6" data-value="6" style="cursor:pointer;">Ajax</li>
+								<li class="jobSelect" id="skill7" data-value="7" style="cursor:pointer;">Jquery</li>
+								<li class="jobSelect" id="skill8" data-value="8" style="cursor:pointer;">NodeJS</li>
+								<li class="jobSelect" id="skill9" data-value="9" style="cursor:pointer;">Vue.js</li>
+								<li class="jobSelect" id="skill10" data-value="10" style="cursor:pointer;">React.js</li>
+								<li class="jobSelect" id="skill11" data-value="11" style="cursor:pointer;">Ruby</li>
+								<li class="jobSelect" id="skill12" data-value="12" style="cursor:pointer;">RubyonRails</li>
+								<li class="jobSelect" id="skill13" data-value="13" style="cursor:pointer;">MiPlatform</li>
+								<li class="jobSelect" id="skill14" data-value="14" style="cursor:pointer;">Nexacro</li>
+								<li class="jobSelect" id="skill15" data-value="15" style="cursor:pointer;">XPLATFORM</li>
+								<li class="jobSelect" id="skill16" data-value="16" style="cursor:pointer;">GO</li>
+								<li class="jobSelect" id="skill17" data-value="17" style="cursor:pointer;">Oracle</li>
+								<li class="jobSelect" id="skill18" data-value="18" style="cursor:pointer;">MS-SQL</li>
+								<li class="jobSelect" id="skill19" data-value="19" style="cursor:pointer;">MySQL</li>
+								<li class="jobSelect" id="skill20" data-value="20" style="cursor:pointer;">DB2</li>
+								<li class="jobSelect" id="skill21" data-value="21" style="cursor:pointer;">Pro-C</li>
+								<li class="jobSelect" id="skill22" data-value="22" style="cursor:pointer;">Python</li>
+								<li class="jobSelect" id="skill23" data-value="23" style="cursor:pointer;">VB</li>
+								<li class="jobSelect" id="skill24" data-value="24" style="cursor:pointer;">VB.NET</li>
+								<li class="jobSelect" id="skill25" data-value="25" style="cursor:pointer;">POS</li>
+								<li class="jobSelect" id="skill26" data-value="26" style="cursor:pointer;">ABAP</li>
+								<li class="jobSelect" id="skill27" data-value="27" style="cursor:pointer;">EJB</li>
+								<li class="jobSelect" id="skill28" data-value="28" style="cursor:pointer;">JAVA</li>
+								<li class="jobSelect" id="skill29" data-value="29" style="cursor:pointer;">C#</li>
+								<li class="jobSelect" id="skill30" data-value="30" style="cursor:pointer;">SAP</li>
+								<li class="jobSelect" id="skill31" data-value="31" style="cursor:pointer;">C++</li>
+								<li class="jobSelect" id="skill32" data-value="32" style="cursor:pointer;">Kotlin</li>
+								<li class="jobSelect" id="skill33" data-value="33" style="cursor:pointer;">F#</li>
+								<li class="jobSelect" id="skill34" data-value="34" style="cursor:pointer;">C</li>
+								<li class="jobSelect" id="skill35" data-value="35" style="cursor:pointer;">PowerBuilder</li>
+								<li class="jobSelect" id="skill36" data-value="36" style="cursor:pointer;">MFC</li>
+								<li class="jobSelect" id="skill37" data-value="37" style="cursor:pointer;">어셈블리</li>
+								<li class="jobSelect" id="skill38" data-value="38" style="cursor:pointer;">임베디드</li>
+								<li class="jobSelect" id="skill39" data-value="39" style="cursor:pointer;">펌웨어</li>
+								<li class="jobSelect" id="skill40" data-value="40" style="cursor:pointer;">HMI</li>
+								<li class="jobSelect" id="skill41" data-value="41" style="cursor:pointer;">MMI</li>
+								<li class="jobSelect" id="skill42" data-value="42" style="cursor:pointer;">PLC</li>
+								<li class="jobSelect" id="skill43" data-value="43" style="cursor:pointer;">Android</li>
+								<li class="jobSelect" id="skill44" data-value="44" style="cursor:pointer;">Objective-C</li>
+								<li class="jobSelect" id="skill45" data-value="45" style="cursor:pointer;">Swift</li>
 							</ul>
                         </div>
                     </div>
@@ -178,7 +180,7 @@
                     <!-- 옵션 -->
                     <div class="option depth1 single" id="careerList" style="display: none;">
                         <div class="select_box cf">
-                            <ul class="cf">
+                            <ul class="cf" id="memberSearchJobList">
                                 <li class="setRangeValue" data-action="setRangeValue" data-value="1" id="career1" data-html="5년이하">5년이하</li>
 				                <li class="setRangeValue" data-action="setRangeValue" data-value="2" id="career2" data-html="6~10년">6~10년</li>
 				                <li class="setRangeValue" data-action="setRangeValue" data-value="3" id="career3" data-html="11~15년">11~15년</li>
@@ -200,7 +202,9 @@
             </div>
             <div class="select_in" id="searchWord">
                 <a href="" class="reset" id="freemonReload">전체삭제</a>
-            </div>
+                <p id="select1">
+                </p>
+			</div>
         </div>
         
         <!-- 단가 *지우면 목록이 안나옴 -->
@@ -269,6 +273,8 @@
 						</div>
 					</div>
 				</div>
+				
+				
 				<div class="card cf" style=" cursor: pointer;" onclick="location.href='../member/memberLogin.jsp'">
                     <div class="free_info cf">
                         <div class="profile" style="cursor:pointer; background-image:url(http://th-p.talk.kakao.co.kr/th/talkp/wlBaG95K4G/8Ttz5G4v91tdCDYBGwYNFK/hpj5e3_110x110_c.jpg)" data-action="talentDetail" data-value="1443141222">프로필사진</div>
