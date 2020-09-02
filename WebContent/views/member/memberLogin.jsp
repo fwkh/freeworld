@@ -84,7 +84,7 @@
 				<h3 class="name">프리랜서</h3>
 				<div class="middle">
                    <div class="member_input">
-						<form class="login_form" id="login_form" name="login_form">
+						<form class="login_form" id="login_form" action="/freeWorld/login.me" name="login_form">
 		                    <ul class="cf">
 		                        <li class="p-0">
 	                                <!-- <label for="companyUserId">아이디</label> -->
@@ -95,7 +95,6 @@
 	                                <input type="password" id="userPwd" name="userPwd" placeholder="비밀번호"/>
 		                        </li>
 		                    </ul>
-						</form>
 		                <div class="radio member_check left">
 		                	<label for="chkIdSave">
 		                	<input type="checkbox" id="chkIdSave" name="chkIdSave" value="Y" />
@@ -103,6 +102,7 @@
 		                	아이디저장</label>
                         </div>
 		                <button id="userLoginBtn" class="b_login b_red" value="로그인" style="cursor:pointer;">로그인</button>
+						</form>
 		                <ul class="login_link">
 		                	<li><a href="../member/signEmail.jsp" class="underline">아이디/비밀번호 찾기</a></li>
 		                	<li><a href="../member/memberJoin.jsp">프리랜서 회원가입</a></li>

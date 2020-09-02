@@ -23,6 +23,20 @@ public class Member implements Serializable{
 	private int career;
 	private int total;
 	private String join;
+//<<<<<<< HEAD
+
+	// 가입시 필요한 생성자
+	public Member(String userPwd, String userName, Date birth, String phone, String email, String area, String hope, Date future, int total) {
+		this.userPwd = userPwd;
+		this.userName = userName;
+		this.birth = birth;
+		this.phone = phone;
+		this.email = email;
+		this.area = area;
+		this.hope = hope;
+		this.future = future;
+		this.total = total;}
+//=======
 	
 	// 2020-09-01 새로 생성된 속성값(진선)
 	//기존 테이블에 추가
@@ -82,6 +96,7 @@ public class Member implements Serializable{
 		L_Name = l_Name;
 		L_Agency = l_Agency;
 		L_Date = l_Date;
+//>>>>>>> 3b7561068741bedbaddc53a0177bc56a83d2c0ab
 	}
 
 	public Member() {
@@ -391,6 +406,20 @@ public class Member implements Serializable{
 
 	@Override
 	public String toString() {
+//<<<<<<< HEAD
+//		return "Member{" +
+//				"userPwd='" + userPwd + '\'' +
+//				", userName='" + userName + '\'' +
+//				", birth=" + birth +
+//				", phone='" + phone + '\'' +
+//				", email='" + email + '\'' +
+//				", area='" + area + '\'' +
+//				", hope='" + hope + '\'' +
+//				", future=" + future +
+//				", enrolldate=" + enrolldate +
+//				", total=" + total +
+//				'}';
+//=======
 		return "Member [userNo=" + userNo + ", userPwd=" + userPwd + ", userName=" + userName + ", birth=" + birth
 				+ ", phone=" + phone + ", email=" + email + ", area=" + area + ", hope=" + hope + ", future=" + future
 				+ ", enrolldate=" + enrolldate + ", career=" + career + ", total=" + total + ", join=" + join
@@ -398,10 +427,8 @@ public class Member implements Serializable{
 				+ ", uni_Name=" + uni_Name + ", enterDate=" + enterDate + ", gra_Date=" + gra_Date + ", gra_Status="
 				+ gra_Status + ", major=" + major + ", Total_grade=" + Total_grade + ", grade_Standard="
 				+ grade_Standard + ", L_Name=" + L_Name + ", L_Agency=" + L_Agency + ", L_Date=" + L_Date + "]";
+//>>>>>>> 3b7561068741bedbaddc53a0177bc56a83d2c0ab
 	}
-
-	
-	
 }
 
 
