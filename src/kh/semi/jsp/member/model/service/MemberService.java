@@ -25,4 +25,18 @@ public class MemberService
 		}
 		return result;
 	}
+
+	public Member f_searchOne(Member m) throws MemberException
+	{
+		con = getConnection();
+		
+		Member result = mDao.f_searchOne(con, m);
+		
+		if(result == null)
+		{
+			throw new MemberException("조회에 실패하였습니다.");
+		}
+		
+		return result;
+	}
 }

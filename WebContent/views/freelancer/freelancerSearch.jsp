@@ -193,7 +193,9 @@
                     <!-- /옵션 -->
                 </div>
                 <div class="sel_check">
-                    <label class="agrChk" for="careerY"><input type="checkbox" id="careerY" name="careerY" data-action="careerTypeClick" data-value="EXP" value="EXP"><i></i>이력서 등록자</label>
+                    <label class="agrChk" for="careerY">
+                    	<input type="checkbox" id="careerY" name="careerY" data-action="careerTypeClick" data-value="EXP" value="EXP"><i></i>이력서 등록자
+                    </label>
                 </div>
                 <ul class="sel_order" style="display:none;">
                     <li class="active"><a href="">등록순</a></li>
@@ -280,7 +282,7 @@
                         <div class="profile" style="cursor:pointer; background-image:url(http://th-p.talk.kakao.co.kr/th/talkp/wlBaG95K4G/8Ttz5G4v91tdCDYBGwYNFK/hpj5e3_110x110_c.jpg)" data-action="talentDetail" data-value="1443141222">프로필사진</div>
                         <div class="free_con">
                             <h3 data-action="talentDetail" data-value="1443141222">
-                                <a href="../member/memberLogin.jsp" data-action="talentDetail" data-value="1443141222">김**</a>
+                                <a href="../member/memberLogin.jsp"></a>
                                 <ul class="f_nature cf">
                                     <li>36세</li>
                                     <li class="ellipsis">**</li>

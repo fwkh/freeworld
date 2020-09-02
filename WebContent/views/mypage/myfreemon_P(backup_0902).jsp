@@ -211,64 +211,83 @@
 
 							<!-- 임시 -->
 							<div class="proj_list">
-    				    	<!-- 목록형 -->
-								<div class="open_list xs-hidden">
-               						 <ul class="suggest_list" id="projectSearchList">
-										<!-- 목록형-->
-										<li class=" closed">
-											<div class="proj_box cf">	
-												<div class="proj_info col-6" data-action="applicantInfo" data-view="slider">
-                									<h4 data-value="1013"><a href="javascript:void(0);" data-action="projectDetail" data-appidx="1213" data-proidx=""><span class="line-130">GSteletech</span></a></h4>
-										            <h3 data-value="1013">
-									                    <a href="javascript:void(0);" data-action="projectDetail" data-appidx="1213" data-proidx="">
-									                        <span class="add_info gray first">마감</span><span class="add_info org first ">면접진행</span><span class="line-130">semi-Project</span>
-									                    </a> 
-									                    
-               										</h3>
-               										<ul class="pro_list surport">
-									                    <li>2020-08-28 ~ 2020-09-07<span class="add_info org">1개월</span></li>
-									                    <li>서울 강남구</li>
-														<li class="ellipsis">1만원<span class="add_info">협의가능</span></li>
-									                    <li class="ellipsis">Ajax, Java, JSP, MySQL</li>
-									                </ul>
-									                <!-- 친구공유 -->
-									                <ul class="btn_icon absolute cf">
-									                    <li class="share"><a href="javascript:void(0);" data-action="share_click" data-value="1013" title="친구공유">친구공유</a></li>
-									                </ul>
-    										        <!-- 지원 또는 답변이 와서 상세 내용을 확인하지 않았을때 -->
-													<span class="right_plus"></span>
-										       </div>
-   									           <div class="process">
-										          <div class="process_in">
-										             <div class="p_btn">
-				                    					<!-- 프로젝트 모집이 마감되었을 때 -->
-				                					    <p class="center">프로젝트 모집이 마감되었습니다.</p>
+        	<!-- 목록형 -->
+			<div class="open_list xs-hidden">
+                <ul class="suggest_list" id="projectSearchList">
+<!-- 목록형-->
+<li class=" closed">
+	<div class="proj_box cf">
+		<div class="proj_info col-6" data-action="applicantInfo" data-view="slider">
+                <h4 data-value="1013"><a href="javascript:void(0);" data-action="projectDetail" data-appidx="1213" data-proidx=""><span class="line-130">GSteletech</span></a></h4>
+                <h3 data-value="1013">
+                    <a href="javascript:void(0);" data-action="projectDetail" data-appidx="1213" data-proidx="">
+                        <span class="add_info gray first">마감</span><span class="add_info org first ">면접진행</span><span class="line-130">semi-Project</span>
+                    </a> 
+                    
+                </h3>
+                <ul class="pro_list surport">
+                    <li>2020-08-28 ~ 2020-09-07<span class="add_info org">1개월</span></li>
+                    <li>서울 강남구</li>
+					<li class="ellipsis">1만원<span class="add_info">협의가능</span></li>
+                    <li class="ellipsis">Ajax, Java, JSP, MySQL</li>
+                </ul>
+                <!-- 친구공유 -->
+                <ul class="btn_icon absolute cf">
+                    <li class="share"><a href="javascript:void(0);" data-action="share_click" data-value="1013" title="친구공유">친구공유</a></li>
+                </ul>
+                <!-- 지원 또는 답변이 와서 상세 내용을 확인하지 않았을때 -->
+                
+                
+				<span class="right_plus"></span>
+        </div>
+        <div class="process">
+            <div class="process_in">
+                <div class="p_btn">
+                    
 
-									                </div>
-								                  <!-- 프로세스 -->
-									                  <div class="p_stepstep2step3">          
-									                    <ul><p class="line_graph"><em></em></p>
-									                        <li>
-									                        	<p class="tit"><span class="tit_in">제안</span></p><span class="date"></span>
-									                        </li>
-	                        								<li>
-	                        									<p class="tit"><span class="tit_in">지원<em class="yes">O</em></span></p><span class="date">2020-08-28</span>
-	   									                    </li>
-	                       									<li>
-									                            <p class="tit"><span class="tit_in">면접진행<em class="yes">O</em></span></p><span class="date">2020-08-28</span>             
-	                       									</li>
-									                        <li>
-									                            <p class="tit"><span class="tit_in">계약요청</span></p><span class="date"></span>
-									                        </li>
-									                        <li>
-									                            <p class="tit"><span class="tit_in">계약완료</span></p>
-									                        </li>
-	                   									</ul>
-										               </div>
-      											  </div>           
-									        </div> 
-									    </div></li></ul>
-									  </div>
+					<!-- 프로젝트 모집이 마감되었을 때 -->
+                    <p class="center">프로젝트 모집이 마감되었습니다.</p>
+
+                </div>
+                <!-- 프로세스 -->
+                <div class="p_step 
+                                
+                                step2 
+                                
+                                step3  
+                                ">          
+                    <ul>
+                        <p class="line_graph"><em></em></p>
+                        <li>
+                                
+                                
+                                
+                                
+                                <p class="tit"><span class="tit_in">제안</span></p><span class="date"></span>
+                        </li>
+                        <li>
+                                
+                                
+                                
+                                <p class="tit"><span class="tit_in">지원<em class="yes">O</em></span></p><span class="date">2020-08-28</span>
+                        </li>
+                        <li>
+                            <p class="tit"><span class="tit_in">면접진행<em class="yes">O</em></span></p><span class="date">2020-08-28</span>
+                            
+                            
+                        </li>
+                        <li>
+                            <p class="tit"><span class="tit_in">계약요청</span></p><span class="date"></span>
+                        </li>
+                        <li>
+                            <p class="tit"><span class="tit_in">계약완료</span></p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div> 
+    </div>
     <ul class="open_talk" style="display:none">
      	<li>
          	<div class="talk_box proj_talk" id="loadCommunicationList1013" data-action="openCommunicationPopup" data-idx="1013" data-fno="kch@gsteletech.com" data-nm="GSteletech" data-appidx="1213" data-proidx="">

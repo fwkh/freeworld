@@ -17,13 +17,13 @@
 <html lang="ko">
 
 <head>
-	<%@ include file="../common/header.jsp" %>
+	
 	<style type="text/css">	  
 	  #f_management{display:none;}
 	  #p_management{display:none;}
 	  #profile{display:none;}
 	  #suggestion{display:none;}
-	  #logout{display:none;}
+	  #logout{display:none;} 
 	</style>
 	<style>
 	li {
@@ -32,57 +32,25 @@
     padding: 0;
     width: 200px;
     background-color: #f1f1f1;
-}
+}  <link rel="stylesheet" type="text/css" href="../resources/css/resume.css">
 	</style>
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 
 
 <body>
-	<!-- Google Tag Manager (noscript) -->
-	<noscript><iframe src="http://www.googletagmanager.com/ns.html?id=GTM-MF7LK3J"
-        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-        <!-- End Google Tag Manager (noscript) -->
-    
+
         <div class="load_box" style="display:none;">
             <div class="load_img">
                 <img src="../resources/images/common/loading.gif" alt="loading"/>
             </div>
         </div>
-        <link rel="stylesheet" type="text/css" href="../resources/css/resume.css">
-    
+   
 <script type="text/javascript" src="../resources/js/Chart.js"></script>
 <script type="text/javascript" src="../resources/js/resumeSearch.js"></script>
-<script type="text/javascript">
-	/* $(function() {
-	    var skills = [], areas = [];
-		
-		
-		freemon.invoker.invoke("resumeSearch", "talent", {
-		    'userId':'1444427072',
-            'selectSkills': skills,
-            'selectArea': areas,
-            'korNm' : '아무개',
-            'birthDay' : '1990',
-            'genderCd' : '',
-            'telNo' : '01011112222',
-            'email' : 'test@test.com',
-            'joinPsblDt' : '2020-12-09',
-            'keyword' : '',
-            'genderCd' : '',
-            'hldSkill' : '',
-            'workAreaNm' : ''
-		});
-	}); */
 
-/* 	function clickFile() {
-		registForm.file.click();
-	}
-	function fillFile() {
-		registForm.virtu_text.value = registForm.file.value;
-	} */
-</script>
 <div id="container">
+<%@ include file="../common/header.jsp" %>   
 	<section class="project_in">
         <h5 class="mb-20 ml-5">기본정보</h5>
 
@@ -98,18 +66,27 @@
                 </div>
                 <!-- 기본정보 출력 -->
                 <div class="free_con" id="freelancerShow"  id="freelancerShow">
-                    <h3>아무개</h3>
+                    <h3><=m.getName()%></h3>
                     <div class="gray_box mt-10">
-	                    <p class="small"> 20세</p>
+	                    <p class="small"> <=Integer.parseInt(m.getBirth())%></p>
 	                    <ul class="ul_detail no_line cf">
-		                    <li><span class="tit">전화</span>01011112222</li>
-		                    <li><span class="tit">이메일</span>test@test.com</li>
+		                    <li><span class="tit">전화</span><=m.getPhone()%></li>
+		                    <li><span class="tit">이메일</span><=m.getEmail()%></li>
 		                </ul>
 	                </div>
 	                <ul class="ul_detail no_line cf">
-	                    <li><span class="tit">희망지역</span></li>
-	                    <li><span class="tit">전문기술</span></li>
-	                    <li><span class="tit">투입가능일</span>2020-12-09<span class="add_info org">999 일후</span></li>
+	                    <li><span class="tit">희망지역</span><=m.getArea() %></li>
+	                    <li><span class="tit">전문기술</span><=m.getSkill1()%>
+	                    
+	                      <%--  <% if(m.getSkill2()!=null){ %>
+                                  , <%=m.getSkill2() %>
+                                                                
+                                <%} %>
+                                <% if(m.getSkill3()!=null){ %>
+                                  , <%=m.getSkill3() %>
+                                                                
+                                <%} %> --%></li>
+	                    <li><span class="tit">투입가능일</span><=m.getFuture()%><span class="add_info org">999 일후</span></li>
 	                </ul>
 	                <div class="add_con cf mt-10">
 			            <div class="hash hash_detail">
@@ -138,10 +115,10 @@
 	            		// #profile_big=> display : none으로 변경 
 	            	}
                 </script>
-                <!-- /기본정보 출력 -->
+
                 <!-- 기본정보 입력 -->
                 <div class="free_con" id="freelancerUpdate" style="display:none;">
-                <form id="updateForm" name="updateForm" action="/myWeb/mUpdate.me" method="post">
+                	<form id="updateForm" name="updateForm" action="/myWeb/mUpdate.me" method="post">
                     <div class="member_input input_small">
                     	<div class="gray_box mb-5">
 	                        <ul class="cf">
@@ -271,7 +248,7 @@
 	                            </li>
 	                            <li class="col-12">
 	                                <!-- <label for="">성별</label> -->
-	                                <div class="radio member_check">
+	                            	<div class="radio member_check">
 		                                <label for="genderCd01">
 		                                <input type="radio" id="genderCd01" name="genderCd" value="M" checked=""/>
 		                                <i></i>
@@ -284,7 +261,7 @@
 		                                <input type="radio" id="genderCd03" name="genderCd" value="" checked=""/>
 		                                <i></i>
 		                                                        선택안함</label>
-		                            </div>
+		                        	</div>
 	                            </li>
 	                            <li class="col-6 pr-5">
 	                                <!-- <label for="">휴대폰번호<span class="need orange">(필수)</span></label> -->
@@ -298,6 +275,7 @@
 	                            </li>
 							</ul>
 						</div>
+						<div>
 						<ul class="cf">
                             <li class="col-6 pr-5">
                                 <label for="">전문기술<span class="need orange">(필수)</span></label>
@@ -371,44 +349,40 @@
                             </li>
                             <li class="col-6 pl-5">
                                 <label for="">희망근무지역<span class="need orange">(필수)</span></label>
+                                <!--  -->
                                 <input type="text" class="input_local" id="area" name="area" placeholder="지역을 선택하세요." value="<=m.getArea()%>" />
 								
                                 <div class="option depth2 multi" id="workAreaList" style="display: none;">
-                                    <div class="select_box cf">
-                                        <ul class="cf" id="memberConfigAreaList">
-                                        </ul>
-                                        <ul class="cf" id="memberConfigArea2List">
-                                        </ul>
-                                    </div>
+                                    
                                     <div class="view_box">
                                         <ul class="cf">
                                             <!-- 지역 선택 정보 -->
-                                        <select id="area1" name="area1" placeholder="선택하세요.(여러개 선택 가능)" value="<=m.getArea()%>">
+                                        <select id="area1" name="area1" placeholder="선호 지역을 선택하세요." value="<=m.getArea()%>">
 	                                    
-	                                    <option value="강남구">강남구</option>
-	                                    <option value="강동구">강동구</option>
-	                                    <option value="강서구">강서구</option>
-	                                    <option value="구로구">구로구</option>
-	                                    <option value="금천구">금천구</option>
-	                                    <option value="노원구">노원구</option>
-	                                    <option value="관악구">관악구</option>
-	                                    <option value="광진구">광진구</option>
-	                                    <option value="도봉구">도봉구</option>
-	                                    <option value="동대문구">동대문구</option>
-	                                    <option value="동작구">동작구</option>
-	                                    <option value="마포구">마포구</option>
-	                                    <option value="서대문구">서대문구</option>
-	                                    <option value="서초구">서초구</option>
-	                                    <option value="성동구">성동구</option>
-	                                    <option value="성북구">성북구</option>
-	                                    <option value="송파구">송파구</option>
-	                                    <option value="양천구">양천구</option>
-	                                    <option value="영등포구">영등포구</option>
-	                                    <option value="용산구">용산구</option>
-	                                    <option value="은평구">은평구</option>
-	                                    <option value="중랑구">중랑구</option>
-	                                    <option value="종로구">종로구</option>
-	                                    <option value="중구">중구</option>
+		                                    <option value="강남구">강남구</option>
+		                                    <option value="강동구">강동구</option>
+		                                    <option value="강서구">강서구</option>
+		                                    <option value="구로구">구로구</option>
+		                                    <option value="금천구">금천구</option>
+		                                    <option value="노원구">노원구</option>
+		                                    <option value="관악구">관악구</option>
+		                                    <option value="광진구">광진구</option>
+		                                    <option value="도봉구">도봉구</option>
+		                                    <option value="동대문구">동대문구</option>
+		                                    <option value="동작구">동작구</option>
+		                                    <option value="마포구">마포구</option>
+		                                    <option value="서대문구">서대문구</option>
+		                                    <option value="서초구">서초구</option>
+		                                    <option value="성동구">성동구</option>
+		                                    <option value="성북구">성북구</option>
+		                                    <option value="송파구">송파구</option>
+		                                    <option value="양천구">양천구</option>
+		                                    <option value="영등포구">영등포구</option>
+		                                    <option value="용산구">용산구</option>
+		                                    <option value="은평구">은평구</option>
+		                                    <option value="중랑구">중랑구</option>
+		                                    <option value="종로구">종로구</option>
+		                                    <option value="중구">중구</option>
 	                                </select>
                                     </div>
                                 </div>
@@ -417,7 +391,12 @@
                                 <label for="">투입가능일<span class="need orange">(필수)</span></label>
                                 <input type="text" class="input_day" id="joinPsblDt" name="joinPsblDt" value="<=m.getBirth()%>" placeholder="투입가능일자를 선택하시면 회원님의 일정에 반영됩니다." readonly="readonly"/>
                             </li>
-                           
+                           <li>
+                       
+		                        <button type="submit" class="btn b_m b_red" id="save">저장</button>
+		                        <button class="btn b_m b" href="" id="cancel">취소</button>
+                	    				
+                           </li>
                         </ul>
 
                     </div>
@@ -426,7 +405,8 @@
                         <button type="submit" class="btn b_m b_red" id="save">저장</button>
                         <button class="btn b_m b" href="" id="cancel">취소</button>
                     </div>
-                    </form>
+				</div>
+                </form>
                  
                 </div>
                 <!-- /기본정보 입력 -->
@@ -437,13 +417,12 @@
 	            <div class="card_info">
 	                <h3><span class="orange">파일 등록</span>으로 프로필을 <span class="orange">10초 완성</span>하세요~</h3>
 	                <div class="file_btn cf">
-	                    <form id="registForm" name="registForm" enctype="multipart/form-data" style="display:;">
-	                        <input type="file" id="file" name="file" class="hidden" accept="application/pdf, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document, application/x-tika-msoffice, application/vnd.ms-powerpoint, application/vnd.openxmlformats-officedocument.presentationml.slideshow, application/vnd.openxmlformats-officedocument.presentationml.presentation, application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, .hwp" onchange="fillFile()" />
-	                        <button name="virtu_btn" class="btn b_m" onclick="clickFile(); return false;">파일선택</button>
+	                    <form id="registForm" name="registForm" enctype="multipart/form-data" action="<%= request.getContextPath() %>/fileUpdate.bo" >
+	                       <input type="file" name="file" id="file" />
 	                        <input type="text" name="virtu_text" />
 	                        <button type="submit" id="btn" class="btn b_m b_red" style="cursor:pointer;">등록</button>
 	                    </form>
-	                    <button id="btnMail" class="btn b_red" style="display:none;cursor:pointer;" onClick="location.href='mailto:freemon@freemon.co.kr'">이력서 메일로 첨부하기</button>
+	                    <button id="btnMail" class="btn b_red" style="display:none;cursor:pointer;">이력서 메일로 첨부하기</button>
 	                </div>
 	                <h6>이력서 파일을 올려주시면 프리몬에서 프로필을 완성해드립니다.</h6>
 	                <p class="small">(최대 2~3일 소요, 프로필 완성 후 카카오톡 메시지로 안내드립니다.)</p>

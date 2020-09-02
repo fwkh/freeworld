@@ -20,6 +20,7 @@
 	  #suggestion{display:none;}
 	  #login{display:none;}
 	</style>
+		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 <body>
 <script type="text/javascript" src="../../resources/freemon/common/freemonSearch9667.js?version=1.2"></script>
@@ -39,13 +40,18 @@
             <div class="input_box cf">
                 <form>
                     <input type="text" id="joinPsblDt" name="joinPsblDt" class="dateRangePicker col-10" value="2020-10-23" placeholder="ex)2020-10-10"/>
-                    <button id="changeDate" class="btn_resume col-2" style="cursor:pointer;" onClick="return false;"/>변경</button> <!-- 버튼을 누르면 날짜 전송 후 이전 jsp페이지로 이동 -->
+                    <button id="changeDate" class="btn_resume col-2" style="cursor:pointer;">변경</button> <!-- 버튼을 누르면 날짜 전송 후 이전 jsp페이지로 이동 -->
                 </form>
             </div>
 			<img src="images/new/img_insert.png" class="hidden sm-visible" alt="" />
         </div>
     </section>
 </div>
+<script>
+	$("#changeDate").click(function(){
+		location.href="/myWeb/chageDate"
+	});
+</script>
 	<%@ include file="../common/footer.jsp"%>
 
 

@@ -14,24 +14,31 @@ import static kh.semi.jsp.common.JDBCTemplate.*;
 import kh.semi.jsp.member.exception.MemberException;
 import kh.semi.jsp.member.model.vo.Member;
 
-public class MemberDao {
-
+public class MemberDao
+{
 	private Properties prop;
 
-	public MemberDao() {
+	public MemberDao()
+	{
 		prop = new Properties();
 		
-		String filePath = MemberDao.class
-				.getResource("/config/member-query.properties").getPath();
-		try {
+		String filePath = MemberDao.class.getResource("/config/member-query.properties").getPath();
+		try
+		{
 			prop.load(new FileReader(filePath));
-		}catch(FileNotFoundException e) {
+		}
+		catch(FileNotFoundException e) 
+		{
 			e.printStackTrace();
-		}catch(IOException e) {
+		}
+		catch(IOException e) 
+		{
 			e.printStackTrace();
 		}
 	}
-	public Member selectMember(Connection con, Member m) throws MemberException{
+	
+	public Member selectMember(Connection con, Member m) throws MemberException
+	{
 		Member result = null;
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
@@ -66,6 +73,50 @@ public class MemberDao {
 		{
 			throw new MemberException(e.getMessage());
 		}finally
+		{
+			close(rset);
+			close(pstmt);
+		}
+		
+		return result;
+	}
+	public Member f_searchOne(Connection con, Member m)
+	{
+		Member result = null;
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		
+		String sql = prop.getProperty("freelancerSearchOne");
+		
+		try
+		{
+			pstmt.getConnection().prepareStatement(sql);
+			rset = pstmt.executeQuery();
+		
+			if(rset.next())
+			{
+				result.setUserName(rset.getString("F_NAME"));
+				result.setBirth(rset.getDate("F_BIRTH"));
+				result.setPhone(rset.getString("F_PHONE"));
+				result.setEmail(rset.getString("F_EAMIL"));
+				result.setArea(rset.getString("F_AREA"));
+				result.setHope(rset.getString("F_HOPE"));
+				result.setFuture(rset.getDate("F_FUTURE"));
+				result.setWithdraw(rset.getBoolean("F_WITHDRAW_YN"));
+				result.setEnrolldate(rset.getDate("F_ENROLLDATE"));
+				result.setCareer(rset.getInt("F_CAREER"));
+				result.setTotal(rset.getInt("F_TOTAL"));
+				result.setJoin(rset.getString("F_JOIN"));
+				result.setSkill1(rset.getString("F_SKILL1"));
+				result.setSkill2(rset.getString("F_SKILL2"));
+				result.setSkill3(rset.getString("F_SKILL3"));
+			}
+		}
+		catch(SQLException e)
+		{
+			e.printStackTrace();
+		}
+		finally
 		{
 			close(rset);
 			close(pstmt);
