@@ -133,7 +133,7 @@
 
                 <!-- 기본정보 입력 -->
                 <div id="freelancerUpdate" style="display:block;"><!-- class="free_con"  -->>
-                	<form id="updateForm" name="updateForm" action="/myWeb/mUpdate.do" method="post">
+                	<form id="updateForm" name="updateForm" action="${pageContext.request.contextPath}/mUpdate.do" method="post">
                     <div class="member_input input_small">
                     	<div class="gray_box mb-5">
 	                        <ul class="cf">
@@ -436,9 +436,10 @@
                             		for(var i=0;i<check.length;i++){
                             			
                             			if (document.getElementsByName("skillbox")[i].checked == true) {
-                            	              str+= document.getElementsByName("skillbox")[i].value+",";
-                            	              count++;
-                            	            } 
+                            	            
+	                            				  str+= document.getElementsByName("skillbox")[i].value+",";
+	                            	              count++;
+                            			} 
                             		} 
                             		if(count<=3){
                             			document.getElementById("skills").value=str;
