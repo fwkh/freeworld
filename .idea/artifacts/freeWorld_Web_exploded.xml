@@ -7,6 +7,10 @@
         <element id="directory" name="classes">
           <element id="module-output" name="kh_semi" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="apache/lib" />
+          <element id="library" level="project" name="WEB-INF/lib" />
+        </element>
       </element>
     </root>
   </artifact>
