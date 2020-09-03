@@ -24,28 +24,15 @@ public class Member implements Serializable{
 	private int career;
 	private int total;
 	private String join;
-//<<<<<<< HEAD
 
-	// 가입시 필요한 생성자
-	public Member(String userPwd, String userName, Date birth, String phone, String email, String area, String hope, Date future, int total) {
-		this.userPwd = userPwd;
-		this.userName = userName;
-		this.birth = birth;
-		this.phone = phone;
-		this.email = email;
-		this.area = area;
-		this.hope = hope;
-		this.future = future;
-		this.total = total;}
-//=======
-	
 	private String files;		// 이력서 파일 업로드
-	
+
 	// 스킬테이블
 	private String skill1;		// 스킬 1
 	private String skill2;		// 스킬 2
 	private String skill3;		// 스킬 3
 	
+
 	// 학력 테이블
 	private String uni_Name; // 학교명 
 	private Date enterDate;			// 입학일
@@ -59,6 +46,21 @@ public class Member implements Serializable{
 	private String l_Name;		// 자격증명
 	private String l_Agency;	// 발행처/ 발행기관
 	private Date l_Date;		// 취득일
+	
+
+	// 가입시 필요한 생성자
+	public Member(String userPwd, String userName, Date birth, String phone, String email, String area, String hope, Date future, int total) {
+		this.userPwd = userPwd;
+		this.userName = userName;
+		this.birth = birth;
+		this.phone = phone;
+		this.email = email;
+		this.area = area;
+		this.hope = hope;
+		this.future = future;
+		this.total = total;
+	}
+	
 	
 	public Member() {}
 	
@@ -84,32 +86,26 @@ public class Member implements Serializable{
 		this.skill2 = skill2;
 		this.skill3 = skill3;
 	}
+	
 	// 자격사항 테이블
 	public Member(int userNo, String l_Name, String l_Agency, Date l_Date) {
 		super();
 		this.userNo = userNo;
-<<<<<<< HEAD
+
 		this.l_Name = l_Name;
 		this.l_Agency = l_Agency;
 		this.l_Date = l_Date;
-=======
-		L_Name = l_Name;
-		L_Agency = l_Agency;
-		L_Date = l_Date;
-//>>>>>>> 3b7561068741bedbaddc53a0177bc56a83d2c0ab
->>>>>>> branch 'master' of https://github.com/fwkh/freeworld.git
+
 	}
 
-	public Member(String userPwd, String email) 
-	{
+	public Member(String userPwd, String email) {
 		super();
 		this.userPwd = userPwd;
 		this.email = email;
 	}
 
 	public Member(int userNo, String userPwd, String userName, Date birth, String phone, String email, String area,
-			String hope, Date future, int career, int total, String join) 
-	{
+			String hope, Date future, int career, int total, String join) {
 		super();
 		this.userNo = userNo;
 		this.userPwd = userPwd;
@@ -126,8 +122,7 @@ public class Member implements Serializable{
 	}
 
 	public Member(int userNo, String userPwd, String userName, Date birth, String phone, String email, String area,
-			String hope, Date future, Date enrolldate, int career, int total, String join, String files)
-	{
+			String hope, Date future, Date enrolldate, int career, int total, String join, String files){
 		super();
 		this.userNo = userNo;
 		this.userPwd = userPwd;
@@ -146,8 +141,7 @@ public class Member implements Serializable{
 	}
 
 	public Member(int userNo, String userPwd, String userName, Date birth, String phone, String email, String area,
-			String hope, Date future, Date enrolldate, int career, int total, String join)
-	{
+			String hope, Date future, Date enrolldate, int career, int total, String join){
 		super();
 		this.userNo = userNo;
 		this.userPwd = userPwd;
@@ -167,8 +161,7 @@ public class Member implements Serializable{
 	public Member(int userNo, String userPwd, String userName, Date birth, String phone, String email, String area,
 			String hope, Date future, Date enrolldate, int career, int total, String join, String files, String skill1,
 			String skill2, String skill3, String uni_Name, Date enterDate, Date gra_Date, String gra_Status,
-			String major, String total_grade, String grade_Standard, String l_Name, String l_Agency, Date l_Date)
-	{
+			String major, String total_grade, String grade_Standard, String l_Name, String l_Agency, Date l_Date){
 		super();
 		this.userNo = userNo;
 		this.userPwd = userPwd;
@@ -334,44 +327,16 @@ public class Member implements Serializable{
 		this.join = join;
 	}
 
-<<<<<<< HEAD
 	public String getFiles() {
 		return files;
-=======
-	@Override
-	public String toString() {
-//<<<<<<< HEAD
-//		return "Member{" +
-//				"userPwd='" + userPwd + '\'' +
-//				", userName='" + userName + '\'' +
-//				", birth=" + birth +
-//				", phone='" + phone + '\'' +
-//				", email='" + email + '\'' +
-//				", area='" + area + '\'' +
-//				", hope='" + hope + '\'' +
-//				", future=" + future +
-//				", enrolldate=" + enrolldate +
-//				", total=" + total +
-//				'}';
-//=======
-		return "Member [userNo=" + userNo + ", userPwd=" + userPwd + ", userName=" + userName + ", birth=" + birth
-				+ ", phone=" + phone + ", email=" + email + ", area=" + area + ", hope=" + hope + ", future=" + future
-				+ ", enrolldate=" + enrolldate + ", career=" + career + ", total=" + total + ", join=" + join
-				+ ", files=" + files + ", skill1=" + skill1 + ", skill2=" + skill2 + ", skill3=" + skill3
-				+ ", uni_Name=" + uni_Name + ", enterDate=" + enterDate + ", gra_Date=" + gra_Date + ", gra_Status="
-				+ gra_Status + ", major=" + major + ", Total_grade=" + Total_grade + ", grade_Standard="
-				+ grade_Standard + ", L_Name=" + L_Name + ", L_Agency=" + L_Agency + ", L_Date=" + L_Date + "]";
-//>>>>>>> 3b7561068741bedbaddc53a0177bc56a83d2c0ab
->>>>>>> branch 'master' of https://github.com/fwkh/freeworld.git
 	}
-<<<<<<< HEAD
 
+
+	
 	public void setFiles(String files) {
 		this.files = files;
 	}
-=======
-}
->>>>>>> branch 'master' of https://github.com/fwkh/freeworld.git
+
 
 	public String getSkill1() {
 		return skill1;
@@ -477,16 +442,5 @@ public class Member implements Serializable{
 		this.l_Date = l_Date;
 	}
 
-	@Override
-	public String toString() 
-	{
-		return "userNo=" + userNo + ", userPwd=" + userPwd + ", userName=" + userName + ", birth=" + birth
-				+ ", phone=" + phone + ", email=" + email + ", area=" + area + ", hope=" + hope + ", future=" + future
-				+ ", withdraw=" + withdraw + ", enrolldate=" + enrolldate + ", career=" + career + ", total=" + total
-				+ ", join=" + join + ", files=" + files + ", skill1=" + skill1 + ", skill2=" + skill2 + ", skill3="
-				+ skill3 + ", uni_Name=" + uni_Name + ", enterDate=" + enterDate + ", gra_Date=" + gra_Date
-				+ ", gra_Status=" + gra_Status + ", major=" + major + ", Total_grade=" + Total_grade
-				+ ", grade_Standard=" + grade_Standard + ", L_Name=" + L_Name + ", L_Agency=" + L_Agency + ", L_Date="
-				+ L_Date;
-	}	
-}
+	
+}	

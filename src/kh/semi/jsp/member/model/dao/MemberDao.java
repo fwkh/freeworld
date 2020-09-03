@@ -14,12 +14,10 @@ import static kh.semi.jsp.common.JDBCTemplate.*;
 import kh.semi.jsp.member.exception.MemberException;
 import kh.semi.jsp.member.model.vo.Member;
 
-public class MemberDao
-{
+public class MemberDao{
 	private Properties prop;
 
-	public MemberDao()
-	{
+	public MemberDao(){
 		prop = new Properties();
 		
 		String filePath = MemberDao.class.getResource("/config/member-query.properties").getPath();
@@ -37,33 +35,27 @@ public class MemberDao
 		}
 	}
 	
-	public Member selectMember(Connection con, Member m) throws MemberException
-	{
+	public Member selectMember(Connection con, Member m) throws MemberException{
 		Member result = null;
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
 		
 		String sql = prop.getProperty("selectMember");
-<<<<<<< HEAD
-		try
-		{
-			pstmt.getConnection().prepareStatement(sql);
-=======
+
+		
 		try {
 			pstmt = con.prepareStatement(sql);
->>>>>>> branch 'master' of https://github.com/fwkh/freeworld.git
+
 			pstmt.setString(1, m.getEmail());
 			pstmt.setString(2, m.getUserPwd());
 			
 			rset = pstmt.executeQuery();
 			
-			if(rset.next())
-			{
+			if(rset.next()){
 				result = new Member();
 				result.setEmail(m.getEmail());
 				result.setUserPwd(m.getUserPwd());
 				
-<<<<<<< HEAD
 				result.setUserNo(rset.getInt("userNo"));
 				result.setUserName(rset.getString(3));
 				result.setBirth(rset.getDate("birth"));
@@ -74,7 +66,6 @@ public class MemberDao
 				result.setCareer(rset.getInt("career"));
 				result.setTotal(rset.getInt("total"));
 				result.setJoin(rset.getString("join"));
-=======
 				result.setUserNo(rset.getInt("F_NO"));
 				result.setUserName(rset.getString("F_USERNAME"));
 				result.setBirth(rset.getDate("F_BIRTH"));
@@ -90,35 +81,29 @@ public class MemberDao
 			
 				
 				
->>>>>>> branch 'master' of https://github.com/fwkh/freeworld.git
 			}
-		} catch (Exception e)
-		{
+		} catch (Exception e){
 			throw new MemberException(e.getMessage());
-		}finally
-		{
+		}finally{
 			close(rset);
 			close(pstmt);
 		}
 		
 		return result;
 	}
-<<<<<<< HEAD
-	public Member f_searchOne(Connection con, Member m)
-	{
+
+	public Member f_searchOne(Connection con, Member m){
 		Member result = null;
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
 		
 		String sql = prop.getProperty("freelancerSearchOne");
 		
-		try
-		{
+		try{
 			pstmt.getConnection().prepareStatement(sql);
 			rset = pstmt.executeQuery();
 		
-			if(rset.next())
-			{
+			if(rset.next()){
 				result.setUserName(rset.getString("F_NAME"));
 				result.setBirth(rset.getDate("F_BIRTH"));
 				result.setPhone(rset.getString("F_PHONE"));
@@ -136,20 +121,17 @@ public class MemberDao
 				result.setSkill3(rset.getString("F_SKILL3"));
 			}
 		}
-		catch(SQLException e)
-		{
+		catch(SQLException e){
 			e.printStackTrace();
 		}
-		finally
-		{
+		finally{
 			close(rset);
 			close(pstmt);
 		}
 		
 		return result;
 	}
-}
-=======
+
 
 	public int insertMember(Connection con, Member m) throws MemberException {
 		int result = 0;
@@ -180,4 +162,3 @@ public class MemberDao
 		return result;
 	}
 }
->>>>>>> branch 'master' of https://github.com/fwkh/freeworld.git
