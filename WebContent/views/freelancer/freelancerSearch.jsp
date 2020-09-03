@@ -2,22 +2,21 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
-
-<!-- Mirrored from www.freemon.co.kr/talent/talentSearch by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 27 Jul 2020 06:59:39 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
-	<%@ include file="../common/header.jsp" %>
-	
-    <!-- 네비게이션바 -->
 	<style type="text/css">	  
 	  #f_management{display:none;}
 	  #p_management{display:none;}
 	  #profile{display:none;}
 	  #suggestion{display:none;}
 	  #logout{display:none;}
+	  #delSelect{display:none;}
 	</style>
 </head>
 <body>
+	<%@ include file="../common/header.jsp" %>
+
+
 		
 <!-- Bootstrap css -->
 <style type="text/css">
@@ -36,9 +35,10 @@
 	display:none;
 }
 </style>
-<link rel="stylesheet" type="text/css" href="../resources/css/bootstrap-slider.css">
-<script type="text/javascript" src="../resources/js/bootstrap-slider.min.js"></script>
-<script type="text/javascript" src="../resources/freemon/talent/talentSearch29d4.js?version=1.16"></script>
+<link rel="stylesheet" type="text/css" href="../../resources/css/bootstrap-slider.css">
+<script type="text/javascript" src="../../resources/js/bootstrap-slider.min.js"></script>
+<script type="text/javascript" src="../../resources/js/f_Search.js" charset="UTF-8"></script>
+<script type="text/javascript" src="../../resources/scripts/jquery-3.3.1.min.js" charset="UTF-8"></script>
 <script type="text/javascript">
 	$(function() {
 		freemon.invoker.invoke("talentSearch");
@@ -56,28 +56,26 @@
     	<!-- 제목부분 -->
     	<div class="pro_tit mb-0">
         	<h2>프리랜서 검색 <span class="totalCnt">3,245</span></h2>
-<script type="text/javascript" src="../resources/freemon/common/freemonSearch9667.js?version=1.2"></script>
-<script type="text/javascript">
-	$(function() {
-		freemon.invoker.invoke("freemonSearch");
-		$('.dateRangePicker').datepicker({
-			 format: "yyyy-mm-dd",
-			 language: "kr",
-		});
-	});
-</script>
-<div class="search cf">
-    <div class="input_box col-4 cf">
-        <a href="#none" id="freemonSearchDateBtn" class="btn_sche col-3">달력</a>
-        <input type="text" class="dateRangePicker col-9 pl-0" id ="searchStrDate" name ="searchStrDate" placeholder="투입가능일" readonly="readonly" />
-    </div>
-    <div class="input_box col-7">
-        <input type="text" name="keyword" id ="keyword" placeholder="예) 서울 java 홍길동" />
-    </div>
-    <a href="#none" class="btn_search col-1" id="freemonSearchBtn">검색</a>
-    <!-- <a href="#none" class="btn_search btn_reset sm-col-1" id="freemonReload">초기화</a> -->
-</div>
-
+			<script type="text/javascript" src="../resources/freemon/common/freemonSearch9667.js?version=1.2"></script>
+			<script type="text/javascript">
+			$(function() {
+				freemon.invoker.invoke("freemonSearch");
+				$('.dateRangePicker').datepicker({
+					 format: "yyyy-mm-dd",
+					 language: "kr",
+				});
+			});
+			</script>
+			<div class="search cf">
+			    <div class="input_box col-4 cf">
+			        <a href="#none" id="freemonSearchDateBtn" class="btn_sche col-3">달력</a>
+			        <input type="text" class="dateRangePicker col-9 pl-0" id ="searchStrDate" name ="searchStrDate" placeholder="투입가능일" readonly="readonly" />
+			    </div>
+			    <div class="input_box col-7">
+			        <input type="text" name="keyword" id ="keyword" placeholder="예) 서울 java 홍길동" />
+			    </div>
+			    <a href="#none" class="btn_search col-1" id="freemonSearchBtn">검색</a>
+			</div>
         </div>
         
         <!-- 선택부분 -->
@@ -86,49 +84,36 @@
                 <div class="sel_option">
                     <a href="#none" id="area">지역선택</a>
                     <!-- 옵션 -->
-                    <div class="option depth2 single" id="workAreaList" style="display: none;">
+                    <div class="option depth1 single" id="areaList" style="display: none;">
                         <div class="select_box cf">
                             <ul class="cf" id="memberSearchAreaList">
-		<li class="areaSelect" data-id="0" data-value="전국" style="cursor:pointer;">전국</li>
-		<li class="areaSelect" data-id="10" data-value="서울" style="cursor:pointer;">서울</li>
-		<li class="areaSelect" data-id="60" data-value="부산" style="cursor:pointer;">부산</li>
-		<li class="areaSelect" data-id="70" data-value="대구" style="cursor:pointer;">대구</li>
-		<li class="areaSelect" data-id="40" data-value="인천" style="cursor:pointer;">인천</li>
-		<li class="areaSelect" data-id="50" data-value="광주" style="cursor:pointer;">광주</li>
-		<li class="areaSelect" data-id="30" data-value="대전" style="cursor:pointer;">대전</li>
-		<li class="areaSelect" data-id="68" data-value="울산" style="cursor:pointer;">울산</li>
-		<li class="areaSelect" data-id="33" data-value="세종" style="cursor:pointer;">세종</li>
-		<li class="areaSelect" data-id="41" data-value="경기" style="cursor:pointer;">경기</li>
-		<li class="areaSelect" data-id="20" data-value="강원" style="cursor:pointer;">강원</li>
-		<li class="areaSelect" data-id="36" data-value="충북" style="cursor:pointer;">충북</li>
-		<li class="areaSelect" data-id="31" data-value="충남" style="cursor:pointer;">충남</li>
-		<li class="areaSelect" data-id="56" data-value="전북" style="cursor:pointer;">전북</li>
-		<li class="areaSelect" data-id="51" data-value="전남" style="cursor:pointer;">전남</li>
-		<li class="areaSelect" data-id="71" data-value="경북" style="cursor:pointer;">경북</li>
-		<li class="areaSelect active" data-id="62" data-value="경남" style="cursor:pointer;">경남</li>
-		<li class="areaSelect" data-id="69" data-value="제주" style="cursor:pointer;">제주</li>
-</ul>
-                            <ul class="cf" id="memberSearchArea2List">
-        <li class="area2Select" id="areaSelectList_62" data-id="62" data-value="경남" data-uppervalue="" data-upperid="" style="cursor:pointer;">경남</li>
-        <li class="area2Select" id="areaSelectList_620" data-id="620" data-value="창원시" data-uppervalue="경남" data-upperid="62" style="cursor:pointer;">창원시</li>
-        <li class="area2Select" id="areaSelectList_621" data-id="621" data-value="진주시" data-uppervalue="경남" data-upperid="62" style="cursor:pointer;">진주시</li>
-        <li class="area2Select" id="areaSelectList_622" data-id="622" data-value="통영시" data-uppervalue="경남" data-upperid="62" style="cursor:pointer;">통영시</li>
-        <li class="area2Select" id="areaSelectList_623" data-id="623" data-value="사천시" data-uppervalue="경남" data-upperid="62" style="cursor:pointer;">사천시</li>
-        <li class="area2Select" id="areaSelectList_624" data-id="624" data-value="김해시" data-uppervalue="경남" data-upperid="62" style="cursor:pointer;">김해시</li>
-        <li class="area2Select" id="areaSelectList_625" data-id="625" data-value="밀양시" data-uppervalue="경남" data-upperid="62" style="cursor:pointer;">밀양시</li>
-        <li class="area2Select" id="areaSelectList_626" data-id="626" data-value="거제시" data-uppervalue="경남" data-upperid="62" style="cursor:pointer;">거제시</li>
-        <li class="area2Select" id="areaSelectList_627" data-id="627" data-value="양산시" data-uppervalue="경남" data-upperid="62" style="cursor:pointer;">양산시</li>
-        <li class="area2Select" id="areaSelectList_628" data-id="628" data-value="의령군" data-uppervalue="경남" data-upperid="62" style="cursor:pointer;">의령군</li>
-        <li class="area2Select" id="areaSelectList_629" data-id="629" data-value="함안군" data-uppervalue="경남" data-upperid="62" style="cursor:pointer;">함안군</li>
-        <li class="area2Select" id="areaSelectList_630" data-id="630" data-value="창녕군" data-uppervalue="경남" data-upperid="62" style="cursor:pointer;">창녕군</li>
-        <li class="area2Select" id="areaSelectList_631" data-id="631" data-value="고성군" data-uppervalue="경남" data-upperid="62" style="cursor:pointer;">고성군</li>
-        <li class="area2Select" id="areaSelectList_632" data-id="632" data-value="남해군" data-uppervalue="경남" data-upperid="62" style="cursor:pointer;">남해군</li>
-        <li class="area2Select" id="areaSelectList_633" data-id="633" data-value="하동군" data-uppervalue="경남" data-upperid="62" style="cursor:pointer;">하동군</li>
-        <li class="area2Select" id="areaSelectList_634" data-id="634" data-value="산청군" data-uppervalue="경남" data-upperid="62" style="cursor:pointer;">산청군</li>
-        <li class="area2Select" id="areaSelectList_635" data-id="635" data-value="함양군" data-uppervalue="경남" data-upperid="62" style="cursor:pointer;">함양군</li>
-        <li class="area2Select" id="areaSelectList_636" data-id="636" data-value="거창군" data-uppervalue="경남" data-upperid="62" style="cursor:pointer;">거창군</li>
-        <li class="area2Select" id="areaSelectList_637" data-id="637" data-value="합천군" data-uppervalue="경남" data-upperid="62" style="cursor:pointer;">합천군</li>
-</ul>
+								<li class="areaSelect" id="area0" data-value="서울 전체" style="cursor:pointer;">서울 전체</li>
+								<li class="areaSelect" id="area1" data-value="중구" style="cursor:pointer;">중구</li>
+								<li class="areaSelect" id="area2" data-value="종로구" style="cursor:pointer;">종로구</li>
+								<li class="areaSelect" id="area3" data-value="용산구" style="cursor:pointer;">용산구</li>
+								<li class="areaSelect" id="area4" data-value="성동구" style="cursor:pointer;">성동구</li>
+								<li class="areaSelect" id="area5" data-value="광진구" style="cursor:pointer;">광진구</li>
+								<li class="areaSelect" id="area6" data-value="동대문구" style="cursor:pointer;">동대문구</li>
+								<li class="areaSelect" id="area7" data-value="중랑구" style="cursor:pointer;">중랑구</li>
+								<li class="areaSelect" id="area8" data-value="성북구" style="cursor:pointer;">성북구</li>
+								<li class="areaSelect" id="area9" data-value="강북구" style="cursor:pointer;">강북구</li>
+								<li class="areaSelect" id="area10" data-value="도봉구" style="cursor:pointer;">도봉구</li>
+								<li class="areaSelect" id="area11" data-value="노원구" style="cursor:pointer;">노원구</li>
+								<li class="areaSelect" id="area12" data-value="은평구" style="cursor:pointer;">은평구</li>
+								<li class="areaSelect" id="area13" data-value="서대문구" style="cursor:pointer;">서대문구</li>
+								<li class="areaSelect" id="area14" data-value="양천구" style="cursor:pointer;">양천구</li>
+								<li class="areaSelect" id="area15" data-value="강서구" style="cursor:pointer;">강서구</li>
+								<li class="areaSelect" id="area16" data-value="구로구" style="cursor:pointer;">구로구</li>
+								<li class="areaSelect" id="area17" data-value="금천구" style="cursor:pointer;">금천구</li>
+								<li class="areaSelect" id="area18" data-value="제주" style="cursor:pointer;">영등포구</li>
+								<li class="areaSelect" id="area19" data-value="영등포구" style="cursor:pointer;">동작구</li>
+								<li class="areaSelect" id="area20" data-value="관악구" style="cursor:pointer;">관악구</li>
+								<li class="areaSelect" id="area21" data-value="서초구" style="cursor:pointer;">서초구</li>
+								<li class="areaSelect" id="area22" data-value="강남구" style="cursor:pointer;">강남구</li>
+								<li class="areaSelect" id="area23" data-value="송파구" style="cursor:pointer;">송파구</li>
+								<li class="areaSelect" id="area24" data-value="강동구" style="cursor:pointer;">강동구</li>
+								<li class="areaSelect" id="area25" data-value="마포구" style="cursor:pointer;">마포구</li>
+							</ul>
                         </div>
                     </div>
                     <!-- /옵션 -->
@@ -136,46 +121,55 @@
                 <div class="sel_option">
 	                <a href="#none" id="skill">전문기술</a>
 	                <!-- 옵션 -->
-                    <div class="option depth2 single" id="skillList" style="display: none;">
+                    <div class="option depth1 single" id="skillList" style="display: none;">
                         <div class="select_box cf">
                             <ul class="cf" id="memberSearchJobList">
-		<li class="jobSelect active" data-value="1" style="cursor:pointer;">웹개발</li>
-		<li class="jobSelect" data-value="12" style="cursor:pointer;">응용개발</li>
-		<li class="jobSelect" data-value="13" style="cursor:pointer;">시스템개발</li>
-		<li class="jobSelect" data-value="10" style="cursor:pointer;">모바일개발</li>
-		<li class="jobSelect" data-value="2" style="cursor:pointer;">DBA/데이터베이스</li>
-		<li class="jobSelect" data-value="11" style="cursor:pointer;">네트워크/서버/보안</li>
-		<li class="jobSelect" data-value="3" style="cursor:pointer;">기획/마케팅</li>
-		<li class="jobSelect" data-value="4" style="cursor:pointer;">웹디자인/퍼블리싱</li>
-		<li class="jobSelect" data-value="6" style="cursor:pointer;">분석/설계/PM</li>
-		<li class="jobSelect" data-value="5" style="cursor:pointer;">게임</li>
-		<li class="jobSelect" data-value="7" style="cursor:pointer;">IT 강의</li>
-		<li class="jobSelect" data-value="8" style="cursor:pointer;">동영상제작/편집</li>
-		<li class="jobSelect" data-value="9" style="cursor:pointer;">빅데이터/AI(인공지능)</li>
-</ul>
-                            <ul class="cf" id="memberSearchSkillList">
-    	<li class="skillSelect" id="skillSelectList_2" data-id="2" data-value="JSP" style="cursor:pointer;">JSP</li>
-    	<li class="skillSelect" id="skillSelectList_3" data-id="3" data-value="PHP" style="cursor:pointer;">PHP</li>
-    	<li class="skillSelect" id="skillSelectList_1" data-id="1" data-value="ASP.NET" style="cursor:pointer;">ASP.NET</li>
-    	<li class="skillSelect" id="skillSelectList_125" data-id="125" data-value="ASP" style="cursor:pointer;">ASP</li>
-    	<li class="skillSelect" id="skillSelectList_6" data-id="6" data-value="JavaScript" style="cursor:pointer;">JavaScript</li>
-    	<li class="skillSelect" id="skillSelectList_126" data-id="126" data-value="Ajax" style="cursor:pointer;">Ajax</li>
-    	<li class="skillSelect" id="skillSelectList_4" data-id="4" data-value="Jquery" style="cursor:pointer;">Jquery</li>
-    	<li class="skillSelect" id="skillSelectList_5" data-id="5" data-value="NodeJS" style="cursor:pointer;">NodeJS</li>
-    	<li class="skillSelect" id="skillSelectList_146" data-id="146" data-value="Vue.js" style="cursor:pointer;">Vue.js</li>
-    	<li class="skillSelect" id="skillSelectList_147" data-id="147" data-value="React.js" style="cursor:pointer;">React.js</li>
-    	<li class="skillSelect" id="skillSelectList_150" data-id="150" data-value="Angular.js" style="cursor:pointer;">Angular.js</li>
-    	<li class="skillSelect" id="skillSelectList_148" data-id="148" data-value="Ruby" style="cursor:pointer;">Ruby</li>
-    	<li class="skillSelect" id="skillSelectList_149" data-id="149" data-value="Ruby on Rails" style="cursor:pointer;">Ruby on Rails</li>
-    	<li class="skillSelect" id="skillSelectList_130" data-id="130" data-value="MiPlatform" style="cursor:pointer;">MiPlatform</li>
-    	<li class="skillSelect" id="skillSelectList_132" data-id="132" data-value="Nexacro platform" style="cursor:pointer;">Nexacro platform</li>
-    	<li class="skillSelect" id="skillSelectList_131" data-id="131" data-value="XPLATFORM" style="cursor:pointer;">XPLATFORM</li>
-    	<li class="skillSelect" id="skillSelectList_129" data-id="129" data-value="GO" style="cursor:pointer;">GO</li>
-    	<li class="skillSelect" id="skillSelectList_7" data-id="7" data-value="Oracle" style="cursor:pointer;">Oracle</li>
-    	<li class="skillSelect" id="skillSelectList_8" data-id="8" data-value="MS-SQL" style="cursor:pointer;">MS-SQL</li>
-    	<li class="skillSelect" id="skillSelectList_9" data-id="9" data-value="MySQL" style="cursor:pointer;">MySQL</li>
-    	<li class="skillSelect" id="skillSelectList_10" data-id="10" data-value="DB2" style="cursor:pointer;">DB2</li>
-</ul>
+								<li class="jobSelect" id="skill1" data-value="1" style="cursor:pointer;">JSP</li>
+								<li class="jobSelect" id="skill2" data-value="2" style="cursor:pointer;">PHP</li>
+								<li class="jobSelect" id="skill3" data-value="3" style="cursor:pointer;">ASP.NET</li>
+								<li class="jobSelect" id="skill4" data-value="4" style="cursor:pointer;">ASP</li>
+								<li class="jobSelect" id="skill5" data-value="5" style="cursor:pointer;">JavaScript</li>
+								<li class="jobSelect" id="skill6" data-value="6" style="cursor:pointer;">Ajax</li>
+								<li class="jobSelect" id="skill7" data-value="7" style="cursor:pointer;">Jquery</li>
+								<li class="jobSelect" id="skill8" data-value="8" style="cursor:pointer;">NodeJS</li>
+								<li class="jobSelect" id="skill9" data-value="9" style="cursor:pointer;">Vue.js</li>
+								<li class="jobSelect" id="skill10" data-value="10" style="cursor:pointer;">React.js</li>
+								<li class="jobSelect" id="skill11" data-value="11" style="cursor:pointer;">Ruby</li>
+								<li class="jobSelect" id="skill12" data-value="12" style="cursor:pointer;">RubyonRails</li>
+								<li class="jobSelect" id="skill13" data-value="13" style="cursor:pointer;">MiPlatform</li>
+								<li class="jobSelect" id="skill14" data-value="14" style="cursor:pointer;">Nexacro</li>
+								<li class="jobSelect" id="skill15" data-value="15" style="cursor:pointer;">XPLATFORM</li>
+								<li class="jobSelect" id="skill16" data-value="16" style="cursor:pointer;">GO</li>
+								<li class="jobSelect" id="skill17" data-value="17" style="cursor:pointer;">Oracle</li>
+								<li class="jobSelect" id="skill18" data-value="18" style="cursor:pointer;">MS-SQL</li>
+								<li class="jobSelect" id="skill19" data-value="19" style="cursor:pointer;">MySQL</li>
+								<li class="jobSelect" id="skill20" data-value="20" style="cursor:pointer;">DB2</li>
+								<li class="jobSelect" id="skill21" data-value="21" style="cursor:pointer;">Pro-C</li>
+								<li class="jobSelect" id="skill22" data-value="22" style="cursor:pointer;">Python</li>
+								<li class="jobSelect" id="skill23" data-value="23" style="cursor:pointer;">VB</li>
+								<li class="jobSelect" id="skill24" data-value="24" style="cursor:pointer;">VB.NET</li>
+								<li class="jobSelect" id="skill25" data-value="25" style="cursor:pointer;">POS</li>
+								<li class="jobSelect" id="skill26" data-value="26" style="cursor:pointer;">ABAP</li>
+								<li class="jobSelect" id="skill27" data-value="27" style="cursor:pointer;">EJB</li>
+								<li class="jobSelect" id="skill28" data-value="28" style="cursor:pointer;">JAVA</li>
+								<li class="jobSelect" id="skill29" data-value="29" style="cursor:pointer;">C#</li>
+								<li class="jobSelect" id="skill30" data-value="30" style="cursor:pointer;">SAP</li>
+								<li class="jobSelect" id="skill31" data-value="31" style="cursor:pointer;">C++</li>
+								<li class="jobSelect" id="skill32" data-value="32" style="cursor:pointer;">Kotlin</li>
+								<li class="jobSelect" id="skill33" data-value="33" style="cursor:pointer;">F#</li>
+								<li class="jobSelect" id="skill34" data-value="34" style="cursor:pointer;">C</li>
+								<li class="jobSelect" id="skill35" data-value="35" style="cursor:pointer;">PowerBuilder</li>
+								<li class="jobSelect" id="skill36" data-value="36" style="cursor:pointer;">MFC</li>
+								<li class="jobSelect" id="skill37" data-value="37" style="cursor:pointer;">어셈블리</li>
+								<li class="jobSelect" id="skill38" data-value="38" style="cursor:pointer;">임베디드</li>
+								<li class="jobSelect" id="skill39" data-value="39" style="cursor:pointer;">펌웨어</li>
+								<li class="jobSelect" id="skill40" data-value="40" style="cursor:pointer;">HMI</li>
+								<li class="jobSelect" id="skill41" data-value="41" style="cursor:pointer;">MMI</li>
+								<li class="jobSelect" id="skill42" data-value="42" style="cursor:pointer;">PLC</li>
+								<li class="jobSelect" id="skill43" data-value="43" style="cursor:pointer;">Android</li>
+								<li class="jobSelect" id="skill44" data-value="44" style="cursor:pointer;">Objective-C</li>
+								<li class="jobSelect" id="skill45" data-value="45" style="cursor:pointer;">Swift</li>
+							</ul>
                         </div>
                     </div>
                     <!-- /옵션 -->
@@ -186,20 +180,22 @@
                     <!-- 옵션 -->
                     <div class="option depth1 single" id="careerList" style="display: none;">
                         <div class="select_box cf">
-                            <ul class="cf">
-                                <li class="setRangeValue" data-action="setRangeValue" data-value="1" id="1" data-html="5년이하">5년이하</li>
-				                <li class="setRangeValue" data-action="setRangeValue" data-value="2" id="2" data-html="6~10년">6~10년</li>
-				                <li class="setRangeValue" data-action="setRangeValue" data-value="3" id="3" data-html="11~15년">11~15년</li>
-				                <li class="setRangeValue" data-action="setRangeValue" data-value="4" id="4" data-html="16~20년">16~20년</li>
-				                <li class="setRangeValue" data-action="setRangeValue" data-value="5" id="5" data-html="21년이상">21년이상</li>
-				                <li class="setRangeValue" data-action="setRangeValue" data-value="0" id="0" data-html="경력무관">경력무관</li>
+                            <ul class="cf" id="memberSearchJobList">
+                                <li class="setRangeValue" data-action="setRangeValue" data-value="1" id="career1" data-html="5년이하">5년이하</li>
+				                <li class="setRangeValue" data-action="setRangeValue" data-value="2" id="career2" data-html="6~10년">6~10년</li>
+				                <li class="setRangeValue" data-action="setRangeValue" data-value="3" id="career3" data-html="11~15년">11~15년</li>
+				                <li class="setRangeValue" data-action="setRangeValue" data-value="4" id="career4" data-html="16~20년">16~20년</li>
+				                <li class="setRangeValue" data-action="setRangeValue" data-value="5" id="career5" data-html="21년이상">21년이상</li>
+				                <li class="setRangeValue" data-action="setRangeValue" data-value="0" id="career6" data-html="경력무관">경력무관</li>
                             </ul>
                         </div>
                     </div>
                     <!-- /옵션 -->
                 </div>
                 <div class="sel_check">
-                    <label class="agrChk" for="careerY"><input type="checkbox" id="careerY" name="careerY" data-action="careerTypeClick" data-value="EXP" value="EXP"><i></i>이력서 등록자</label>
+                    <label class="agrChk" for="careerY">
+                    	<input type="checkbox" id="careerY" name="careerY" data-action="careerTypeClick" data-value="EXP" value="EXP"><i></i>이력서 등록자
+                    </label>
                 </div>
                 <ul class="sel_order" style="display:none;">
                     <li class="active"><a href="">등록순</a></li>
@@ -208,7 +204,9 @@
             </div>
             <div class="select_in" id="searchWord">
                 <a href="" class="reset" id="freemonReload">전체삭제</a>
-            </div>
+                <p id="select1">
+                </p>
+			</div>
         </div>
         
         <!-- 단가 *지우면 목록이 안나옴 -->
@@ -277,17 +275,14 @@
 						</div>
 					</div>
 				</div>
-				<div class="card cf">
+				
+				
+				<div class="card cf" style=" cursor: pointer;" onclick="location.href='../member/memberLogin.jsp'">
                     <div class="free_info cf">
-                        <div class="profile" style="cursor:pointer;background-image:url(http://th-p.talk.kakao.co.kr/th/talkp/wlBaG95K4G/8Ttz5G4v91tdCDYBGwYNFK/hpj5e3_110x110_c.jpg)" data-action="talentDetail" data-value="1443141222">프로필사진</div>
+                        <div class="profile" style="cursor:pointer; background-image:url(http://th-p.talk.kakao.co.kr/th/talkp/wlBaG95K4G/8Ttz5G4v91tdCDYBGwYNFK/hpj5e3_110x110_c.jpg)" data-action="talentDetail" data-value="1443141222">프로필사진</div>
                         <div class="free_con">
-                            <!--div class="report2 list2">
-                                <ul class="alarm cf">
-                                    <li class="alarm2 ">5일후</li>
-                                </ul>
-                            </div-->
                             <h3 data-action="talentDetail" data-value="1443141222">
-                                <a href="#none" data-action="talentDetail" data-value="1443141222">김**</a>
+                                <a href="../member/memberLogin.jsp"></a>
                                 <ul class="f_nature cf">
                                     <li>36세</li>
                                     <li class="ellipsis">**</li>
@@ -311,13 +306,6 @@
 
                                 <li class="pick"><a href="#none" data-value="1443141222" data-nm="김**" data-action="noneAuth" title="전속프리랜서<br></a>전속프리랜서는 프리랜서가 기업에 소속되는 관계로 둘다 동의시 프리랜서검색에 노출되지 않습니다.">전속프리랜서</a>
                                 </li>
-
-                                <!--li class="tree"><a href="#none" data-value="1443141222" data-index="0"
-                                
-                                data-action="noneAuth"
-                                title="인맥트리">인맥트리</a></li-->
-                                
-                                <!-- 메모 -->
                             </ul>
                         </div>
                     </div>
@@ -361,15 +349,10 @@
                         </div>
                     </div>
 				</div>
-				<div class="card cf">
+				<div class="card cf" style=" cursor: pointer;" onclick="location.href='../member/memberLogin.jsp'">
                     <div class="free_info cf">
                         <div class="profile" style="cursor:pointer;background-image:url(/resources/images/new/no-pic.png)" data-action="talentDetail" data-value="1413120282">프로필사진</div>
                         <div class="free_con">
-                            <!--div class="report2 list2">
-                                <ul class="alarm cf">
-                                    <li class="alarm2 on">투입가능</li>
-                                </ul>
-                            </div-->
                             <h3 data-action="talentDetail" data-value="1413120282">
                                 <a href="#none" data-action="talentDetail" data-value="1413120282">김**</a>
                                 <ul class="f_nature cf">
@@ -395,13 +378,6 @@
 
                                 <li class="pick"><a href="#none" data-value="1413120282" data-nm="김**" data-action="noneAuth" title="전속프리랜서<br></a>전속프리랜서는 프리랜서가 기업에 소속되는 관계로 둘다 동의시 프리랜서검색에 노출되지 않습니다.">전속프리랜서</a>
                                 </li>
-
-                                <!--li class="tree"><a href="#none" data-value="1413120282" data-index="1"
-                                
-                                data-action="noneAuth"
-                                title="인맥트리">인맥트리</a></li-->
-                                
-                                <!-- 메모 -->
                             </ul>
                         </div>
                     </div>
@@ -437,15 +413,10 @@
                         </div>
                     </div>
 				</div>
-				<div class="card cf">
+				<div class="card cf" style=" cursor: pointer;" onclick="location.href='../member/memberLogin.jsp'">
                     <div class="free_info cf">
                         <div class="profile" style="cursor:pointer;background-image:url(http://th-p.talk.kakao.co.kr/th/talkp/wkTe9ganri/RLUKJr1XNRu8EycEPMFdFK/ov0djy_110x110_c.jpg)" data-action="talentDetail" data-value="1407998569">프로필사진</div>
                         <div class="free_con">
-                            <!--div class="report2 list2">
-                                <ul class="alarm cf">
-                                    <li class="alarm2 ">1일후</li>
-                                </ul>
-                            </div-->
                             <h3 data-action="talentDetail" data-value="1407998569">
                                 <a href="#none" data-action="talentDetail" data-value="1407998569">엄**</a>
                                 <ul class="f_nature cf">
@@ -471,13 +442,6 @@
 
                                 <li class="pick"><a href="#none" data-value="1407998569" data-nm="엄**" data-action="noneAuth" title="전속프리랜서<br></a>전속프리랜서는 프리랜서가 기업에 소속되는 관계로 둘다 동의시 프리랜서검색에 노출되지 않습니다.">전속프리랜서</a>
                                 </li>
-
-                                <!--li class="tree"><a href="#none" data-value="1407998569" data-index="2"
-                                
-                                data-action="noneAuth"
-                                title="인맥트리">인맥트리</a></li-->
-                                
-                                <!-- 메모 -->
                             </ul>
                         </div>
                     </div>
@@ -529,15 +493,10 @@
                         </div>
                     </div>
 				</div>
-				<div class="card cf">
+				<div class="card cf" style=" cursor: pointer;" onclick="location.href='../member/memberLogin.jsp'">
                     <div class="free_info cf">
                         <div class="profile" style="cursor:pointer;background-image:url(http://th-p.talk.kakao.co.kr/th/talkp/wlB2QYnj7f/NSmL6HT1YjotCdheKAWgBk/ouzjh9_110x110_c.jpg)" data-action="talentDetail" data-value="1388066362">프로필사진</div>
                         <div class="free_con">
-                            <!--div class="report2 list2">
-                                <ul class="alarm cf">
-                                    <li class="alarm2 ">2일후</li>
-                                </ul>
-                            </div-->
                             <h3 data-action="talentDetail" data-value="1388066362">
                                 <a href="#none" data-action="talentDetail" data-value="1388066362">박**</a>
                                 <ul class="f_nature cf">
@@ -563,13 +522,6 @@
 
                                 <li class="pick"><a href="#none" data-value="1388066362" data-nm="박**" data-action="noneAuth" title="전속프리랜서<br></a>전속프리랜서는 프리랜서가 기업에 소속되는 관계로 둘다 동의시 프리랜서검색에 노출되지 않습니다.">전속프리랜서</a>
                                 </li>
-
-                                <!--li class="tree"><a href="#none" data-value="1388066362" data-index="4"
-                                
-                                data-action="noneAuth"
-                                title="인맥트리">인맥트리</a></li-->
-                                
-                                <!-- 메모 -->
                             </ul>
                         </div>
                     </div>
@@ -634,6 +586,7 @@
     </section>
 </div>
 <!--//Contents-->
+
 <script id="talentSearchListTemplate" type="text/x-mustache">
 {{#obj}}
 	{{#isSearch}}

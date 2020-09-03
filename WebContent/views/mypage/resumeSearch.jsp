@@ -62,7 +62,7 @@
 
         <div class="layer-2">
             <!-- 이력서 파일 -->
-            <div class="card no_over p-20 cf" style="display:block;">
+            <div id="resumfiles" class="card no_over p-20 cf" style="display:block;">
                 <div class="profile_big">
                     <div class="profile" style="background-image:url()">프로필사진</div>
                     <div class="btn_box no_gap mt-10 cf">
@@ -71,7 +71,7 @@
                     </div>
                 </div>
                 <!-- 기본정보 출력 -->
-                <div class="free_con" id="freelancerShow"  id="freelancerShow"  style="display:none;">
+                <div  id="freelancerShow"  id="freelancerShow" ><!-- class="free_con" -->
                     <h3><=m.getName()%></h3>
                     <div class="gray_box mt-10">
 	                    <p class="small"> <=Integer.parseInt(m.getBirth())%></p>
@@ -111,19 +111,29 @@
 			            <a href="" class="btn b_s absolute" id="modifyButton" onclick="changeInfo()">수정하기</a>
                 </div>
                 <script type="text/javascript">
-	                function changeInfo(){
-	                	if($('#freelancerUpdate').css("display")=="none"){
-	                		
-		                	$('#freelancerUpdate').show();
-	                		/* $('#freelancerShow').hide(); */
-	                	}
+                
+                
+	                function changeInfo(url){
+	                	var ajaxOption =({
+	                		type:"post",
+	                		url:url,
+	                		async:true,
+	                		dataType:"html",
+	                		cache : false
+	                	});
 	                	
+	                	$.ajax(ajaxOption).done(function(data){
+	                		
+		                	$('#freelancerUpdate').toggle();
+	                		$('#freelancerShow').toggle(); 
+	                	})
+	               
 	            	}
                 </script>
 
                 <!-- 기본정보 입력 -->
-                <div class="free_con" id="freelancerUpdate"><!-- style="display:none;" -->>
-                	<form id="updateForm" name="updateForm" action="/myWeb/mUpdate.me" method="post">
+                <div id="freelancerUpdate" style="display:none;"><!-- class="free_con"  -->>
+                	<form id="updateForm" name="updateForm" action="/myWeb/mUpdate.do" method="post">
                     <div class="member_input input_small">
                     	<div class="gray_box mb-5">
 	                        <ul class="cf">
@@ -302,7 +312,7 @@
 					
                                 <div class="option depth2 multi" id="skillListModify" >
                                    
-                                    <div class="view_box" id="test1">
+                                    <div class="view_box" id="test1" style="display:none;">
                                         	<ul id ="skillTable"> <!--  checked 조건 걸어준다. -->
 										
 												<li><input type="checkbox" class="skillbox" value="ASP">ASP</li>
@@ -354,19 +364,17 @@
                                         <div id="btnModifySkill" class="btn_close" onclick="closeSkill();">닫기</div>
                                     </div>
                                 </div>
-                                <script>
-                                	
-                                </script>
+                                
                             </li>
                             <li class="col-6 pl-5">
                                 <label for="">희망근무지역<span class="need orange">(필수)</span></label>
                                 <!--  -->
-                                <input type="text" class="input_local" id="area" name="area" placeholder="지역을 선택하세요." value="<=m.getArea()%>" />
+                                <input type="text" onclick="display_change2()" class="input_local" id="area" name="area" placeholder="지역을 선택하세요." readonly="readonly" value="<=m.getArea()%>" />
 								
-                                <div class="option depth2 multi" id="workAreaList" style="display: none;">
+                                <div class="option depth2 multi" id="workAreaList" >
                                     
-                                    <div class="view_box">
-                                        <ul class="cf">
+                                    <div class="view_box" id="test2" style="display: none;">
+                                        
                                             <!-- 지역 선택 정보 -->
                                         <select id="area1" name="area1" placeholder="선호 지역을 선택하세요." value="<=m.getArea()%>">
 	                                    
@@ -395,12 +403,13 @@
 		                                    <option value="종로구">종로구</option>
 		                                    <option value="중구">중구</option>
 	                                </select>
+	                                <div id="btnArea" class="btn_close" onclick="closeSkill2();">닫기</div>
                                     </div>
                                 </div>
                             </li>
                             <li class="col-6 pr-5">
                                 <label for="">투입가능일<span class="need orange">(필수)</span></label>
-                                <input type="text" class="input_day" id="joinPsblDt" name="joinPsblDt" value="<=m.getFuture()%>" placeholder="투입가능일자를 선택하시면 회원님의 일정에 반영됩니다." />
+                                <input type="text" class="input_day" id="joinPsblDt" name="joinPsblDt" value="<=m.getFuture()%>" placeholder="ex.2020-08-31"/>
                             </li>
                            <li>
                        
@@ -416,8 +425,14 @@
                               		document.getElementById("test1").style.display='block';
                                	}
                               	function closeSkill(){
-                            		document.getElementById("test1").style.display='none';
-                            		
+                            		document.getElementById("test1").style.display='none';                            		
+                            	}
+                              	
+                              	function display_change2(){
+                              		document.getElementById("test2").style.display='block';
+                               	}
+                              	function closeSkill2(){
+                            		document.getElementById("test2").style.display='none';
                             	}
                               </script>   
 				</div>

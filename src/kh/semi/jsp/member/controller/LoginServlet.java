@@ -32,10 +32,10 @@ public class LoginServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	String userId = request.getParameter("userId");
-	String email = request.getParameter("email");
+	String eamil = request.getParameter("eamil");
+	String userPwd = request.getParameter("userPwd");
 	
-	Member m = new Member(userId,email);
+	Member m = new Member(eamil,userPwd);
 	
 	MemberService ms = new MemberService();
 	
@@ -47,7 +47,7 @@ public class LoginServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		session.setAttribute("member", m);
 		
-		response.sendRedirect("home.jsp");
+		response.sendRedirect("/freeWorld/main/home.jsp");
 		
 	}catch(MemberException e) {
 		request.setAttribute("msg", "회원 로그인 실패!");

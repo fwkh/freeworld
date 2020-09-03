@@ -8,8 +8,8 @@ import kh.semi.jsp.member.exception.MemberException;
 import kh.semi.jsp.member.model.dao.MemberDao;
 import kh.semi.jsp.member.model.vo.Member;
 
-public class MemberService {
-
+public class MemberService 
+{
 	private Connection con;
 	private MemberDao mDao = new MemberDao();
 	
@@ -26,6 +26,22 @@ public class MemberService {
 		return result;
 	}
 
+<<<<<<< HEAD
+	public Member f_searchOne(Member m) throws MemberException
+	{
+		con = getConnection();
+		
+		Member result = mDao.f_searchOne(con, m);
+		
+		if(result == null)
+		{
+			throw new MemberException("조회에 실패하였습니다.");
+		}
+		
+		return result;
+	}
+}
+=======
 	public int insertMember(Member m) throws MemberException {
 		con = getConnection();
 
@@ -40,3 +56,4 @@ public class MemberService {
 
 	}
 }
+>>>>>>> branch 'master' of https://github.com/fwkh/freeworld.git

@@ -46,7 +46,6 @@
 					<a href="../customer/questionRegistForm.html">문의하기</a>
 				</div>
 			</section>
-
 		</div>
 	</div>
 			<!-- footer -->

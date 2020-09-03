@@ -60,6 +60,16 @@
     #content{margin: 12% 0% 7% 18%; width: 80%;}
     #seoul{height: 400px; background: white; display: inline-block; padding: 1px;}
     #projectList{display: inline-block; float: left;}
+<<<<<<< HEAD
+    
+    <!-- 네비게이션바 -->
+    #f_management{display:none;}
+	#p_management{display:none;}
+	#profile{display:none;}
+	#suggestion{display:none;}
+	<!-- 네비게이션바 -->
+=======
+>>>>>>> branch 'master' of https://github.com/fwkh/freeworld.git
 	
     </style>
     
@@ -78,10 +88,14 @@
 
 
 <body>
+<<<<<<< HEAD
+	<%@ include file="../common/header.jsp" %>
+=======
 
 
 	<%@ include file="../common/header.jsp" %>
 
+>>>>>>> branch 'master' of https://github.com/fwkh/freeworld.git
 
 		
 <style type="text/css">
