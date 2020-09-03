@@ -62,7 +62,7 @@
 
         <div class="layer-2">
             <!-- 이력서 파일 -->
-            <div class="card no_over p-20 cf" style="display:block;">
+            <div id="resumfiles" class="card no_over p-20 cf" style="display:block;">
                 <div class="profile_big">
                     <div class="profile" style="background-image:url()">프로필사진</div>
                     <div class="btn_box no_gap mt-10 cf">
@@ -71,7 +71,7 @@
                     </div>
                 </div>
                 <!-- 기본정보 출력 -->
-                <div class="free_con" id="freelancerShow"  id="freelancerShow"  style="display:none;">
+                <div  id="freelancerShow"  id="freelancerShow" ><!-- class="free_con" -->
                     <h3><=m.getName()%></h3>
                     <div class="gray_box mt-10">
 	                    <p class="small"> <=Integer.parseInt(m.getBirth())%></p>
@@ -111,18 +111,28 @@
 			            <a href="" class="btn b_s absolute" id="modifyButton" onclick="changeInfo()">수정하기</a>
                 </div>
                 <script type="text/javascript">
-	                function changeInfo(){
-	                	if($('#freelancerUpdate').css("display")=="none"){
-	                		
-		                	$('#freelancerUpdate').show();
-	                		/* $('#freelancerShow').hide(); */
-	                	}
+                
+                
+	                function changeInfo(url){
+	                	var ajaxOption =({
+	                		type:"post",
+	                		url:url,
+	                		async:true,
+	                		dataType:"html",
+	                		cache : false
+	                	});
 	                	
+	                	$.ajax(ajaxOption).done(function(data){
+	                		
+		                	$('#freelancerUpdate').toggle();
+	                		$('#freelancerShow').toggle(); 
+	                	})
+	               
 	            	}
                 </script>
 
                 <!-- 기본정보 입력 -->
-                <div class="free_con" id="freelancerUpdate"><!-- style="display:none;" -->>
+                <div id="freelancerUpdate" style="display:none;"><!-- class="free_con"  -->>
                 	<form id="updateForm" name="updateForm" action="/myWeb/mUpdate.do" method="post">
                     <div class="member_input input_small">
                     	<div class="gray_box mb-5">
