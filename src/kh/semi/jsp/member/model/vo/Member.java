@@ -101,6 +101,14 @@ public class Member implements Serializable{
 		this.email = email;
 		this.userPwd = userPwd;
 	}
+	
+	// 로그인시
+	public Member(String email , String userPwd, String userName)
+	{
+		this.email = email;
+		this.userPwd = userPwd;
+		this.userName = userName;
+	}
 
 
 

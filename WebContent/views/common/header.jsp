@@ -1,18 +1,18 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" import="kh.semi.jsp.member.model.vo.*" %>
+<% Member m = (Member)session.getAttribute("member"); %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>freeWorld</title>
-<link rel="stylesheet" type="text/css" href="../../resources/css/defaulta9af.css?version=4.3">
-   <link rel="stylesheet" type="text/css" href="../../resources/css/jquery-ui.mina751.css?version=2.0">
-   <link rel="stylesheet" type="text/css" href="../../resources/css/membercd4e.css?version=4.1">
-   <link rel="stylesheet" type="text/css" href="../../resources/css/new6d33.css?version=4.8">
-   <link rel="stylesheet" type="text/css" id="mobile" href="../../resources/css/web_hand.css">
-   <link rel="stylesheet" type="text/css" href="../../resources/css/career-ui.mina751.css?version=2.0" />
-   <link rel="stylesheet" type="text/css" href="../../resources/css/ui.jqgrid.css" />
-   <link rel="shortcut icon" href="../../resources/images/new/favicon.ico"/>
+	<meta charset="UTF-8">
+	<title>freeWorld</title>
+	<link rel="stylesheet" type="text/css" href="../../resources/css/defaulta9af.css?version=4.3">
+	<link rel="stylesheet" type="text/css" href="../../resources/css/jquery-ui.mina751.css?version=2.0">
+	<link rel="stylesheet" type="text/css" href="../../resources/css/membercd4e.css?version=4.1">
+	<link rel="stylesheet" type="text/css" href="../../resources/css/new6d33.css?version=4.8">
+	<link rel="stylesheet" type="text/css" id="mobile" href="../../resources/css/web_hand.css">
+	<link rel="stylesheet" type="text/css" href="../../resources/css/career-ui.mina751.css?version=2.0" />
+	<link rel="stylesheet" type="text/css" href="../../resources/css/ui.jqgrid.css" />
+	<link rel="shortcut icon" href="../../resources/images/new/favicon.ico"/>
 </head>
    <style type="text/css">
      .tooltipUI{
@@ -66,9 +66,6 @@
    <script type="text/javascript" src="../../resources/freemon/common/apply.js"></script>
    <script type="text/javascript" src="../../resources/freemon/common/freemonPopUp9667.js?version=1.2"></script>
    <script type="text/javascript" src="../../resources/freemon/common/input.js"></script>
-   
-   <!-- <script type="text/javascript" src="../developers.kakao.com/sdk/js/kakao.min.js"></script>  -->
-   
    <script type="text/javascript">
       var frameworkProperties = {
          context: '',
@@ -112,17 +109,12 @@
       });
    </script>
 <body>
-<!-- Google Tag Manager (noscript) -->
-   <noscript><iframe src="http://www.googletagmanager.com/ns.html?id=GTM-MF7LK3J"
-   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-   <!-- End Google Tag Manager (noscript) -->
    <div class="load_box" style="display:none;"><div class="load_img"><img src="../../resources/images/common/loading.gif" alt="loading"/></div></div>
 <!--Index Scripts-->
 <link href="../../resources/css/main56b8.css?version=4.2" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="../../resources/freemon/common/jquery.mousewheel.js"></script>
 <script type="text/javascript" src="../../resources/freemon/common/slick.min.js"></script>
 <script type="text/javascript" src="../../resources/freemon/common/main069b.js?version=1.1"></script>
-<!--  <script type="text/javascript" src="resources/freemon/home/freemonHome3851.js?version=1.12"></script> -- 이곳에서 에러 발생 -->
 <script type="text/javascript">
    $(function() {
       freemon.invoker.invoke("freemonHome");
@@ -154,21 +146,19 @@
              </div>
           </div> -->
            <div class="top_menu w_top_menu">
-               <ul class="cf">
-                    <li id="logout">한진선님</li>
-                   <li class="login" id="logout"><a href="/login/logout">로그아웃</a></li>
+           <% if(m == null) { %>
+          	   <ul>
                    <li class="login" id="login"><a href="../../views/member/memberLogin.jsp">로그인</a></li>
-                   <li id="logout"><a href="/mypage/myFreemon">마이프리월드<span class="arrow"></span></a>
                    <li id="login"><a href="../../views/member/joinSelect.jsp">회원가입</a></li>
-                   <li class="coustomer"><a href="../customer/noticeSearch.html"><span class="arrow"></span></a>
-                      <ul class="top_depth2" style="display:none;">
-                          <p class="top_arrow"></p>
-                          <li><a href="../customer/noticeSearch.html">자주묻는질문</a></li>
-                           <li><a href="../customer/questionRegistForm.html">문의하기</a></li>
-                       </ul>
-                   </li>
-                   <li class="blog"><a href="http://blog.freemon.co.kr/" target="_blank">블로그</a></li>
+                   <li class="coustomer"><a href="../customer/noticeSearch.html"><span class="arrow"></span></a></li>
                </ul>
+          <% } else { %>
+               <ul>
+                   <li id="logout"><%= m.getUserName() %>님</li>
+                   <li class="login" id="logout"><a href="/freeWorld/logout.me">로그아웃</a></li>
+                   <li id="logout"><a href="../mypage/myfreemon_P.jsp">마이프리월드<span class="arrow"></span></a></li>
+               </ul>
+         <% } %>
            </div>
        </div>
    </div>

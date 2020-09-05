@@ -23,7 +23,6 @@
         #suggestion {
             display: none;
         }
-        #logout{display:none;}
     </style>
 
 

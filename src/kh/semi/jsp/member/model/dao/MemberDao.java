@@ -58,16 +58,17 @@ public class MemberDao
          {
             result = new Member();
             
-            result.setEmail(m.getEmail());
             result.setUserPwd(m.getUserPwd());
+            result.setEmail(m.getEmail());
+            result.setUserName(rset.getString("F_NAME"));
             
 //            result.setUserNo(rset.getInt("F_NO"));
-//            result.setUserName(rset.getString("F_USERNAME"));
 //            result.setBirth(rset.getDate("F_BIRTH"));
 //            result.setPhone(rset.getString("F_PHONE"));
 //            result.setArea(rset.getString("F_AREA"));
 //            result.setHope(rset.getString("F_HOPE"));
 //            result.setFuture(rset.getDate("F_FUTURE"));
+//            result.setEnrolldate(rset.getDate("F_ENROLLDATE"));
 //            result.setCareer(rset.getInt("F_CAREER"));
 //            result.setTotal(rset.getInt("F_TOTAL"));
 //            result.setJoin(rset.getString("F_JOIN"));
@@ -75,6 +76,7 @@ public class MemberDao
 //            result.setPhone_new(rset.getInt("F_PHONE_NEW"));
 //            result.setFiles(rset.getString("F_FILE"));
 //            result.setGender(rset.getString("F_GENDER"));
+            System.out.println(result);
          }
       }
       catch(Exception e) 

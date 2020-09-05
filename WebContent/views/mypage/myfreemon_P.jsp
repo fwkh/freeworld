@@ -7,7 +7,6 @@
 <%@page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" import="kh.semi.jsp.member.model.vo.*"%>
 <%
-	Member m = (Member)session.getAttribute("member");
 	Calendar today = Calendar.getInstance();
 	SimpleDateFormat df = new SimpleDateFormat("yy-MM");
 	//ArrayList<Project> list = (ArrayList<Project>)request.getAttribute("list"); // 확인했던 프로젝트들을 담아 놓는 객체
@@ -57,7 +56,7 @@
 		<section class="project_in margintop" style="min-height: 765px;">
 			<!-- 제목부분 -->
 			<div class="pro_tit mb-0">
-				<h2><%-- <%=m.getUserName()%> --%></h2>
+				<h2><%=m.getUserName()%> 님</h2>
 			</div>
 			<ul class="man_tab my_man_tab cf">
 				<li class="active"><a href="#none">마이프리월드</a></li>		
@@ -120,11 +119,9 @@
 											</div>
 											<div class="pro_con">
 												<h3>
-													이름<%-- <%=m.getUserName()%> --%>
+													<%=m.getUserName()%>
 													<ul class="f_nature cf">
-														<li>나이<%-- <%
-															df.format(today.getTime());
-														%> --%></li>
+														<li>나이<%-- <% df.format(today.getTime());%> --%></li>
 														<li class="ellipsis"></li>
 													</ul>
 												</h3>

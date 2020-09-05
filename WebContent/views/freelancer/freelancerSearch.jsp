@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" import="kh.semi.jsp.member.model.vo.*" %>
 <!DOCTYPE html>
 <html lang="ko">
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
@@ -9,7 +8,6 @@
 	  #p_management{display:none;}
 	  #profile{display:none;}
 	  #suggestion{display:none;}
-	  #logout{display:none;}
 	  #delSelect{display:none;}
 	</style>
 </head>
