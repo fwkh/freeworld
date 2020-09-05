@@ -19,43 +19,46 @@ import kh.semi.jsp.member.model.vo.Member;
 @WebServlet("/login.me")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public LoginServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public LoginServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	String eamil = request.getParameter("eamil");
-	String userPwd = request.getParameter("userPwd");
-	
-	Member m = new Member(eamil,userPwd);
-	
-	MemberService ms = new MemberService();
-	
-	try {
-		m = ms.selectMember(m);
-		
-		System.out.println("회원 로그인 성공!");
-		
-		HttpSession session = request.getSession();
-		session.setAttribute("member", m);
-		
-		response.sendRedirect("/freeWorld/main/home.jsp");
-		
-	}catch(MemberException e) {
-		request.setAttribute("msg", "회원 로그인 실패!");
-		request.setAttribute("exception", e);
-		
-		request.getRequestDispatcher("views/common/errorPage.jsp")
-		.forward(request, response);
-	}
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+	{
+		String email = request.getParameter("userEmail");
+		String userPwd = request.getParameter("userPwd");
+
+		Member m = new Member(email,userPwd);
+
+		MemberService ms = new MemberService();
+
+		try
+		{
+			m = ms.selectMember(m);
+			System.out.println("test1");
+
+			System.out.println("회원 로그인 성공!");
+
+			HttpSession session = request.getSession();
+			session.setAttribute("member", m);
+
+			response.sendRedirect("/freeWorld/main/home.jsp");
+		}
+		catch(MemberException e) 
+		{
+			request.setAttribute("msg", "회원 로그인 실패!");
+			request.setAttribute("exception", e);
+
+			request.getRequestDispatcher("views/common/errorPage.jsp").forward(request, response);
+		}
 	}
 
 	/**
@@ -65,5 +68,4 @@ public class LoginServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
-
 }

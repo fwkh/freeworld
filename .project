@@ -28,16 +28,4 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>WebContent/WEB-INF/lib/gson-2.8.5.jar</name>
-			<type>1</type>
-			<locationURI>PARENT-4-PROJECT_LOC/dev/webWorkspace/freeWorld2/WebContent/WEB-INF/lib/gson-2.8.5.jar</locationURI>
-		</link>
-		<link>
-			<name>WebContent/WEB-INF/lib/json-simple-1.1.1.jar</name>
-			<type>1</type>
-			<locationURI>PARENT-4-PROJECT_LOC/dev/webWorkspace/freeWorld2/WebContent/WEB-INF/lib/json-simple-1.1.1.jar</locationURI>
-		</link>
-	</linkedResources>
 </projectDescription>

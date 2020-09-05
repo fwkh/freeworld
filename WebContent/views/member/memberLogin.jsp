@@ -17,10 +17,8 @@
 <body>
 
 
-<!-- Google Tag Manager (noscript) -->
 	<noscript><iframe src="http://www.googletagmanager.com/ns.html?id=GTM-MF7LK3J"
 	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-	<!-- End Google Tag Manager (noscript) -->
 
 	<div class="load_box" style="display:none;"><div class="load_img"><img src="../resources/images/common/loading.gif" alt="loading"/></div></div>
 
@@ -69,6 +67,11 @@
 			}
 		});
 	});
+	
+	function f_login()
+	{
+		$('#f_login_form').submit();
+	}
 </script>
 
 <!--Contents-->
@@ -76,32 +79,30 @@
 	<section class="member login">
     	<!-- 제목부분 -->
     	<h2>로그인</h2>
-        
-        
        	<!-- 개인 -->
        	<div class="col-6 pr-15">
 			<div class="white_box center">
 				<h3 class="name">프리랜서</h3>
 				<div class="middle">
                    <div class="member_input">
-						<form class="login_form" id="login_form" action="/freeWorld/login.me" name="login_form">
+						<form class="f_login_form" id="f_login_form" name="f_login_form" action="/freeWorld/login.me">
 		                    <ul class="cf">
 		                        <li class="p-0">
 	                                <!-- <label for="companyUserId">아이디</label> -->
-	                                <input type="text" id="UserId" name="UserId" placeholder="아이디(이메일주소)"/>
+	                                <input type="text" id="userEmail" name="userEmail" placeholder="아이디(이메일주소)"/>
 		                        </li>
 		                        <li class="pb-0">
 	                                <!-- <label for="companyPwd">비밀번호</label> -->
 	                                <input type="password" id="userPwd" name="userPwd" placeholder="비밀번호"/>
 		                        </li>
 		                    </ul>
-		                <div class="radio member_check left">
-		                	<label for="chkIdSave">
-		                	<input type="checkbox" id="chkIdSave" name="chkIdSave" value="Y" />
-		                	<i></i>
-		                	아이디저장</label>
-                        </div>
-		                <button id="userLoginBtn" class="b_login b_red" value="로그인" style="cursor:pointer;">로그인</button>
+			                <div class="radio member_check left">
+			                	<label for="chkIdSave">
+			                	<input type="checkbox" id="chkIdSave" name="chkIdSave" value="Y" />
+			                	<i></i>
+			                	아이디저장</label>
+	                        </div>
+			                <button id="userLoginBtn" class="b_login b_red" value="로그인" onclick='f_login()' style="cursor:pointer;">로그인</button>
 						</form>
 		                <ul class="login_link">
 		                	<li><a href="../member/signEmail.jsp" class="underline">아이디/비밀번호 찾기</a></li>

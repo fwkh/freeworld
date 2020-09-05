@@ -8,52 +8,39 @@ import kh.semi.jsp.member.exception.MemberException;
 import kh.semi.jsp.member.model.dao.MemberDao;
 import kh.semi.jsp.member.model.vo.Member;
 
-public class MemberService 
-{
-	private Connection con;
-	private MemberDao mDao = new MemberDao();
-	
-	public Member selectMember(Member m) throws MemberException {
-		con = getConnection();
-		
-		Member result = mDao.selectMember(con,m);
-		
-		close(con);
-		
-		if(result == null) {
-			throw new MemberException("이메일이나 비밀번호를 확인해주세요.");
-		}
-		return result;
-	}
+public class MemberService {
 
-<<<<<<< HEAD
-	public Member f_searchOne(Member m) throws MemberException
-	{
-		con = getConnection();
-		
-		Member result = mDao.f_searchOne(con, m);
-		
-		if(result == null)
-		{
-			throw new MemberException("조회에 실패하였습니다.");
-		}
-		
-		return result;
-	}
+   private Connection con;
+   private MemberDao mDao = new MemberDao();
+   
+   public Member selectMember(Member m) throws MemberException
+   {
+      con = getConnection();
+      
+      Member result = mDao.selectMember(con, m);
+      
+      close(con);
+      
+      if(result == null)
+      {
+         throw new MemberException("이메일이나 비밀번호를 확인해주세요.");
+      }
+      
+      return result;
+   }
+
+   public int insertMember(Member m) throws MemberException
+   {
+      con = getConnection();
+
+      int result = mDao.insertMember(con,m);
+      
+
+      if(result > 0) commit(con);
+      else rollback(con);
+
+      close(con);
+
+      return result;
+   }
 }
-=======
-	public int insertMember(Member m) throws MemberException {
-		con = getConnection();
-
-		int result = mDao.insertMember(con,m);
-
-		if(result > 0) commit(con);
-		else rollback(con);
-
-		close(con);
-
-		return result;
-
-	}
-}
->>>>>>> branch 'master' of https://github.com/fwkh/freeworld.git
