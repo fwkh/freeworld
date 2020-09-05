@@ -56,7 +56,6 @@ public class MemberDao
          
          if(rset.next())
          {
-        	System.out.println("dao2 : " + m.getUserPwd());
             result = new Member();
             
             result.setEmail(m.getEmail());
@@ -76,7 +75,7 @@ public class MemberDao
 //            result.setPhone_new(rset.getInt("F_PHONE_NEW"));
 //            result.setFiles(rset.getString("F_FILE"));
 //            result.setGender(rset.getString("F_GENDER"));
-         }S
+         }
       }
       catch(Exception e) 
       {

@@ -43,14 +43,13 @@ public class LoginServlet extends HttpServlet {
 		try
 		{
 			m = ms.selectMember(m);
-			System.out.println("test1");
 
 			System.out.println("회원 로그인 성공!");
 
 			HttpSession session = request.getSession();
 			session.setAttribute("member", m);
 
-			response.sendRedirect("/freeWorld/main/home.jsp");
+			response.sendRedirect("/freeWorld/views/main/home.jsp");
 		}
 		catch(MemberException e) 
 		{
