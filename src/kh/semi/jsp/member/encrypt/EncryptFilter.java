@@ -14,12 +14,13 @@ import javax.servlet.http.HttpServletRequest;
  * Servlet Filter implementation class EncryptFilter
  */                                        
 @WebFilter({ "/login.me", "/mInsert.me", "/mUpdate.me" })
-public class EncryptFilter implements Filter {
-
+public class EncryptFilter implements Filter
+{
     /**
      * Default constructor. 
      */
-    public EncryptFilter() {
+    public EncryptFilter() 
+    {
         // TODO Auto-generated constructor stub
     }
 
@@ -50,5 +51,4 @@ public class EncryptFilter implements Filter {
 	public void init(FilterConfig fConfig) throws ServletException {
 		// TODO Auto-generated method stub
 	}
-
 }

@@ -13,17 +13,9 @@
 	  #p_management{display:none;}
 	  #profile{display:none;}
 	  #suggestion{display:none;}
-	  #logout{display:none;}
 	</style>
 </head>
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript>
-        <iframe src="http://www.googletagmanager.com/ns.html?id=GTM-MF7LK3J"
-                height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
     <div class="load_box" style="display:none;">
         <div class="load_img"><img src="../resources/images/common/loading.gif" alt="loading"/></div>
     </div>

@@ -1,12 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
-
 <!DOCTYPE html>
 <html lang="ko">
-
-<!-- Mirrored from www.freemon.co.kr/home by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 27 Jul 2020 06:58:58 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
 	<%@ include file="../common/header.jsp" %>
 	
@@ -16,7 +11,7 @@
 	  #p_management{display:none;}
 	  #profile{display:none;}
 	  #suggestion{display:none;}
-	  #logout{display:none;}
+	  
 	</style>
 </head>
 <body>

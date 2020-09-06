@@ -26,8 +26,65 @@ public class Member implements Serializable{
 	private String join;
 	private String gender;
 	
+	private int birthday_year;
+	private int phone_new;
+	private String files;	// 이력서 파일 업로드
 
-	private String files;		// 이력서 파일 업로드
+
+
+
+	@Override
+	public String toString() {
+		return "Member [userNo=" + userNo + ", userPwd=" + userPwd + ", userName=" + userName + ", birth=" + birth
+				+ ", phone=" + phone + ", email=" + email + ", area=" + area + ", hope=" + hope + ", future=" + future
+				+ ", withdraw=" + withdraw + ", enrolldate=" + enrolldate + ", career=" + career + ", total=" + total
+				+ ", join=" + join + ", gender=" + gender + ", birthday_year=" + birthday_year + ", phone_new="
+				+ phone_new + ", files=" + files + ", skill1=" + skill1 + ", skill2=" + skill2 + ", skill3=" + skill3
+				+ ", uni_Name=" + uni_Name + ", enterDate=" + enterDate + ", gra_Date=" + gra_Date + ", gra_Status="
+				+ gra_Status + ", major=" + major + ", total_grade=" + total_grade + ", grade_Standard="
+				+ grade_Standard + ", l_Name=" + l_Name + ", l_Agency=" + l_Agency + ", l_Date=" + l_Date
+				+ ", birthYear=" + birthYear + "]";
+	}
+
+	public Member(int userNo, String userPwd, String userName, Date birth, String phone, String email, String area,
+			String hope, Date future, boolean withdraw, Date enrolldate, int career, int total, String join,
+			String gender, int birthday_year, int phone_new, String files, String skill1, String skill2, String skill3,
+			String uni_Name, Date enterDate, Date gra_Date, String gra_Status, String major, String total_grade,
+			String grade_Standard, String l_Name, String l_Agency, Date l_Date, int birthYear) {
+		super();
+		this.userNo = userNo;
+		this.userPwd = userPwd;
+		this.userName = userName;
+		this.birth = birth;
+		this.phone = phone;
+		this.email = email;
+		this.area = area;
+		this.hope = hope;
+		this.future = future;
+		this.withdraw = withdraw;
+		this.enrolldate = enrolldate;
+		this.career = career;
+		this.total = total;
+		this.join = join;
+		this.gender = gender;
+		this.birthday_year = birthday_year;
+		this.phone_new = phone_new;
+		this.files = files;
+		this.skill1 = skill1;
+		this.skill2 = skill2;
+		this.skill3 = skill3;
+		this.uni_Name = uni_Name;
+		this.enterDate = enterDate;
+		this.gra_Date = gra_Date;
+		this.gra_Status = gra_Status;
+		this.major = major;
+		this.total_grade = total_grade;
+		this.grade_Standard = grade_Standard;
+		this.l_Name = l_Name;
+		this.l_Agency = l_Agency;
+		this.l_Date = l_Date;
+		this.birthYear = birthYear;
+	}
 
 	// 스킬테이블
 	private String skill1;		// 스킬 1
@@ -108,7 +165,7 @@ public class Member implements Serializable{
 		this.future = future;
 		this.total = total;
 	}
-	//
+	
 	
 	public Member(String userName, int birthYear, String email, String area, String gender, Date future, String phone, String skill1, String skill2, String skill3) {
 		
@@ -195,7 +252,6 @@ public class Member implements Serializable{
 		this.skill2 = skill2;
 		this.skill3 = skill3;
 	}
-	
 	// 자격사항 테이블
 	public Member(int userNo, String l_Name, String l_Agency, Date l_Date) {
 		super();
@@ -205,12 +261,18 @@ public class Member implements Serializable{
 		this.l_Agency = l_Agency;
 		this.l_Date = l_Date;
 
+		
 	}
 
-	public Member(String userPwd, String email) {
-		super();
-		this.userPwd = userPwd;
+	
+	
+
+
+	public Member(String email , String userPwd)
+	{
 		this.email = email;
+		this.userPwd = userPwd;
+	
 	}
 
 	public Member(int userNo, String userPwd, String userName, Date birth, String phone, String email, String area,
@@ -230,25 +292,9 @@ public class Member implements Serializable{
 		this.join = join;
 	}
 
-	public Member(int userNo, String userPwd, String userName, Date birth, String phone, String email, String area,
-			String hope, Date future, Date enrolldate, int career, int total, String join, String files){
-		super();
-		this.userNo = userNo;
-		this.userPwd = userPwd;
-		this.userName = userName;
-		this.birth = birth;
-		this.phone = phone;
-		this.email = email;
-		this.area = area;
-		this.hope = hope;
-		this.future = future;
-		this.enrolldate = enrolldate;
-		this.career = career;
-		this.total = total;
-		this.join = join;
-		this.files = files;
-	}
 
+
+	
 	public Member(int userNo, String userPwd, String userName, Date birth, String phone, String email, String area,
 			String hope, Date future, Date enrolldate, int career, int total, String join){
 		super();
@@ -261,7 +307,6 @@ public class Member implements Serializable{
 		this.area = area;
 		this.hope = hope;
 		this.future = future;
-		this.enrolldate = enrolldate;
 		this.career = career;
 		this.total = total;
 		this.join = join;
@@ -271,6 +316,7 @@ public class Member implements Serializable{
 			String hope, Date future, Date enrolldate, int career, int total, String join, String files, String skill1,
 			String skill2, String skill3, String uni_Name, Date enterDate, Date gra_Date, String gra_Status,
 			String major, String total_grade, String grade_Standard, String l_Name, String l_Agency, Date l_Date){
+	
 		super();
 		this.userNo = userNo;
 		this.userPwd = userPwd;
@@ -439,9 +485,23 @@ public class Member implements Serializable{
 	public String getFiles() {
 		return files;
 	}
+	public int getBirthday_year() {
+		return birthday_year;
+	}
+
+	public void setBirthday_year(int birthday_year) {
+		this.birthday_year = birthday_year;
+	}
+
+	public int getPhone_new() {
+		return phone_new;
+	}
+
+	public void setPhone_new(int phone_new) {
+		this.phone_new = phone_new;
+	}
 
 
-	
 	public void setFiles(String files) {
 		this.files = files;
 	}
@@ -552,4 +612,6 @@ public class Member implements Serializable{
 	}
 
 	
-}	
+	
+
+}
