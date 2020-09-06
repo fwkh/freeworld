@@ -53,4 +53,20 @@ public class MemberService{
 		return result;
 
 	}
+
+
+	public int memberUpdate(Member m) throws MemberException {
+		con = getConnection();
+
+		System.out.println("MemberService 접속!");
+		int result = mDao.memberUpdate(con,m);
+		
+		if(result > 0) commit(con);
+		else rollback(con);
+
+		close(con);
+
+		return result;
+		
+	}
 }

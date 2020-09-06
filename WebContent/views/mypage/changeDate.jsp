@@ -25,7 +25,7 @@
 <body>
 <script type="text/javascript" src="../../resources/freemon/common/freemonSearch9667.js?version=1.2"></script>
 
-<div id="container">ㄴ
+<div id="container">
 	<section class="project_in">
     	<!-- 제목부분 -->
     	<div class="pro_tit mb-0">
@@ -49,7 +49,7 @@
 </div>
 <script>
 	$("#changeDate").click(function(){
-		location.href="/myWeb/chageDate"
+		location.href="/myWeb/chageDate";
 	});
 </script>
 	<%@ include file="../common/footer.jsp"%>

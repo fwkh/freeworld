@@ -161,4 +161,35 @@ public class MemberDao{
 		}
 		return result;
 	}
+
+	public int memberUpdate(Connection con, Member m) throws MemberException {
+		int result = 0;
+		System.out.println("MemberDao 접속!");
+		PreparedStatement pstmt = null;
+
+		String sql = prop.getProperty("memberUpdate");
+
+		try{
+			System.out.println("MemberDao try문 입성!");
+			pstmt = con.prepareStatement(sql);
+
+			pstmt.setInt(1,m.getBirthYear());
+			pstmt.setString(2,m.getGender());
+			pstmt.setString(3,m.getPhone());
+			pstmt.setString(4,m.getSkill1());
+			pstmt.setString(5,m.getSkill2());
+			pstmt.setString(6,m.getSkill3());
+			pstmt.setString(7,m.getArea());
+			pstmt.setDate(8,m.getFuture());
+			pstmt.setInt(9,1);
+
+			result = pstmt.executeUpdate();
+			
+		}catch (SQLException e){
+			throw new MemberException(e.getMessage());
+		}finally {
+			close(pstmt);
+		}
+		return result;
+	}
 }

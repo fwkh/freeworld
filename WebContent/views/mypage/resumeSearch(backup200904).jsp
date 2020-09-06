@@ -62,7 +62,7 @@
 
         <div class="layer-2">
             <!-- 이력서 파일 -->
-            <div class="card no_over p-20 cf" style="display:block;">
+            <div id="resumfiles" class="card no_over p-20 cf" style="display:block;">
                 <div class="profile_big">
                     <div class="profile" style="background-image:url()">프로필사진</div>
                     <div class="btn_box no_gap mt-10 cf">
@@ -71,7 +71,7 @@
                     </div>
                 </div>
                 <!-- 기본정보 출력 -->
-                <div class="free_con" id="freelancerShow"  id="freelancerShow"  style="display:none;">
+                <div  id="freelancerShow"  id="freelancerShow" ><!-- class="free_con" -->
                     <h3><=m.getName()%></h3>
                     <div class="gray_box mt-10">
 	                    <p class="small"> <=Integer.parseInt(m.getBirth())%></p>
@@ -108,22 +108,32 @@
 			                <span>등록된 경력을 기준으로 기업고객에게 보여지는 이력정보 화면입니다.</span>
 			            </a>
 			        </div>
-			            <a href="" class="btn b_s absolute" id="modifyButton" onclick="changeInfo()">수정하기</a>
+			        <input type="button" class="btn b_s absolute" id="modifyButton" onclick="changeInfo()" value="수정하기">
+			            <!-- <a href="/freeworld/resumeUpdate.jsp" class="btn b_s absolute" id="modifyButton">수정하기</a> -->
                 </div>
                 <script type="text/javascript">
-	                function changeInfo(){
-	                	if($('#freelancerUpdate').css("display")=="none"){
-	                		
-		                	$('#freelancerUpdate').show();
-	                		/* $('#freelancerShow').hide(); */
-	                	}
+                
+	               function changeInfo(url){
+	                	var ajaxOption =({
+	                		type:"post",
+	                		url:url,
+	                		async:true,
+	                		dataType:"html",
+	                		cache : false
+	                	});
 	                	
-	            	}
+	                	$.ajax(ajaxOption).done(function(data){
+	                		
+		                	$('#freelancerUpdate').toggle();
+	                		$('#freelancerShow').toggle(); 
+	                	})
+	               
+	            	} 
                 </script>
 
                 <!-- 기본정보 입력 -->
-                <div class="free_con" id="freelancerUpdate"><!-- style="display:none;" -->>
-                	<form id="updateForm" name="updateForm" action="/myWeb/mUpdate.me" method="post">
+                <div id="freelancerUpdate" style="display:none;"><!-- class="free_con"  -->>
+                	<form id="updateForm" name="updateForm" action="${pageContext.request.contextPath}/mUpdate.do" method="post">
                     <div class="member_input input_small">
                     	<div class="gray_box mb-5">
 	                        <ul class="cf">
@@ -138,14 +148,10 @@
 	                                
 	                                <select id="birthDay" name="birthDay">
 	                                    <option value="<=m.getBirth()%>"> 
-	                                    
-	                                         
+
 	                                           <=m.getBirth()%>
 	                                        
-	                                        
-	                                    
 	                                    </option>
-
 	                                    
 	                                    <option value="2000"  >2000</option>
 	                                    
@@ -276,7 +282,7 @@
 	                                <!-- <label for="">이메일주소<span class="need orange">(필수)</span></label> -->
 	                                <input type="hidden" id="userId" name="userId" value="1444427072"/>
 	                                <input type="hidden" id="prfPhotoYn" name="prfPhotoYn" value="Y"/>
-	                                <input type="text" id="email" name="email" value="<=m.getEmail()%>" placeholder="이메일 형식에 맞춰 입력바랍니다."/>
+	                                <input type="text" id="email" name="email" value="<=m.getEmail()%>" placeholder="이메일 형식에 맞춰 입력바랍니다." readonly="readonly"/>
 	                            </li>
 							</ul>
 						</div>
@@ -284,9 +290,9 @@
 						<div>
 						<ul class="cf">
                             <li class="col-6 pr-5">
-                                <label for="">전문기술<span class="need orange">(필수)</span></label>
+                                <label for="">전문기술(최대 3가지)<span class="need orange">(필수)</span></label>
                                 
-                                <input type="text"  onclick="display_change()" id="skills" name="skills" placeholder="선택하세요.(여러개 선택 가능)" value="<=m.getSkill1()%>" 
+                                <input type="text"  onclick="display_change1()" id="skills" name="skills" placeholder="선택하세요.(여러개 선택 가능)" value="<=m.getSkill()%>" 
                                 <%--  <% if(m.getSkill2()!=null){ %>
                                   , <%=m.getSkill2() %>
                                                                 
@@ -302,117 +308,164 @@
 					
                                 <div class="option depth2 multi" id="skillListModify" >
                                    
-                                    <div class="view_box" id="test1">
-                                        	<ul id ="skillTable"> <!--  checked 조건 걸어준다. -->
+                                    <div class="view_box" id="test1" style="display:none;">
+                                        	<ul id ="skillTable"> <!--  checked 조건 걸고 innerhtml로 id=>skills에 입력되게 한다. -->
 										
-												<li><input type="checkbox" class="skillbox" value="ASP">ASP</li>
-												<li><input type="checkbox" class="skillbox" value="JSP">JSP</li>
-												<li><input type="checkbox" class="skillbox" value="PHP">PHP</li>
-												<li><input type="checkbox" class="skillbox" value="JAVA">JAVA</li>
-												<li><input type="checkbox" class="skillbox"value="C">C</li>
-												<li><input type="checkbox" class="skillbox" value="C++">C++</li>
-												<li><input type="checkbox" class="skillbox" value="C#">C#</li>
-												<li><input type="checkbox" class="skillbox" value="ASP.NET">ASP.NET</li>
-												<li><input type="checkbox" class="skillbox" value="JavaScript">JavaScript</li>
-												<li><input type="checkbox" class="skillbox" value="Ajax">Ajax</li>
-												<li><input type="checkbox" class="skillbox" value="Jquery">Jquery</li>
-												<li><input type="checkbox" class="skillbox" value="NodeJS">NodeJS</li>
-												<li><input type="checkbox" class="skillbox" value="vue.js">vue.js</li>
-												<li><input type="checkbox" class="skillbox" value="React.js">React.js</li>
-												<li><input type="checkbox" class="skillbox" value="Ruby">Ruby</li>
-												<li><input type="checkbox" class="skillbox" value="RubyonRails">RubyonRails</li>
-												<li><input type="checkbox" class="skillbox" value="MiPlatform">MiPlatform</li>
-												<li><input type="checkbox" class="skillbox" value="Nexacro">Nexacro</li>
-												<li><input type="checkbox" class="skillbox" value="XPLATFORM">XPLATFORM</li>
-												<li><input type="checkbox" class="skillbox" value="GO">GO</li>
-												<li><input type="checkbox" class="skillbox" value="Oracle">Oracle</li>
-												<li><input type="checkbox" class="skillbox" value="MS-SQL">MS-SQL</li>
-												<li><input type="checkbox" class="skillbox" value="MySQL">MySQL</li>
-												<li><input type="checkbox" class="skillbox" value="DB2">DB2</li>
-												<li><input type="checkbox" class="skillbox" value="Pro-C">Pro-C</li>
-												<li><input type="checkbox" class="skillbox" value="Python">Python</li>
-												<li><input type="checkbox" class="skillbox" value="VB">VB</li>
-												<li><input type="checkbox" class="skillbox" value="VB.NET">VB.NET</li>
-												<li><input type="checkbox" class="skillbox" value="POS">POS</li>
-												<li><input type="checkbox" class="skillbox" value="ABAP">ABAP</li>
-												<li><input type="checkbox" class="skillbox" value="EJB">EJB</li>
-												<li><input type="checkbox" class="skillbox" value="Kotlin">Kotlin</li>
-												<li><input type="checkbox" class="skillbox" value="F#">F#</li>
-												<li><input type="checkbox" class="skillbox" value="SAP">SAP</li>
-												<li><input type="checkbox" class="skillbox" value="PowerBulder">PowerBulder</li>
-												<li><input type="checkbox" class="skillbox" value="MFC">MFC</li>
-												<li><input type="checkbox" class="skillbox" value="어셈블리">어셈블리</li>
-												<li><input type="checkbox" class="skillbox" value="임베디드">임베디드</li>
-												<li><input type="checkbox" class="skillbox" value="펌웨어">펌웨어</li>
-												<li><input type="checkbox" class="skillbox" value="HMI">HMI</li>
-												<li><input type="checkbox" class="skillbox" value="PLC">PLC</li>
-												<li><input type="checkbox" class="skillbox" value="Android">Android</li>
-												<li><input type="checkbox" class="skillbox" value="Objective-C">Objective-C</li>
-												<li><input type="checkbox" class="skillbox" value="Swift">Swift</li>
+												<li><input type="checkbox" name="skillbox" value="ASP">ASP</li>
+												<li><input type="checkbox" name="skillbox" value="JSP">JSP</li>
+												<li><input type="checkbox" name="skillbox" value="PHP">PHP</li>
+												<li><input type="checkbox" name="skillbox" value="JAVA">JAVA</li>
+												<li><input type="checkbox" name="skillbox" value="C">C</li>
+												<li><input type="checkbox" name="skillbox" value="C++">C++</li>
+												<li><input type="checkbox" name="skillbox" value="C#">C#</li>
+												<li><input type="checkbox" name="skillbox" value="ASP.NET">ASP.NET</li>
+												<li><input type="checkbox" name="skillbox" value="JavaScript">JavaScript</li>
+												<li><input type="checkbox" name="skillbox" value="Ajax">Ajax</li>
+												<li><input type="checkbox" name="skillbox" value="Jquery">Jquery</li>
+												<li><input type="checkbox" name="skillbox" value="NodeJS">NodeJS</li>
+												<li><input type="checkbox" name="skillbox" value="vue.js">vue.js</li>
+												<li><input type="checkbox" name="skillbox" value="React.js">React.js</li>
+												<li><input type="checkbox" name="skillbox" value="Ruby">Ruby</li>
+												<li><input type="checkbox" name="skillbox" value="RubyonRails">RubyonRails</li>
+												<li><input type="checkbox" name="skillbox" value="MiPlatform">MiPlatform</li>
+												<li><input type="checkbox" name="skillbox" value="Nexacro">Nexacro</li>
+												<li><input type="checkbox" name="skillbox" value="XPLATFORM">XPLATFORM</li>
+												<li><input type="checkbox" name="skillbox" value="GO">GO</li>
+												<li><input type="checkbox" name="skillbox" value="Oracle">Oracle</li>
+												<li><input type="checkbox" name="skillbox" value="MS-SQL">MS-SQL</li>
+												<li><input type="checkbox" name="skillbox" value="MySQL">MySQL</li>
+												<li><input type="checkbox" name="skillbox" value="DB2">DB2</li>
+												<li><input type="checkbox" name="skillbox" value="Pro-C">Pro-C</li>
+												<li><input type="checkbox" name="skillbox" value="Python">Python</li>
+												<li><input type="checkbox" name="skillbox" value="VB">VB</li>
+												<li><input type="checkbox" name="skillbox" value="VB.NET">VB.NET</li>
+												<li><input type="checkbox" name="skillbox" value="POS">POS</li>
+												<li><input type="checkbox" name="skillbox" value="ABAP">ABAP</li>
+												<li><input type="checkbox" name="skillbox" value="EJB">EJB</li>
+												<li><input type="checkbox" name="skillbox" value="Kotlin">Kotlin</li>
+												<li><input type="checkbox" name="skillbox" value="F#">F#</li>
+												<li><input type="checkbox" name="skillbox" value="SAP">SAP</li>
+												<li><input type="checkbox" name="skillbox" value="PowerBulder">PowerBulder</li>
+												<li><input type="checkbox" name="skillbox" value="MFC">MFC</li>
+												<li><input type="checkbox" name="skillbox" value="어셈블리">어셈블리</li>
+												<li><input type="checkbox" name="skillbox" value="임베디드">임베디드</li>
+												<li><input type="checkbox" name="skillbox" value="펌웨어">펌웨어</li>
+												<li><input type="checkbox" name="skillbox" value="HMI">HMI</li>
+												<li><input type="checkbox" name="skillbox" value="PLC">PLC</li>
+												<li><input type="checkbox" name="skillbox" value="Android">Android</li>
+												<li><input type="checkbox" name="skillbox" value="Objective-C">Objective-C</li>
+												<li><input type="checkbox" name="skillbox" value="Swift">Swift</li>
 												
 											</ul>
-                                        <div id="btnModifySkill" class="btn_close" onclick="this.parentNode.style.display='none';">닫기</div>
+                                        <div id="btnModifySkill" class="btn_close" onclick="closeSkill1();">닫기</div>
                                     </div>
                                 </div>
+                                
                             </li>
                             <li class="col-6 pl-5">
                                 <label for="">희망근무지역<span class="need orange">(필수)</span></label>
                                 <!--  -->
-                                <input type="text" class="input_local" id="area" name="area" placeholder="지역을 선택하세요." value="<=m.getArea()%>" />
+                                <input type="text" onclick="display_change2()" class="input_local" id="area" name="area" placeholder="지역을 선택하세요." readonly="readonly" value="<=m.getArea()%>" />
 								
-                                <div class="option depth2 multi" id="workAreaList" style="display: none;">
+                                <div class="option depth2 multi" id="workAreaList" >
                                     
-                                    <div class="view_box">
-                                        <ul class="cf">
+                                    <div class="view_box" id="test2" style="display: none;">
+                                        
                                             <!-- 지역 선택 정보 -->
-                                        <select id="area1" name="area1" placeholder="선호 지역을 선택하세요." value="<=m.getArea()%>">
+                                        <select id="area1" name="area1"><!-- 입력받은 값을 id=area에 입력되게 한다. -->
 	                                    
-		                                    <option value="강남구">강남구</option>
-		                                    <option value="강동구">강동구</option>
-		                                    <option value="강서구">강서구</option>
-		                                    <option value="구로구">구로구</option>
-		                                    <option value="금천구">금천구</option>
-		                                    <option value="노원구">노원구</option>
-		                                    <option value="관악구">관악구</option>
-		                                    <option value="광진구">광진구</option>
-		                                    <option value="도봉구">도봉구</option>
-		                                    <option value="동대문구">동대문구</option>
-		                                    <option value="동작구">동작구</option>
-		                                    <option value="마포구">마포구</option>
-		                                    <option value="서대문구">서대문구</option>
-		                                    <option value="서초구">서초구</option>
-		                                    <option value="성동구">성동구</option>
-		                                    <option value="성북구">성북구</option>
-		                                    <option value="송파구">송파구</option>
-		                                    <option value="양천구">양천구</option>
-		                                    <option value="영등포구">영등포구</option>
-		                                    <option value="용산구">용산구</option>
-		                                    <option value="은평구">은평구</option>
-		                                    <option value="중랑구">중랑구</option>
-		                                    <option value="종로구">종로구</option>
-		                                    <option value="중구">중구</option>
+		                                    <option  value="강남구">강남구</option>
+		                                    <option  value="강동구">강동구</option>
+		                                    <option  value="강서구">강서구</option>
+		                                    <option  value="구로구">구로구</option>
+		                                    <option  value="금천구">금천구</option>
+		                                    <option  value="노원구">노원구</option>
+		                                    <option  value="관악구">관악구</option>
+		                                    <option  value="광진구">광진구</option>
+		                                    <option  value="도봉구">도봉구</option>
+		                                    <option  value="동대문구">동대문구</option>
+		                                    <option  value="동작구">동작구</option>
+		                                    <option  value="마포구">마포구</option>
+		                                    <option  value="서대문구">서대문구</option>
+		                                    <option  value="서초구">서초구</option>
+		                                    <option  value="성동구">성동구</option>
+		                                    <option  value="성북구">성북구</option>
+		                                    <option  value="송파구">송파구</option>
+		                                    <option  value="양천구">양천구</option>
+		                                    <option  value="영등포구">영등포구</option>
+		                                    <option  value="용산구">용산구</option>
+		                                    <option  value="은평구">은평구</option>
+		                                    <option  value="중랑구">중랑구</option>
+		                                    <option  value="종로구">종로구</option>
+		                                    <option  value="중구">중구</option>
 	                                </select>
+	                                <div id="btnArea" class="btn_close" onclick="closeSkill2();">닫기</div>
                                     </div>
                                 </div>
                             </li>
                             <li class="col-6 pr-5">
                                 <label for="">투입가능일<span class="need orange">(필수)</span></label>
-                                <input type="text" class="input_day" id="joinPsblDt" name="joinPsblDt" value="<=m.getFuture()%>" placeholder="투입가능일자를 선택하시면 회원님의 일정에 반영됩니다." />
+                                <input type="text" class="input_day" id="joinPsblDt" name="future" value="<=m.getFuture()%>" placeholder="ex.2020-08-31"/>
                             </li>
-                           <li>
                        
-		                        <button type="submit" class="btn b_m b_red" id="save">저장</button>
-		                        <button class="btn b_m b" href="" id="cancel">취소</button>
+                           		<button type="submit"  id="save">저장</button>
+		                        <button type="button"  id="cancel">취소</button>
                 	    				
-                           </li>
                         </ul>
 
                     </div>
-                                 <script>
-                              	function display_change(){
+                               <script>
+                               // 취소 버튼
+                               $('#cancel').click(function(){
+                            	  location.reload(); 
+                               });
+                               
+                               //skill 열기
+                              	function display_change1(){
                               		document.getElementById("test1").style.display='block';
-                              	}
-                              	
+                               	}
+                              //skill 닫기
+                              	function closeSkill1(){
+                            	  
+                            		document.getElementById("test1").style.display='none';  
+                            		
+                            		var check= document.getElementsByName("skillbox");
+									
+									var str =""; // 선택한 문자열을 담을 변수
+									var count= 0; // 몇개를 선택했는지 확인할  변수
+									
+                            		for(var i=0;i<check.length;i++){
+                            			
+                            			if (document.getElementsByName("skillbox")[i].checked == true) {
+                            	            if(count<2){
+                            	            	
+	                            				  str+= document.getElementsByName("skillbox")[i].value+",";
+	                            	              count++;
+                            	            }else{
+	                            				  str+= document.getElementsByName("skillbox")[i].value ;
+	                            	              count++;
+                            	            	
+                            	            }
+                            			} 
+                            		} 
+                            		if(count<=3){
+                            			document.getElementById("skills").value=str;
+                            		}else{
+                            			alert("3가지만 선택해주세요.");
+                            		}
+                            	}
+                              	// area 열기
+                              	function display_change2(){
+                              		document.getElementById("test2").style.display='block';
+                               	}
+                              	// area 닫기
+                              	function closeSkill2(){
+                              		
+                            		document.getElementById("test2").style.display='none';
+                            		
+                            		var area = document.getElementById("area1");
+                            		document.getElementById("area").value=area.options[area.selectedIndex].value;
+                            	}
                               </script>   
 				</div>
                 </form>

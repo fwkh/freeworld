@@ -77,7 +77,7 @@
 					<li><a href="/applicant/talentApplicantSearch?dv=2">
 							<h5>지원 프로젝트</h5>
 							<p>
-								<span class="icon"></span>1 <!--  지원한 프로젝트가 있다면 count(*) 불러오기 -->
+								<span class="icon"></span>0 <!--  지원한 프로젝트가 있다면 count(*) 불러오기 -->
 							</p>
 					</a></li>
 					<li><a href="/applicant/talentApplicantSearch?dv=4">
@@ -453,7 +453,6 @@
 
 	<!-- 풋터 include -->
 	<%@ include file="../common/footer.jsp"%>
-
 </body>
 
 </html>

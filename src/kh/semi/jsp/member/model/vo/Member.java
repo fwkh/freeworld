@@ -24,6 +24,8 @@ public class Member implements Serializable{
 	private int career;
 	private int total;
 	private String join;
+	private String gender;
+	
 
 	private String files;		// 이력서 파일 업로드
 
@@ -46,7 +48,53 @@ public class Member implements Serializable{
 	private String l_Name;		// 자격증명
 	private String l_Agency;	// 발행처/ 발행기관
 	private Date l_Date;		// 취득일
-	
+	private int birthYear;
+
+	public Member(int userNo, String userPwd, String userName, Date birth, String phone, String email, String area,
+			String hope, Date future, boolean withdraw, Date enrolldate, int career, int total, String join,
+			String gender, String files, String skill1, String skill2, String skill3, String uni_Name, Date enterDate,
+			Date gra_Date, String gra_Status, String major, String total_grade, String grade_Standard, String l_Name,
+			String l_Agency, Date l_Date, int birthYear) {
+		super();
+		this.userNo = userNo;
+		this.userPwd = userPwd;
+		this.userName = userName;
+		this.birth = birth;
+		this.phone = phone;
+		this.email = email;
+		this.area = area;
+		this.hope = hope;
+		this.future = future;
+		this.withdraw = withdraw;
+		this.enrolldate = enrolldate;
+		this.career = career;
+		this.total = total;
+		this.join = join;
+		this.gender = gender;
+		this.files = files;
+		this.skill1 = skill1;
+		this.skill2 = skill2;
+		this.skill3 = skill3;
+		this.uni_Name = uni_Name;
+		this.enterDate = enterDate;
+		this.gra_Date = gra_Date;
+		this.gra_Status = gra_Status;
+		this.major = major;
+		this.total_grade = total_grade;
+		this.grade_Standard = grade_Standard;
+		this.l_Name = l_Name;
+		this.l_Agency = l_Agency;
+		this.l_Date = l_Date;
+		this.birthYear = birthYear;
+	}
+
+	public int getBirthYear() {
+		return birthYear;
+	}
+
+	public void setBirthYear(int birthYear) {
+		this.birthYear = birthYear;
+	}
 
 	// 가입시 필요한 생성자
 	public Member(String userPwd, String userName, Date birth, String phone, String email, String area, String hope, Date future, int total) {
@@ -60,10 +108,71 @@ public class Member implements Serializable{
 		this.future = future;
 		this.total = total;
 	}
+	//
+	
+	public Member(String userName, int birthYear, String email, String area, String gender, Date future, String phone, String skill1, String skill2, String skill3) {
+		
+		this.userName = userName;
+		this.birthYear = birthYear;
+		this.email = email;
+		this.future = future;
+		this.area=area;
+		this.gender=gender;
+		this.future=future;
+		this.phone=phone;
+		this.skill1=skill1;
+		this.skill2=skill2;
+		this.skill3=skill3;
+		
+	}
 	
 	
 	public Member() {}
+	public Member(int userNo, String userPwd, String userName, Date birth, String phone, String email, String area,
+			String hope, Date future, boolean withdraw, Date enrolldate, int career, int total, String join,
+			String gender, String files, String skill1, String skill2, String skill3, String uni_Name, Date enterDate,
+			Date gra_Date, String gra_Status, String major, String total_grade, String grade_Standard, String l_Name,
+			String l_Agency, Date l_Date) {
+		super();
+		this.userNo = userNo;
+		this.userPwd = userPwd;
+		this.userName = userName;
+		this.birth = birth;
+		this.phone = phone;
+		this.email = email;
+		this.area = area;
+		this.hope = hope;
+		this.future = future;
+		this.withdraw = withdraw;
+		this.enrolldate = enrolldate;
+		this.career = career;
+		this.total = total;
+		this.join = join;
+		this.gender = gender;
+		this.files = files;
+		this.skill1 = skill1;
+		this.skill2 = skill2;
+		this.skill3 = skill3;
+		this.uni_Name = uni_Name;
+		this.enterDate = enterDate;
+		this.gra_Date = gra_Date;
+		this.gra_Status = gra_Status;
+		this.major = major;
+		this.total_grade = total_grade;
+		this.grade_Standard = grade_Standard;
+		this.l_Name = l_Name;
+		this.l_Agency = l_Agency;
+		this.l_Date = l_Date;
+	}
 	
+	public String getGender() {
+		return gender;
+	}
+	
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
 	// 학력 테이블
 	public Member(int userNo, String uni_Name, Date enterDate, Date gra_Date, String gra_Status, String major,
 			String total_grade, String grade_Standard) {
