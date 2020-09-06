@@ -6,12 +6,7 @@
 <%@page import="kh.semi.project.model.vo.*"%>
 <%@page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" import="kh.semi.jsp.member.model.vo.*"%>
-<%
-	Member m = (Member)session.getAttribute("member");
-	Calendar today = Calendar.getInstance();
-	SimpleDateFormat df = new SimpleDateFormat("yy-MM");
-	//ArrayList<Project> list = (ArrayList<Project>)request.getAttribute("list"); // 확인했던 프로젝트들을 담아 놓는 객체
-%>
+
 
 <!DOCTYPE html>
 <html lang="ko">

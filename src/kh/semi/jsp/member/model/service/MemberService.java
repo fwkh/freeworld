@@ -8,7 +8,7 @@ import kh.semi.jsp.member.exception.MemberException;
 import kh.semi.jsp.member.model.dao.MemberDao;
 import kh.semi.jsp.member.model.vo.Member;
 
-<<<<<<< HEAD
+
 public class MemberService{
 	
 	private Connection con;
@@ -26,11 +26,8 @@ public class MemberService{
 		}
 		return result;
 	}
-=======
-public class MemberService {
->>>>>>> branch 'master' of https://github.com/fwkh/freeworld.git
 
-<<<<<<< HEAD
+
 
 	public Member f_searchOne(Member m) throws MemberException{
 		con = getConnection();
@@ -45,28 +42,8 @@ public class MemberService {
 		return result;
 	}
 
-	public int insertMember(Member m) throws MemberException {
-		con = getConnection();
-=======
-   private Connection con;
-   private MemberDao mDao = new MemberDao();
-   
-   public Member selectMember(Member m) throws MemberException
-   {
-      con = getConnection();
-      
-      Member result = mDao.selectMember(con, m);
-      
-      close(con);
-      
-      if(result == null)
-      {
-         throw new MemberException("이메일이나 비밀번호를 확인해주세요.");
-      }
-      
-      return result;
-   }
->>>>>>> branch 'master' of https://github.com/fwkh/freeworld.git
+
+
 
    public int insertMember(Member m) throws MemberException
    {
@@ -80,7 +57,7 @@ public class MemberService {
 
       close(con);
 
-<<<<<<< HEAD
+      return result;
 	}
 
 
@@ -98,8 +75,5 @@ public class MemberService {
 		return result;
 		
 	}
-=======
-      return result;
-   }
->>>>>>> branch 'master' of https://github.com/fwkh/freeworld.git
+
 }
